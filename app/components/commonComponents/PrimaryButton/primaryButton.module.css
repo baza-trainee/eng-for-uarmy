@@ -1,14 +1,5 @@
 .box {
-  --border-color: black;
-  --size-corner: 20px;
-  --border-width: 2px;
-
-  padding: 20px 30px;
   position: relative;
-  text-transform: uppercase;
-  margin: 0 auto;
-  margin-top: 30px;
-  margin-bottom: 30px;
   border: none;
   clip-path: polygon(
     0 0,
@@ -21,7 +12,7 @@
 }
 
 .box::before {
-  content: "";
+  content: '';
   position: absolute;
   inset: 0;
   background: var(--border-color);
@@ -29,7 +20,7 @@
 }
 
 .box::after {
-  content: "";
+  content: '';
   background: beige;
   position: absolute;
   inset: 0;
