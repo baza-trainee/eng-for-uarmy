@@ -1,6 +1,8 @@
 const StudyPage = () => {
-    return <>
-    <h1>Study page</h1>
+  return (
+    <>
+      <h1>Study page</h1>
     </>
-}
-export default StudyPage
+  );
+};
+export default StudyPage;

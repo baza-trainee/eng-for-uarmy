@@ -1,8 +1,12 @@
-import styles from './primaryButton.module.css';
+import styles from "./primaryButton.module.css";
 
-const PrimaryButton = ({name}) => {
-    return <>
-        <button type="button" className={styles.box}>{name}</button>
+const PrimaryButton = ({ name }) => {
+  return (
+    <>
+      <button type="button" className={styles.box}>
+        {name}
+      </button>
     </>
-}
-export default PrimaryButton
+  );
+};
+export default PrimaryButton;

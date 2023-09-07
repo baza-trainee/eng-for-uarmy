@@ -1,8 +1,6 @@
-import Link from "next/link"
+import Link from "next/link";
 
 const Footer = () => {
-    return <>
-        footer
-    </>
-}
-export default Footer
+  return <>footer</>;
+};
+export default Footer;
