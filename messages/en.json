@@ -1,5 +1,8 @@
 {
-    "Header": {
-      "home": "Hello world!"
-    }
+  "Header": {
+    "home": "Головна сторінка",
+    "study": "Навчання",
+    "team": "Наша команда",
+    "contact": "Contact Us"
   }
+}
