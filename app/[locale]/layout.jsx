@@ -1,9 +1,8 @@
 import "./globals.css";
+import fonts from './fonts/fontsSrc';
 import { NextIntlClientProvider } from "next-intl";
-import { Inter } from "next/font/google";
 import Header from "./components/commonComponents/Header/Header";
 import Footer from "./components/commonComponents/Footer/Footer";
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Eng for UArmy",
@@ -24,7 +23,7 @@ export default async function RootLayout({ children, params: { locale } }) {
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className={inter.className}>
+        <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
           <Header />
           <main>{children}</main>
           <Footer />
