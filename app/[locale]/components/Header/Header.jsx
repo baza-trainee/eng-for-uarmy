@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import Image from "next/image";
 import styles from "./header.module.css";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
-import getCurrentPathname from "@/app/[locale]/libs/getCurrentPathName";
+import getCurrentPathname from "../../libs/getCurrentPathname";
 
 const Header = () => {
   const t = useTranslations("Header");
