@@ -1,0 +1,39 @@
+.langSwitcher {
+  position: relative;
+  margin-left: 16px;
+  border: 1px solid #231f20;
+}
+.langItem {
+  display: flex;
+  padding: 16px;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+}
+.langSwitcher:focus {
+  border: 3px solid #798738;
+}
+.selectedLang {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  width: calc(100% + 2px);
+  transform: translate(-1px, calc(100% - 1px));
+  background-color: #f2f1f1;
+  border: 1px solid #231f20;
+  border-top: none;
+}
+.selectedLang:hover {
+  background-color: #c4d294;
+}
+.switchIcon {
+  font-size: 16px;
+}
+
+.switchLang {
+  color: #231f20;
+  font-family: inherit;
+  font-size: 16px;
+  white-space: nowrap;
+}
