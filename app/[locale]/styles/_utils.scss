@@ -1,0 +1,236 @@
+// font styles
+h1 {
+    font-family: 'Furore', sans-serif; 
+    font-size: 64px; 
+    font-weight: 400; 
+    line-height: 34px; 
+    letter-spacing: 0.36399999260902405px;
+    text-align: left;
+}
+
+h2 {
+    font-family: 'Furore', sans-serif; 
+    font-size: 48px; 
+    font-weight: 400; 
+    line-height: 55.2px; 
+    letter-spacing: 0.36399999260902405px;
+    text-align: left;
+}
+
+h3 {
+    font-family: 'Furore', sans-serif; // after adding font to project
+    font-size: 36px; 
+    font-weight: 400; 
+    line-height: 28px; 
+    letter-spacing: 0.3499999940395355px;
+    text-align: left;
+}
+
+h4 {
+    font-family: 'Furore', sans-serif; // after adding font to project
+    font-size: 28px; 
+    font-weight: 400; 
+    line-height: 28px; 
+    letter-spacing: 0.3499999940395355px;
+    text-align: left;
+}
+
+h5 {
+    font-family: 'Furore', sans-serif; // after adding font to project
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 28px; 
+    letter-spacing: 0.3499999940395355px;
+    text-align: left;
+}
+
+
+.body1 {
+    font-family: Arial;
+    font-size: 18px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    font-family: Arial;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+}
+
+.body1-bold {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+}
+
+.body2 {
+    font-family: Arial;
+    font-size: 22px; 
+    font-weight: 400; 
+    line-height: 22px; 
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+}
+
+.body2-bold {
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 33px;
+    letter-spacing: -0.40799999237060547px;
+    text-align: left;
+}
+
+
+.caption {
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.caption-bold {
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    letter-spacing: 0px;
+    text-align: left;
+}
+
+.footnote-bold {
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 18px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+}
+
+.footnote {
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    letter-spacing: -0.07800000160932541px;
+    text-align: left;
+}
+
+.subheadline {
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+}
+
+.subheadline-bold {
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.23999999463558197px;
+    text-align: left;
+}
+
+// buttom styles
+.main-button {
+    width: 250px;
+    height: 92px;
+    font-family: Furore, sans-serif;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 25px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $color-ultra_light_grey; 
+    border: none; 
+    cursor: pointer; 
+    background-color: $color-black; 
+    padding: 0 35px 0 32px;
+}
+
+.main-button:hover {
+    background-color: $color-olive;
+}
+
+.main-button:focus {
+    outline: none; 
+    border: 3px solid $color-grey; 
+    background-color: $color-black;
+}
+
+.main-button:active {
+    background-color: $color-black; 
+}
+
+.outline-button {
+    width: 286px;
+    height: 92px;
+    font-family: Furore, sans-serif;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 27,62px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: $black; 
+    border: 1px solid $color-black; 
+    cursor: pointer; 
+    background-color: $color-white; 
+    padding: 0 35px 0 32px;
+}
+
+.outline-button:hover {
+    background-color: $color-olive;
+    color: $color-white;
+    border: none;
+}
+
+.outline-button:focus {
+    background-color:$color-white;
+    border: 3px solid $color-green;
+    color: $color-black;
+}
+
+.outline-button:active {
+    background-color: $color-white; 
+    color:$black;
+    border: 1px solid $color-black;
+}
+
+.small-button {
+    width: 280px;
+    height: 60px;
+    font-family: Furore, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 18,42px;
+    letter-spacing: 0em;
+    text-align: center;
+    color: $color-white; 
+    border: none; 
+    cursor: pointer; 
+    background-color: $color-olive; 
+}
+
+.small-button:hover {
+    background-color: $color-green;
+    color: $black;
+    border: none;
+}
+
+.outline-button:focus {
+    background-color:$color-olive;
+    border: 3px solid $color-black;
+    color: $color-white;
+}
+
+.outline-button:active {
+    background-color: $color-olive; 
+    color: $color-white;
+    border: none;
+}
