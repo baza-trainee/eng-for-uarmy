@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "./langSwitcher.module.css";
+import styles from "./langSwitcher.module.scss";
 
 const LangSwitcher = ({locale}) => {
   const [currentLang, setCurrentLang] = useState('UKR')
@@ -14,6 +14,20 @@ const LangSwitcher = ({locale}) => {
       setCurrentLang('UKR')
     }
   }, [locale])
+
+  useEffect(() => {
+    const closeSwitcher = () => {
+      setIsOpenSwitcher(false)
+    }
+    if (isOpenSwitcher) {
+      document.addEventListener('click', closeSwitcher);
+    }
+
+    return () => {
+      document.removeEventListener('click', closeSwitcher);
+
+    };
+  }, [isOpenSwitcher])
 
   const onLangClick = () => {
     setIsOpenSwitcher(!isOpenSwitcher)

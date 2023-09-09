@@ -1,7 +1,13 @@
+@import '../../../styles/variables.module';
+
 .langSwitcher {
   position: relative;
   margin-left: 16px;
-  border: 1px solid #231f20;
+  border: 1px solid $color-black;
+  transition: all $transition-duration $timing-function;
+  &:focus{
+    border: 3px solid $color-olive;
+  }
 }
 .langItem {
   display: flex;
@@ -10,9 +16,7 @@
   gap: 12px;
   cursor: pointer;
 }
-.langSwitcher:focus {
-  border: 3px solid #798738;
-}
+
 .selectedLang {
   position: absolute;
   bottom: 0;
@@ -20,19 +24,22 @@
   z-index: 2;
   width: calc(100% + 2px);
   transform: translate(-1px, calc(100% - 1px));
-  background-color: #f2f1f1;
-  border: 1px solid #231f20;
+  background-color: $color-ultra-light-grey;
+  border: 1px solid $color-black;
   border-top: none;
+  transition: background-color $transition-duration $timing-function;
+
+  &:hover {
+    background-color: $color-green;
+  }
 }
-.selectedLang:hover {
-  background-color: #c4d294;
-}
+
 .switchIcon {
   font-size: 16px;
 }
 
 .switchLang {
-  color: #231f20;
+  color: $color-black;
   font-family: inherit;
   font-size: 16px;
   white-space: nowrap;
