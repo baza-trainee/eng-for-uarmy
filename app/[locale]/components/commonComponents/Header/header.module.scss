@@ -1,0 +1,66 @@
+@import '../../../styles/variables.module';
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 1280px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+.logo {
+  width: 170px;
+  height: 76px;
+}
+.headerWrapper {
+  display: flex;
+  align-items: center;
+}
+.nav {
+  display: flex;
+  gap: 28px;
+  margin-right: 31px;
+}
+.navLink {
+  position: relative;
+  font-size: 18px;
+  letter-spacing: 0.35px;
+  color: $color-grey;
+  transition: color $transition-duration $timing-function;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: transparent;
+    transition: background-color $transition-duration $timing-function;
+  }
+  &.activeLink::before {
+    background-color: $color-black;
+  }
+}
+.activeLink {
+  color: $color-black;
+}
+
+
+.headerButton {
+  display: flex;
+  padding: 16px 38.5px;
+  font-family: inherit;
+  font-size: 16px;
+  color: $color-white;
+  border: none;
+  background-color: $color-olive;
+  cursor: pointer;
+  transition: all $transition-duration $timing-function;
+
+  &:hover{
+    background-color: $color-green;
+    color: $color-black;
+  }
+}

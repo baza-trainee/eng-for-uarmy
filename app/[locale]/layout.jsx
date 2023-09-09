@@ -1,8 +1,8 @@
 import "./globals.css";
 import { NextIntlClientProvider } from "next-intl";
 import fonts from './fonts/fontsSrc';
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+import Header from "./components/commonComponents/Header/Header";
+import Footer from "./components/commonComponents/Footer/Footer";
 
 export const metadata = {
   title: "Eng for UArmy",

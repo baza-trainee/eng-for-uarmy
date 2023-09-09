@@ -3,9 +3,9 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
-import styles from "./header.module.css";
+import styles from "./header.module.scss";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
-import getCurrentPathname from "../../libs/getCurrentPathname";
+import getCurrentPathname from "../../../libs/getCurrentPathname";
 
 const Header = () => {
   const t = useTranslations("Header");
