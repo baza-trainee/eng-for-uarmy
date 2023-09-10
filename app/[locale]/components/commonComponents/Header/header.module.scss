@@ -1,5 +1,12 @@
 @import '../../../styles/variables.module';
 
+.headerBox{
+  position: fixed;
+  width: 100%;
+  background-color: $color-ultra-light-grey;
+  top: 0;
+  z-index: 100;
+}
 .header {
   display: flex;
   align-items: center;
@@ -27,7 +34,9 @@
   letter-spacing: 0.35px;
   color: $color-grey;
   transition: color $transition-duration $timing-function;
-
+  &:hover{
+    color: $color-black;
+  }
   &::before {
     content: "";
     display: block;

@@ -13,21 +13,23 @@ const Header = () => {
   const pathname = usePathname();
   const currentPathname = getCurrentPathname(pathname);
 
-  return <header className={styles.header}>
-      <Image src='./logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority/>
-      <div className={styles.headerWrapper}>
-        <nav className={styles.nav}>
-          <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` ? styles.activeLink : ''}`}>{t("home")}</Link>
-          <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link>
-          <Link href={`/${locale}/team`} className={`${styles.navLink} ${currentPathname === 'team' ? styles.activeLink : ''}`} locale={locale}>
-            {t("team")}
-          </Link>
-          <Link href={`/${locale}/contact`} className={`${styles.navLink} ${currentPathname === 'contact' ? styles.activeLink : ''}`} locale={locale}>
-            {t("contact")}
-          </Link>
-        </nav>
-        <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton}>{t("button")}</Link>
-      <LangSwitcher locale={locale} pathname={currentPathname} />
+  return <header className={styles.headerBox}>
+      <div className={styles.header}>
+        <Image src='./logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority/>
+        <div className={styles.headerWrapper}>
+          <nav className={styles.nav}>
+            <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` ? styles.activeLink : ''}`}>{t("home")}</Link>
+            <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link>
+            <Link href={`/${locale}/team`} className={`${styles.navLink} ${currentPathname === 'team' ? styles.activeLink : ''}`} locale={locale}>
+              {t("team")}
+            </Link>
+            <Link href={`/${locale}/contact`} className={`${styles.navLink} ${currentPathname === 'contact' ? styles.activeLink : ''}`} locale={locale}>
+              {t("contact")}
+            </Link>
+          </nav>
+          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton}>{t("button")}</Link>
+        <LangSwitcher locale={locale} pathname={currentPathname} />
+        </div>
       </div>
     </header>
   
