@@ -4,9 +4,9 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1280px;
+  width: $desktop;
   margin: 0 auto;
-  padding: 32px 20px;
+  padding: 32px $section-padding;
 }
 .logo {
   width: 170px;
@@ -50,10 +50,12 @@
 
 .headerButton {
   display: flex;
-  padding: 16px 38.5px;
+  padding: 16px 38px;
   font-family: inherit;
   font-size: 16px;
-  color: $color-white;
+  justify-content: center;
+  width: 208px;
+  color: $color-white-text;
   border: none;
   background-color: $color-olive;
   cursor: pointer;
