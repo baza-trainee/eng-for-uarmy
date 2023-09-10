@@ -1,0 +1,280 @@
+@import '../../../styles/reset.styles';
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+@font-face {
+    font-family: Furore; 
+    src: url('../../../fonts/Furore.woff2') format('woff'); 
+    
+  }
+
+.hero{
+    padding-top: 60px;
+    padding-bottom: 88px;
+    position: relative;
+}
+.container{
+    display: grid;
+    grid-template-columns: 990px 208px;
+    column-gap: 16px;
+}
+.card{
+    border: 1px solid black;
+    padding:65px 225px 64px 111px ;
+    --border-color: black;
+    --size-corner: 20px;
+    --border-width: 2px;
+    position: relative;
+    color: var(--black, #231F20);
+    font-family: Furore;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    border: none;
+    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--border-color);
+        z-index: -2;
+    }
+    &::after{
+        content: "";
+        background: #ffffff;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
+}
+}
+
+.firstHead{
+    font-family: Furore;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.secondHead{
+    margin-top: 12px;
+    font-family: Furore;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.35px;
+}
+
+ul{
+    display: grid;
+    margin-top: 32px;
+    gap: 28px;
+}
+
+.li-item{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    
+}
+
+.li-txt{
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+
+.contact-us-col{
+    display: grid;
+    grid-template-rows: 65px 65px 65px;
+    row-gap: 20px;
+}
+
+.contact-us{
+    --border-color: black;
+    --size-corner: 20px;
+    --border-width: 2px;
+    padding: 17px 24px 23px 35px;
+    position: relative;
+    width: 208px;
+    height: 65px;
+    color: var(--black, #231F20);
+    font-family: Furore;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    border: none;
+    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--border-color);
+        z-index: -2;
+        
+    }
+    &::after{
+        content: "";
+        background: #F9F9F9;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
+    &:hover{
+        --border-color: #798738;
+        }
+}}
+
+.under-txt-btn {
+    --border-color: black;
+    --size-corner: 20px;
+    --border-width: 2px;
+    padding: 17px 24px 23px 35px;
+    width: 270px;
+    height: 92px;
+    margin-top: 24px;
+    position: relative;
+    font-family: Furore;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: white;
+    text-transform: uppercase;
+    border: none;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--border-color);
+      z-index: -2;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      clip-path: polygon(var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
+    }
+    &:hover {
+      --border-color: #76871E;
+      cursor: pointer;
+    }
+  }
+
+  .under-txt-btn2 {
+    --border-color: black;
+    --size-corner: 20px;
+    --border-width: 2px;
+    margin-left: 16px;
+    padding: 17px 24px 23px 35px;
+    position: relative;
+    margin-top: 24px;
+    width: 365px;
+    height: 92px;
+    color: var(--black, #231F20);
+    font-family: Furore;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    border: none;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    z-index: 1000;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--border-color);
+      z-index: -2;
+    }
+    &::after {
+      content: "";
+      background: #F9F9F9;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      clip-path: polygon(
+        var(--border-width) var(--border-width),
+        100% var(--border-width),
+        calc(100% - var(--border-width)) var(--border-width),
+        calc(100% - var(--border-width)) calc(100% - var(--border-width)),
+        calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
+        var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2))
+      );
+    }
+    &:hover {
+        background: #76871E;
+        cursor: pointer;
+    }
+  }
+
+.social-btn {
+        --border-color: black;
+        --size-corner: 20px;
+        --border-width: 2px;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        justify-self: end;
+        width: 86px;
+        height: 65px;
+        color: var(--black, #231F20);
+        font-family: Furore;
+        font-size: 22px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-transform: uppercase;
+        border: none;
+        -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+        clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+        z-index: 100;
+        &::before{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: var(--border-color);
+            z-index: -2;
+        }
+        &::after{
+            content: "";
+            background: #F9F9F9;
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+
+    .soldierImg {
+        position: absolute;
+        left: 24%;
+        top: 21%;
+        z-index: 1;
+
+
+    }
