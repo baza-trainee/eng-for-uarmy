@@ -1,0 +1,100 @@
+@import '../../../styles/variables.module';
+
+.section{
+    background-color: $color-white;
+}
+.sectionWrap{
+    display: flex;
+    flex-direction: column;
+    width: $desktop;
+    margin: 0 auto;
+    padding: 100px $section-padding 88px $section-padding;
+}
+.sectionDesc{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    width: 320px;
+    color: $color-black;
+    transform: translate(0, 12px);
+}
+.arrowIcon{
+    margin-top: 30px;
+}
+.descWrap{
+    display: flex;
+    gap: 56px;
+    margin-bottom: 47px;
+}
+
+.helpList{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+}
+.helpItem{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    background-color: $color-white;
+    border: 1px solid black; 
+    &:nth-child(odd) {
+        padding-left: 71px;
+        padding-right: 144px; 
+        border-left: none;
+    }
+    &:nth-child(even) {
+        padding-left: 144px;
+        padding-right: 71px;
+        border-right: none;
+    }
+    &:nth-child(-n+2){
+        padding-bottom: 39px;
+        border-top: none;
+    }
+    &:nth-child(n+3){
+        padding-top: 46px;
+        padding-bottom: 8px;
+        border-bottom: none;
+    }
+}
+.helpDesc{
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    width: 291px;
+}
+.helpBtn{
+    font-family: inherit;
+    background-color: $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: 22px;
+    --size-corner: 36px;
+    width: 270px;
+    height: 92px;
+    border: none;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+    transition: background-color $transition-duration $timing-function;
+    cursor: pointer;
+    &:hover{
+        background-color: $color-olive;
+    }
+    &:active,
+    &:focus{
+        background-color: $color-black;
+    }
+}
+

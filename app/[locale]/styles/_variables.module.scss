@@ -1,7 +1,7 @@
 $color-black: #231F20;
 $color-dark-grey: #5D5D5D;
 $color-grey: #8b8b8b;
-$color-white: #fff;
+$color-white-text: #fff;
 $color-light-grey: #D9D9D9;
 $color-ultra-light-grey: #F2F1F1;
 $color-white: #F9F9F9;
@@ -16,6 +16,8 @@ $color-olive: #798738;
 
 $transition-duration: 250ms;
 $timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+$section-padding: 20px;
 
 $mobile: 320px;
 $tablet: 768px;

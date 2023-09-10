@@ -26,7 +26,7 @@ const Header = () => {
             {t("contact")}
           </Link>
         </nav>
-        <button type="button" className={styles.headerButton}>help us grows</button>
+        <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton}>{t("button")}</Link>
       <LangSwitcher locale={locale} pathname={currentPathname} />
       </div>
     </header>
