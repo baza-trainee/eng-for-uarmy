@@ -1,0 +1,53 @@
+@import '../../../styles/variables.module'; 
+@import '../../../styles/utils.module';
+@font-face {
+    font-family: Furore; 
+    src: url('../../../fonts/Furore.woff2') format('woff'); 
+}
+@font-face {
+    font-family: arial;
+    src: url('../../../fonts/ArialMT.woff2') format('woff');
+}
+
+.aboutUs {
+    background-color: $color-ultra_light_grey;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 1440px;
+    height: 1000px;
+  }
+
+.image {
+    width: 100%; 
+    height: 100%;
+  }
+  
+.rightside {
+    width: 100%; 
+    padding: 0 56px 120px 120px;
+}
+
+.header {
+    color: $color-black;
+    font-family: Furore;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin: 115px 0 50px 0;
+    width: 288px;
+    height: 55px;
+}
+
+.text {
+    color: $color-black;
+    font-family: arial;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 33px;
+    margin: 0 0 40px 0;
+    padding: 0px;
+}
+
+
