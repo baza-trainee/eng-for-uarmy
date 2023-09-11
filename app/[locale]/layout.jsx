@@ -1,4 +1,4 @@
-import "./globals.css";
+import "./globals.scss";
 import { NextIntlClientProvider } from "next-intl";
 import fonts from './fonts/fontsSrc';
 import Header from "./components/commonComponents/Header/Header";
@@ -13,12 +13,12 @@ export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "en" }];
 }
 
-export default async function RootLayout({ children, params: { locale } }) {
+const RootLayout = async({ children, params: { locale } }) => {
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
   } catch (error) {
-    return error;
+    return console.log(error);
   }
   return (
     <html lang={locale}>
@@ -30,5 +30,6 @@ export default async function RootLayout({ children, params: { locale } }) {
         </body>
       </NextIntlClientProvider>
     </html>
-  );
+  )
 }
+export default RootLayout

@@ -1,5 +1,6 @@
+@import './variables.module';
 // font styles
-h1 {
+.h1 {
     font-family: 'Furore', sans-serif; 
     font-size: 64px; 
     font-weight: 400; 
@@ -8,8 +9,8 @@ h1 {
     text-align: left;
 }
 
-h2 {
-    font-family: 'Furore', sans-serif; 
+.h2 {
+    font-family: inherit; 
     font-size: 48px; 
     font-weight: 400; 
     line-height: 55.2px; 
@@ -17,7 +18,7 @@ h2 {
     text-align: left;
 }
 
-h3 {
+.h3 {
     font-family: 'Furore', sans-serif; // after adding font to project
     font-size: 36px; 
     font-weight: 400; 
@@ -26,7 +27,7 @@ h3 {
     text-align: left;
 }
 
-h4 {
+.h4 {
     font-family: 'Furore', sans-serif; // after adding font to project
     font-size: 28px; 
     font-weight: 400; 
@@ -35,7 +36,7 @@ h4 {
     text-align: left;
 }
 
-h5 {
+.h5 {
     font-family: 'Furore', sans-serif; // after adding font to project
     font-size: 18px; 
     font-weight: 400; 
@@ -152,6 +153,15 @@ h5 {
     cursor: pointer; 
     background-color: $color-black; 
     padding: 0 35px 0 32px;
+    --size-corner: 36px;
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    var(--size-corner) 100%,
+    0 calc(100% - var(--size-corner))
+  );
 }
 
 .main-button:hover {
@@ -182,6 +192,15 @@ h5 {
     cursor: pointer; 
     background-color: $color-white; 
     padding: 0 35px 0 32px;
+    --size-corner: 36px;
+    clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    var(--size-corner) 100%,
+    0 calc(100% - var(--size-corner))
+  );
 }
 
 .outline-button:hover {
@@ -198,7 +217,7 @@ h5 {
 
 .outline-button:active {
     background-color: $color-white; 
-    color:$color-black;
+    color: $color-black;
     border: 1px solid $color-black;
 }
 
