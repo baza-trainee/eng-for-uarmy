@@ -5,15 +5,16 @@
     font-family: Furore; 
     src: url('../../../fonts/Furore.woff2') format('woff'); 
 }
-
+.partnersSection{
+        background-color: $color-ultra_light_grey;
+}
 .partners {
-    background-color: $color-ultra_light_grey;
-    width: 1440px;
-    height: 805px;
+    width: $desktop;
+    margin: 0 auto;
+    padding: 96px $section-padding 120px $section-padding;
 }
 
 .header {
-    background-color: $color-ultra_light_grey;
     color: $color-black;
     font-family: Furore;
     font-size: 48px;
@@ -21,12 +22,10 @@
     font-weight: 400;
     line-height: normal;
     text-align: center;
-    padding-top: 96px;
     padding-bottom: 46px;
 }
 
 .icons {
-    background-color: $color-ultra_light_grey;
     width: 179px;
     height: 179px;
     display: inline-block;

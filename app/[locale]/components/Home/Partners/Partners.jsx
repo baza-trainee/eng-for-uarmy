@@ -39,8 +39,9 @@ const Partners = () => {
         }
     };
 
-    return <section className={styles.partners}>
-        <div><p className={styles.header}>ПАРТНЕРИ</p></div>
+    return <section className={styles.partnersSection}>
+        <div className={styles.partners}>
+            <h2 className={styles.header}>ПАРТНЕРИ</h2>
         <div id="imagesContainer" className={styles.scrollContainer}>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
@@ -58,6 +59,7 @@ const Partners = () => {
             <p className={styles.helpItem}>
                 <Link href={`/${locale}/contact`} className={styles.helpBtn}>Become a partner or sponsor</Link>
             </p>   
+        </div>
         </div>
     </section>
 
