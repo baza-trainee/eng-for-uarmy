@@ -2,7 +2,7 @@ import "./SvgComponent.styles.scss"
 import Link from 'next/link';
 
 
-export function Facebook () {
+export const Facebook = () => {
     return (
       <> 
             <button className='facebook social-btn'>
