@@ -11,11 +11,14 @@
     padding-top: 60px;
     padding-bottom: 88px;
     position: relative;
+    display: flex;
+    
 }
 .container{
     display: grid;
     grid-template-columns: 990px 208px;
     column-gap: 16px;
+    margin: 0 auto;
 }
 .card{
     border: 1px solid black;
@@ -213,7 +216,7 @@ ul{
  
     .soldierImg {
         position: absolute;
-        left: 24%;
+        left: 34%;
         top: 21%;
         z-index: 1;
         pointer-events: none;
