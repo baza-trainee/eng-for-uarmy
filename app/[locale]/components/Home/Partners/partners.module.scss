@@ -1,0 +1,101 @@
+@import '../../../styles/variables.module'; 
+@import '../../../styles/utils.module';
+
+@font-face {
+    font-family: Furore; 
+    src: url('../../../fonts/Furore.woff2') format('woff'); 
+}
+.partnersSection{
+        background-color: $color-ultra_light_grey;
+}
+.partners {
+    width: $desktop;
+    margin: 0 auto;
+    padding: 96px $section-padding 120px $section-padding;
+}
+
+.header {
+    color: $color-black;
+    font-family: Furore;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+    padding-bottom: 46px;
+}
+
+.icons {
+    width: 179px;
+    height: 179px;
+    display: inline-block;
+    margin: 38px 71px 38px 70px;
+    min-width: 179px;
+    min-height: 179px;
+}
+
+.scrollContainer {
+    overflow:scroll;
+    overflow-x: auto; 
+    white-space: nowrap;
+    width: 100%;
+    display: flex;
+}
+
+.scrollButtonContainer {
+    display: flex; 
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.scrollButton {
+    width: 31px;
+    height: 8px;
+    margin: 0 14px;
+    background-color: $color-light-grey;
+    border: none;
+}
+
+.scrollButton:active {
+    background-color: $color-olive;
+}
+
+.helpItem {
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    align-items: center;
+    background-color: $color-ultra_light_grey;
+    border: none; 
+    padding-top: 68px;
+    padding-bottom: 10px;
+}
+
+.helpBtn{
+    font-family: inherit;
+    background-color: $color-black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    font-size: 22px;
+    --size-corner: 36px;
+    width: 482px;
+    height: 92px;
+    border: none;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+    transition: background-color $transition-duration $timing-function;
+    cursor: pointer;
+    &:hover{
+        background-color: $color-olive;
+    }
+    &:active,
+    &:focus{
+        background-color: $color-black;
+    }
+}
