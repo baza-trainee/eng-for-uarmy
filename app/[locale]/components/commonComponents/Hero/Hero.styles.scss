@@ -101,43 +101,6 @@ ul{
     row-gap: 20px;
 }
 
-.contact-us{
-    --border-color: black;
-    --size-corner: 20px;
-    --border-width: 2px;
-    padding: 17px 24px 23px 35px;
-    position: relative;
-    width: 208px;
-    height: 65px;
-    color: var(--black, #231F20);
-    font-family: Furore;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    border: none;
-    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    &::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--border-color);
-        z-index: -2;
-        
-    }
-    &::after{
-        content: "";
-        background: #F9F9F9;
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
-    &:hover{
-        --border-color: #798738;
-        }
-}}
 
 .under-txt-btn {
     --border-color: black;
@@ -162,7 +125,7 @@ ul{
       content: "";
       position: absolute;
       inset: 0;
-      background: var(--border-color);
+      background-color: var(--border-color);
       z-index: -2;
     }
     &::after {
@@ -172,9 +135,13 @@ ul{
       z-index: -1;
       clip-path: polygon(var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
     }
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
       --border-color: #76871E;
       cursor: pointer;
+    }
+    &:focus {
+      background: #798738; 
     }
   }
 
@@ -208,7 +175,7 @@ ul{
     }
     &::after {
       content: "";
-      background: #F9F9F9;
+      background: white;
       position: absolute;
       inset: 0;
       z-index: -1;
@@ -221,60 +188,34 @@ ul{
         var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2))
       );
     }
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
     &:hover {
-        background: #76871E;
-        cursor: pointer;
+      --border-color: #798738;
+      cursor: pointer;
+      color:#ffffff;
+      &::after {
+        background: #798738; 
+      }
+  
+    }
+    &:focus{
+      --border-color: #798738;
+      &::after {
+        background: #798738; 
+      }
     }
   }
 
-.social-btn {
-        --border-color: black;
-        --size-corner: 20px;
-        --border-width: 2px;
-        padding: 15px 25px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        justify-self: end;
-        width: 86px;
-        height: 65px;
-        color: var(--black, #231F20);
-        font-family: Furore;
-        font-size: 22px;
-        font-style: normal;
-        font-weight: 400;
-        line-height: normal;
-        text-transform: uppercase;
-        border: none;
-        -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-        clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-        z-index: 100;
-        &::before{
-            content: "";
-            position: absolute;
-            inset: 0;
-            background: var(--border-color);
-            z-index: -2;
-        }
-        &::after{
-            content: "";
-            background: #F9F9F9;
-            position: absolute;
-            inset: 0;
-            z-index: -1;
-            clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
-        }
-        &:hover{
-            cursor: pointer;
-        }
-    }
 
+    .social-btn:hover .social-svg path {
+      fill: #798738; /* Цвет при наведении */
+    }
+ 
     .soldierImg {
         position: absolute;
         left: 24%;
         top: 21%;
         z-index: 1;
-
+        pointer-events: none;
 
     }
