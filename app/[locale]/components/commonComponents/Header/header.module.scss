@@ -1,12 +1,19 @@
 @import '../../../styles/variables.module';
 
+.headerBox{
+  position: fixed;
+  width: 100%;
+  background-color: $color-ultra-light-grey;
+  top: 0;
+  z-index: 100;
+}
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 1280px;
+  width: $desktop;
   margin: 0 auto;
-  padding: 32px 20px;
+  padding: 32px $section-padding;
 }
 .logo {
   width: 170px;
@@ -27,7 +34,9 @@
   letter-spacing: 0.35px;
   color: $color-grey;
   transition: color $transition-duration $timing-function;
-
+  &:hover{
+    color: $color-black;
+  }
   &::before {
     content: "";
     display: block;
@@ -50,10 +59,12 @@
 
 .headerButton {
   display: flex;
-  padding: 16px 38.5px;
+  padding: 16px 38px;
   font-family: inherit;
   font-size: 16px;
-  color: $color-white;
+  justify-content: center;
+  width: 208px;
+  color: $color-white-text;
   border: none;
   background-color: $color-olive;
   cursor: pointer;

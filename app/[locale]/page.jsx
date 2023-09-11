@@ -1,3 +1,4 @@
+
 import styles from "./page.module.css";
 import PrimaryButton from "./components/commonComponents/PrimaryButton/PrimaryButton";
 import Hero from "./components/commonComponents/Hero/Hero";
@@ -9,4 +10,6 @@ export default function Home() {
       <PrimaryButton name="Start Studying" />
     </div>
   );
+
 }
+export default Home;

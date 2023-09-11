@@ -1,8 +1,9 @@
 {
   "Header": {
-    "home": "Головна",
-    "study": "Навчання",
-    "team": "Наша команда",
-    "contact": "Contact Us"
+    "home": "Home",
+    "study": "Study",
+    "team": "Our team",
+    "contact": "Contact Us",
+    "button": "Help us grow"
   }
 }
