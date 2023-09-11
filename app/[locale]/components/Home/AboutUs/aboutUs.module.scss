@@ -9,22 +9,19 @@
     src: url('../../../fonts/ArialMT.woff2') format('woff');
 }
 
-.aboutUs {
+.aboutUsSection {
     background-color: $color-ultra_light_grey;
+  }
+.aboutUs {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    width: 1440px;
-    height: 1000px;
-  }
-
-.image {
-    width: 100%; 
-    height: 100%;
+    width: $desktop;
+    margin: 0 auto;
   }
   
 .rightside {
     width: 100%; 
-    padding: 0 56px 120px 120px;
+    padding: 115px 56px 120px 100px;
 }
 
 .header {
@@ -34,14 +31,14 @@
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    margin: 115px 0 50px 0;
+    margin: 0px 0 50px 0;
     width: 288px;
     height: 55px;
 }
 
 .text {
     color: $color-black;
-    font-family: arial;
+    font-family: Arial;
     font-size: 22px;
     font-style: normal;
     font-weight: 400;

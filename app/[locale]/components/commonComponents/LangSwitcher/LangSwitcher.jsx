@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./langSwitcher.module.scss";
 
-const LangSwitcher = ({locale}) => {
+const LangSwitcher = ({ locale }) => {
   const [currentLang, setCurrentLang] = useState('UKR')
   const [isOpenSwitcher, setIsOpenSwitcher] = useState(false)
 
@@ -44,8 +44,8 @@ const LangSwitcher = ({locale}) => {
   return <div className={styles.langSwitcher}>
     <div className={styles.langItem} onClick={() => onLangClick()}>
       <span className={styles.switchLang}>{currentLang}</span>
-      {isOpenSwitcher ? <Image src='./arrow-up.svg' alt='arrow up icon' width={8} height={4} /> :
-        <Image src='./arrow-down.svg' alt='arrow down icon' width={8} height={4}/>
+      {isOpenSwitcher ? <Image src='/arrow-up.svg' alt='arrow up icon' width={8} height={4} /> :
+        <Image src='/arrow-down.svg' alt='arrow down icon' width={8} height={4}/>
       }
     </div>
     {isOpenSwitcher ? <Link href={locale === 'uk' ? '/en' : '/uk'} className={`${styles.langItem} ${styles.selectedLang}`} onClick={() => onChangeLang()}>

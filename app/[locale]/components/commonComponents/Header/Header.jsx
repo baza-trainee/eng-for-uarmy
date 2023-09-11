@@ -15,7 +15,7 @@ const Header = () => {
 
   return <header className={styles.headerBox}>
       <div className={styles.header}>
-        <Image src='./logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority/>
+        <Image src='/logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority/>
         <div className={styles.headerWrapper}>
           <nav className={styles.nav}>
             <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` ? styles.activeLink : ''}`}>{t("home")}</Link>

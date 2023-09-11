@@ -1,7 +1,6 @@
-
-import Hero from "./components/commonComponents/Hero/Hero";
+import Hero from "./components/Home/Hero/Hero";
 import HelpUsGrows from "./components/Home/HelpUsGrow/HelpUsGrow";
-import AboutUs from "./components/commonComponents/AboutUs/AboutUs";
+import AboutUs from "./components/Home/AboutUs/AboutUs";
 
 const Home = () => {
   return <>

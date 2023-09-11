@@ -7,58 +7,62 @@
     
   }
 
-.hero{
-    padding-top: 60px;
-    padding-bottom: 88px;
-    position: relative;
-    display: flex;
-    
-}
-.container{
-    display: grid;
-    grid-template-columns: 990px 208px;
-    column-gap: 16px;
-    margin: 0 auto;
-}
-.card{
-    border: 1px solid black;
-    padding:65px 225px 64px 111px ;
-    --border-color: black;
-    --size-corner: 20px;
-    --border-width: 2px;
-    position: relative;
-    color: var(--black, #231F20);
-    font-family: Furore;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
-    border: none;
-    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    &::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--border-color);
-        z-index: -2;
-    }
-    &::after{
-        content: "";
-        background: #ffffff;
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
-}
+.heroSection{
+  background-color: $color-ultra-light-grey;
 }
 
+.hero{   
+  width: $desktop;
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  padding: 51px $section-padding 58px $section-padding;
+  overflow: hidden;
+}
+.container{
+  display: grid;
+  grid-template-columns: 990px 208px;
+  column-gap: 16px;
+}
+.card{
+  border: 1px solid $color-black;
+  padding:65px 225px 64px 111px ;
+  --border-color: black;
+  --size-corner: 120px;
+  --border-width: 2px;
+  position: relative;
+  height: 650px;
+  color: $color-black;
+  font-family: Furore;
+  font-size: 22px;
+  line-height: normal;
+  border: none;
+  -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+  clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+  &::before{
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--border-color);
+      z-index: -2;
+  }
+  &::after{
+      content: "";
+      background: $color-ultra-light-grey;
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
+  }
+}
+
+.cardContent{
+  position: absolute;
+  top: 0;
+}
 .firstHead{
     font-family: Furore;
     font-size: 64px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
 }
 
@@ -66,18 +70,15 @@
     margin-top: 12px;
     font-family: Furore;
     font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
     line-height: normal;
     letter-spacing: 0.35px;
 }
 
-ul{
-    display: grid;
-    margin-top: 32px;
-    gap: 28px;
+.list{
+  display: grid;
+  margin: 32px 0 20px 0;
+  gap: 32px;
 }
-
 .li-item{
     display: flex;
     gap: 28px;
@@ -86,17 +87,27 @@ ul{
 }
 
 .li-txt{
-    display: flex;
+    display: inline;
     font-family: Arial;
     font-size: 18px;
-    font-style: normal;
     font-weight: 400;
     line-height: 27px;
-    flex-direction: row;
-    flex-wrap: wrap;
+    width: 450px;
+}
+.last-li-txt{
+  width: 465px;
 }
 
-
+.li-bold-txt{
+  font-weight: 700;
+  line-height: 28px;
+  letter-spacing: -0.408px;
+  padding: 0 5px;
+}
+.btnList{
+  display: flex;
+  gap: 16px;
+}
 
 .contact-us-col{
     display: grid;
@@ -106,21 +117,16 @@ ul{
 
 
 .under-txt-btn {
-    --border-color: black;
-    --size-corner: 20px;
+    --border-color: #231F20;
+    --size-corner: 36px;
     --border-width: 2px;
-    padding: 17px 24px 23px 35px;
-    width: 270px;
-    height: 92px;
-    margin-top: 24px;
+    display: block;
+    padding: 32px 35px 35px 35px;
     position: relative;
     font-family: Furore;
     font-size: 22px;
-    font-style: normal;
     font-weight: 400;
-    line-height: normal;
-    color: white;
-    text-transform: uppercase;
+    color: $color-ultra-light-grey;
     border: none;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
     clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
@@ -138,7 +144,7 @@ ul{
       z-index: -1;
       clip-path: polygon(var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
     }
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color $transition-duration $timing-function;
     &:hover {
       --border-color: #76871E;
       cursor: pointer;
@@ -148,19 +154,16 @@ ul{
     }
   }
 
-  .under-txt-btn2 {
-    --border-color: black;
+.under-txt-btn2 {
+    --border-color: #231F20;
     --size-corner: 20px;
     --border-width: 2px;
-    margin-left: 16px;
-    padding: 17px 24px 23px 35px;
+    padding: 32px 23px 32px 33px;
     position: relative;
-    margin-top: 24px;
-    width: 365px;
-    height: 92px;
-    color: var(--black, #231F20);
+    display: block;
+    color: $color-black;
     font-family: Furore;
-    font-size: 22px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -178,7 +181,7 @@ ul{
     }
     &::after {
       content: "";
-      background: white;
+      background: $color-ultra-light-grey;
       position: absolute;
       inset: 0;
       z-index: -1;
@@ -191,34 +194,29 @@ ul{
         var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2))
       );
     }
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background-color $transition-duration $timing-function;
     &:hover {
-      --border-color: #798738;
+      --border-color: $color-olive;
       cursor: pointer;
-      color:#ffffff;
+      color: $color-ultra-light-grey;
       &::after {
-        background: #798738; 
+        background: $color-olive; 
       }
   
     }
     &:focus{
-      --border-color: #798738;
+      --border-color: $color-olive;
       &::after {
-        background: #798738; 
+        background: $color-olive; 
       }
     }
   }
 
+.soldierImg {
+    position: absolute;
+    right: 0;
+    bottom: -30px;
+    z-index: 2;
+    pointer-events: none;
 
-    .social-btn:hover .social-svg path {
-      fill: #798738; /* Цвет при наведении */
-    }
- 
-    .soldierImg {
-        position: absolute;
-        left: 34%;
-        top: 21%;
-        z-index: 1;
-        pointer-events: none;
-
-    }
+}
