@@ -41,7 +41,7 @@ const Partners = () => {
 
     return <section className={styles.partnersSection}>
         <div className={styles.partners}>
-            <h2 className={styles.header}>ПАРТНЕРИ</h2>
+            <h2 className={styles.title}>ПАРТНЕРИ</h2>
         <div id="imagesContainer" className={styles.scrollContainer}>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
@@ -56,9 +56,9 @@ const Partners = () => {
             <button id="scrollButtonRight" className={styles.scrollButton} onClick={scrollRight}></button>
         </div>
         <div>
-            <p className={styles.helpItem}>
+            <div className={styles.helpItem}>
                 <Link href={`/${locale}/contact`} className={styles.helpBtn}>Become a partner or sponsor</Link>
-            </p>   
+            </div>   
         </div>
         </div>
     </section>

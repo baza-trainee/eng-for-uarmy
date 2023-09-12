@@ -8,10 +8,10 @@ const locale = useLocale();
 
   return <section className={styles.aboutUsSection}>
       <div className={styles.aboutUs}>
-        <Image src='/about-us.svg' alt='aboutUsImg' width={720} height={1000} />
+        <Image classname="image" src='/about-us.svg' alt='aboutUsImg' width={635} height={1000} />
         <div className={styles.rightside}>
             <div className={styles.text}>
-            <h2 className={styles.header}>Про нас</h2>
+            <h2 className={styles.title}>Про нас</h2>
             <p className={styles.text}>Навесні 2022 року засновниця проєкту, викладачка
             Олена Чекрижова, на прохання друга розпочала 
             курс англійської у його батальйоні. Олена прожила
