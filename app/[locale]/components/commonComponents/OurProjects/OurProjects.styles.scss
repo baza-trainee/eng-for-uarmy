@@ -8,8 +8,8 @@
   }
 
   .ourProjects{
-    padding-top: 110px;
-    padding-bottom: 110px;
+    margin: 0 auto;
+    padding: 110px 0 200px 0; 
   }
   
   .head{
@@ -22,35 +22,10 @@
   }
 
   .our-projects-card{
-    --border-color: black;
-    --size-corner: 20px;
-    --border-width: 2px;
     position: relative;
-    color: var(--black, #231F20);
-    display: flex;
-    width: 359px;
-    height: 590px;
-    padding-bottom: 0px;
-    flex-direction: column;
-    align-items: center;
-    border: none;
-    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-    &::before{
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--border-color);
-        z-index: -2;
-    }
-    &::after{
-        content: "";
-        background: #ffffff;
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
-}
+    display: grid;
+    justify-items: center;
+    
 }
   
 
@@ -58,12 +33,20 @@
     margin-top: 100px;
     display: flex;
     justify-content: center;
-    gap: 17px;
+    gap: 21px;
     
   }
 
-  .card-img{
-   
+  .card-svg{
+   position: absolute;
+   pointer-events: none;
+  }
+
+  .text-cont{
+    display: grid;
+    justify-items: center;
+    padding-right: 35px;
+    padding-left: 35px;
   }
 
   .card-head{
@@ -78,7 +61,21 @@
     letter-spacing: 0.35px;
   }
 
+  .card-text{
+    width: 287px;
+    margin-top: 40px;
+    color: var(--grey, #8B8B8B);
+    text-align: center;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+
+  }
+
   .card-button {
+    margin-top: 40px;
     display: flex;
     padding: 16px 38px;
     font-family: inherit;
