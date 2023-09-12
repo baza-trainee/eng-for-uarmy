@@ -16,11 +16,9 @@
     align-items: center;
     width: 100%;
     white-space: nowrap;
-    color: $color-black-text;
+    color: $color-black;
     font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    line-height: 50px;
     letter-spacing: 0.35px;
    
 }
@@ -29,6 +27,6 @@
     display: inline-block;
     width: 5px;
     height: 46px;
-    background-color: $color-black-text;
+    background-color: $color-black;
     margin: 0 45px;
 }
