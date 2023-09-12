@@ -1,4 +1,9 @@
 const getCurrentPathname = (pathname) => {
-    return pathname.substring(pathname.lastIndexOf('/') + 1);
+    const currentPath = pathname.substring(pathname.lastIndexOf('/') + 1);
+    if (currentPath === 'en' || currentPath === 'uk') {
+        return '/'
+    } else {
+        return currentPath
+    }
 }
 export default getCurrentPathname;
