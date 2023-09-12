@@ -1,0 +1,47 @@
+@import '../../../styles/variables.module';
+
+.social-btn {
+    color:currentColor;
+    --border-color: currentColor;
+    --size-corner: 20px;
+    --border-width: 2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    justify-self: end;
+    width: 86px;
+    height: 65px;
+    border: none;
+    cursor: pointer;
+    -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
+    &::before{
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--border-color);
+        z-index: -2;
+    }
+    &::after{
+        content: "";
+        background: $color-ultra-light-grey;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
+    }
+    &:hover {
+        --border-color: #798738;
+
+    }
+    &:hover .svg-icon {
+        fill: $color-olive;
+    }
+    }
+
+.svg-icon{
+    margin: 20px;
+    fill: currentColor;
+    transition: fill $transition-duration $timing-function;
+}

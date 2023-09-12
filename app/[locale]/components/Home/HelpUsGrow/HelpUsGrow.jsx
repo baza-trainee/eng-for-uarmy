@@ -7,8 +7,9 @@ import utilsStyles from '../../../styles/_utils.module.scss'
 
 const HelpUsGrows = () => {
     const locale = useLocale();
-
-    return <section className={styles.section} id='helpUsGrow'>
+    return <>
+        <span className={styles.anchor} id='helpUsGrow'></span>
+        <section className={styles.section} id='helpUsGrow'>
         <div className={styles.sectionWrap}>
             <div className={styles.descWrap}>
                 <div>
@@ -19,23 +20,24 @@ const HelpUsGrows = () => {
             </div>
             <ul className={styles.helpList}>
                 <li className={styles.helpItem}>
+                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                     <Link href={`/${locale}/contact`} className={styles.helpBtn}>donate</Link>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                 </li>
                 <li className={styles.helpItem}>
+                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                     <Link href={`/${locale}/contact`} className={styles.helpBtn}>volunteer</Link>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                 </li>
                 <li className={styles.helpItem}>
+                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                     <Link href={`/${locale}/contact`} className={styles.helpBtn}>partner with us</Link>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
                 </li>
                 <li className={styles.helpItem}>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>spread the word</Link>
                     <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>spread the word</Link>
                 </li>
             </ul>
         </div>
     </section>
+    </>
 }
 export default HelpUsGrows;

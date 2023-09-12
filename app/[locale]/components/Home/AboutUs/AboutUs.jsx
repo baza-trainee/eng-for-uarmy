@@ -6,11 +6,12 @@ import { useLocale } from 'next-intl';
 const AboutUs = () => {
 const locale = useLocale();
 
-  return <section className={styles.aboutUs}>
-        <div className={styles.image}><Image src='/about-us.svg' alt='aboutUsImg' width={720} height={1000} /></div>
+  return <section className={styles.aboutUsSection}>
+      <div className={styles.aboutUs}>
+        <Image className="image" src='/about-us.svg' alt='aboutUsImg' width={635} height={1000} />
         <div className={styles.rightside}>
             <div className={styles.text}>
-            <p className={styles.header}>Про нас</p>
+            <h2 className={styles.title}>Про нас</h2>
             <p className={styles.text}>Навесні 2022 року засновниця проєкту, викладачка
             Олена Чекрижова, на прохання друга розпочала 
             курс англійської у його батальйоні. Олена прожила
@@ -30,6 +31,7 @@ const locale = useLocale();
             проєкту – озброїти українські збройні сили
             англійською.</p>
             </div>
+        </div>
         </div>
     </section>
 
