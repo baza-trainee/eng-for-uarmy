@@ -8,7 +8,7 @@ const locale = useLocale();
 
   return <section className={styles.aboutUsSection}>
       <div className={styles.aboutUs}>
-        <Image classname="image" src='/about-us.svg' alt='aboutUsImg' width={635} height={1000} />
+        <Image className="image" src='/about-us.svg' alt='aboutUsImg' width={635} height={1000} />
         <div className={styles.rightside}>
             <div className={styles.text}>
             <h2 className={styles.title}>Про нас</h2>
