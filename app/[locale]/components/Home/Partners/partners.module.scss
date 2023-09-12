@@ -14,7 +14,7 @@
     padding: 96px $section-padding 120px $section-padding;
 }
 
-.header {
+.title {
     color: $color-black;
     font-family: Furore;
     font-size: 48px;
@@ -53,10 +53,10 @@
     margin: 0 14px;
     background-color: $color-light-grey;
     border: none;
-}
+    &:active {
+        background-color: $color-olive;
 
-.scrollButton:active {
-    background-color: $color-olive;
+    }
 }
 
 .helpItem {
