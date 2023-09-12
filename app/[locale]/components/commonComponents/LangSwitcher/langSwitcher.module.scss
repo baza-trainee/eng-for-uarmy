@@ -2,18 +2,19 @@
 
 .langSwitcher {
   position: relative;
-  margin-left: 16px;
+  margin-left: 20px;
   border: 1px solid $color-black;
-  transition: all $transition-duration $timing-function;
-  &:focus{
+  outline: none;
+  &:focus:not(:active){
     border: 3px solid $color-olive;
   }
+ 
 }
 .langItem {
   display: flex;
-  padding: 16px;
+  padding: 12px 12px 12px 8px;
   align-items: center;
-  gap: 12px;
+  line-height: 27px;
   cursor: pointer;
 }
 
@@ -22,7 +23,7 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  width: calc(100% + 2px);
+  width: calc(100% + 3px);
   transform: translate(-1px, calc(100% - 1px));
   background-color: $color-ultra-light-grey;
   border: 1px solid $color-black;
@@ -34,13 +35,10 @@
   }
 }
 
-.switchIcon {
-  font-size: 16px;
-}
-
 .switchLang {
   color: $color-black;
   font-family: inherit;
   font-size: 16px;
   white-space: nowrap;
+  margin-right: 12px;
 }

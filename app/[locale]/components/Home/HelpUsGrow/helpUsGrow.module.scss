@@ -13,42 +13,44 @@
 .sectionDesc{
     font-family: Arial;
     font-size: 18px;
-    font-weight: 400;
     line-height: 27px;
     width: 320px;
     color: $color-black;
-    transform: translate(0, 12px);
+    transform: translate(0, 8px);
+    margin-left: 81px;
 }
 .arrowIcon{
     margin-top: 30px;
 }
 .descWrap{
     display: flex;
-    gap: 56px;
-    margin-bottom: 47px;
+    margin-bottom: 52px;
 }
-
+.anchor{
+    display: block;
+    height: 100px;
+    margin-top: -100px;
+    visibility: hidden;
+}
 .helpList{
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
-    width: auto;
+    justify-content: flex-end;
 }
 .helpItem{
     display: flex;
     flex-direction: column;
-    gap: 36px;
     align-items: center;
     background-color: $color-white;
     border: 1px solid black; 
     &:nth-child(odd) {
-        padding-left: 71px;
-        padding-right: 144px; 
+        padding-left: 35px;
+        padding-right: 140px; 
         border-left: none;
     }
     &:nth-child(even) {
-        padding-left: 144px;
-        padding-right: 71px;
+        padding-left: 140px;
+        padding-right: 35px;
         border-right: none;
     }
     &:nth-child(-n+2){
@@ -65,9 +67,10 @@
     font-family: Arial;
     font-size: 18px;
     font-style: normal;
-    font-weight: 400;
     line-height: 27px;
+    color: $color-grey;
     width: 291px;
+    margin-bottom: 36px;
 }
 .helpBtn{
     font-family: inherit;
