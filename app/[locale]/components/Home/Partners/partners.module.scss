@@ -35,9 +35,8 @@
 }
 
 .scrollContainer {
-    overflow:scroll;
-    overflow-x: auto; 
-    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden; 
     width: 100%;
     display: flex;
 }
