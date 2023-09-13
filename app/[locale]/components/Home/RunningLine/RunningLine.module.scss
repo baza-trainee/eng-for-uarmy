@@ -1,0 +1,32 @@
+@import '../../../styles/variables.module';
+
+
+.bannerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 118px;
+    overflow: hidden;
+    background-color: $color-banner;
+}
+
+.bannerText {
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    white-space: nowrap;
+    color: $color-black;
+    font-size: 36px;
+    line-height: 50px;
+    letter-spacing: 0.35px;
+   
+}
+
+.bannerDivider {
+    display: inline-block;
+    width: 5px;
+    height: 46px;
+    background-color: $color-black;
+    margin: 0 45px;
+}
