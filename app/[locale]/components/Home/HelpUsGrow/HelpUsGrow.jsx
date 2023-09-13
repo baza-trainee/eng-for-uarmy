@@ -1,39 +1,41 @@
 'use client'
 import Image from 'next/image';
 import Link from 'next/link';
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import styles from './helpUsGrow.module.scss';
 import utilsStyles from '../../../styles/_utils.module.scss'
 
 const HelpUsGrows = () => {
     const locale = useLocale();
+    const t = useTranslations("HelpUsGrow");
+
     return <>
         <span className={styles.anchor} id='helpUsGrow'></span>
         <section className={styles.section} id='helpUsGrow'>
         <div className={styles.sectionWrap}>
             <div className={styles.descWrap}>
                 <div>
-                    <h2 className={utilsStyles.h2}>Help us grow</h2>
+                    <h2 className={utilsStyles.h2}>{t("title")}</h2>
                     <Image src='./large-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
                 </div>
-                <p className={styles.sectionDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
+                <p className={styles.sectionDesc}>{t("desc")}</p>
             </div>
             <ul className={styles.helpList}>
                 <li className={styles.helpItem}>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>donate</Link>
+                    <p className={styles.helpDesc}>{t("donate-desc")}</p>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("donate")}</Link>
                 </li>
                 <li className={styles.helpItem}>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>volunteer</Link>
+                    <p className={styles.helpDesc}>{t("volunteer-desc")}</p>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("volunteer")}</Link>
                 </li>
                 <li className={styles.helpItem}>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>partner with us</Link>
+                    <p className={styles.helpDesc}>{t("partner-desc")}</p>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("partner")}</Link>
                 </li>
                 <li className={styles.helpItem}>
-                    <p className={styles.helpDesc}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis.</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>spread the word</Link>
+                    <p className={styles.helpDesc}>{t("spread-desc")}</p>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("spread")}</Link>
                 </li>
             </ul>
         </div>
