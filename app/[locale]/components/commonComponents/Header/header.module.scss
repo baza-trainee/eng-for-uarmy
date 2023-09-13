@@ -58,14 +58,12 @@
   color: $color-black;
 }
 
-
 .headerButton {
   display: flex;
   padding: 12px 16px;
   font-family: inherit;
   font-size: 16px;
   justify-content: center;
-  width: 170px;
   line-height: 27px;
   color: $color-white-text;
   background-color: $color-olive;
@@ -78,11 +76,14 @@
     background-color: $color-green;
     color: $color-black;
   }
-  &:active{
+
+  &:active {
     background-color: $color-olive;
     color: $color-white-text;
   }
-  &:focus:not(:active){
+
+  &:focus:not(:active) {
     border: 3px solid $color-black;
   }
 }
+

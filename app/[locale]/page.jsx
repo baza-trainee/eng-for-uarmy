@@ -1,9 +1,10 @@
 import Hero from "./components/Home/Hero/Hero";
-import HelpUsGrows from "./components/Home/HelpUsGrow/HelpUsGrow";
+import RunningLine from "./components/Home/RunningLine/RunningLine";
 import OurProjects from "./components/commonComponents/OurProjects/OurProjects";
 import AboutUs from "./components/Home/AboutUs/AboutUs";
+import HelpUsGrows from "./components/Home/HelpUsGrow/HelpUsGrow";
 import Partners from "./components/Home/Partners/Partners";
-import RunningLine from "./components/Home/RunningLine/RunningLine";
+import Media from "./components/Home/Media/Media";
 
 const Home = () => {
   return <>
@@ -13,6 +14,7 @@ const Home = () => {
     <AboutUs />
     <HelpUsGrows />
     <Partners />
+    <Media />
 </>
 }
 export default Home;
