@@ -9,7 +9,7 @@ import Media from "./components/Home/Media/Media";
 const Home = () => {
   return <>
     <Hero />
-    <RunningLine />
+    <RunningLine/>
     <OurProjects />
     <AboutUs />
     <HelpUsGrows />
