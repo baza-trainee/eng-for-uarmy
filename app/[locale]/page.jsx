@@ -8,8 +8,8 @@ import RunningLine from "./components/Home/RunningLine/RunningLine";
 const Home = () => {
   return <>
     <Hero />
-    <OurProjects />
     <RunningLine/>
+    <OurProjects />
     <AboutUs />
     <HelpUsGrows />
     <Partners />
