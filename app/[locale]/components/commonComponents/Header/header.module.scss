@@ -25,15 +25,17 @@
 }
 .nav {
   display: flex;
-  gap: 28px;
-  margin-right: 31px;
+  margin-right: 20px;
 }
 .navLink {
   position: relative;
   font-size: 18px;
-  letter-spacing: 0.35px;
+  line-height: 27px;
   color: $color-grey;
-  transition: color $transition-duration $timing-function;
+  transition: all $transition-duration $timing-function;
+  &:not(:last-child){
+    margin-right: 20px;
+  }
   &:hover{
     color: $color-black;
   }
@@ -56,21 +58,30 @@
   color: $color-black;
 }
 
-
 .headerButton {
   display: flex;
-  padding: 16px 38px;
+  padding: 12px 16px;
   font-family: inherit;
   font-size: 16px;
   justify-content: center;
   color: $color-white-text;
-  border: none;
   background-color: $color-olive;
+  border: none;
+  outline: none;
   cursor: pointer;
-  transition: all $transition-duration $timing-function;
+  transition: background-color $transition-duration $timing-function, color $transition-duration $timing-function;
 
   &:hover{
     background-color: $color-green;
     color: $color-black;
+  }
+
+  &:active {
+    background-color: $color-olive;
+    color: $color-white-text;
+  }
+
+  &:focus:not(:active) {
+    border: 3px solid $color-black;
   }
 }

@@ -3,7 +3,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import styles from "./langSwitcher.module.scss";
 
-const LangSwitcher = ({ locale }) => {
+const LangSwitcher = ({ locale, pathname }) => {
   const [currentLang, setCurrentLang] = useState('УКР')
   const [isOpenSwitcher, setIsOpenSwitcher] = useState(false)
 
@@ -41,14 +41,14 @@ const LangSwitcher = ({ locale }) => {
     setIsOpenSwitcher(false);
   }
   
-  return <div className={styles.langSwitcher}>
+  return <div className={styles.langSwitcher} tabIndex={0} onClick={(e) => e.currentTarget.blur()}>
     <div className={styles.langItem} onClick={() => onLangClick()}>
       <span className={styles.switchLang}>{currentLang}</span>
       {isOpenSwitcher ? <Image src='/arrow-up.svg' alt='arrow up icon' width={8} height={4} /> :
         <Image src='/arrow-down.svg' alt='arrow down icon' width={8} height={4}/>
       }
     </div>
-    {isOpenSwitcher ? <Link href={locale === 'uk' ? '/en' : '/uk'} className={`${styles.langItem} ${styles.selectedLang}`} onClick={() => onChangeLang()}>
+    {isOpenSwitcher ? <Link href={locale === 'uk' ? `/en/${pathname}` : `/uk/${pathname}`} className={`${styles.langItem} ${styles.selectedLang}`} onClick={() => onChangeLang()}>
       <span className={styles.switchLang}>{currentLang === 'УКР' ? 'ENG' : 'УКР'}</span>
     </Link> : null}
   </div>
