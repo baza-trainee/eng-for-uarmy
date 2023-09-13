@@ -1,0 +1,15 @@
+.btnRight::after,
+.btnLeft::after {
+	content: "../../../../../public/testimonials/erow-left.svg";
+	display: block;
+	width: 68px;
+	height: 68px;
+}
+
+.btnLeft {
+	background-image: url("../../../../../public/testimonials/erow-left.svg");
+}
+
+.btnRight {
+	background-image: url("../../../../../public/testimonials/erow-right.svg");
+}
