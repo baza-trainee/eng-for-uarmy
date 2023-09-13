@@ -1,0 +1,63 @@
+@import "../../../../styles/variables.module";
+
+.rightTop {
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.rightBottom {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+}
+
+.review {
+	position: relative;
+	display: flex;
+	max-width: 927px;
+	padding: 70px 72px 57px 95px;
+	margin-bottom: 72px;
+}
+
+.reviewWrapper {
+	margin-left: 40px;
+}
+
+.leftTop {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.leftBottom {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+
+.reviewText {
+	// font-family: "Furore", sans-serif;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: 0.3499999940395355px;
+	color: $color-black;
+	margin-bottom: 26px;
+}
+
+.authorName {
+	font-family: Arial;
+	font-size: 22px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $color-black;
+}
+
+.authorProfession {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $color-grey;
+}

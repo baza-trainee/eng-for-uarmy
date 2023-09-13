@@ -1,0 +1,62 @@
+@import "../../../styles/variables.module";
+
+.section {
+	// 	padding-top: 30px;
+	// 	padding-bottom: 30px;
+
+	// @media screen and (max-width: $tablet) {
+	// 	padding-top: 60px;
+	// 	padding-bottom: 60px;
+	// }
+
+	@media screen and (min-width: $desktop) {
+		padding-top: 85px;
+		padding-bottom: 93px;
+	}
+}
+
+.container {
+	// 	padding-left: 30px;
+	// 	padding-right: 30px;
+
+	// @media screen and (max-width: $tablet) {
+	// 	padding-left: 60px;
+	// 	padding-bottom: 60px;
+	// }
+
+	@media screen and (min-width: $desktop) {
+		padding-left: $section-padding;
+		padding-right: $section-padding;
+	}
+}
+
+.titleWrapper {
+	display: flex;
+	align-items: center;
+	margin-bottom: 76px;
+}
+
+.title {
+	max-width: 320px;
+	// font-family: "Furore", sans-serif;
+	font-size: 48px;
+	font-weight: 400;
+	line-height: 1.15;
+	letter-spacing: 0.36399999260902405px;
+	margin-right: 59px;
+}
+
+.subcription {
+	max-width: 320px;
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $color-black;
+}
+
+.sliderWrapper {
+	position: relative;
+	width: 927px;
+	margin: 0 auto;
+}

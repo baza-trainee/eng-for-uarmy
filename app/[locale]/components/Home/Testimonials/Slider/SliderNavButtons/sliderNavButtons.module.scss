@@ -1,0 +1,36 @@
+.btnWrapper {
+	// display: flex;
+	// justify-content: space-between;
+	transform: translateY(-316px);
+}
+
+.btnRight::before,
+.btnLeft::before {
+	content: "";
+	display: inline-block;
+	width: 68px;
+	height: 68px;
+}
+
+.btnLeft::before {
+	background-image: url("../../../../../../../public/testimonials/erow-left.svg");
+}
+
+.btnRight::before {
+	background-image: url("../../../../../../../public/testimonials/erow-right.svg");
+}
+
+.btnLeft,
+.btnRight {
+	position: absolute;
+	background-color: transparent;
+	border: none;
+}
+
+.btnLeft {
+	left: -6.8%;
+}
+
+.btnRight {
+	right: -6.8%;
+}
