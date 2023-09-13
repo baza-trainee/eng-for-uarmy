@@ -21,39 +21,22 @@
 }
 .container{
   display: grid;
-  grid-template-columns: 990px 208px;
-  column-gap: 16px;
+  grid-template-columns: 990px 75px;
+  
 }
 .card{
-  border: 1px solid $color-black;
-  padding:65px 225px 64px 111px ;
-  --border-color: black;
-  --size-corner: 120px;
-  --border-width: 2px;
+
+ padding: 68px 92px 82px 95px;
   position: relative;
-  height: 650px;
-  color: $color-black;
-  font-family: Furore;
-  font-size: 22px;
-  line-height: normal;
-  border: none;
-  -webkit-clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-  clip-path: polygon( 0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)) );
-  &::before{
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--border-color);
-      z-index: -2;
-  }
-  &::after{
-      content: "";
-      background: $color-ultra-light-grey;
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      clip-path: polygon( var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)) );
-  }
+
+
+}
+
+.card-border{
+  position: absolute;
+  top:-1px;
+  right:7px;
+  pointer-events: none;
 }
 
 .cardContent{
@@ -61,41 +44,45 @@
   top: 0;
 }
 .firstHead{
-    font-family: Furore;
-    font-size: 64px;
-    line-height: normal;
+  font-family: Furore;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 80px; 
+  letter-spacing: 0.364px;
 }
 
 .secondHead{
     margin-top: 12px;
     font-family: Furore;
-    font-size: 36px;
-    line-height: normal;
-    letter-spacing: 0.35px;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 50px; 
+    letter-spacing: 0.364px;
 }
 
 .list{
   display: grid;
-  margin: 32px 0 20px 0;
-  gap: 32px;
+  margin-top: 18px;
 }
 .li-item{
     display: flex;
-    gap: 28px;
+    margin-top: 21px;
     align-items: center;
-    
+    &:first-child{
+      margin-top: 0;
+    }
 }
 
 .li-txt{
-    display: inline;
+    display: block;
     font-family: Arial;
+    margin-left: 28px;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
-    width: 450px;
-}
-.last-li-txt{
-  width: 465px;
+    width: 100%;
 }
 
 .li-bold-txt{
@@ -105,116 +92,87 @@
   padding: 0 5px;
 }
 .btnList{
+  margin-top: 65px;
   display: flex;
-  gap: 16px;
 }
 
 .contact-us-col{
     display: grid;
     grid-template-rows: 65px 65px 65px;
+    margin-left: 46px;
     row-gap: 20px;
 }
 
 
 .under-txt-btn {
-    --border-color: #231F20;
-    --size-corner: 36px;
-    --border-width: 2px;
-    display: block;
-    padding: 32px 35px 35px 35px;
-    position: relative;
-    font-family: Furore;
-    font-size: 22px;
-    font-weight: 400;
-    color: $color-ultra-light-grey;
-    border: none;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: var(--border-color);
-      z-index: -2;
-    }
-    &::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      clip-path: polygon(var(--border-width) var(--border-width), 100% var(--border-width), calc(100% - var(--border-width)) var(--border-width), calc(100% - var(--border-width)) calc(100% - var(--border-width)), calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)), var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
-    }
-    transition: background-color $transition-duration $timing-function;
-    &:hover {
-      --border-color: #76871E;
-      cursor: pointer;
-    }
-    &:focus {
-      background: #798738; 
-    }
+  font-family: inherit;
+  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-white;
+  font-size: 22px;
+  --size-corner: 36px;
+  width: 270px;
+  height: 92px;
+  border: none;
+  clip-path: polygon(0 0,
+          100% 0,
+          100% 100%,
+          80% 100%,
+          var(--size-corner) 100%,
+          0 calc(100% - var(--size-corner)));
+  transition: background-color $transition-duration $timing-function;
+  cursor: pointer;
+  &:hover{
+      background-color: $color-olive;
+  }
+  &:active,
+  &:focus{
+      background-color: $color-black;
+  }
   }
 
-.under-txt-btn2 {
-    --border-color: #231F20;
-    --size-corner: 20px;
-    --border-width: 2px;
-    padding: 32px 23px 32px 33px;
-    position: relative;
-    display: block;
+  .under-txt-btn2 {
+    margin-left: 20px;
+    font-family: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     color: $color-black;
-    font-family: Furore;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-transform: uppercase;
+    font-size: 22px;
+    --size-corner: 36px;
+    width: 361px;
+    height: 93px;
     border: none;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    cursor: pointer;
     z-index: 1000;
-    &::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: var(--border-color);
-      z-index: -2;
+    &:hover{
+        background-color: $color-olive;
+        color: $color-white;
+        clip-path: polygon(0 0,
+          100% 0,
+          100% 100%,
+          80% 100%,
+          var(--size-corner) 100%,
+          0 calc(100% - var(--size-corner)));
     }
-    &::after {
-      content: "";
-      background: $color-ultra-light-grey;
-      position: absolute;
-      inset: 0;
-      z-index: -1;
-      clip-path: polygon(
-        var(--border-width) var(--border-width),
-        100% var(--border-width),
-        calc(100% - var(--border-width)) var(--border-width),
-        calc(100% - var(--border-width)) calc(100% - var(--border-width)),
-        calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
-        var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2))
-      );
-    }
-    transition: background-color $transition-duration $timing-function;
-    &:hover {
-      --border-color: $color-olive;
-      cursor: pointer;
-      color: $color-ultra-light-grey;
-      &::after {
-        background: $color-olive; 
-      }
-  
-    }
+    &:active,
     &:focus{
-      --border-color: $color-olive;
-      &::after {
-        background: $color-olive; 
-      }
+        background-color: $color-black;
+        color: $color-white;
+        clip-path: polygon(0 0,
+          100% 0,
+          100% 100%,
+          80% 100%,
+          var(--size-corner) 100%,
+          0 calc(100% - var(--size-corner)));
     }
   }
 
 .soldierImg {
     position: absolute;
-    right: 0;
+    right: 83px;
     bottom: -30px;
     z-index: 2;
     pointer-events: none;
