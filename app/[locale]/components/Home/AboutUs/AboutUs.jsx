@@ -1,7 +1,7 @@
 "use client";
 import Image from 'next/image';
-import styles from './aboutUs.module.scss';
 import { useLocale } from 'next-intl';
+import styles from './aboutUs.module.scss';
 
 const AboutUs = () => {
 const locale = useLocale();

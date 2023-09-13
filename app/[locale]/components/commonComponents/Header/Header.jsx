@@ -12,13 +12,12 @@ const Header = () => {
   const locale = useLocale();
   const pathname = usePathname();
   const currentPathname = getCurrentPathname(pathname);
-
   return <header className={styles.headerBox}>
       <div className={styles.header}>
         <Image src='/logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority/>
         <div className={styles.headerWrapper}>
           <nav className={styles.nav}>
-            <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` ? styles.activeLink : ''}`}>{t("home")}</Link>
+            <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` || pathname === '/' ? styles.activeLink : ''}`}>{t("home")}</Link>
             <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link>
             <Link href={`/${locale}/team`} className={`${styles.navLink} ${currentPathname === 'team' ? styles.activeLink : ''}`} locale={locale}>
               {t("team")}
@@ -27,7 +26,7 @@ const Header = () => {
               {t("contact")}
             </Link>
           </nav>
-          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton}>{t("button")}</Link>
+          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
         <LangSwitcher locale={locale} pathname={currentPathname} />
         </div>
       </div>
