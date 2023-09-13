@@ -2,8 +2,9 @@
 import Image from 'next/image'
 import "./Hero.styles.scss"; 
 import { useLocale } from 'next-intl';
-import { Facebook, Youtube, Instagram, Telegram} from './SvgComponent';
+import { Facebook, Youtube, Instagram, Telegram, ButtonBorder} from './SvgComponent';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
  
 const Hero = () => {
 const locale = useLocale();
@@ -12,6 +13,7 @@ const locale = useLocale();
       <div className='hero'>
         <div className='container'>
             <div className='card'>
+            <Image className='card-border' src="/HeroImage/CardSvg.svg" alt="SVG Image" width={990} height={661} />
                 <h1 className='firstHead'>Eng for UArmy</h1>
                 <h2 className='secondHead'>Break the language barrier to achieve victory</h2>
                 <ul className='list'>
@@ -30,7 +32,7 @@ const locale = useLocale();
                 </ul>
                 <ul className='btnList'>
                     <li><Link href={`/${locale}/study`} className="under-txt-btn">Start studying</Link></li>
-                    <li><Link href={`/${locale}#helpUsGrow`} className="under-txt-btn2">Support the project</Link></li>
+                    <li><ButtonBorder/>  <ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2">Support the project</ScrollLink></li>
                 </ul>
             </div>
 
@@ -41,7 +43,7 @@ const locale = useLocale();
                 <Telegram/>
             </div>
         </div>
-        <Image className='soldierImg' src="/HeroImage/soldier-transp.png" alt="soldierImg" width={961} height={632} priority/>
+        <Image className='soldierImg' src="/HeroImage/soldier-transp.png" alt="soldierImg" width={796} height={523} priority/>
        </div>
     </section>
   
