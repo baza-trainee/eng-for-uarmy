@@ -1,11 +1,9 @@
 {
   "Header": {
-    "home": "Home",
+    "home": "Homepage",
     "study": "Study",
     "team": "Our team",
     "contact": "Contact Us",
-    "button": "Help us grow",
-    "ukr": "ukr",
-    "eng": "eng"
+    "button": "Help us grow"
   }
 }

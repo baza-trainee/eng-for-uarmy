@@ -1,0 +1,10 @@
+@import '../../../styles/variables.module';
+
+.section {
+    background-color: $color-white;
+}
+.mediaSection{
+    width: $desktop;
+    padding: 106px $section-padding 120px $section-padding;
+    margin: 0 auto;
+}

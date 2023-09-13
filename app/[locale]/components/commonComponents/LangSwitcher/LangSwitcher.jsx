@@ -4,14 +4,14 @@ import { useEffect, useState } from "react";
 import styles from "./langSwitcher.module.scss";
 
 const LangSwitcher = ({ locale }) => {
-  const [currentLang, setCurrentLang] = useState('UKR')
+  const [currentLang, setCurrentLang] = useState('УКР')
   const [isOpenSwitcher, setIsOpenSwitcher] = useState(false)
 
   useEffect(() => {
     if (locale === 'en') {
       setCurrentLang('ENG')
     } else if (locale === 'uk') {
-      setCurrentLang('UKR')
+      setCurrentLang('УКР')
     }
   }, [locale])
 
@@ -33,10 +33,10 @@ const LangSwitcher = ({ locale }) => {
     setIsOpenSwitcher(!isOpenSwitcher)
   }
   const onChangeLang = () => {
-    if (currentLang === 'UKR') {
+    if (currentLang === 'УКР') {
     setCurrentLang('ENG');
     } else {
-      setCurrentLang('UKR');
+      setCurrentLang('УКР');
     }
     setIsOpenSwitcher(false);
   }
@@ -49,7 +49,7 @@ const LangSwitcher = ({ locale }) => {
       }
     </div>
     {isOpenSwitcher ? <Link href={locale === 'uk' ? '/en' : '/uk'} className={`${styles.langItem} ${styles.selectedLang}`} onClick={() => onChangeLang()}>
-      <span className={styles.switchLang}>{currentLang === 'UKR' ? 'ENG' : 'UKR'}</span>
+      <span className={styles.switchLang}>{currentLang === 'УКР' ? 'ENG' : 'УКР'}</span>
     </Link> : null}
   </div>
     
