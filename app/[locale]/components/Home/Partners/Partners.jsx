@@ -2,11 +2,12 @@
 import React, {useState} from 'react';
 import styles from './partners.module.scss';
 import Image from 'next/image'
-import { useLocale } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
 
 const Partners = () => {
     const locale = useLocale();
+    const t = useTranslations("Partners");
 
     const [scrollPosition, setScrollPosition] = useState(0);
 
@@ -41,7 +42,7 @@ const Partners = () => {
 
     return <section className={styles.partnersSection}>
         <div className={styles.partners}>
-            <h2 className={styles.title}>ПАРТНЕРИ</h2>
+            <h2 className={styles.title}>{t("title")}</h2>
         <div id="imagesContainer" className={styles.scrollContainer}>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
             <div className={styles.icons}><Image src="./partners/partnersImage.svg" alt="SVG Image" width={179} height={179} /></div>
@@ -57,7 +58,7 @@ const Partners = () => {
         </div>
         <div>
             <div className={styles.helpItem}>
-                <Link href={`/${locale}/contact`} className={styles.helpBtn}>Become a partner or sponsor</Link>
+                <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("becomePartner")}</Link>
             </div>   
         </div>
         </div>
