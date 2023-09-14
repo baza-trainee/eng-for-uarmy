@@ -6,9 +6,6 @@ import { data } from "./data";
 import styles from "./testimonials.module.scss";
 import Slider from "./Slider/Slider";
 
-import SliderNavButtons from "./Slider/SliderNavButtons/SliderNavButtons";
-import SliderPagination from "./Slider/SliderPagination/SliderPagination";
-
 const Testimonials = () => {
   //   const [rewies, setRewies] = useState([]);
 
@@ -64,13 +61,7 @@ const Testimonials = () => {
             improving based on your suggestions.
           </p>
         </div>
-
-        <div className={styles.sliderWrapper}>
-          <Slider data={data} />
-          {/* <Slider /> */}
-          <SliderNavButtons />
-          <SliderPagination />
-        </div>
+        <Slider data={data} />
       </div>
     </section>
   );

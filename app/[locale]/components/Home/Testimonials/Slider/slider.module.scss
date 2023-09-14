@@ -15,13 +15,23 @@
 .review {
 	position: relative;
 	display: flex;
-	max-width: 927px;
-	padding: 70px 72px 57px 95px;
-	margin-bottom: 72px;
+	// padding: 70px 72px 57px 95px;
+	padding-top: 70px;
+	padding-bottom: 95px;
 }
+
+.reviewImg {
+	margin-left: 72px;
+}
+
+// .containerSlider {
+// 	padding-left: 96px;
+// 	padding-right: 96px;
+// }
 
 .reviewWrapper {
 	margin-left: 40px;
+	margin-right: 72px;
 }
 
 .leftTop {

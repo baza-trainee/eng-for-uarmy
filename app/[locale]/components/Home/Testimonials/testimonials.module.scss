@@ -23,8 +23,10 @@
 	// 	padding-left: 60px;
 	// 	padding-bottom: 60px;
 	// }
+	margin: 0 auto;
 
 	@media screen and (min-width: $desktop) {
+		width: $desktop;
 		padding-left: $section-padding;
 		padding-right: $section-padding;
 	}
@@ -53,10 +55,4 @@
 	font-weight: 400;
 	line-height: 1.5;
 	color: $color-black;
-}
-
-.sliderWrapper {
-	position: relative;
-	width: 927px;
-	margin: 0 auto;
 }
