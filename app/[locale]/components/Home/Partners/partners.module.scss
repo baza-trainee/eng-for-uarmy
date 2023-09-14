@@ -32,6 +32,10 @@
     margin: 38px 71px 38px 70px;
     min-width: 179px;
     min-height: 179px;
+    transition: transform 0.3s ease;
+    &:hover {
+        transform: scale(1.1);
+    }
 }
 
 .scrollContainer {
