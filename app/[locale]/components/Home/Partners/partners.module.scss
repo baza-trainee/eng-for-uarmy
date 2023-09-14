@@ -9,9 +9,11 @@
         background-color: $color-ultra_light_grey;
 }
 .partners {
+    max-height: 793px;
     width: $desktop;
     margin: 0 auto;
-    padding: 96px $section-padding 120px $section-padding;
+    padding: 96px 0 120px 0;
+    max-width: $desktop;
 }
 
 .title {
@@ -22,46 +24,27 @@
     font-weight: 400;
     line-height: normal;
     text-align: center;
-    padding-bottom: 46px;
+    padding-bottom: 42px;
 }
 
 .icons {
     width: 179px;
     height: 179px;
     display: inline-block;
-    margin: 38px 71px 38px 70px;
-    min-width: 179px;
-    min-height: 179px;
     transition: transform 0.3s ease;
+    margin: 0;
+    padding: 27px 27px 24px 27px;
     &:hover {
         transform: scale(1.1);
     }
 }
 
-.scrollContainer {
+.imageSlider {
     overflow-x: hidden;
     overflow-y: hidden; 
     width: 100%;
     display: flex;
-}
-      
-
-.scrollButtonContainer {
-    display: flex; 
     justify-content: center;
-    padding-top: 70px;
-}
-
-.scrollButton {
-    width: 31px;
-    height: 8px;
-    margin: 0 14px;
-    background-color: $color-light-grey;
-    border: none;
-    &:active {
-        background-color: $color-olive;
-
-    }
 }
 
 .helpItem {
@@ -71,8 +54,7 @@
     align-items: center;
     background-color: $color-ultra_light_grey;
     border: none; 
-    padding-top: 68px;
-    padding-bottom: 10px;
+    padding-top: 70px;
 }
 
 .helpBtn{
