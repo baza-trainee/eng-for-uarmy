@@ -31,6 +31,7 @@ const Slider = ({ data }) => {
       navigation
       pagination={{
         clickable: true,
+        // dynamicBullets: true,
       }}
       speed={700}
       loop={true}

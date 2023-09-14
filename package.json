@@ -17,7 +17,7 @@
     "react-dom": "18.2.0",
     "react-fast-marquee": "^1.6.0",
     "styled-components": "^6.0.7",
-    "swiper": "^10.2.0"
+    "swiper": "^10.2.0",
     "react-scroll": "^1.8.9",
     "styled-components": "^6.0.7"
   },
