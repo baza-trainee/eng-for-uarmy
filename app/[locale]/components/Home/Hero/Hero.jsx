@@ -22,7 +22,7 @@ const currentPathname = getCurrentPathname(pathname);
                 <ul className='list'>
                       <li className='li-item'>
                           <Image src="./HeroImage/arrow-small.svg" alt="SVG Image" width={35} height={35} />
-                          <p className='li-txt'> <strong className='li-bold-txt'> ENG for UArmy </strong> Перший у своєму роді проєкт<strong className='li-bold-txt'> військової англійської</strong> в Україні.</p>
+                          <p className='li-txt'>Перший у своєму роді проєкт<strong className='li-bold-txt'> військової англійської в Україні.</strong></p>
                       </li>
                       <li className='li-item'>
                           <Image src="./HeroImage/arrow-small.svg" alt="SVG Image" width={35} height={35} />
