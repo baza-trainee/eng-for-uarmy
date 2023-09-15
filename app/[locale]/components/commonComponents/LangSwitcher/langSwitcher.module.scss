@@ -3,6 +3,7 @@
 .langSwitcher {
   position: relative;
   margin-left: 20px;
+  width: 75px;
   border: 1px solid $color-black;
   outline: none;
   &:focus:not(:active){
@@ -23,7 +24,7 @@
   bottom: 0;
   left: 0;
   z-index: 2;
-  width: calc(100% + 3px);
+  width: 75px;
   transform: translate(-1px, calc(100% - 1px));
   background-color: $color-ultra-light-grey;
   border: 1px solid $color-black;
