@@ -18,7 +18,7 @@ const OurProjects = () => {
                         <div className='text-cont'>
                         <h3 className='card-head'>{t("youtube")}</h3>
                         <p className='card-text'>{t("youtube-desc")}</p>
-                        <Link href={`/${locale}/study`} className="card-button">{t("learnMore")}</Link>
+                        <Link href={`https://www.youtube.com/@engforuarmy`} className="card-button">{t("learnMore")}</Link>
                         
                     </div>
                     </li>
@@ -28,7 +28,7 @@ const OurProjects = () => {
                     <div className='text-cont'> 
                         <h3 className='card-head'>{t("practice")}</h3>
                         <p className='card-text'>{t("practice-desc")}</p>
-                        <Link href={`/${locale}/study`} className="card-button">{t("learnMore")}</Link>
+                        <Link href={`/${locale}`} className="card-button">{t("learnMore")}</Link>
                     </div>
                     </li>
                     <li className='our-projects-card'>
@@ -37,7 +37,7 @@ const OurProjects = () => {
                         <div className='text-cont'>
                         <h3 className='card-head'>{t("mobileApp")}</h3>
                         <p className='card-text'>{t("mobileApp-desc")}</p>
-                        <Link href={`/${locale}/learnMore`} className="card-button">{t("learnMore")}</Link>
+                        <Link href={`/${locale}`} className="card-button">{t("learnMore")}</Link>
                         </div>
                     </li>
 
