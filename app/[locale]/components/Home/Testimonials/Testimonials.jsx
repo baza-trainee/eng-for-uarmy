@@ -59,7 +59,7 @@ const Testimonials = () => {
       <div className={styles.container}>
         <div className={styles.titleWrapper}>
           <h2 className={styles.title}>{t("title")}</h2>
-          <p className={styles.subcription}>{t("desc")}</p>
+          <p className={styles.subscription}>{t("desc")}</p>
         </div>
         <Slider data={data} />
       </div>
