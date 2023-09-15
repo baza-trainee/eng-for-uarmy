@@ -1,0 +1,9 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+.goin {
+    width: $desktop;
+    margin: 0 auto;
+    padding: 84px $section-padding 0 $section-padding;
+  
+}    
