@@ -1,9 +1,16 @@
+@import '../../../styles/variables.module';
+
 .footer{
     width: 100%;
     height: 437px;
-    background-color: #171717;
-    color: #FFFFFF;
+    background-color: $color-black;
+}
+.footerContainer{
+    width: $desktop;
+    margin: 0 auto;
+    color: $color-white;
     position: relative;
+    padding: 10px 62px 68px 50px;
 }
 
 .companyBlock{
@@ -13,8 +20,6 @@
 }
 
 .footerLogo{
-    padding: 10px 0 0 50px;
-    height: 210px;
     margin-right: 235px;
 }
 
@@ -26,32 +31,16 @@
     width: 284px;
     padding-top: 70px;
 }
-.menu h2{
-    color: var(--light-green, #C4D294);
-    font-weight: 400;
+.title{
+    color: $color-green;
     font-size: 28px;
     padding-bottom: 32px;
-}
+    font-weight: 400;
+  }
 
 .contactsBlock{
     margin-bottom: 36px;
 }
-
-.contactsBlock h2{
-    color: var(--light-green, #C4D294);
-    font-weight: 400;
-    font-size: 28px;
-    padding-bottom: 32px;
-}
-
-.followsBlock h2{
-    color: var(--light-green, #C4D294);
-    font-weight: 400;
-    font-size: 28px;
-    padding-bottom: 32px;
-}
-
-
 
 .list{
     display: flex;
@@ -63,16 +52,14 @@
 
 .list li{
     font-size: 18px;
-    font-weight: 400;
     margin-bottom: 26px;
-    position: relative;
-    transition: 0.5s;
+    transition: color $transition-duration $timing-function;
 }
 
 .list li:hover{
-    transform: scale(1.1);
-    color: #a3a1a1;
+    color: $color-grey;
 }
+
 
 
 
@@ -97,13 +84,13 @@
 
 .contactLink{
     margin-left: 16px;
-    position: relative;
-    transition: 0.5s;
+    transition: color $transition-duration $timing-function;
+
 }
 
 .contactLink:hover{
-    transform: scale(1.1);
-    color: #a3a1a1;
+    color: $color-grey;
+
 }
 
 .followsIcons{
@@ -117,13 +104,12 @@
 
 .followsIcons img{
     margin-right: 38px;
-    position: relative; 
-    transition: 0.5s;
+    cursor: pointer;
+    transition: color $transition-duration $timing-function;
 }
 
 .followsIcons img:hover{
-    transform: scale(1.4);
-    cursor: pointer;
+    fill: $color-olive;
 }
 
 .developerBlock{
@@ -150,12 +136,6 @@
 .companyBlock{
     flex-direction: column;
     align-items: center;
-}
-
-.footerLogo{
-    height: 130px;
-    margin: 0;
-    padding: 0;
 }
 
 .menu{

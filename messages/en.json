@@ -9,7 +9,7 @@
   "Hero": {
     "title": "Break the language barrier to achieve victory",
     "first-desc": "The first-of-a-kind  project",
-    "first-desc-bold":"Military English in Ukraine.",
+    "first-desc-bold": "Military English in Ukraine.",
     "second-desc-bold": "NATO",
     "second-desc-bold2": "(STANAG 6001).",
     "second-desc": "Based on",
@@ -68,6 +68,8 @@
   },
   "Footer": {
     "homepage": "Homepage",
+    "menu": "Menu",
+    "contacts": "Contacts",
     "study": "Study",
     "ourTeam": "Our team",
     "contactUs": "Contact us",

@@ -41,8 +41,11 @@ const LangSwitcher = ({ locale, pathname }) => {
     setIsOpenSwitcher(false);
   }
   
-  return <div className={styles.langSwitcher} tabIndex={0} onClick={(e) => e.currentTarget.blur()}>
-    <div className={styles.langItem} onClick={() => onLangClick()}>
+  return <div className={styles.langSwitcher}>
+    <div className={styles.langItem} tabIndex={0} onClick={(e) => {
+      e.currentTarget.blur()
+      onLangClick()
+    }}>
       <span className={styles.switchLang}>{currentLang}</span>
       {isOpenSwitcher ? <Image src='/arrow-up.svg' alt='arrow up icon' width={8} height={4} /> :
         <Image src='/arrow-down.svg' alt='arrow down icon' width={8} height={4}/>
