@@ -2,53 +2,75 @@ import "./SvgComponent.styles.scss"
 import Link from 'next/link';
 
 export const Facebook = () => {
-    return <Link href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='facebook social-btn'>
-        <svg className="svg-icon" width="13" height="25" viewBox="0 0 13 25" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#clip0_1_100)">
-        <path d="M2.95009 25H8.6177V12.3968H12.5716L12.9878 8.18123H8.6177C8.6177 8.18123 8.6177 6.60582 8.6177 5.7801C8.6177 4.78053 8.83804 4.3894 9.9275 4.3894C10.7966 4.3894 13 4.3894 13 4.3894V0C13 0 9.76836 0 9.07062 0C4.84746 0 2.95009 1.65146 2.95009 4.80226C2.95009 7.55106 2.95009 8.17036 2.95009 8.17036H0V12.4402H2.95009V25Z" />
-        </g>
-        <defs>
-        <clipPath id="clip0_1_100">
-        <rect width="13" height="25" fill="white"/>
-        </clipPath>
-        </defs>
+    return <Link href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn'>
+        <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
+<g clipPath="url(#clip0_1_1623)">
+<path className="back" d="M34.9501 45H40.6177V32.3968H44.5716L44.9878 28.1812H40.6177C40.6177 28.1812 40.6177 26.6058 40.6177 25.7801C40.6177 24.7805 40.838 24.3894 41.9275 24.3894C42.7966 24.3894 45 24.3894 45 24.3894V20C45 20 41.7684 20 41.0706 20C36.8475 20 34.9501 21.6515 34.9501 24.8023C34.9501 27.5511 34.9501 28.1704 34.9501 28.1704H32V32.4402H34.9501V45Z"/>
+</g>
+<defs>
+<clipPath id="clip0_1_1623">
+<rect width="13" height="25" fill="white" transform="translate(32 20)"/>
+</clipPath>
+</defs>
         </svg>    
       </Link>
   }
 
-  export function Youtube () {
-    return <Link href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer" className='youtube social-btn'>
-        <svg className="svg-icon" width="36" height="36" viewBox="0 0 36 36"  xmlns="http://www.w3.org/2000/svg">
-          <path fillRule="evenodd" clipRule="evenodd" d="M28.9054 8.56963C30.1116 8.88286 31.0525 9.79993 31.3787 10.9711C32.2318 14.3122 32.1762 20.629 31.3966 24.0224C31.074 25.1935 30.1295 26.1071 28.9234 26.4238C25.5181 27.2417 10.2664 27.1408 7.05828 26.4238C5.85212 26.1106 4.91121 25.1935 4.58502 24.0224C3.78032 20.8379 3.83587 14.1034 4.5671 10.9885C4.8897 9.81734 5.8342 8.90374 7.04036 8.58703C11.5926 7.66474 27.2853 7.96231 28.9054 8.56963ZM16 14L23 17.5L16 21V14Z" />
+  export const Youtube =()=>  {
+    return <Link href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn'>
+        <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="#F2F1F1" xmlns="http://www.w3.org/2000/svg">
+<path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
+<path className="back" fillRule="evenodd" clipRule="evenodd" d="M49.9054 23.5696C51.1116 23.8829 52.0525 24.7999 52.3787 25.9711C53.2318 29.3122 53.1762 35.629 52.3966 39.0224C52.074 40.1935 51.1295 41.1071 49.9234 41.4238C46.5181 42.2417 31.2664 42.1408 28.0583 41.4238C26.8521 41.1106 25.9112 40.1935 25.585 39.0224C24.7803 35.8379 24.8359 29.1034 25.5671 25.9885C25.8897 24.8173 26.8342 23.9037 28.0404 23.587C32.5926 22.6647 48.2853 22.9623 49.9054 23.5696ZM37 29L44 32.5L37 36V29Z"/>
         </svg>
       </Link>
   }
 
   
-  export function Instagram () {
+  export const Instagram =()=> {
     return <Link href="https://www.instagram.com/engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn'>
-        <svg className="svg-icon" width="36" height="36" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-            <g clipPath="url(#clip0_1_90)">
-            <path d="M25.7531 36H10.2447C4.5955 36 0 31.4045 0 25.7531V10.2447C0 4.5955 4.5955 0 10.2469 0H25.7553C31.4045 0 36.0023 4.5955 36.0023 10.2469V25.7553C36 31.4045 31.4022 36 25.7531 36ZM10.2469 3.08571C6.29915 3.08571 3.08571 6.29686 3.08571 10.2469V25.7553C3.08571 29.7031 6.29686 32.9166 10.2469 32.9166H25.7553C29.7031 32.9166 32.9166 29.7054 32.9166 25.7553V10.2469C32.9166 6.29914 29.7054 3.08571 25.7553 3.08571H10.2469Z" />
-            <path d="M17.9986 27.2187C12.9151 27.2187 8.78027 23.0839 8.78027 18.0004C8.78027 12.9168 12.9151 8.78198 17.9986 8.78198C23.0822 8.78198 27.217 12.9168 27.217 18.0004C27.217 23.0839 23.0822 27.2187 17.9986 27.2187ZM17.9986 11.87C14.6164 11.87 11.866 14.6204 11.866 18.0026C11.866 21.3848 14.6164 24.1353 17.9986 24.1353C21.3808 24.1353 24.1313 21.3848 24.1313 18.0026C24.1313 14.6204 21.3808 11.87 17.9986 11.87Z" />
-            <path d="M29.8276 8.25431C29.8276 9.47901 28.8356 10.4688 27.6131 10.4688C26.3884 10.4688 25.3986 9.47673 25.3986 8.25431C25.3986 7.03188 26.3907 6.0398 27.6131 6.0398C28.8356 6.03752 29.8276 7.0296 29.8276 8.25431Z" />
+        <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M76 66V1H1V46.2564L20.2569 66H76Z" strokeLinecap="square"/>
+            <g clipPath="url(#clip0_217_117)">
+            <path className="back" d="M46.7531 51H31.2447C25.5955 51 21 46.4045 21 40.7531V25.2447C21 19.5955 25.5955 15 31.2469 15H46.7553C52.4045 15 57.0023 19.5955 57.0023 25.2469V40.7553C57 46.4045 52.4022 51 46.7531 51ZM31.2469 18.0857C27.2991 18.0857 24.0857 21.2969 24.0857 25.2469V40.7553C24.0857 44.7031 27.2969 47.9166 31.2469 47.9166H46.7553C50.7031 47.9166 53.9166 44.7054 53.9166 40.7553V25.2469C53.9166 21.2991 50.7054 18.0857 46.7553 18.0857H31.2469Z" />
+            <path className="back" d="M38.9986 42.2187C33.9151 42.2187 29.7803 38.0839 29.7803 33.0004C29.7803 27.9168 33.9151 23.782 38.9986 23.782C44.0822 23.782 48.217 27.9168 48.217 33.0004C48.217 38.0839 44.0822 42.2187 38.9986 42.2187ZM38.9986 26.87C35.6164 26.87 32.866 29.6204 32.866 33.0026C32.866 36.3848 35.6164 39.1353 38.9986 39.1353C42.3808 39.1353 45.1313 36.3848 45.1313 33.0026C45.1313 29.6204 42.3808 26.87 38.9986 26.87Z" />
+            <path className="back" d="M50.8274 23.2543C50.8274 24.479 49.8354 25.4688 48.6129 25.4688C47.3882 25.4688 46.3984 24.4767 46.3984 23.2543C46.3984 22.0319 47.3905 21.0398 48.6129 21.0398C49.8354 21.0375 50.8274 22.0296 50.8274 23.2543Z" />
             </g>
             <defs>
-            <clipPath id="clip0_1_90">
-            <rect width="36" height="36" fill="white"/>
+            <clipPath id="clip0_217_117">
+            <rect width="36" height="36" fill="white" transform="translate(21 15)"/>
             </clipPath>
             </defs>
         </svg>
       </Link>
   }
 
-  export function Telegram () {
+  export const Telegram =()=> {
     return <Link href="https://t.me/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn'>
-        <svg className="svg-icon" width="36" height="36"  viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-          <path d="M7.35951 17.8537C9.80937 16.5665 12.5574 15.4786 15.1109 14.3908C19.5206 12.6178 23.9304 10.8623 28.4101 9.23918C29.2851 8.95551 30.8418 8.68655 31 9.92427C30.9132 11.6638 30.58 13.4033 30.335 15.1254C29.7401 18.9389 29.0401 22.7363 28.3569 26.5324C28.1288 27.8036 26.467 28.4566 25.4003 27.6364C22.8454 25.9972 20.2906 24.3581 17.7707 22.6855C16.949 21.8826 17.7175 20.7292 18.4539 20.1592C20.5538 18.1855 22.7755 16.4956 24.7717 14.4215C25.3149 13.1838 23.7218 14.2208 23.1968 14.538C20.327 16.4287 17.5271 18.4358 14.4823 20.1084C12.9424 20.9273 11.1225 20.2248 9.58258 19.7738C8.19946 19.2386 6.16957 18.6873 7.35951 17.851V17.8537Z" />
+        <svg className="svg-icon"width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
+<path className="back" d="M25.3595 32.8537C27.8094 31.5665 30.5574 30.4786 33.1109 29.3908C37.5206 27.6178 41.9304 25.8623 46.4101 24.2392C47.2851 23.9555 48.8418 23.6866 49 24.9243C48.9132 26.6638 48.58 28.4033 48.335 30.1254C47.7401 33.9389 47.0401 37.7363 46.3569 41.5324C46.1288 42.8036 44.467 43.4566 43.4003 42.6364C40.8454 40.9972 38.2906 39.3581 35.7707 37.6855C34.949 36.8826 35.7175 35.7292 36.4539 35.1592C38.5538 33.1855 40.7755 31.4956 42.7717 29.4215C43.3149 28.1838 41.7218 29.2208 41.1968 29.538C38.327 31.4287 35.5271 33.4358 32.4823 35.1084C30.9424 35.9273 29.1225 35.2248 27.5826 34.7738C26.1995 34.2386 24.1696 33.6873 25.3595 32.851V32.8537Z" />
         </svg>
     </Link>
    
   }
+
+export const ButtonBorder = ()=> {
+  return <Link href="" target="_blank" rel="noopener noreferrer" className=''>
+        <svg className="svg-border" width="360" height="92" viewBox="0 0 360 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M0.5 0.5H359.5V91.5H36.2071L0.5 55.7929V0.5Z" />
+</svg>
+        </Link>
+}
+
+export const Arrow = () => {
+  return <Link href="" target="_blank" rel="noopener noreferrer" className=''>
+  <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M9 8L18 17.5L9 27" stroke="#768728" strokeWidth="3"/>
+<path d="M18 8L27 17.5L18 27" stroke="#768728" strokeWidth="3"/>
+</svg>
+</Link>
+
+}
 
   

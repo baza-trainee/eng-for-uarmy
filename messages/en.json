@@ -1,11 +1,84 @@
 {
   "Header": {
-    "home": "Home",
+    "home": "Homepage",
     "study": "Study",
     "team": "Our team",
     "contact": "Contact Us",
-    "button": "Help us grow",
-    "ukr": "ukr",
-    "eng": "eng"
+    "button": "Help us grow"
+  },
+  "Hero": {
+    "title": "Break the language barrier to achieve victory",
+    "first-desc": "The first-of-a-kind  project",
+    "first-desc-bold":"Military English in Ukraine.",
+    "second-desc-bold": "NATO",
+    "second-desc-bold2": "(STANAG 6001).",
+    "second-desc": "Based on",
+    "second-desc2": "language standards",
+    "third-desc": "Empowering ",
+    "third-desc-bold": "active military ",
+    "and": "and",
+    "third-desc-bold2": "veterans",
+    "third-desc-bold3": "for new opportunities.",
+    "study-btn": "Start studying",
+    "support-btn": "Support the project"
+  },
+  "RunningLine": {
+    "string": "Over 6,000 soldiers are already studying. Join them now!"
+  },
+  "Feedback": {
+    "title": "Learners’ feedback",
+    "desc": "We love hearing what you find useful about our materials and improving based on your suggestions."
+  },
+  "OurProjects": {
+    "title": "Our projects",
+    "learnMore": "Learn more",
+    "youtube": "YouTube channel",
+    "youtube-desc": "Our video lessons allow you to learn Military English anywhere and anytime, starting with the most essential grammar and vocabulary",
+    "practice": "Speaking practice",
+    "practice-desc": "Our speaking clubs allow you to use your newly acquired knowledge by having real conversations with your peers and volunteers",
+    "mobileApp": "Mobile app",
+    "mobileApp-desc": "Our mobile app will let you fully immerse yourself in the learning process, set goals and track your progress towards them"
+  },
+  "AboutUs": {
+    "title": "About us",
+    "first-part": "In the spring of 2022, the founder of the project, teacher Olena Chekryzhova, was asked by her friend to start an English course in his battalion. Olena lived at a military base for several months, teaching English every day, after which she trained officers and personnel at the headquarters and deployment sites, and worked with the military online.",
+    "second-part": "In the first months, Olena unofficially called her initiative 'Special educational operation', later the project was named ENG for UARMY, and later the YouTube channel by the same name was launched. During the first year of activity, more than a hundred volunteers (Ukrainians and foreigners) contributed to the creation of the project and a wide variety of tasks.",
+    "third-part": "We believe that language is a weapon. The more weapons we have, the closer our victory is. And the mission of our project is to equip the armed forces of Ukraine with English."
+  },
+  "HelpUsGrow": {
+    "title": "Help us grow",
+    "desc": "We set ambitious goals for ourselves. Your support brings the Armed Forces of Ukraine closer to NATO standards",
+    "donate": "Donate",
+    "donate-desc": "Every donation, big or small, allows us to keep providing the best educational opportunities to more and more military personnel",
+    "volunteer": "Volunteer",
+    "volunteer-desc": "Join our vibrant team of volunteers, showcase your skills and use them to make an impact for thousands of our learners",
+    "partner": "Partner with us",
+    "partner-desc": "Contribute to our mission of breaking the language barrier and empowering the people who defend our freedom and values",
+    "spread": "Spread the word",
+    "spread-desc": "Share our project with the audience of your media, blog or socials and help more people discover the easiest way to learn military English"
+  },
+  "Partners": {
+    "title": "Partners",
+    "becomePartner": "Become a partner or sponsor"
+  },
+  "Media": {
+    "title": "Media about ENG for UArmy",
+    "button": "Share our project with your audience",
+    "readMore": "Read more"
+  },
+  "Footer": {
+    "homepage": "Homepage",
+    "study": "Study",
+    "ourTeam": "Our team",
+    "contactUs": "Contact us",
+    "follow": "Follow",
+    "policy-first": "Developed by Baza Trainee Ukraine 2023",
+    "policy-second": "All rights reserved"
+  },
+  "OurTeam": {
+    "title": "Our team",
+    "desc": "The project is driven by a team of Ukrainians and English-speaking volunteers from different countries.",
+    "join": "Want to join our project?",
+    "joinVolunteer": "Check out our job vacancies or reach out to become volunteer"
   }
 }

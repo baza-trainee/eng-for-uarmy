@@ -1,0 +1,20 @@
+@import "../../../../../styles/variables.module";
+
+.pagination {
+	display: flex;
+	justify-content: center;
+}
+
+.elPagination {
+	width: 30px;
+	height: 8px;
+	background-color: $color-light-grey;
+
+	&:not(:last-child) {
+		margin-right: 14px;
+	}
+
+	&.isActive {
+		background-color: $color-olive;
+	}
+}

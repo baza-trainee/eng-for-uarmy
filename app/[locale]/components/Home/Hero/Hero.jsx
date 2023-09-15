@@ -1,36 +1,41 @@
 "use client";
 import Image from 'next/image'
 import "./Hero.styles.scss"; 
-import { useLocale } from 'next-intl';
-import { Facebook, Youtube, Instagram, Telegram} from './SvgComponent';
+import { useLocale, useTranslations } from 'next-intl';
+import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow} from './SvgComponent';
 import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
+import { usePathname } from 'next/navigation';
  
 const Hero = () => {
 const locale = useLocale();
-
+const pathname = usePathname();
+const t = useTranslations("Hero");
   return <section className='heroSection'>
       <div className='hero'>
         <div className='container'>
             <div className='card'>
+            <Image className='card-border' src="/HeroImage/CardSvg.svg" alt="SVG Image" width={990} height={661} />
                 <h1 className='firstHead'>Eng for UArmy</h1>
-                <h2 className='secondHead'>Break the language barrier to achieve victory</h2>
+                <h2 className='secondHead'>{t("title")}</h2>
+                
                 <ul className='list'>
                       <li className='li-item'>
-                          <Image src="./HeroImage/arrow-small.svg" alt="SVG Image" width={35} height={35} />
-                          <p className='li-txt'> <strong className='li-bold-txt'> ENG for UArmy </strong> is the first <strong className='li-bold-txt'> Military English</strong> online course in Ukraine.</p>
+                          <Arrow />
+                          <p className='li-txt'>{t("first-desc")}<strong className='li-bold-txt'>{t("first-desc-bold")}</strong></p>
                       </li>
                       <li className='li-item'>
-                          <Image src="./HeroImage/arrow-small.svg" alt="SVG Image" width={35} height={35} />
-                          <p className='li-txt'>Спеціалізована мовна підготовка за стандартом <span className='li-bold-txt'>НАТО (STANAG 6001).</span></p>
+                          <Arrow />
+                          <p className='li-txt'>{t("second-desc")}<span className='li-bold-txt'>{t("second-desc-bold")}</span>{t("second-desc2")}<span className='li-bold-txt'>{t("second-desc-bold2")}</span></p>
                       </li>
                       <li className='li-item'>
-                          <Image src="./HeroImage/arrow-small.svg" alt="SVG Image" width={35} height={35} />
-                          <p className='li-txt last-li-txt'>Перший в Україні відкритий курс військової англійської.</p>
+                          <Arrow />
+                          <p className='li-txt last-li-txt'>{t("third-desc")}<span className='li-bold-txt'>{t("third-desc-bold")}</span>{t("and")}<span className='li-bold-txt'>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
                       </li>
                 </ul>
                 <ul className='btnList'>
-                    <li><Link href={`/${locale}/study`} className="under-txt-btn">Start studying</Link></li>
-                    <li><Link href={`/${locale}#helpUsGrow`} className="under-txt-btn2">Support the project</Link></li>
+                    <li><Link href={`/${locale}/study`} className="under-txt-btn">{t("study-btn")}</Link></li>
+                    <li><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" tabIndex="0">{t("support-btn")}</ScrollLink><ButtonBorder /></li>
                 </ul>
             </div>
 
@@ -41,7 +46,7 @@ const locale = useLocale();
                 <Telegram/>
             </div>
         </div>
-        <Image className='soldierImg' src="/HeroImage/soldier-transp.png" alt="soldierImg" width={961} height={632} priority/>
+        <Image className='soldierImg' src="/HeroImage/soldier-transp.png" alt="soldierImg" width={796} height={523} priority/>
        </div>
     </section>
   
