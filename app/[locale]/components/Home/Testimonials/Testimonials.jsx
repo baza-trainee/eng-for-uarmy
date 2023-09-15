@@ -1,8 +1,9 @@
 "use client";
-
+import { useLocale, useTranslations } from "next-intl";
 // import { useState, useEffect, useCallback } from "react";
 
 import { data } from "./data";
+
 import styles from "./testimonials.module.scss";
 import Slider from "./Slider/Slider";
 
@@ -51,15 +52,14 @@ const Testimonials = () => {
 
   //   console.log(items);
 
+  const locale = useLocale();
+  const t = useTranslations("Feedback");
   return (
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleWrapper}>
-          <h2 className={styles.title}>Learners’ feedback</h2>
-          <p className={styles.subcription}>
-            We love hearing what you find useful about our materials and
-            improving based on your suggestions.
-          </p>
+          <h2 className={styles.title}>{t("title")}</h2>
+          <p className={styles.subcription}>{t("desc")}</p>
         </div>
         <Slider data={data} />
       </div>
