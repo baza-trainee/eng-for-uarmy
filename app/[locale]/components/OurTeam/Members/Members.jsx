@@ -1,8 +1,8 @@
- "use client";
+"use client";
 import { useTranslations } from "next-intl";
 import styles from './Members.module.scss';
 import utilsStyles from '../../../styles/_utils.module.scss';
-import Image from 'next/image';
+import MemberList from "../MemberList/MemberList";
 
 const Members = () => {
     const t = useTranslations("OurTeam");
@@ -14,16 +14,9 @@ const Members = () => {
                 <p className={styles.members__description}>{t("desc")}</p>
             </div>
 
-            <ul className={styles.members__list}>
-                <li className={styles.members__item}>
-                    <Image src="/team/member-01.jpg" alt="member 1" width={265} height={266} />
-                    <div className={styles.members__info}>
-                        <h3 className={styles.members__name}>Олена Чекрижова</h3>
-                        <p className={styles.members__position}>Директорка</p>
-                    </div>
-                </li>
-
-                <li className={styles.members__item}>
+            <MemberList />
+            
+                {/* <li className={styles.members__item}>
                     <Image src="/team/member-02.jpg" alt="member 2" width={265} height={266} />
                     <div className={styles.members__info}>
                         <h3 className={styles.members__name}>Єва Гольц</h3>
@@ -148,8 +141,7 @@ const Members = () => {
                         <h3 className={styles.members__name}>Альона Нікітчина</h3>
                         <p className={styles.members__position}>Волонтер</p>
                     </div>
-                </li>
-            </ul>
+                </li> */}
         </section>
     )
 }  
