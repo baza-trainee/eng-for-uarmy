@@ -1,0 +1,58 @@
+.my-swiper {
+	position: relative;
+	padding-bottom: 90px;
+}
+
+.container-slider {
+	padding-left: 96px;
+	padding-right: 96px;
+}
+
+.my-swiper .swiper-button-prev,
+.my-swiper .swiper-button-next {
+	position: absolute;
+	width: 68px;
+	height: 68px;
+	transform: translateY(-50px);
+	z-index: 1000;
+}
+
+.my-swiper .swiper-button-prev {
+	left: 30px;
+}
+
+.my-swiper .swiper-button-next {
+	right: 30px;
+}
+
+.my-swiper .swiper-button-prev::after,
+.my-swiper .swiper-button-next::after {
+	content: "";
+	display: inline-block;
+	width: 68px;
+	height: 68px;
+}
+
+.my-swiper .swiper-button-prev::after {
+	background-image: url("../../../../../../public/testimonials/erow-left.svg");
+}
+
+.my-swiper .swiper-button-next::after {
+	background-image: url("../../../../../../public/testimonials/erow-right.svg");
+}
+
+.my-swiper .swiper-pagination-bullet {
+	width: 30px;
+	height: 8px;
+	background-color: #D9D9D9;
+	border-radius: 0;
+	opacity: 1;
+}
+
+.my-swiper .swiper-pagination-bullet:not(:last-child) {
+	margin-right: 14px;
+}
+
+.my-swiper .swiper-pagination-bullet-active {
+	background-color: #798738;
+}
