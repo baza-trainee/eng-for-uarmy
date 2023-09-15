@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5000",
+    "dev": "next dev -p 3000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -18,8 +18,7 @@
     "react-fast-marquee": "^1.6.0",
     "styled-components": "^6.0.7",
     "swiper": "^10.2.0",
-    "react-scroll": "^1.8.9",
-    "styled-components": "^6.0.7"
+    "react-scroll": "^1.8.9"
   },
   "devDependencies": {
     "babel-plugin-inline-react-svg": "^2.0.2",

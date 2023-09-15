@@ -1,7 +1,7 @@
 @import './variables.module';
 // font styles
 .h1 {
-    font-family: 'Furore', sans-serif; 
+    font-family: inherit; 
     font-size: 64px; 
     font-weight: 400; 
     line-height: 34px; 
@@ -16,10 +16,11 @@
     line-height: 50px; 
     letter-spacing: 0.36399999260902405px;
     text-align: left;
+    color: $color-black-text;
 }
 
 .h3 {
-    font-family: 'Furore', sans-serif; // after adding font to project
+    font-family: inherit;
     font-size: 36px; 
     font-weight: 400; 
     line-height: 28px; 
@@ -28,7 +29,7 @@
 }
 
 .h4 {
-    font-family: 'Furore', sans-serif; // after adding font to project
+    font-family: inherit;
     font-size: 28px; 
     font-weight: 400; 
     line-height: 28px; 
@@ -37,7 +38,7 @@
 }
 
 .h5 {
-    font-family: 'Furore', sans-serif; // after adding font to project
+    font-family: inherit;
     font-size: 18px; 
     font-weight: 400; 
     line-height: 28px; 

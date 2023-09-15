@@ -1,4 +1,3 @@
-"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -8,7 +7,6 @@ import "swiper/css/pagination";
 
 import Image from "next/image";
 
-// import utils from "../../styles/_utils.module.scss";
 import styles from "./slider.module.scss";
 import "./slider.css";
 
@@ -16,8 +14,6 @@ import borderRightTop from "../../../../../../public/testimonials/border-right-t
 import borderRightBottom from "../../../../../../public/testimonials/border-right-bottom.svg";
 import borderLeftTop from "../../../../../../public/testimonials/border-left-top.svg";
 import borderLeftBottom from "../../../../../../public/testimonials/border-left-bottom.svg";
-
-import authorFhoto from "../../../../../../images/testimonials/mask-group.jpg";
 
 // import SliderNavButtons from "./SliderNavButtons/SliderNavButtons";
 // import SliderPagination from "./SliderPagination/SliderPagination";

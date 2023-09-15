@@ -15,7 +15,7 @@ const HelpUsGrows = () => {
         <div className={styles.sectionWrap}>
             <div className={styles.descWrap}>
                 <div>
-                    <h2 className={utilsStyles.h2}>{t("title")}</h2>
+                    <h2 className={`${utilsStyles.h2} ${styles.sectionTitle}`}>{t("title")}</h2>
                     <Image src='./large-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
                 </div>
                 <p className={styles.sectionDesc}>{t("desc")}</p>

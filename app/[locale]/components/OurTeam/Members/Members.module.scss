@@ -1,0 +1,27 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+.members {
+    width: $desktop;
+    margin: 0 auto;
+    padding: 84px $section-padding 0 $section-padding;
+
+    &__wrapper{
+        display: flex;
+        gap: 80px;
+        margin-bottom: 60px;
+    }
+
+    &__title {
+        color: $color-black-text;
+    }
+
+    &__description{
+        font-family: Arial;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        max-width: 322px;
+        color: $color-black-text;
+    }
+}
