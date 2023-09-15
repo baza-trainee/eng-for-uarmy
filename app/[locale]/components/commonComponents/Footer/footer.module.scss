@@ -36,7 +36,7 @@
     font-size: 28px;
     padding-bottom: 32px;
     font-weight: 400;
-}
+  }
 
 .contactsBlock{
     margin-bottom: 36px;
@@ -64,6 +64,7 @@
 
 
 
+
 .contactsFollowsBlock{
     display: flex;
     flex-direction: column;
@@ -84,11 +85,12 @@
 .contactLink{
     margin-left: 16px;
     transition: color $transition-duration $timing-function;
+
 }
 
 .contactLink:hover{
-    transform: scale(1.1);
     color: $color-grey;
+
 }
 
 .followsIcons{
@@ -135,7 +137,6 @@
     flex-direction: column;
     align-items: center;
 }
-
 
 .menu{
     display: none;

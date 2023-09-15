@@ -18,7 +18,7 @@ const Footer = () => {
                 <ul className={styles.list}>
                   <li><Link href={`/${locale}`}>{t("homepage")}</Link></li>
                   <li><Link href={`/${locale}/study`}>{t("study")}</Link></li>
-                  <li><Link href={`/${locale}/team`}>{t("ourTeam")}</Link></li>
+                  <li><Link href={`/${locale}/https://github.com/baza-trainee/eng-for-uarmy/pull/40/conflict?name=app%252F%255Blocale%255D%252Fcomponents%252FcommonComponents%252FFooter%252FFooter.jsx&ancestor_oid=653342168b0ce27e853abe8ea0539fa56fb27350&base_oid=60753f15e555839265f227945932d61fdd3b2d3d&head_oid=4a7e03b09f83807053cdebc585aedf51e90b3530team`}>{t("ourTeam")}</Link></li>
                   <li><Link href={`/${locale}/contact`}>{t("contactUs")}</Link></li>
                 </ul>
             </nav>
@@ -46,4 +46,5 @@ const Footer = () => {
     </div>
   </footer>
 }
+
 export default Footer;
