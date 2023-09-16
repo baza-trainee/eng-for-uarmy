@@ -21,8 +21,8 @@ const Modal = () => {
             <h3 className={styles.modalTitle}>Donate</h3>
             <p className={styles.modalDesc}>To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!</p>
             <ul className={styles.btnList}>
-                <li><Link href={'/'} className={styles.btn}>PayPal</Link></li>
-                <li><Link href={'/'} className={styles.btn}>BuyMeACoffee</Link></li>
+                <li><Link href={'/'} onClick={() => onCloseClick()} className={styles.btn}>PayPal</Link></li>
+                <li><Link href={'/'} onClick={() => onCloseClick()} className={styles.btn}>BuyMeACoffee</Link></li>
             </ul>
             <div className={styles.infoCard}>
                 <h4 className={styles.infoTitle}>Банківські реквізити</h4>
