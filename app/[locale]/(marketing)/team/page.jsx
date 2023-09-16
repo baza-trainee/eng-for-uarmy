@@ -1,10 +1,12 @@
-import Members from '../../components/Team/Members/Members';
+import Members from '../../components/OurTeam/Members/Members';
+import Goin from '../../components/OurTeam/Goin/Goin';
 
-const Team = () => {
+const OurTeam = () => {
   return (
     <>
       <Members />
+      <Goin />
     </>
   )  
 };
-export default Team;
+export default OurTeam;

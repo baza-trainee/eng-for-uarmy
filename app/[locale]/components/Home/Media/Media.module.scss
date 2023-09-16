@@ -47,9 +47,19 @@
 .arrowBtn{
     margin-top: 54px;
     margin-bottom: 60px;
-    border: none;
     outline: none;
     cursor: pointer;
+    stroke: $color-black;
+    & path{
+        stroke: $color-black;
+        transition: stroke $transition-duration $timing-function;
+    }
+    &:hover path{
+        stroke: $color-green;
+    }
+    &:active path{
+        stroke: $color-black;
+    }
 }
 .mediaTitle{
     margin-bottom: 75px;
