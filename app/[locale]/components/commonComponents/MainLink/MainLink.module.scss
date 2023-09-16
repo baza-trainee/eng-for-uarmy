@@ -1,0 +1,38 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+.mainLink {
+    min-width: 265px;
+    height: 92px;
+    padding: 32px 38px;
+    border: none;
+    outline: none;
+    --size-corner: 36px;
+    clip-path: polygon(0 0,
+        100% 0,
+        100% 100%,
+        80% 100%,
+        var(--size-corner) 100%,
+        0 calc(100% - var(--size-corner)));
+
+    text-align: center;    
+    text-transform: uppercase;
+    font-family: inherit;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 27px;
+
+    color: $color-ultra-light-grey;    
+    background-color: $color-black-btn;   
+
+    transition: background-color $transition-duration $timing-function,
+        border $transition-duration $timing-function;
+        
+    &:hover{
+        background-color: $color-olive;
+    }
+
+    :focus{
+        border: 3px solid $color-black;
+    }  
+}
