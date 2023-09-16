@@ -17,7 +17,10 @@
     width: 320px;
     color: $color-black;
     transform: translate(0, 8px);
-    margin-left: 81px;
+    margin-left: 69px;
+}
+.sectionTitle{
+    width: 400px;
 }
 .arrowIcon{
     margin-top: 30px;
@@ -78,7 +81,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $color-white;                                                                                
+    color: $color-ultra-light-grey;                                                                                
     font-size: 22px;
     --size-corner: 36px;
     width: 270px;
