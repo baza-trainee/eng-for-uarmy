@@ -6,6 +6,7 @@ import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow} from './Sv
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePathname } from 'next/navigation';
+import "./SvgComponent.styles.scss"
  
 const Hero = () => {
 const locale = useLocale();
@@ -35,7 +36,7 @@ const t = useTranslations("Hero");
                 </ul>
                 <ul className='btnList'>
                     <li><Link href={`/${locale}/study`} className="under-txt-btn">{t("study-btn")}</Link></li>
-                    <li><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" tabIndex="0">{t("support-btn")}</ScrollLink><ButtonBorder /></li>
+                    <li tabIndex="0" className="under"><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" >{t("support-btn")}</ScrollLink><ButtonBorder /></li>
                 </ul>
             </div>
 
