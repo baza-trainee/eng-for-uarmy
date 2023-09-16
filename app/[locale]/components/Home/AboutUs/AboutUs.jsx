@@ -12,9 +12,9 @@ const AboutUs = () => {
             <Image className="image" src='/about-us.svg' alt='aboutUsImg' width={635} height={1000} />
             <div className={styles.rightside}>
                 <h2 className={styles.title}>{t("title")}</h2>
-                <p className={styles.text}>{t("first-part")}</p>
-                <p className={styles.text}>{t("second-part")}</p>
-                <p className={styles.text}>{t("third-part")}</p>
+                <p className={styles.paragraphOne}>{t("first-part")}</p>
+                <p className={styles.paragraphTwo}>{t("second-part")}</p>
+                <p className={styles.paragraphThree}>{t("third-part")}</p>
             </div>
         </div>
     </section>
