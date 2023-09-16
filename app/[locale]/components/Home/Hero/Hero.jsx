@@ -1,6 +1,7 @@
 "use client";
 import Image from 'next/image'
 import "./Hero.styles.scss"; 
+import "./SvgComponent.styles.scss"
 import { useLocale, useTranslations } from 'next-intl';
 import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow} from './SvgComponent';
 import Link from 'next/link';
@@ -8,6 +9,7 @@ import { Link as ScrollLink } from 'react-scroll';
 import { usePathname } from 'next/navigation';
  
 const Hero = () => {
+    
 const locale = useLocale();
 const pathname = usePathname();
 const t = useTranslations("Hero");
@@ -15,7 +17,7 @@ const t = useTranslations("Hero");
       <div className='hero'>
         <div className='container'>
             <div className='card'>
-            <Image className='card-border' src="/HeroImage/CardSvg.svg" alt="SVG Image" width={990} height={661} />
+            <Image className='card-border' src="/HeroImage/CardSvg.svg" alt="SVG Image" width={990} height={652} />
                 <h1 className='firstHead'>Eng for UArmy</h1>
                 <h2 className='secondHead'>{t("title")}</h2>
                 
@@ -34,8 +36,8 @@ const t = useTranslations("Hero");
                       </li>
                 </ul>
                 <ul className='btnList'>
-                    <li><Link href={`/${locale}/study`} className="under-txt-btn">{t("study-btn")}</Link></li>
-                    <li><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" tabIndex="0">{t("support-btn")}</ScrollLink><ButtonBorder /></li>
+                    <li><Link href={`https://www.youtube.com/@engforuarmy`} className="under-txt-btn">{t("study-btn")}</Link></li>
+                    <li tabIndex="0" className="under" ><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" >{t("support-btn")}</ScrollLink><ButtonBorder /></li>
                 </ul>
             </div>
 

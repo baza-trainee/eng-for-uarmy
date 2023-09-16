@@ -34,12 +34,13 @@ position: relative;
 
 .card-border{
   position: absolute;
-  top: -5px;
+  top: 0px;
   right:0px;
   pointer-events: none;
 }
  
 .firstHead{
+  color: var(--black, #171717);
   font-family: Furore;
   font-size: 64px;
   font-style: normal;
@@ -89,7 +90,7 @@ position: relative;
   margin-right: 5px;
 }
 .btnList{
-  margin-top: 65px;
+  margin-top: 54px;
   display: flex;
   position: relative;
 }
@@ -129,6 +130,7 @@ position: relative;
   }
   &:focus{
       background-color: $color-black;
+      border: 3px solid var(--grey, #8B8B8B);
   }
   }
 
@@ -158,9 +160,6 @@ position: relative;
           0 calc(100% - var(--size-corner)));
     }
   }
-  .under-txt-btn2:focus .svg-border {
-    stroke: var(--green, #798738); 
-}
 
 .soldierImg {
     position: absolute;
@@ -171,7 +170,7 @@ position: relative;
 
 }
 .svg-border{
-  stroke: $color-black        ;
+  stroke: currentColor;
   position: absolute;
   top: 0;   
   right: 19%;
@@ -179,6 +178,17 @@ position: relative;
   pointer-events: none;
 
 }
-.under-txt-btn2:focus .svg-border {
-  stroke: var(--green, #798738); 
+
+.under:focus{
+  outline: none;
 }
+
+
+.under:focus .svg-border{
+    stroke: var(--green, #798738); 
+    stroke-width: 3px;
+    outline: 0;
+    z-index: 1000;
+}
+
+
