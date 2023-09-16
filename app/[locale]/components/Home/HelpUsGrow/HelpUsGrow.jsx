@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import styles from './HelpUsGrow.module.scss';
 import utilsStyles from '../../../styles/_utils.module.scss'
-
 const HelpUsGrows = () => {
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
@@ -39,7 +38,7 @@ const HelpUsGrows = () => {
                 </li>
             </ul>
         </div>
-    </section>
+        </section>
     </>
 }
 export default HelpUsGrows;
