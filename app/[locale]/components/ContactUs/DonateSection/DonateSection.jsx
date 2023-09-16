@@ -1,0 +1,46 @@
+"use client";
+import { useTranslations, useLocale } from 'next-intl';
+import styles from './donateSection.module.scss';
+import Link from 'next/link';
+import Image from 'next/image';
+import utilsStyles from '../../../styles/_utils.module.scss'
+
+const DonateSection = () => {
+    const locale = useLocale();
+    const t = useTranslations("Contact us");
+
+    return <section className={styles.pageContainer}>
+    <div className={styles.sectionWrap}>
+            <div className={styles.descWrap}>
+                <div>
+                    <h2 className={`${utilsStyles.h2} ${styles.title}`}>{t("donate")}</h2>
+                    <Image src='../large-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
+                </div>
+                <p className={styles.supportText}>{t("support")}</p>
+            </div>
+        <div className={styles.linkArea}>
+            <div clasname={styles.paypallBtn}>
+                <Link href={`/${locale}/contact`} className={styles.linkButtons}>
+                    <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
+                    <p>PAYPALL</p>
+                </Link>
+            </div>
+            <div className={styles.buymeacoffeeBtn}>
+                <Link href={`/${locale}/contact`} className={styles.linkButtons}>
+                    <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
+                    <p>BUYMEACOFFEE</p>
+                </Link>
+            </div>
+        </div>
+        <div className={styles.bankDetails}>
+            <h1 classname={styles.bankDetailtitle}>{t("bankDetails")}</h1>
+            <p className={styles.bankDetailsText}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
+            <p className={styles.bankDetailsText}>КОД ЄДРПОУ 44966920</p>
+            <p className={styles.bankDetailsText}>БАНК  УКРСИББАНК: п/р <br /> UA373510050000026007879183309</p>
+            <p className={styles.bankDetailsText}>Призначення: благодійний внесок</p>
+        </div>
+    </div>
+    </section>
+};
+
+export default DonateSection;

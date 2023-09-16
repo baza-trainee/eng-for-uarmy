@@ -1,7 +1,10 @@
+"use client"
+import ContactUs from "../../components/ContactUs/ContactUs";
+
 const ContactsPage = () => {
   return (
     <>
-      <h1>Contacts page</h1>
+      <ContactUs/>
     </>
   );
 };
