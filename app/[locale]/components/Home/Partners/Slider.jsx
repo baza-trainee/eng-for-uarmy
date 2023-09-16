@@ -25,7 +25,7 @@ const Slider = ({ data }) => {
          >
          {data.map(({ id, src, alt }) => (
             <SwiperSlide className={styles.imageSlider} key={id}>
-              <Image class={styles.icons} src={src} alt={alt} />
+              <Image className={styles.icons} src={src} alt={alt} />
             </SwiperSlide>
           ))}
         </Swiper>
