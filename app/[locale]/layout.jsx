@@ -18,7 +18,7 @@ export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "en" }];
 }
 
-const RootLayout = async({ children, params: { locale } }) => {
+const RootLayout = async ({ children, params: { locale }}) => {
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;
