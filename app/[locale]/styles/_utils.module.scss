@@ -53,7 +53,7 @@
     font-weight: 400; 
     line-height: 22px; 
     font-family: Arial;
-    letter-spacing: -0.40799999237060547px;
+    letter-spacing: -0.4px;
     text-align: left;
 }
 
@@ -62,7 +62,7 @@
     font-size: 18px;
     font-weight: 700;
     line-height: 28px;
-    letter-spacing: -0.40799999237060547px;
+    letter-spacing: -0.4px;
     text-align: left;
 }
 
@@ -71,17 +71,19 @@
     font-size: 22px; 
     font-weight: 400; 
     line-height: 22px; 
-    letter-spacing: -0.40799999237060547px;
+    letter-spacing: -0.4px;
     text-align: left;
 }
 
-.body2-bold {
+.body2_bold {
     font-family: Arial;
     font-size: 22px;
     font-weight: 700;
     line-height: 33px;
-    letter-spacing: -0.40799999237060547px;
+    letter-spacing: -0.4px;
     text-align: left;
+
+    color: $color-black-text;
 }
 
 
@@ -108,7 +110,7 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 18px;
-    letter-spacing: -0.07800000160932541px;
+    letter-spacing: -0.08px;
     text-align: left;
 }
 
@@ -117,7 +119,7 @@
     font-size: 13px;
     font-weight: 400;
     line-height: 18px;
-    letter-spacing: -0.07800000160932541px;
+    letter-spacing: -0.08px;
     text-align: left;
 }
 
@@ -126,7 +128,7 @@
     font-size: 15px;
     font-weight: 400;
     line-height: 20px;
-    letter-spacing: -0.23999999463558197px;
+    letter-spacing: -0.24px;
     text-align: left;
 }
 
@@ -135,7 +137,7 @@
     font-size: 15px;
     font-weight: 700;
     line-height: 20px;
-    letter-spacing: -0.23999999463558197px;
+    letter-spacing: -0.24px;
     text-align: left;
 }
 
