@@ -124,28 +124,6 @@ display: flex;
     }
 }
 
-// .infoCard::before {
-//     content: "";
-//     position: absolute;
-//     inset: 0;
-//     background: var(--border-color);
-//     z-index: -2;
-// }
-
-// .infoCard::after {
-//     content: "";
-//     background: #fff;
-//     position: absolute;
-//     inset: 0;
-//     z-index: -1;
-//     clip-path: polygon(var(--border-width) var(--border-width),
-//             100% var(--border-width),
-//             calc(100% - var(--border-width)) var(--border-width),
-//             calc(100% - var(--border-width)) calc(100% - var(--border-width)),
-//             calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
-//             var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
-// }
-
 
 .infoItem{
     margin-top: 24px;

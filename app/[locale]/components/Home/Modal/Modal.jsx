@@ -1,13 +1,11 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale} from "next-intl";
 import { useRouter } from "next/navigation";
 import styles from './Modal.module.scss';
 import Link from "next/link";
 import { useCallback } from "react";
 
 const Modal = () => {
-    // const t = useTranslations("Modal");
-    const locale = useLocale();
     const router = useRouter()
     const onCloseClick = useCallback(() => {
     document.body.classList.remove('modal-open');
