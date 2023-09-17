@@ -3,6 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import Image from 'next/image'
 import "./OurProjects.styles.scss"
 import Link from 'next/link';
+import { SvgBorder } from './SvgBorder';
 
 
 const OurProjects = () => {
@@ -14,7 +15,7 @@ const OurProjects = () => {
                 <h2 className='head'>{t("title")}</h2>
                 <ul className='wraper'>
                     <li className='our-projects-card'>
-                    <Image className='card-svg' src="./OurProjects/CardBorder.svg" alt="Speaking" width={359} height={590} />
+                    <SvgBorder />
                     <Image className='card-img' src="/OurProjects/Rectangle.png" alt="Image" width={359} height={236} />
                         <div className='text-cont'>
                         <h3 className='card-head'>{t("youtube")}</h3>
@@ -24,7 +25,7 @@ const OurProjects = () => {
                     </div>
                     </li>
                     <li className='our-projects-card'>
-                    <Image className='card-svg' src="./OurProjects/CardBorder.svg" alt="Speaking" width={359} height={590} />
+                    <SvgBorder />
                     <Image className='card-img' src="/OurProjects/Speaking.png" alt="Speaking" width={359} height={236} />
                     <div className='text-cont'> 
                         <h3 className='card-head'>{t("practice")}</h3>
@@ -33,7 +34,7 @@ const OurProjects = () => {
                     </div>
                     </li>
                     <li className='our-projects-card'>
-                    <Image className='card-svg' src="./OurProjects/CardBorder.svg" alt="Speaking" width={359} height={590} />
+                    <SvgBorder />
                     <Image className='card-img' src="/OurProjects/mobile.png" alt="mobile" width={359} height={236} />
                         <div className='text-cont'>
                         <h3 className='card-head'>{t("mobileApp")}</h3>
