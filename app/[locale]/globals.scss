@@ -20,9 +20,13 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	background-color: $color-ultra-light-grey;
 	color: $color-black;
-	overflow: scroll;
 }
-
+.modal-open {
+	overflow: hidden;
+	height: 100%;
+	position: fixed;
+	width: 100%;
+}
 main {
 	margin-top: 140px;
 	min-height: 100vh;

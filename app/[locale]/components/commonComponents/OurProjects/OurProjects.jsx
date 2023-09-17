@@ -10,6 +10,7 @@ const OurProjects = () => {
    const t = useTranslations("OurProjects");
    return <>
         <section className='ourProjects'>
+            <div className='ourProjectsContainer' >
                 <h2 className='head'>{t("title")}</h2>
                 <ul className='wraper'>
                     <li className='our-projects-card'>
@@ -42,6 +43,7 @@ const OurProjects = () => {
                     </li>
 
                 </ul>
+                </div>
         </section>
         </>
 
