@@ -52,7 +52,8 @@ display: flex;
     color: $color-ultra-light-grey;
     font-size: 22px;
     --size-corner: 36px;
-    padding: 32px 0px 35px 0px;
+    padding: 28px 0px;
+    // padding-left: 91px;
     width: 359px;
     height: 92px;
     border: none;
@@ -76,6 +77,10 @@ display: flex;
     &:focus:not(:active) {
         border: 3px solid $color-black;
     }
+}
+.icon{
+margin-right: 28px;
+
 }
 .infoCard{
     position: relative;
