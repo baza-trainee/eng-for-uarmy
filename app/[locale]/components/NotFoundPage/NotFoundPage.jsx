@@ -10,6 +10,12 @@ import Image from "next/image";
 
 import errorImg from "../../../../public//404/404.png";
 
+import {
+  ArrowLeftSvg,
+  BorderBackSvg,
+  BorderGoHomeFocusSvg,
+} from "./SvgComponents/SvgComponents";
+
 const NotFoundPage = ({ error }) => {
   const locale = useLocale();
   const t = useTranslations("404");
@@ -20,16 +26,19 @@ const NotFoundPage = ({ error }) => {
         {/* <h2 className={styles.title}> Not Found {error} </h2> */}
         <div className={styles.NotFoundWrapper}>
           <div className={styles.btnBackWrapper}>
-            <div className={styles.btnBack}>
-              {/* redirect to HomePage */}
-              <Link href={`/${locale}/team`}>Back</Link>
-            </div>
+            <BorderBackSvg />
+
+            {/* redirect to HomePage */}
+            <Link className={styles.btnBack} href={`/${locale}/team`}>
+              <ArrowLeftSvg />
+              Back
+            </Link>
           </div>
 
           <div className={styles.errorWrapper}>
             <div className={styles.imgWrapper}>
               <Image src={errorImg} alt="Error 404" width={595} height={245} />
-              <h4 className={styles.title}>Cторінку не знайдено</h4>
+              <h4 className={styles.title}>Page not found</h4>
             </div>
           </div>
         </div>
@@ -44,9 +53,12 @@ const NotFoundPage = ({ error }) => {
           </p>
         </div>
 
-        <Link href={`/${locale}/contact`} className={styles.goHome}>
-          Go on homepage
-        </Link>
+        <div className={styles.btnGoHomeWrapper}>
+          <BorderGoHomeFocusSvg />
+          <Link href={`/${locale}/contact`} className={styles.goHome}>
+            <p>Go on homepage</p>
+          </Link>
+        </div>
       </div>
     </section>
   );

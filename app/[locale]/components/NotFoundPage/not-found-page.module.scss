@@ -40,22 +40,11 @@
 	position: relative;
 	margin-right: 20px;
 
-	&::before {
-		content: "";
-		display: inline-block;
-		width: 170px;
-		height: 92px;
-		background-image: url("../../../../public/404/border-back.svg");
+	&:focus {
+		stroke-width: 3px;
+		color: $color-olive;
 	}
 }
-
-// .btnBackWrapper::before {
-// 	content: "";
-// 	display: inline-block;
-// 	width: 170px;
-// 	height: 92px;
-// 	background-image: url("../../../../public/404/border-back.svg");
-// }
 
 .btnBack {
 	position: absolute;
@@ -68,33 +57,18 @@
 	padding: 26px 27px 26px 20px;
 	color: $color-black;
 	border: none;
-	stroke-width: $color-black;
 	font-size: 22px;
 	line-height: normal;
 	--size-corner: 36px;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-	// transition: background-color $transition-duration $timing-function;
+	transition:
+		color $transition-duration $timing-function,
+		background-color $transition-duration $timing-function;
 	cursor: pointer;
 
-	// &:hover {
-	// 	background-color: $color-olive;
-	// }
-
-	// &:active,
-	// &:focus {
-	// 	background-color: $color-black;
-	// }
-	// &:focus:not(:active) {
-	// 	border: 3px solid $color-black;
-	// }
-
-	&::before {
-		content: "";
-		display: inline-block;
-		width: 28px;
-		height: 25px;
-		margin-right: 32px;
-		background-image: url("../../../../public/404/arrow-btn-left-404.svg");
+	&:hover {
+		color: $color-white;
+		background-color: $color-olive;
 	}
 }
 
@@ -167,18 +141,35 @@
 	letter-spacing: -0.408px;
 }
 
+.btnGoHomeWrapper {
+	position: relative;
+	width: 360px;
+	margin: 0 auto;
+
+	&:hover {
+		color: transparent;
+	}
+
+	&:focus {
+		stroke-width: 3px;
+		color: $color-grey;
+	}
+}
+
 .goHome {
-	font-family: inherit;
-	background-color: $color-black;
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: $color-white;
+	color: $color-ultra-light-grey;
 	font-size: 22px;
 	--size-corner: 36px;
 	width: 360px;
 	height: 92px;
-	border: none;
+	border: transparent;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
 	transition: background-color $transition-duration $timing-function;
 	cursor: pointer;
@@ -186,9 +177,5 @@
 
 	&:hover {
 		background-color: $color-olive;
-	}
-	&:active,
-	&:focus {
-		background-color: $color-black;
 	}
 }
