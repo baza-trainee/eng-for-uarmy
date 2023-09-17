@@ -6,10 +6,12 @@ import HelpUsGrows from "./components/Home/HelpUsGrow/HelpUsGrow";
 import Partners from "./components/Home/Partners/Partners";
 import Media from "./components/Home/Media/Media";
 import Testimonials from "./components/Home/Testimonials/Testimonials";
+import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
 
 const Home = () => {
   return (
     <>
+      <NotFoundPage />
       <Hero />
       <RunningLine />
       <Testimonials />
