@@ -1,0 +1,118 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+@font-face {
+    font-family: Furore;
+    src: url('../../../fonts/Furore.woff2') format('woff');
+}
+
+@font-face {
+    font-family: arial;
+    src: url('../../../fonts/ArialMT.woff2') format('woff');
+}
+
+.pageContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+}
+
+.sectionWrap{
+    width: $desktop;
+    margin: 0 auto;
+    padding: 219px $section-padding 0 $section-padding;
+}
+
+.descWrap{
+    display: flex;
+    margin-bottom: 96px;
+    width: $desktop;
+}
+
+.supportText {
+font-family: Arial;
+font-size: 18px;
+line-height: 27px;
+color: $color-black;
+width: 360px;
+}
+
+.title{
+    height: 51px;
+    margin-right: 80px;
+}
+
+.arrowIcon{
+    margin-top: 16px;
+}
+
+
+.linkArea {
+    width: $desktop;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.linkButtons {
+    text-decoration: none; 
+    margin: 0 10px;
+    height: 92px;
+    width: 359px;
+    display: flex;
+    align-items: center;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 22px;
+    --size-corner: 36px;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+    transition: background-color $transition-duration $timing-function;
+    cursor: pointer;
+    &:hover {
+        background-color: $color-olive;
+    }
+    &:active, &:focus {
+        background-color: $color-black;
+    }
+}
+
+.buttonText {
+    margin-right: 10px; /* Расстояние между текстом и иконкой, по желанию */
+}
+
+.paypallBtnIcon {
+    margin: 28px 29px 28px 92px;
+}
+
+.buymeacoffeeBtnIcon {
+    margin: 25px 28px 28px 56px;
+}
+
+.bankDetails {
+    width: 739px;
+    height: 373px;
+    padding: 71px 0 58px 131px;
+    margin: 72px 271px 0px 271px; 
+    border: 1px solid $color-black;
+}
+
+.bankDetailstitle {
+    font-family: Furore;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0px;
+    margin: 57px 0 0 0;
+    padding-left: 131px;
+}
+
+.bankDetailsText {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-top: 20px;
+}
