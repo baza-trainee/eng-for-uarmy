@@ -1,4 +1,3 @@
-// import Link from "next/link";
 import styles from "./svg-components.module.scss";
 
 export const ArrowLeftSvg = () => {

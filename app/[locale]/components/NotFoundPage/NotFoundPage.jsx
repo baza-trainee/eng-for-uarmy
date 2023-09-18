@@ -1,14 +1,9 @@
 "use client";
 
-import { useEffect } from "react";
-
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
-
-import styles from "./not-found-page.module.scss";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
-
-import errorImg from "../../../../public//404/404.png";
 
 import {
   ArrowLeftSvg,
@@ -16,20 +11,26 @@ import {
   BorderGoHomeFocusSvg,
 } from "./SvgComponents/SvgComponents";
 
+import errorImg from "../../../../public/404/404.png";
+
+import styles from "./not-found-page.module.scss";
+
 const NotFoundPage = ({ error }) => {
   const locale = useLocale();
   const t = useTranslations("404");
+  const router = useRouter();
 
   return (
     <section className={styles.section}>
       <div className={styles.container}>
-        {/* <h2 className={styles.title}> Not Found {error} </h2> */}
         <div className={styles.NotFoundWrapper}>
           <div className={styles.btnBackWrapper}>
             <BorderBackSvg />
-
-            {/* redirect to HomePage */}
-            <Link className={styles.btnBack} href={`/${locale}/team`}>
+            <Link
+              className={styles.btnBack}
+              href=""
+              onClick={() => router.back()}
+            >
               <ArrowLeftSvg />
               Back
             </Link>
@@ -50,12 +51,13 @@ const NotFoundPage = ({ error }) => {
           <p className={styles.descr}>
             We couldn't find the page you're looking for but that's 4.5.0 (all
             good).
+            {/* &apos; */}
           </p>
         </div>
 
         <div className={styles.btnGoHomeWrapper}>
           <BorderGoHomeFocusSvg />
-          <Link href={`/${locale}/contact`} className={styles.goHome}>
+          <Link href={`/${locale}`} className={styles.goHome}>
             <p>Go on homepage</p>
           </Link>
         </div>
@@ -65,26 +67,3 @@ const NotFoundPage = ({ error }) => {
 };
 
 export default NotFoundPage;
-
-// const Error = ({ error, reset }) => {
-//   useEffect(() => {
-//     // Log the error to an error reporting service
-//     console.error(error);
-//   }, [error]);
-
-//   return (
-//     <div>
-//       <h2>Something went wrong!</h2>
-//       <button
-//         onClick={
-//           // Attempt to recover by trying to re-render the segment
-//           () => reset()
-//         }
-//       >
-//         Try again
-//       </button>
-//     </div>
-//   );
-// };
-
-// export default Error;
