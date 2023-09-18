@@ -1,4 +1,4 @@
-@import '../../../styles/reset.styles';
+@import '../../../styles/reset.module';
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
 @font-face {
@@ -9,9 +9,13 @@
 
   .ourProjects{
     margin: 0 auto;
-    padding: 110px 0 200px 0; 
+    padding: 80px 0 200px 0; 
   }
   
+  .ourProjectsContaine{
+    margin: 0 auto;
+    width: $desktop;
+  }
   .head{
     font-family: Furore;
     font-size: 48px;
@@ -19,6 +23,7 @@
     font-weight: 400;
     line-height: normal;
     text-align: center;
+    color: var(--black, #231F20);
   }
 
   .our-projects-card{
@@ -37,16 +42,12 @@
     
   }
 
-  .card-svg{
-   position: absolute;
-   pointer-events: none;
-  }
+  
 
   .text-cont{
     display: grid;
     justify-items: center;
-    padding-right: 35px;
-    padding-left: 35px;
+
   }
 
   .card-head{
@@ -83,13 +84,102 @@
     justify-content: center;
     width: 208px;
     color: $color-white-text;
-    border: none;
     background-color: $color-olive;
     cursor: pointer;
     transition: all $transition-duration $timing-function;
     &:hover{
       background-color: $color-green;
-      color: $color-black;
+      color: var(--black, #231F20);
     }
-  }
+    &:focus{
+      border: 3px solid var(--black, #231F20);
+      outline: none;
+   }
   
+  @media screen and (max-width: 320px){
+
+    .ourProjects{
+      width: $mobile;
+      padding: 0 20px 0 20px;
+    }
+    .card-svg{
+      top: -16%;
+      width: 280px;
+      aspect-ratio: unset;
+    }
+    .card-img{
+      width: 280px;
+      height: 173px;
+      
+    }
+    .ourProjects{
+      margin: 0 auto;
+      padding: 110px 0 200px 0; 
+    }
+    
+    .head{
+      font-family: Furore;
+      font-size: 30px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 120%; 
+      text-align: left;
+    }
+  
+    .our-projects-card{
+      position: relative;
+      display: grid;
+      justify-items: center;
+      
+  }
+    
+  
+    .wraper{
+      margin-top: 100px;
+      display: flex;
+      justify-content: center;
+      gap: 21px;
+      
+    }
+  
+    .card-svg{
+     position: absolute;
+     pointer-events: none;
+    }
+  
+    .text-cont{
+      display: grid;
+      justify-items: center;
+  
+    }
+  
+    .card-head{
+      text-align: center;
+      font-family: Furore;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+    }
+  
+    .card-text{
+      text-align: center;
+      font-family: Arial;
+      font-size: 13px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; 
+  
+    }
+  
+    .card-button {
+      width: 155px;
+      height: 40px;
+      padding: 12px;
+      justify-content: center;
+      align-items: center;
+      gap: 6px;
+    }
+
+  }
+}

@@ -2,7 +2,7 @@
 
 .headerBox{
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: $color-ultra-light-grey;
   top: 0;
   z-index: 100;
@@ -21,11 +21,9 @@
 }
 .headerWrapper {
   display: flex;
-  align-items: center;
 }
 .nav {
   display: flex;
-  margin-right: 20px;
 }
 .navLink {
   position: relative;

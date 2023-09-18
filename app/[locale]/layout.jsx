@@ -7,13 +7,18 @@ import Footer from "./components/commonComponents/Footer/Footer";
 export const metadata = {
   title: "Eng for UArmy",
   description: "Eng for UArmy",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  }
 };
 
 export function generateStaticParams() {
   return [{ locale: "uk" }, { locale: "en" }];
 }
 
-const RootLayout = async({ children, params: { locale } }) => {
+const RootLayout = async ({ children, params: { locale }}) => {
   let messages;
   try {
     messages = (await import(`../../messages/${locale}.json`)).default;

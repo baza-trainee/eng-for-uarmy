@@ -1,0 +1,30 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+.goin {
+    width: $desktop;
+    margin: 0 auto;
+    padding: 80px $section-padding 0 $section-padding;
+    margin-bottom: 120px;
+
+    &__title{
+        margin-bottom: 8px;
+        font-family: inherit;
+        font-size: 28px;
+        font-weight: 400;
+        line-height: normal;
+
+        color: $color-black-text;
+    }
+
+    &__icon{
+        margin-top: 20px;
+        margin-bottom: 80px;
+    }
+
+    &__wrapper{
+        display: flex;
+        justify-content: center;
+        gap: 18px;
+    } 
+}    

@@ -8,7 +8,7 @@
     flex-direction: column;
     width: $desktop;
     margin: 0 auto;
-    padding: 100px $section-padding 88px $section-padding;
+    padding: 100px $section-padding 85px $section-padding;
 }
 .sectionDesc{
     font-family: Arial;
@@ -16,8 +16,10 @@
     line-height: 27px;
     width: 320px;
     color: $color-black;
-    transform: translate(0, 8px);
-    margin-left: 81px;
+    margin-left: 69px;
+}
+.sectionTitle{
+    width: 400px;
 }
 .arrowIcon{
     margin-top: 30px;
@@ -44,13 +46,13 @@
     background-color: $color-white;
     border: 1px solid black; 
     &:nth-child(odd) {
-        padding-left: 35px;
-        padding-right: 140px; 
+        padding-left: 34px;
+        padding-right: 139px; 
         border-left: none;
     }
     &:nth-child(even) {
-        padding-left: 140px;
-        padding-right: 35px;
+        padding-left: 139px;
+        padding-right: 34px;
         border-right: none;
     }
     &:nth-child(-n+2){
@@ -59,7 +61,6 @@
     }
     &:nth-child(n+3){
         padding-top: 46px;
-        padding-bottom: 8px;
         border-bottom: none;
     }
 }
@@ -78,7 +79,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $color-white;
+    color: $color-ultra-light-grey;                                                                                
     font-size: 22px;
     --size-corner: 36px;
     width: 270px;

@@ -7,8 +7,10 @@ import Partners from "./components/Home/Partners/Partners";
 import Media from "./components/Home/Media/Media";
 import Testimonials from "./components/Home/Testimonials/Testimonials";
 // import NotFoundPage from "./components/NotFoundPage/NotFoundPage";
+import Modal from "./components/Home/Modal/Modal";
 
-const Home = () => {
+const Home = ({ searchParams }) => {
+  const showModal = searchParams?.modal;
   return (
     <>
       {/* <NotFoundPage /> */}
@@ -20,6 +22,7 @@ const Home = () => {
       <HelpUsGrows />
       <Partners />
       <Media />
+      {showModal && <Modal />}
     </>
   );
 };

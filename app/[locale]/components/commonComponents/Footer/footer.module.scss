@@ -1,0 +1,141 @@
+@import '../../../styles/variables.module';
+
+.footer{
+    width: 100%;
+    background-color: $color-black;
+}
+.footerContainer{
+    width: $desktop;
+    margin: 0 auto;
+    color: $color-white;
+    padding: 10px 62px 68px 50px;
+    display: flex;
+}
+
+.companyBlock{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}
+
+.footerLogo{
+    margin-right: 325px;
+}
+
+
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 208px;
+    padding-top: 58px;
+    margin-right: 170px;
+}
+.title{
+    color: $color-green;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 400;
+  }
+
+.list{
+    display: flex;
+    flex-direction: column;
+    :last-child{
+        margin-bottom: 0;
+    }
+}
+
+.list li{
+    font-size: 18px;
+    transition: color $transition-duration $timing-function;
+    &:not(:last-child){
+        margin-bottom: 26px;
+    }
+    &:hover {
+            color: $color-grey;
+    }
+}
+
+.contactsFollowsBlock{
+    display: flex;
+    flex-direction: column;
+    width: 264px;
+    padding-top: 58px;
+}
+
+.contactsBlock {
+    margin-bottom: 67px;
+}
+
+.contacts li{
+    display: flex;
+    font-family: Arial;
+    font-size: 18px;
+    &:not(:last-child) {
+        margin-bottom: 34px;
+    }
+}
+
+.contactLink{
+    margin-left: 16px;
+    transition: color $transition-duration $timing-function;
+    &:hover {
+        color: $color-grey;
+    }
+}
+
+.followTitle{
+    margin-bottom: 38px;
+}
+.followsIcons{
+    display: flex;
+}
+
+.followsIcons li{
+    margin-right: 38px;
+    cursor: pointer;
+    transition: color $transition-duration $timing-function;
+    &:not(:last-child) {
+        margin-right: 38px;
+    }
+
+}
+
+.followIcon{
+    transition: fill $transition-duration $timing-function;
+    &:hover path{
+        fill: $color-olive;
+    }
+    &:hover .youtubePath{
+        fill: $color-black;
+    }
+}
+
+.policyBlock{
+    font-family: Arial;
+    font-size: 15px;
+    color: $color-light-grey;
+    display: flex;
+    align-items: center;
+    transform: translate(30px, 0);
+    cursor: pointer;
+}
+.policyBold{
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+}
+.policyDivider {
+    display: inline-block;
+    width: 1px;
+    height: 17px;
+    background-color: $color-white-text;
+    margin: 0 13px;
+}
+
+
+
+

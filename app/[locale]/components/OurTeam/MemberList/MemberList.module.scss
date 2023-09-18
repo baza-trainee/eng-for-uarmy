@@ -1,0 +1,46 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/utils.module';
+
+.members {
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    &__item {
+
+        flex-basis: calc((100% - 3*20px) / 4);
+    }
+
+    &__img {
+        --size-corner: 45px;
+        clip-path: polygon(0 0,
+                100% 0,
+                100% 100%,
+                80% 100%,
+                var(--size-corner) 100%,
+                0 calc(100% - var(--size-corner)));
+    }
+
+    &__info {
+        padding: 28px 34px;
+    }
+
+    &__name {
+        margin-bottom: 9px;
+        font-family: inherit;
+        font-size: 18px;
+        font-weight: 400;
+        letter-spacing: 0.35px;
+        color: $color-black-text;
+    }
+
+    &__role {
+        font-family: Arial;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 27px;
+        color: $color-black-text;
+    }
+}
