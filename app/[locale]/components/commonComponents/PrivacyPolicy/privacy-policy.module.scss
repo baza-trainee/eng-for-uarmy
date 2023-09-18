@@ -1,0 +1,83 @@
+@import "../../../styles/variables.module";
+
+.section {
+	// 	padding-top: 30px;
+	// 	padding-bottom: 30px;
+
+	// @media screen and (max-width: $tablet) {
+	// 	padding-top: 60px;
+	// 	padding-bottom: 60px;
+	// }
+
+	@media screen and (min-width: $desktop) {
+		padding-top: 80px;
+		padding-bottom: 100px;
+	}
+}
+
+.container {
+	// 	padding-left: 30px;
+	// 	padding-right: 30px;
+
+	// @media screen and (max-width: $tablet) {
+	// 	padding-left: 60px;
+	// 	padding-bottom: 60px;
+	// }
+	margin: 0 auto;
+
+	@media screen and (min-width: $desktop) {
+		width: $desktop;
+		padding-left: $section-padding;
+		padding-right: $section-padding;
+	}
+}
+
+.wrapper {
+	display: flex;
+	color: $color-black-text;
+}
+
+.titleWrapper {
+	min-width: 520px;
+	margin-right: 50px;
+	// color: $color-black-text;
+}
+
+.textWrapper {
+	margin-bottom: 40px;
+}
+
+.title {
+	font-size: 64px;
+	line-height: 1.25;
+	letter-spacing: 0.364px;
+	margin-bottom: 16px;
+}
+
+.textHead {
+	font-family: Arial;
+	font-size: 15px;
+	line-height: 1.53;
+}
+
+.text {
+	font-family: Arial;
+	font-size: 18px;
+	line-height: 1.5;
+}
+
+.subTitle {
+	font-size: 18px;
+	line-height: 1.5;
+	margin-bottom: 16px;
+}
+
+.list {
+	list-style: disc;
+	margin-top: 24px;
+	padding-left: 20px;
+}
+
+.item:not(:last-child) {
+	margin-bottom: 16px;
+}
