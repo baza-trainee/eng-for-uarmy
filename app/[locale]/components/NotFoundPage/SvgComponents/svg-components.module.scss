@@ -1,0 +1,14 @@
+@import "../../../styles/variables.module";
+
+.arrow {
+	margin-right: 32px;
+}
+
+.arrowPath {
+	fill: currentColor;
+}
+
+.borderBackPath,
+.borderGoHomePath {
+	stroke: currentColor;
+}
