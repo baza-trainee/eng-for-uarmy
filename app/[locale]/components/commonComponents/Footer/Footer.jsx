@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={styles.footerContainer}>
         <div className={styles.companyBlock}>
           <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200} className={styles.footerLogo} priority />   
-          <Link className={styles.policyBlock} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}<span className={styles.policyDivider}></span> <span className={styles.policyBold}>Privacy</span></Link> 
+          <p className={styles.policyBlock} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}<span className={styles.policyDivider}></span> <Link href={'/'} className={styles.policyBold}>Privacy policy</Link></p> 
         </div>
         <div className={styles.menu}>
           <h4 className={styles.title}>{t("menu")}</h4>
@@ -19,7 +19,7 @@ const Footer = () => {
               <ul className={styles.list}>
                 <li><Link href={`/${locale}`}>{t("homepage")}</Link></li>
                 <li><Link href={`/${locale}/study`}>{t("study")}</Link></li>
-                <li><Link href={`/${locale}/https://github.com/baza-trainee/eng-for-uarmy/pull/40/conflict?name=app%252F%255Blocale%255D%252Fcomponents%252FcommonComponents%252FFooter%252FFooter.jsx&ancestor_oid=653342168b0ce27e853abe8ea0539fa56fb27350&base_oid=60753f15e555839265f227945932d61fdd3b2d3d&head_oid=4a7e03b09f83807053cdebc585aedf51e90b3530team`}>{t("ourTeam")}</Link></li>
+                <li><Link href={`/${locale}/team`}>{t("ourTeam")}</Link></li>
                 <li><Link href={`/${locale}/contact`}>{t("contactUs")}</Link></li>
               </ul>
           </nav>
