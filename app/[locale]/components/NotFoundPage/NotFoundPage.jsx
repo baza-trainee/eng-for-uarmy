@@ -49,9 +49,8 @@ const NotFoundPage = ({ error }) => {
             <span>four or four</span>
           </div>
           <p className={styles.descr}>
-            We couldn't find the page you're looking for but that's 4.5.0 (all
-            good).
-            {/* &apos; */}
+            We couldn&apos;t find the page you&apos;re looking for but
+            that&apos;s 4.5.0 (all good).
           </p>
         </div>
 
