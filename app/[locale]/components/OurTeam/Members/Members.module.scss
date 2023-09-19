@@ -4,7 +4,7 @@
 .members {
     width: $mobile;
     margin: 0 auto;
-    padding: 20px 20px 0 20px;
+    padding: 20px $section-padding-mob 0;
 
     @include mq(desktop) {
         width: $desktop;
@@ -16,7 +16,7 @@
 
         @include mq(desktop) {
             display: flex;
-            align-items: start;
+            align-items: flex-start;
             gap: 80px;
             margin-bottom: 67px;
         }

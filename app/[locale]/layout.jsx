@@ -1,6 +1,6 @@
 import "./globals.scss";
 import { NextIntlClientProvider } from "next-intl";
-import fonts from './fonts/fontsSrc';
+import fonts from './assets/fonts/fontsSrc';
 import Header from "./components/commonComponents/Header/Header";
 import Footer from "./components/commonComponents/Footer/Footer";
 
