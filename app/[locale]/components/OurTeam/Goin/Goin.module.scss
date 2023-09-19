@@ -1,30 +1,62 @@
 @import '../../../styles/variables.module';
-@import '../../../styles/utils.module';
+@import '../../../styles/mixins.module';
 
 .goin {
-    width: $desktop;
+    width: $mobile;
     margin: 0 auto;
-    padding: 80px $section-padding 0 $section-padding;
-    margin-bottom: 120px;
+    padding: 40px 20px 0 20px;
+    margin-bottom: 50px;
 
-    &__title{
-        margin-bottom: 8px;
-        font-family: inherit;
-        font-size: 28px;
-        font-weight: 400;
-        line-height: normal;
-
-        color: $color-black-text;
+    @include mq(desktop) {
+        width: $desktop;
+        margin: 0 auto;
+        padding: 80px $section-padding 0 $section-padding;
+        margin-bottom: 139px;
     }
 
-    &__icon{
-        margin-top: 20px;
-        margin-bottom: 80px;
+    &__title{
+        display: inline-block;
+        margin-bottom: 10px;
+
+        font-family: inherit;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.2;
+        
+        color: $color-black-text;
+
+        @include mq(desktop) {
+            margin-bottom: 8px;
+                
+            font-size: 28px;
+            line-height: normal;
+        }
+    }
+
+    &__desc{
+        margin-bottom: 50px;
+
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 150%;
+
+        color: $color-black-text;
+
+        @include mq(desktop) {
+            margin-bottom: 30px;
+        
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.408px;
+        }
     }
 
     &__wrapper{
-        display: flex;
-        justify-content: center;
-        gap: 18px;
+        @include mq(desktop) {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+        }
     } 
 }    
