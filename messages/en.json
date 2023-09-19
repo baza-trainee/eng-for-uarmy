@@ -118,5 +118,25 @@
     "joinOffer": "Check out our job vacancies or reach out to become volunteer",
     "vacancies": "Job vacancies",
     "volunteer": "Volunteer"
+  }, 
+  "Contact us": {
+    "title": "Contact us", 
+    "paragraph": "We value every connection we’ve made along our journey. Let us know what’s on your mind by filling out the form below.", 
+    "type": "Type of request",
+    "volonteer": "I’d like to volunteer", 
+    "partner": "I’d like to become a partner or sponsor", 
+    "spread": "I’d like to spread the word", 
+    "questions": "I have questions and/or feedback", 
+    "other": "Other", 
+    "name": "Your name", 
+    "email": "Your email", 
+    "tellUs": "Tell us more about your request", 
+    "send": "Send", 
+    "thanks": "Thanks for your message!", 
+    "getBack": "We'll get back to you as soon as we can.", 
+    "back": "Back", 
+    "donate": "Donate", 
+    "support": "To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!",
+    "bankDetails": "Bank details"
   }
 }

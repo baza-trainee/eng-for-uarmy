@@ -1,5 +1,6 @@
 import styles from './ContactUs.module.scss'
 import ContactForm from "./ContactForm/ContactForm"
+import DonateSection from './DonateSection/DonateSection'
 
 const ContactUs = () =>{
     return (
@@ -10,6 +11,7 @@ const ContactUs = () =>{
                 Let us know what’s on your mind by filling out the form below.</p>
             </div>
         <ContactForm />
+        <DonateSection />
         </section>
     )
 }

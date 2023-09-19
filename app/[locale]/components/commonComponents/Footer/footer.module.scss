@@ -2,25 +2,25 @@
 
 .footer{
     width: 100%;
-    height: 437px;
     background-color: $color-black;
 }
 .footerContainer{
     width: $desktop;
     margin: 0 auto;
     color: $color-white;
-    position: relative;
     padding: 10px 62px 68px 50px;
+    display: flex;
 }
 
 .companyBlock{
     display: flex;
-    justify-content: space-between;
-    
+    flex-direction: column;
+    height: 100%;
+    position: relative;
 }
 
 .footerLogo{
-    margin-right: 235px;
+    margin-right: 325px;
 }
 
 
@@ -28,19 +28,16 @@
 .menu{
     display: flex;
     flex-direction: column;
-    width: 284px;
-    padding-top: 70px;
+    width: 208px;
+    padding-top: 58px;
+    margin-right: 170px;
 }
 .title{
     color: $color-green;
     font-size: 28px;
-    padding-bottom: 32px;
+    margin-bottom: 30px;
     font-weight: 400;
   }
-
-.contactsBlock{
-    margin-bottom: 36px;
-}
 
 .list{
     display: flex;
@@ -52,199 +49,96 @@
 
 .list li{
     font-size: 18px;
-    margin-bottom: 26px;
     transition: color $transition-duration $timing-function;
+    &:not(:last-child){
+        margin-bottom: 26px;
+    }
+    &:hover {
+            color: $color-grey;
+    }
 }
-
-.list li:hover{
-    color: $color-grey;
-}
-
-
-
-
-
 
 .contactsFollowsBlock{
     display: flex;
     flex-direction: column;
-    width: 284px;
-    padding-top: 70px;
-    margin-right: 43px;
+    width: 264px;
+    padding-top: 58px;
 }
 
-.contacts p{
+.contactsBlock {
+    margin-bottom: 67px;
+}
+
+.contacts li{
     display: flex;
-    margin-bottom: 34px;
     font-family: Arial;
-    font-weight: 400;
     font-size: 18px;
-    font-style: normal;
+    &:not(:last-child) {
+        margin-bottom: 34px;
+    }
 }
 
 .contactLink{
     margin-left: 16px;
     transition: color $transition-duration $timing-function;
-
+    &:hover {
+        color: $color-grey;
+    }
 }
 
-.contactLink:hover{
-    color: $color-grey;
-
+.followTitle{
+    margin-bottom: 38px;
 }
-
 .followsIcons{
     display: flex;
-    margin-top: 5px;
-    :last-child{
-        margin-right: 0;
-    }
-
 }
 
-.followsIcons img{
+.followsIcons li{
     margin-right: 38px;
     cursor: pointer;
     transition: color $transition-duration $timing-function;
+    &:not(:last-child) {
+        margin-right: 38px;
+    }
+
 }
 
-.followsIcons img:hover{
-    fill: $color-olive;
+.followIcon{
+    transition: fill $transition-duration $timing-function;
+    &:hover path{
+        fill: $color-olive;
+    }
+    &:hover .youtubePath{
+        fill: $color-black;
+    }
 }
 
-.developerBlock{
+.policyBlock{
+    font-family: Arial;
+    font-size: 15px;
+    color: $color-light-grey;
+    display: flex;
+    align-items: center;
     position: absolute;
-    bottom: 67px;
-    left: 80px;
+    min-width: 555px;
+    left: 30px;
+    bottom: -159px;
+}
+.policyBold{
     font-family: Arial;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 27px;
+    cursor: pointer;
+}
+.policyDivider {
+    display: inline-block;
+    width: 1px;
+    height: 17px;
+    background-color: $color-white-text;
+    margin: 0 13px;
 }
 
 
-@media (min-width: 320px) and (max-width: 425px) {
-
-.footer{
-    height: 419px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-.companyBlock{
-    flex-direction: column;
-    align-items: center;
-}
-
-.menu{
-    display: none;
-}
-
-.contactsFollowsBlock {
-    display: flex;
-    flex-direction: column;
-    width: 142px;
-    padding-top: 0;
-    margin-right: 0;
-}
-
-.contactsBlock h2{
-    font-size: 15px;
-    padding-bottom: 23px;
-}
-
-.followsBlock h2{
-    font-size: 15px;
-}
 
 
-.contacts p{
-    margin-bottom: 20px;
-    font-size: 13px;
-}
-
-.contacts img{
-    width: 13px;
-}
-
-.contactLink{
-    margin-left: 11px;
-}
-
-.contacts p {
-    margin-bottom: 25px;
-    font-size: 13px;
-}
-
-.contactsBlock {
-    margin-bottom: 9px;
-}
-
-.followsIcons{
-    width: 15px;
-    height: 15px;
-    margin-top: 0;
-
-    :first-child{
-        width: 7px;
-    }
-}
-
-.followsIcons img{
-    margin-right: 30px;
-}
-
-.developerBlock{
-    position: static;
-    font-family: Arial;
-    font-size: 7px;
-    margin-top: 49px;
-}
-}
-
-@media (min-width: 890px) and (max-width: 1024px) {
-    .footerLogo{
-        margin-right: 0;
-        padding: 0;
-    }
-}
-
-@media (min-width: 610px) and (max-width: 889px) {
-    .footerLogo{
-        margin-right: 0;
-        padding: 0;
-    }
-
-    .developerBlock{
-        left: 20px;
-        bottom: 10px;
-    }
-
-    .contactsFollowsBlock{
-        margin-right: 0;
-    }
-}
-
-@media (min-width: 426px) and (max-width: 609px) {
-    .footerLogo{
-        height: 130px;
-        margin-right: 0;
-        padding: 0;
-    }
-
-    .developerBlock{
-        left: 20px;
-        bottom: 10px;
-        font-size: 10px;
-    }
-
-    .contactsFollowsBlock{
-        margin-right: 0;
-    }
-    .menu{
-        display: none;
-    }
-
-}
