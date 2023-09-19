@@ -14,10 +14,10 @@ const Slider = ({ data }) => {
             modules={[Navigation, Pagination]}
             spaceBetween={72}
             slidesPerView={3}
-            slidesPerGroup={3}
             navigation
             pagination={{
             clickable: true,
+            dynamicBullets: true
           }}
           speed={700}
           loop={true}
