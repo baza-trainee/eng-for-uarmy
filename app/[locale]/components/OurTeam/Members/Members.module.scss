@@ -1,27 +1,58 @@
 @import '../../../styles/variables.module';
-@import '../../../styles/utils.module';
+@import '../../../styles/mixins.module';
 
 .members {
-    width: $desktop;
+    width: $mobile;
     margin: 0 auto;
-    padding: 84px $section-padding 0 $section-padding;
+    padding: 20px 20px 0 20px;
 
-    &__wrapper{
-        display: flex;
-        gap: 80px;
-        margin-bottom: 60px;
+    @include mq(desktop) {
+        width: $desktop;
+        padding: 84px $section-padding 0 $section-padding;
     }
 
+    &__wrapper{
+        margin-bottom: 30px;
+
+        @include mq(desktop) {
+            display: flex;
+            align-items: start;
+            gap: 80px;
+            margin-bottom: 67px;
+        }
+    }   
+
     &__title {
+        margin-bottom: 10px;
+
+        font-family: inherit;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.2;
+
         color: $color-black-text;
+
+        @include mq(desktop) {
+            margin-bottom: 0;
+
+            font-size: 64px;
+        }
     }
 
     &__description{
-        font-family: Arial;
-        font-size: 18px;
-        font-weight: 400;
-        line-height: 27px;
         max-width: 322px;
+
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        
         color: $color-black-text;
+
+        @include mq(desktop) {
+            margin-top: 10px;
+
+            font-size: 18px;
+        }
     }
 }
