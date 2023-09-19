@@ -67,18 +67,14 @@ width: 360px;
     font-size: 22px;
     --size-corner: 36px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    transition: background-color $transition-duration $timing-function;
     cursor: pointer;
     &:hover {
         background-color: $color-olive;
     }
     &:active, &:focus {
         background-color: $color-black;
+        border: 3px solid $color-grey;
     }
-}
-
-.buttonText {
-    margin-right: 10px; /* Расстояние между текстом и иконкой, по желанию */
 }
 
 .paypallBtnIcon {
@@ -90,12 +86,19 @@ width: 360px;
 }
 
 .bankDetails {
+    position: relative;
     width: 739px;
     height: 373px;
-    padding: 71px 0 58px 131px;
+    padding: 57px 0 58px 131px;
     margin: 72px 271px 0px 271px; 
-    border: 1px solid $color-black;
 }
+
+.cardSVG{
+    position: absolute;
+    top: 0px;
+    right:0px;
+    pointer-events: none;
+  }
 
 .bankDetailstitle {
     font-family: Furore;

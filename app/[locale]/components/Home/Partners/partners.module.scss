@@ -52,7 +52,7 @@
     flex-direction: column;
     gap: 36px;
     align-items: center;
-    background-color: $color-ultra_light_grey;
+    background-color: $color-ultra-light-grey;
     border: none; 
     padding-top: 70px;
 }
@@ -63,7 +63,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: $color-white;
+    color: $color-ultra-light-grey;
     font-size: 22px;
     --size-corner: 36px;
     width: 482px;
@@ -83,5 +83,7 @@
     &:active,
     &:focus{
         background-color: $color-black;
+        border: 3px solid $color-grey;
+        color: $color-ultra-light-grey;
     }
 }
