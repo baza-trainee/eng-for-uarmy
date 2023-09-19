@@ -11,7 +11,7 @@ const Footer = () => {
       <div className={styles.footerContainer}>
         <div className={styles.companyBlock}>
           <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200} className={styles.footerLogo} priority />   
-          <p className={styles.policyBlock} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}<span className={styles.policyDivider}></span> <Link href={'/'} className={styles.policyBold}>Privacy policy</Link></p> 
+          <p className={styles.policyBlock}>{t("policy-first")} &copy; {t("policy-second")}<span className={styles.policyDivider}></span> <Link href={`/${locale}/privacy-policy`} className={styles.policyBold}>Privacy policy</Link></p> 
         </div>
         <div className={styles.menu}>
           <h4 className={styles.title}>{t("menu")}</h4>
