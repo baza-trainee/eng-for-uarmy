@@ -2,6 +2,7 @@
 @import '../../../styles/mixins.module';
 
 .mainLink {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,12 +31,36 @@
     transition: background-color $transition-duration $timing-function,
         border $transition-duration $timing-function;
 
-    &:hover {
+    &::before {
+        content: '';
+        position: absolute;
+        border: 3px solid transparent;
+        top: -3px;
+        left: -3px;
+        height: 65px;
+        rotate: 135deg;
+        z-index: 1;
+
+        transition: border $transition-duration $timing-function;
+
+        @include mq(desktop) {
+            top: 10px;
+            left: -3px;
+            width: 0;
+            height: 92px;
+        }
+    }
+    
+    &:hover { 
         background-color: $color-olive;
     }
 
     &:focus {
         border: 3px solid $color-grey;
+
+        &::before{
+            border: 3px solid $color-grey;
+        }
     }
 
     @include mq(desktop) {
