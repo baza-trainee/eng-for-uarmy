@@ -20,13 +20,14 @@ const Goin = () => {
             {isDesktop && <Image src='/large-arrow.svg' alt='arrow icon' width={96} height={96} />}
 
             <div className={styles.goin__wrapper}>
-                <a href='https://www.work.ua/'
+                {/* <a href='https://www.work.ua/'
                     className={styled.mainLink}
                     target="_blank" 
                     rel="noopener noreferre" 
                     aria-label="button Work.ua">
                     {t("vacancies")}
-                </a>
+                </a> */}
+                
                 <MainLink path='contact'>{t("volunteer")}</MainLink>
             </div>
         </section>
