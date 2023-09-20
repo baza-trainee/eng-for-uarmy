@@ -22,10 +22,15 @@ const CustomSelect = () => {
     setIsOpen(false);
   };
 
+  const changeStyle = selectedOption !== 'Type of request'
+
   return (
     <div className={styles.custom__select}>
-      <div className={styles.select__trigger} onClick={toggleDropdown}>
-        {selectedOption}
+      <div className={`${styles.select__trigger} ${isOpen ? styles.select__triggerBorder : ''}`} onClick={toggleDropdown}>
+      <span className={`${changeStyle ? styles.select__selected : ''}`}>{selectedOption}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+  <path d="M5 11L16 22L27 11" stroke="black"/>
+</svg>
       </div>
       {isOpen && (
         <ul className={styles.options}>
@@ -39,7 +44,7 @@ const CustomSelect = () => {
           ))}
         </ul>
       )}
-      {/* <input type="hidden" name="requestType" value={selectedOption} /> */}
+      <input type="hidden" name="requestType" value={selectedOption} />
     </div>
   );
 };

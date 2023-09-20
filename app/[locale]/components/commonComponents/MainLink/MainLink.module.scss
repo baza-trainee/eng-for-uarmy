@@ -2,13 +2,15 @@
 @import '../../../styles/mixins.module';
 
 .mainLink {
-    display: block;
-    min-width: 265px;
-    height: 92px;
-    padding: 32px 38px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 200px;
+    height: 50px;
     border: 3px solid transparent;
     outline: none;
-    --size-corner: 36px;
+    --size-corner: 20px;
     clip-path: polygon(0 0,
         100% 0,
         100% 100%,
@@ -19,9 +21,9 @@
     text-align: center;
     text-transform: uppercase;
     font-family: inherit;
-    font-size: 22px;
+    font-size: 13px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: normal;
 
     color: $color-ultra-light-grey;
     background-color: $color-black-btn;
@@ -29,15 +31,45 @@
     transition: background-color $transition-duration $timing-function,
         border $transition-duration $timing-function;
 
-    &:hover {
+    &::before {
+        content: '';
+        position: absolute;
+        border: 3px solid transparent;
+        top: -3px;
+        left: -3px;
+        height: 65px;
+        rotate: 135deg;
+        z-index: 1;
+
+        transition: border $transition-duration $timing-function;
+
+        @include mq(desktop) {
+            top: 10px;
+            left: -3px;
+            width: 0;
+            height: 92px;
+        }
+    }
+    
+    &:hover { 
         background-color: $color-olive;
     }
 
     &:focus {
         border: 3px solid $color-grey;
+
+        &::before{
+            border: 3px solid $color-grey;
+        }
     }
 
     @include mq(desktop) {
-        display: inline;
+        display: inline-flex;
+        height: 92px;
+        min-width: 265px;
+        --size-corner: 36px;
+
+        font-size: 22px;
+        line-height: 1.2;
     }
 }

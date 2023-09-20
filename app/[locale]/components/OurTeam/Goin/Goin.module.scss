@@ -4,13 +4,13 @@
 .goin {
     width: $mobile;
     margin: 0 auto;
-    padding: 40px 20px 0 20px;
+    padding: 50px $section-padding-mob 0;
     margin-bottom: 50px;
 
     @include mq(desktop) {
         width: $desktop;
         margin: 0 auto;
-        padding: 80px $section-padding 0 $section-padding;
+        padding: 80px $section-padding 0;
         margin-bottom: 139px;
     }
 
