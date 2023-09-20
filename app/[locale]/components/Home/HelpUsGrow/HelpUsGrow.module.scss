@@ -8,7 +8,7 @@
     flex-direction: column;
     width: $desktop;
     margin: 0 auto;
-    padding: 100px $section-padding 85px $section-padding;
+    padding: 100px $section-padding 86px $section-padding;
 }
 .sectionDesc{
     font-family: Arial;
@@ -16,7 +16,7 @@
     line-height: 27px;
     width: 320px;
     color: $color-black;
-    margin-left: 69px;
+    margin-left: 80px;
 }
 .sectionTitle{
     width: 400px;
@@ -44,7 +44,7 @@
     flex-direction: column;
     align-items: center;
     background-color: $color-white;
-    border: 1px solid black; 
+    border: 1px solid $color-black; 
     &:nth-child(odd) {
         padding-left: 34px;
         padding-right: 139px; 

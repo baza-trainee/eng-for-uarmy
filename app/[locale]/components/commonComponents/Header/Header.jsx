@@ -1,8 +1,8 @@
 "use client";
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
-import { usePathname } from 'next/navigation';
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 import { useState } from "react";
 import HeaderMobile from "./HeaderMobileElem";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
@@ -18,7 +18,6 @@ const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
 
   const openMobileMenu = () => {
-    console.log('click');
     setMobileMenu(!mobileMenu)
   }
 
@@ -46,7 +45,7 @@ const Header = () => {
         </button>
         </div>
     </div>
-    <HeaderMobile openMobileMenu={openMobileMenu} mobileMenu={mobileMenu} />
+    <HeaderMobile setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
     </header>
   
 };
