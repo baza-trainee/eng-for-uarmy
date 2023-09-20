@@ -3,16 +3,25 @@ import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
 import Image from "next/image";
-import styles from "./header.module.scss";
+import { useState } from "react";
+import HeaderMobile from "./HeaderMobileElem";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
-import HeaderMobile from "./HeaderMobileElem";
+import styles from "./header.module.scss";
 
 const Header = () => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
   const currentPathname = getCurrentPathname(pathname);
+
+  const [mobileMenu, setMobileMenu] = useState(false);
+
+  const openMobileMenu = () => {
+    console.log('click');
+    setMobileMenu(!mobileMenu)
+  }
+
   return <header className={styles.headerBox}>
       <div className={styles.header}>
       <Image src='/logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority />
@@ -28,10 +37,16 @@ const Header = () => {
         </nav>
         <div className={styles.headerWrapper}>
           <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
-          <LangSwitcher locale={locale} pathname={currentPathname} />
+        <LangSwitcher locale={locale} pathname={currentPathname} />
+        <button onClick={() => openMobileMenu()} className={styles.menuBtn}>
+            <svg className={styles.menuBurgerIcon} xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
+              <rect width="22" height="1.42857" fill="#768728"/>
+              <rect y="8.57129" width="22" height="1.42857" fill="#768728"/>
+            </svg>
+        </button>
         </div>
     </div>
-    <HeaderMobile/>
+    <HeaderMobile openMobileMenu={openMobileMenu} mobileMenu={mobileMenu} />
     </header>
   
 };

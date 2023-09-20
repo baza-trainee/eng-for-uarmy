@@ -14,6 +14,7 @@
   width: $mobile;
   margin: 0 auto;
   padding: 16px $mobile-padding;
+  
   @media screen and (min-width: $desktop) {
         width: $desktop;
         padding: 32px $section-padding;
@@ -25,15 +26,33 @@
   @media screen and (min-width: $desktop) {
       width: 170px;
       height: 76px;
-    }
+  }
 }
 .headerWrapper {
   display: flex;
+  align-items: center;
 }
 
 .mobileHeader{
-  display: none;
-  flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 25px 16px;
+    z-index: 120;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: $color-ultra-light-grey;
+    // transform: translateY(-100%);
+    display: none;
+    flex-direction: column;
+    .mobileHeader.open {
+      display: flex;
+      transform: translateY(0%);
+    }
+
   @media screen and (min-width: $desktop) {
       display: none;
     }
@@ -41,17 +60,17 @@
 .mobileHeader.open{
   display: flex;
 }
-// .mobileHeader.open .headerButton{
-//   display: block;
-//   @media screen and (min-width: $desktop) {
-//       display: none;
-//     }
-// }
+.mobileHeader.open .headerButton{
+  display: inline-block;
+  
+
+}
 
 .nav {
   display: none;
   @media screen and (min-width: $desktop) {
       display: flex;
+      align-items: center;
     }
  
 }
@@ -64,12 +83,14 @@
 }
 .navLink {
   position: relative;
-  font-size: 18px;
-  line-height: 27px;
+  display: inline;
+  font-size: 15px;
+  line-height: normal;
   color: $color-grey;
+
   transition: all $transition-duration $timing-function;
   &:not(:last-child){
-    margin-right: 20px;
+    margin-bottom: 30px;
   }
   &:hover{
     color: $color-black;
@@ -88,6 +109,14 @@
   &.activeLink::before {
     background-color: $color-black;
   }
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      line-height: 27px;
+      &:not(:last-child) {
+          margin-bottom: 0;
+          margin-right: 20px;
+        }
+    }
 }
 .activeLink {
   color: $color-black;
@@ -95,11 +124,12 @@
 
 .headerButton {
   display: none;
-  padding: 12px 16px;
-  font-family: inherit;
-  font-size: 16px;
   justify-content: center;
-  line-height: 27px;
+  padding: 17px 47px;
+  margin: 30px 0;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: normal;
   color: $color-white-text;
   background-color: $color-olive;
   border: none;
@@ -120,8 +150,23 @@
   &:focus:not(:active) {
     border: 3px solid $color-black;
   }
-    @media screen and (min-width: $desktop) {
-            display: flex;
-          }
+  
+  @media screen and (min-width: $desktop) {
+      display: flex;
+      padding: 12px 16px;
+      font-size: 16px;
+      line-height: 27px;
+      margin: 0;
+      }
 }
-
+.menuBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+.menuBurgerIcon{
+display: block;
+@media screen and (min-width: $desktop) {
+    display: none;
+  }
+}

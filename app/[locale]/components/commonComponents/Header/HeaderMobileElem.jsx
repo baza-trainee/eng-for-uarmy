@@ -5,13 +5,13 @@ import { usePathname } from 'next/navigation';
 import styles from "./header.module.scss";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
 
-const HeaderMobile = () => {
+const HeaderMobile = ({openMobileMenu, mobileMenu}) => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
   const currentPathname = getCurrentPathname(pathname);
     
-  return <div className={styles.mobileHeader}>
+  return <div className={`${styles.mobileHeader} ${mobileMenu && styles.open}`}>
         <nav className={styles.navMobile}>
           <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` || pathname === '/' ? styles.activeLink : ''}`}>{t("home")}</Link>
           <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link>
@@ -22,9 +22,7 @@ const HeaderMobile = () => {
             {t("contact")}
           </Link>
         </nav>
-        <div className={styles.headerWrapper}>
-          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
-        </div>
+        <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
       </div>
   
 };
