@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styles from './ContactForm.module.scss'
 import CustomSelect from "./CustomSelect/CustomSelect";
+import Image from "next/image";
 
 const ContactForm = () => {
 
@@ -9,6 +10,8 @@ const ContactForm = () => {
     }
 
   return (
+    <div className={styles.form__wrapper}>
+       <Image className={styles.cardSVG} src='../outlineBorders.svg' alt='card border' width={1120} height={663}/>
     <form className={styles.form} onSubmit={formHandler}>
      <div className={styles.form__mainblock}>
       <div className={styles.form__block}>
@@ -40,6 +43,7 @@ const ContactForm = () => {
       className={styles.form__button}
       >send</button>
     </form>
+    </div>
   );
 };
 
