@@ -11,29 +11,86 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: $desktop;
+  width: $mobile;
   margin: 0 auto;
-  padding: 32px $section-padding;
+  padding: 16px $mobile-padding;
+  
+  @media screen and (min-width: $desktop) {
+        width: $desktop;
+        padding: 32px $section-padding;
+      }
 }
 .logo {
-  width: 170px;
-  height: 76px;
+  width: 60px;
+  height: 26px;
+  @media screen and (min-width: $desktop) {
+      width: 170px;
+      height: 76px;
+  }
 }
 .headerWrapper {
   display: flex;
+  align-items: center;
+}
+
+.mobileHeader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 120;
+    display: block;
+    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    background-color: $color-ultra-light-grey;
+    transform: translateY(-100%);
+    transition: transform $transition-duration $timing-function;
+    &.open {
+      transform: translateY(0%);
+    }
+
+  @media screen and (min-width: $desktop) {
+      display: none;
+    }
+}
+.mobileHeader.open{
+  display: flex;
+}
+.mobileHeader.open .headerButton{
+  display: inline;
+  
+}
+.mobileHeaderBox{
+  position: relative;
+  width: $mobile;
+  padding: 25px 16px;
+  margin: 0 auto;
 }
 .nav {
-  display: flex;
+  display: none;
+  @media screen and (min-width: $desktop) {
+      display: flex;
+      align-items: center;
+    }
+ 
+}
+.navMobile{
+  display: block;
+  // flex-direction: column;
+  @media screen and (min-width: $desktop) {
+      display: none;
+    }
 }
 .navLink {
   position: relative;
-  font-size: 18px;
-  line-height: 27px;
+  display: inline-block;
+  font-size: 15px;
+  line-height: normal;
   color: $color-grey;
+  margin-bottom: 30px;
   transition: all $transition-duration $timing-function;
-  &:not(:last-child){
-    margin-right: 20px;
-  }
   &:hover{
     color: $color-black;
   }
@@ -51,18 +108,27 @@
   &.activeLink::before {
     background-color: $color-black;
   }
+    @media screen and (min-width: $desktop) {
+      font-size: 18px;
+      line-height: 27px;
+      margin-bottom: 0;
+      &:not(:last-child) {
+          margin-right: 20px;
+        }
+    }
 }
 .activeLink {
   color: $color-black;
 }
 
 .headerButton {
-  display: flex;
-  padding: 12px 16px;
-  font-family: inherit;
-  font-size: 16px;
+  display: none;
   justify-content: center;
-  line-height: 27px;
+  padding: 17px 47px;
+  margin-bottom: 30px;
+  font-family: inherit;
+  font-size: 13px;
+  line-height: normal;
   color: $color-white-text;
   background-color: $color-olive;
   border: none;
@@ -83,5 +149,31 @@
   &:focus:not(:active) {
     border: 3px solid $color-black;
   }
+  
+  @media screen and (min-width: $desktop) {
+      display: flex;
+      padding: 12px 16px;
+      font-size: 16px;
+      line-height: 27px;
+      margin: 0;
+      }
 }
+.menuBtn{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: block;
+  
+    @media screen and (min-width: $desktop) {
+      display: none;
+    }
+}
+.menuBurgerIcon{
 
+}
+.crossIcon{
+  position: absolute;
+  top: 25px;
+  right: 16px;
+  cursor: pointer;
+}

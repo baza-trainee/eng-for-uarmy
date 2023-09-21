@@ -1,0 +1,30 @@
+@import '../../../styles/variables.module';
+
+.socialMediaList{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.socialItem{
+    &:not(:last-child){
+        margin-bottom: 15px;
+    }
+}
+.svgIcon {
+    stroke: currentColor;
+    transition: stroke $transition-duration $timing-function;
+}
+
+.back {
+    fill: currentColor;
+    transition: fill $transition-duration $timing-function;
+}
+
+.socialBtn:hover .svgIcon {
+    stroke: $color-olive;
+}
+
+.socialBtn:hover .back {
+    fill: $color-olive;
+}

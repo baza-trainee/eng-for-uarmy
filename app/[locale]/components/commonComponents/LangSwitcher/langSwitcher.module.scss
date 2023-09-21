@@ -2,28 +2,39 @@
 
 .langSwitcher {
   position: relative;
-  margin-left: 20px;
+  margin-right: 20px;
+  @media screen and (min-width: $desktop) {
+      margin-right: 0;
+      margin-left: 20px;
+    }
 }
 .langItem {
   display: flex;
-  width: 75px;
-  padding: 12px 12px 12px 8px;
+  width: 45px;
+  font-size: 10px;
+  line-height: normal;
+  padding: 6px 7px 6px 5px;
   border: 1px solid $color-black;
   align-items: center;
-  line-height: 27px;
   outline: none;
   cursor: pointer;
   
   &:focus:not(:active) {
     border: 3px solid $color-olive;
   }
+    @media screen and (min-width: $desktop) {
+      width: 75px;
+      padding: 12px 12px 12px 8px;
+      line-height: 27px;
+      font-size: 16px;
+    }
 }
 
 .selectedLang {
   position: absolute;
   bottom: 0;
   right: 0;
-  width: 75px;
+  width: 45px;
   z-index: 2;
   transform: translate(0, calc(100% - 2px));
   background-color: $color-ultra-light-grey;
@@ -34,12 +45,19 @@
   &:hover {
     background-color: $color-green;
   }
+  @media screen and (min-width: $desktop) {
+    width: 75px;
+  }
 }
 
 .switchLang {
   color: $color-black;
   font-family: inherit;
-  font-size: 16px;
+  font-size: 10px;
   white-space: nowrap;
-  margin-right: 12px;
+  margin-right: 5px;
+  @media screen and (min-width: $desktop) {
+      font-size: 16px;
+      margin-right: 12px;
+    }
 }
