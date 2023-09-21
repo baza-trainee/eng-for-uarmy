@@ -17,7 +17,6 @@
         @include mq(desktop) {
             display: flex;
             align-items: flex-start;
-            gap: 80px;
             margin-bottom: 67px;
         }
     }   
@@ -30,9 +29,8 @@
         font-weight: 400;
         line-height: 1.2;
 
-        color: $color-black-text;
-
         @include mq(desktop) {
+            margin-right: 80px;
             margin-bottom: 0;
 
             font-size: 64px;
@@ -46,8 +44,6 @@
         font-size: 13px;
         font-weight: 400;
         line-height: 1.5;
-        
-        color: $color-black-text;
 
         @include mq(desktop) {
             margin-top: 10px;

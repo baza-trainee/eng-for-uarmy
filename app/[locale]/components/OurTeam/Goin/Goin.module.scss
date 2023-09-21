@@ -22,8 +22,6 @@
         font-size: 30px;
         font-weight: 400;
         line-height: 1.2;
-        
-        color: $color-black-text;
 
         @include mq(desktop) {
             margin-bottom: 8px;
@@ -40,8 +38,6 @@
         font-size: 13px;
         font-weight: 400;
         line-height: 150%;
-
-        color: $color-black-text;
 
         @include mq(desktop) {
             margin-bottom: 30px;
