@@ -1,4 +1,5 @@
 @import "./styles/_variables.module.scss";
+@import './styles/mixins.module';
 
 * {
 	box-sizing: border-box;
@@ -32,8 +33,14 @@ body {
 	width: 100%;
 }
 main {
-	margin-top: 140px;
+	margin-top: 58px;
 	min-height: 100vh;
+
+	@include mq(desktop) {
+		margin-top: 140px;
+	}
+	
+	
 }
 
 h1,

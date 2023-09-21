@@ -92,8 +92,10 @@
     &__link {
         transition: color $transition-duration $timing-function;
     
-        &:hover {
+        &:hover,
+        &:focus {
             color: $color-grey;
+            outline: none;
         }
     }
 }
@@ -130,8 +132,10 @@
 
         transition: color $transition-duration $timing-function;
         
-        &:hover {
+        &:hover,
+        &:focus { 
             color: $color-grey;
+            outline: none;
         }
 
         @include mq(desktop) {
@@ -180,12 +184,21 @@
     }
 
     &__link{
+        display: inline-block;
+        border: 1px solid transparent;
         color: $color-white;
 
         transition: color $transition-duration $timing-function;
 
         &:hover{
             color: $color-olive;
+            outline: none;
+            border: 1px solid $color-olive;
+        }
+
+        &:focus{
+            outline: none;
+            border: 1px solid $color-olive;
         }
     }
 
@@ -220,6 +233,10 @@
         font-weight: 400;
         line-height: normal;
 
+        &:focus{
+            outline: none;
+        }
+
         @include mq(desktop) {
             font-size: 15px;
         }
@@ -247,7 +264,9 @@
 
         transition: color $transition-duration $timing-function;
         
-        &:hover {
+        &:hover,
+        &:focus {
+            outline: none;
             color: $color-green;
         }    
 
