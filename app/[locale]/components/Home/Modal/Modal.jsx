@@ -1,11 +1,12 @@
 "use client";
-// import { useLocale} from "next-intl";
 import { useRouter } from "next/navigation";
-import styles from './Modal.module.scss';
-import Link from "next/link";
+import { useTranslations} from "next-intl";
 import { useCallback } from "react";
+import Link from "next/link";
+import styles from './Modal.module.scss';
 
 const Modal = () => {
+    const t = useTranslations("Contact us");
     const router = useRouter()
     const onCloseClick = useCallback(() => {
     document.body.classList.remove('modal-open');
@@ -18,8 +19,8 @@ const Modal = () => {
                     <path fillRule="evenodd" clipRule="evenodd" d="M19.2932 20.0003L10 29.2935L10.7071 30.0006L20.0003 20.7074L29.2935 30.0006L30.0007 29.2935L20.7074 20.0003L30.0006 10.7071L29.2934 10L20.0003 19.2932L10.7072 10L10.0001 10.7071L19.2932 20.0003Z" fill="#231F20"/>
                 </svg>
             </button>
-            <h3 className={styles.modalTitle}>Donate</h3>
-            <p className={styles.modalDesc}>To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!</p>
+            <h3 className={styles.modalTitle}>{t("donate")}</h3>
+            <p className={styles.modalDesc}>{t("support")}</p>
             <ul className={styles.btnList}>
                 <li><Link href={'/'} onClick={() => onCloseClick()} className={styles.btn}>
                         <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" width="30" height="36" viewBox="0 0 30 36" fill="none">
@@ -52,7 +53,7 @@ const Modal = () => {
                 </li>
             </ul>
             <div className={styles.infoCard}>
-                <h4 className={styles.infoTitle}>Банківські реквізити</h4>
+                <h4 className={styles.infoTitle}>{t("bankDetails")}</h4>
                 <p className={styles.infoItem}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
                 <p className={styles.infoItem}>КОД ЄДРПОУ 44966920</p>
                 <p className={styles.infoItem}>БАНК  УКРСИББАНК: п/р UA373510050000026007879183309</p>

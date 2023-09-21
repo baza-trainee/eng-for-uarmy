@@ -1,7 +1,6 @@
 'use client'
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
-import Image from "next/image";
 import MediaList from "./MediaList";
 import medias from "@/app/[locale]/libs/fakeMediaList";
 import styles from "./Media.module.scss";
