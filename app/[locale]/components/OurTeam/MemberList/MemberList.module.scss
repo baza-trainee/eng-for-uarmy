@@ -5,18 +5,29 @@
     &__list {
         display: flex;
         flex-wrap: wrap;
-        gap: 28px;
-
-        @include mq(desktop) {
-            gap: 20px;
-        }
     }
 
     &__item {
         flex-basis: calc((100% - 28px) / 2);
 
+        &:not(:nth-child(2n)) {
+            margin-right: 28px;
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 28px;
+        }
+
         @include mq(desktop) {
             flex-basis: calc((100% - 3*20px) / 4);
+
+            &:not(:nth-child(4n)) {
+                margin-right: 20px;
+            }
+            
+            &:not(:last-child) {
+                margin-bottom: 20px;
+            }
         }
     }    
 
@@ -38,15 +49,12 @@
         }
     }
         
-
     &__name {
         margin-bottom: 10px;
         font-family: inherit;
         font-size: 10px;
         font-weight: 400;
         line-height: normal;
-
-        color: $color-black-text;
 
         @include mq(desktop){
             margin-bottom: 9px;
@@ -61,8 +69,6 @@
         font-size: 10px;
         font-weight: 400;
         line-height: 1.2;
-        
-        color: $color-black-text;
 
         @include mq(desktop) {
             font-size: 18px;

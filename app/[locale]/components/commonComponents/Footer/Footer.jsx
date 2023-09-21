@@ -7,72 +7,117 @@ import styles from "./footer.module.scss";
 const Footer = () => {
   const t = useTranslations("Footer");
   const locale = useLocale();
-  return <footer className={styles.footer}>
-      <div className={styles.footerContainer}>
-        <div className={styles.companyBlock}>
-          <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200} className={styles.footerLogo} priority />   
-          <p className={styles.policyBlock} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}<span className={styles.policyDivider}></span> <Link href={'/'} className={styles.policyBold}>Privacy policy</Link></p> 
-        </div>
+
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.footer__container}>
+        <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200}
+          className={styles.footer__logo} priority />
+
         <div className={styles.menu}>
-          <h4 className={styles.title}>{t("menu")}</h4>
-          <nav className={styles.nav}>
-              <ul className={styles.list}>
-                <li><Link href={`/${locale}`}>{t("homepage")}</Link></li>
-                <li><Link href={`/${locale}/study`}>{t("study")}</Link></li>
-                <li><Link href={`/${locale}/team`}>{t("ourTeam")}</Link></li>
-                <li><Link href={`/${locale}/contact`}>{t("contactUs")}</Link></li>
+          <h4 className={styles.footer__title}>{t("menu")}</h4>
+
+          <nav>
+              <ul className={styles.menu__list}>
+                <li className={styles.menu__item}>
+                  <Link className={styles.menu__link} href={`/${locale}`}>{t("homepage")}</Link>
+                </li>
+
+                <li className={styles.menu__item}>
+                  <Link className={styles.menu__link} href={`/${locale}/study`}>{t("study")}</Link>
+                </li>
+
+                <li className={styles.menu__item}>
+                  <Link className={styles.menu__link} href={`/${locale}/team`}>{t("ourTeam")}</Link>
+                </li>
+
+                <li className={styles.menu__item}>
+                  <Link className={styles.menu__link} href={`/${locale}/contact`}>{t("contactUs")}</Link>
+                </li>
               </ul>
           </nav>
         </div>
-        <div className={styles.contactsFollowsBlock}>
 
-          <div className={styles.contactsBlock}>
-            <h4 className={styles.title}>{t("contacts")}</h4>
-            <ul className={styles.contacts}>
-              <li><img src="/footerIcons/telIcon.svg" alt="telIcon" /><a className={styles.contactLink} href="tel:+380939000000">+ 380 93 900 00 00</a></li>
-              <li><img src="/footerIcons/mailIcon.svg" alt="mailIcon" /><a className={styles.contactLink} href="mailto:welcome@efa.com">welcome@efa.com</a></li>
+        <div className={styles.footer__follows}>
+
+          <div className={styles.contacts}>
+            <h4 className={styles.footer__title}>{t("contacts")}</h4>
+
+            <ul>
+              <li className={styles.contacts__item}>
+                <a className={styles.contacts__link} href="tel:+380939000000">
+                  <svg className={styles.contacts__icon} width="15" height="16" viewBox="0 0 15 16">
+                    <path d="M3.44412 0.846147C3.31524 0.632082 3.09897 0.491585 2.85062 0.461163C2.81744 0.457291 2.7837 0.455078 2.75051 0.455078C2.53811 0.455078 2.33512 0.538602 2.18191 0.691268L0.315133 2.55811C0.102182 2.76886 -0.0117599 3.05981 0.000961826 3.35739C0.0606985 4.69267 0.562929 8.16306 3.92644 11.5295C7.2905 14.8936 10.7619 15.3953 12.0982 15.4551C12.3974 15.465 12.6845 15.3527 12.8969 15.1409L14.7637 13.2741C14.9401 13.0976 15.0242 12.8537 14.9938 12.6053C14.9633 12.3564 14.8229 12.1401 14.6082 12.0112L11.7475 10.296C11.43 10.1062 11.0257 10.1555 10.7641 10.4165L9.89292 11.2855C9.64402 11.5339 9.26845 11.5953 8.9576 11.4382C8.44596 11.1821 7.55213 10.5941 6.2075 9.24887C4.86176 7.90308 4.2738 7.00977 4.0177 6.49701C3.86006 6.18614 3.92091 5.81001 4.1687 5.5622L5.03986 4.69101C5.30094 4.42993 5.35072 4.02503 5.16044 3.70753L3.44412 0.846147Z"/>
+                  </svg>
+                  +380 93 900 00 00
+                </a>
+              </li>
+
+              <li className={styles.contacts__item}>
+                <a className={styles.contacts__link} href="mailto:welcome@efa.com">
+                  <svg className={styles.contacts__icon} width="15" height="11" viewBox="0 0 15 11">
+                    <path d="M0 10.4178L6.09543 5.76762L0.051121 1.25977C0.0190451 1.32722 0 1.40157 0 1.48085V10.4178Z"/>
+                    <path d="M0.535825 0.955078C0.535825 0.955078 0.531315 0.955571 0.528809 0.955571L7.02218 5.79825C7.30334 6.00801 7.69677 6.00801 7.97844 5.79825L14.4713 0.955571C14.4713 0.955571 14.4668 0.955078 14.4643 0.955078H0.535825Z"/>
+                    <path d="M15.0007 10.4178V1.48085C15.0007 1.40157 14.9817 1.32722 14.9496 1.25977L8.90527 5.76762L15.0007 10.4178Z"/>
+                    <path d="M14.4642 10.9532C14.5624 10.9532 14.6536 10.9251 14.7333 10.8793L8.4625 6.0957L8.30212 6.21535C8.06606 6.39163 7.78289 6.47977 7.49972 6.47977C7.21655 6.47977 6.93388 6.39212 6.69782 6.21585L6.53744 6.0962L0.266602 10.8793C0.345789 10.9251 0.437005 10.9532 0.535738 10.9532H14.4642Z"/>
+                  </svg>
+                  welcome@efa.com
+                </a>
+              </li>
             </ul>
           </div>
 
-          <div className={styles.followsBlock}>
-            <h4 className={`${styles.title} ${styles.followTitle}`}>{t("follow")}</h4>
-            <ul className={styles.followsIcons}>
-              <li>
-                <Link href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer">
-                  <svg className={styles.followIcon} width="10" height="20" viewBox="0 0 10 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M2.11802 20H6.18707V9.91743H9.02574L9.32454 6.54498H6.18707C6.18707 6.54498 6.18707 5.28466 6.18707 4.62408C6.18707 3.82442 6.34526 3.51152 7.12743 3.51152C7.75141 3.51152 9.33333 3.51152 9.33333 3.51152V0C9.33333 0 7.01318 0 6.51224 0C3.48023 0 2.11802 1.32116 2.11802 3.84181C2.11802 6.04085 2.11802 6.53629 2.11802 6.53629H0V9.95219H2.11802V20Z" fill="#F9F9F9"/>
+          <div className={styles.social}>
+            <h4 className={`${styles.footer__title} ${styles.social__title}`}>{t("follow")}</h4>
+            <ul className={styles.social__list}>
+              <li className={styles.social__item}>
+                <Link className={styles.social__link} href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer">
+                  <svg className={styles.social__icon} width="7" height="16" viewBox="0 0 7 16">
+                    <path d="M1.58851 15.4551H4.6403V7.89315H6.7693L6.99341 5.36381H4.6403C4.6403 5.36381 4.6403 4.41857 4.6403 3.92314C4.6403 3.3234 4.75895 3.08872 5.34557 3.08872C5.81356 3.08872 7 3.08872 7 3.08872V0.455078C7 0.455078 5.25989 0.455078 4.88418 0.455078C2.61017 0.455078 1.58851 1.44595 1.58851 3.33643C1.58851 4.98572 1.58851 5.35729 1.58851 5.35729H0V7.91922H1.58851V15.4551Z" />
                   </svg>
                 </Link>
               </li>
-              <li>
-                <Link href="https://www.instagram.com/engforuarmy/" target="_blank" rel="noopener noreferrer">
-                  <svg className={styles.followIcon} width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M14.6407 20H6.02497C2.88655 20 0.333496 17.4469 0.333496 14.3073V5.69148C0.333496 2.55306 2.88655 0 6.02624 0H14.642C17.7804 0 20.3348 2.55306 20.3348 5.69275V14.3085C20.3335 17.4469 17.7792 20 14.6407 20ZM6.02624 1.71429C3.83302 1.71429 2.04778 3.49826 2.04778 5.69275V14.3085C2.04778 16.5017 3.83175 18.287 6.02624 18.287H14.642C16.8352 18.287 18.6205 16.503 18.6205 14.3085V5.69275C18.6205 3.49952 16.8365 1.71429 14.642 1.71429H6.02624Z" fill="#F9F9F9"/>
-                    <path d="M10.3327 15.1215C7.50854 15.1215 5.21143 12.8244 5.21143 10.0002C5.21143 7.17602 7.50854 4.87891 10.3327 4.87891C13.1569 4.87891 15.4541 7.17602 15.4541 10.0002C15.4541 12.8244 13.1569 15.1215 10.3327 15.1215ZM10.3327 6.59446C8.45374 6.59446 6.92571 8.12249 6.92571 10.0015C6.92571 11.8805 8.45374 13.4085 10.3327 13.4085C12.2117 13.4085 13.7398 11.8805 13.7398 10.0015C13.7398 8.12249 12.2117 6.59446 10.3327 6.59446Z" fill="#F9F9F9"/>
-                    <path d="M16.9044 4.58575C16.9044 5.26615 16.3533 5.81604 15.6741 5.81604C14.9937 5.81604 14.4438 5.26488 14.4438 4.58575C14.4438 3.90663 14.995 3.35547 15.6741 3.35547C16.3533 3.3542 16.9044 3.90536 16.9044 4.58575Z" fill="#F9F9F9"/>
+
+              <li className={styles.social__item}>
+                <Link className={styles.social__link} href="https://www.instagram.com/engforuarmy/" target="_blank" rel="noopener noreferrer">
+                  <svg className={styles.social__icon} width="15" height="16" viewBox="0 0 15 16">
+                    <path d="M10.7304 15.4551H4.26861C1.91479 15.4551 0 13.5403 0 11.1855V4.72369C0 2.36987 1.91479 0.455078 4.26956 0.455078H10.7314C13.0852 0.455078 15.0009 2.36987 15.0009 4.72464V11.1865C15 13.5403 13.0843 15.4551 10.7304 15.4551ZM4.26956 1.74079C2.62464 1.74079 1.28571 3.07877 1.28571 4.72464V11.1865C1.28571 12.8314 2.62369 14.1703 4.26956 14.1703H10.7314C12.3763 14.1703 13.7152 12.8323 13.7152 11.1865V4.72464C13.7152 3.07972 12.3773 1.74079 10.7314 1.74079H4.26956Z"/>
+                    <path d="M7.49919 11.7972C5.38104 11.7972 3.6582 10.0744 3.6582 7.95622C3.6582 5.83807 5.38104 4.11523 7.49919 4.11523C9.61734 4.11523 11.3402 5.83807 11.3402 7.95622C11.3402 10.0744 9.61734 11.7972 7.49919 11.7972ZM7.49919 5.4019C6.08994 5.4019 4.94392 6.54792 4.94392 7.95717C4.94392 9.36642 6.08994 10.5124 7.49919 10.5124C8.90844 10.5124 10.0545 9.36642 10.0545 7.95717C10.0545 6.54792 8.90844 5.4019 7.49919 5.4019Z"/>
+                    <path d="M12.4279 3.89537C12.4279 4.40566 12.0146 4.81808 11.5052 4.81808C10.9949 4.81808 10.5825 4.40471 10.5825 3.89537C10.5825 3.38603 10.9959 2.97266 11.5052 2.97266C12.0146 2.97171 12.4279 3.38507 12.4279 3.89537Z"/>
                   </svg>
                 </Link>
               </li>
-              <li>
-                <Link href="https://t.me/ENGforUARMY" target="_blank" rel="noopener noreferrer">
-                  <svg className={styles.followIcon} width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M0.833553 7.45575C2.8437 6.37177 5.09851 5.45568 7.19365 4.53959C10.8119 3.04658 14.4302 1.56822 18.1059 0.201413C18.8238 -0.0374683 20.1011 -0.263955 20.2309 0.778335C20.1597 2.24317 19.8863 3.70801 19.6853 5.1582C19.1971 8.36958 18.6228 11.5674 18.0622 14.7642C17.875 15.8346 16.5115 16.3845 15.6363 15.6938C13.54 14.3134 11.4437 12.9331 9.3761 11.5246C8.70184 10.8485 9.33245 9.87724 9.93664 9.39722C11.6596 7.73519 13.4825 6.31205 15.1205 4.56551C15.5662 3.52322 14.259 4.39649 13.8283 4.66354C11.4735 6.25571 9.17623 7.9459 6.67791 9.3544C5.41439 10.044 3.92114 9.45244 2.65762 9.0727C1.52275 8.62198 -0.142804 8.15774 0.833553 7.45349V7.45575Z" fill="#F9F9F9"/>
+
+              <li className={styles.social__item}>
+                <Link className={styles.social__link} href="https://t.me/ENGforUARMY" target="_blank" rel="noopener noreferrer">
+                  <svg className={styles.social__icon} width="15" height="16" viewBox="0 0 15 16">
+                    <path d="M0.375043 8.29884C1.88265 7.48586 3.57376 6.79879 5.14512 6.11172C7.85881 4.99197 10.5725 3.8832 13.3293 2.85809C13.8677 2.67893 14.8257 2.50907 14.923 3.29078C14.8696 4.38941 14.6646 5.48804 14.5138 6.57568C14.1477 8.98422 13.717 11.3826 13.2965 13.7802C13.1561 14.583 12.1335 14.9954 11.4771 14.4774C9.90485 13.4421 8.33263 12.4069 6.78195 11.3505C6.27625 10.8434 6.74921 10.115 7.20236 9.75495C8.49459 8.50843 9.86178 7.44107 11.0903 6.13116C11.4245 5.34944 10.4441 6.0044 10.1211 6.20469C8.35503 7.39881 6.63205 8.66646 4.75831 9.72283C3.81067 10.24 2.69073 9.79636 1.74309 9.51156C0.891937 9.17352 -0.357225 8.82534 0.375043 8.29715V8.29884Z"/>
                   </svg>
                 </Link>
               </li>
-              <li>
-                <Link href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer">
-                  <svg className={styles.followIcon} width="21" height="20" viewBox="0 0 21 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M19.5784 6.03284C19.3571 5.23153 18.7186 4.60406 17.9001 4.38975C16.8007 3.97421 6.15212 3.77061 3.0631 4.40165C2.24463 4.61835 1.60372 5.24344 1.38482 6.04474C0.888629 8.176 0.850928 12.7838 1.39698 14.9627C1.61832 15.764 2.2568 16.3915 3.07526 16.6058C5.25217 17.0963 15.6016 17.1654 17.9123 16.6058C18.7307 16.3891 19.3717 15.764 19.5906 14.9627C20.1196 12.6409 20.1573 8.31888 19.5784 6.03284Z" fill="#F9F9F9"/>
-                  <path className={styles.youtubePath} d="M14 10.5L9 8V13L14 10.5Z" fill="#171717"/>
+
+              <li className={styles.social__item}>
+                <Link className={styles.social__link} href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer">
+                  <svg className={styles.social__icon} width="15" height="16" viewBox="0 0 15 16">
+                    <path d="M14.3224 4.94445C14.1576 4.34813 13.6825 3.88118 13.0734 3.72169C12.2553 3.41245 4.33072 3.26093 2.03191 3.73055C1.42282 3.89181 0.945865 4.35699 0.782958 4.95331C0.413701 6.53936 0.385645 9.96842 0.792008 11.5899C0.956726 12.1862 1.43187 12.6532 2.04096 12.8127C3.66099 13.1777 11.3629 13.2291 13.0825 12.8127C13.6916 12.6514 14.1685 12.1862 14.3314 11.5899C14.7251 9.86209 14.7532 6.64569 14.3224 4.94445Z"/>
+                    <path d="M10.2505 8.33203L6.50049 6.45703V10.207L10.2505 8.33203Z" fill="#231F20"/>
                   </svg>
                 </Link>
               </li>
             </ul>
+          </div>
+        </div>
+
+        <div className={styles.policy}>
+          <Link className={styles.policy__baza} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}</Link>
+                
+          <span className={styles.policy__divider}></span>
+
+          <Link href={`/${locale}/privacy-policy`} className={styles.policy__link}>Privacy policy</Link>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
+  )  
 }
 
 export default Footer;

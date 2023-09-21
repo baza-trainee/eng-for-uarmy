@@ -1,142 +1,261 @@
 @import '../../../styles/variables.module';
+@import '../../../styles/mixins.module';
 
 .footer{
-    width: 100%;
     background-color: $color-black;
-}
-.footerContainer{
-    width: $desktop;
-    margin: 0 auto;
-    color: $color-white;
-    padding: 10px 62px 68px 50px;
-    display: flex;
-}
 
-.companyBlock{
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    position: relative;
-}
+    &__container {
+        overflow: hidden;
+        position: relative;
+        width: $mobile;
+        margin: 0 auto;
+        padding: 0 0 27px;
+    
+        @include mq(desktop) {
+            width: $desktop;
+            padding: 10px 50px 62px;
+            display: flex;
 
-.footerLogo{
-    margin-right: 325px;
-}
+            color: $color-white;
+        }
+    }
 
+    &__logo{
+        display: block;
+        margin: 0 auto;
+        margin-top: -20px;
 
+        @include mq(desktop) {
+            margin: 0 325px 0 0;
+        }
+    }
 
-.menu{
-    display: flex;
-    flex-direction: column;
-    width: 208px;
-    padding-top: 58px;
-    margin-right: 170px;
-}
-.title{
-    color: $color-green;
-    font-size: 28px;
-    margin-bottom: 30px;
-    font-weight: 400;
-  }
+    &__title {
+        margin-bottom: 20px;
 
-.list{
-    display: flex;
-    flex-direction: column;
-    :last-child{
-        margin-bottom: 0;
+        text-align: left;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: normal;
+
+        color: $color-green;
+
+        @include mq(desktop) {
+            margin-bottom: 30px;
+
+            font-size: 28px;
+        } 
+    }      
+    
+    &__follows{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+
+        @include mq(desktop) {
+            align-items: start;
+            padding-top: 58px;
+            margin-bottom: 0;
+        }
     }
 }
 
-.list li{
-    font-size: 18px;
-    transition: color $transition-duration $timing-function;
-    &:not(:last-child){
-        margin-bottom: 26px;
+.menu {
+    display: none;
+
+    @include mq(desktop) {
+        display: flex;
+        flex-direction: column;
+        width: 208px;
+        padding-top: 58px;
+        margin-right: 171px;
     }
-    &:hover {
+
+    &__list {
+        @include mq(desktop) {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &__item {
+        font-size: 18px;
+        line-height: normal;
+        letter-spacing: 0.35px;
+    
+        &:not(:last-child) {
+            margin-bottom: 28px;
+        }
+    }
+
+    &__link {
+        transition: color $transition-duration $timing-function;
+    
+        &:hover {
             color: $color-grey;
+        }
     }
 }
 
-.contactsFollowsBlock{
+.contacts{
+    margin-bottom: 30px;
+
+    @include mq(desktop) {
+        margin-bottom: 67px;
+    }
+     
+    &__item{
+        &:not(:last-child) {
+                margin-bottom: 20px;
+            }
+
+        @include mq(desktop) {
+            &:not(:last-child) {
+                margin-bottom: 29px;
+            }
+        }
+    }
+
+    &__link{
+        display: flex;
+        align-items: center;
+
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+        
+        color: $color-white;
+
+        transition: color $transition-duration $timing-function;
+        
+        &:hover {
+            color: $color-grey;
+        }
+
+        @include mq(desktop) {
+            font-size: 18px;
+        }
+    }  
+    
+    &__icon{
+        display: inline-block;
+        fill: currentColor;
+        margin-right: 10px;
+
+        @include mq(desktop) {
+           width: 22px;
+           height: 22px;
+           margin-right: 15px;
+        }
+    }
+}
+
+.social{
+    &__title{
+        margin-bottom: 30px; 
+
+        @include mq(desktop) {
+            margin-bottom: 38px;
+        }
+    }
+
+    &__list{
+        display: flex;
+        align-items: center;
+    }
+
+    &__item{
+        &:not(:last-child) {
+            margin-right: 30px;
+        }
+
+        @include mq(desktop) {
+            &:not(:last-child) {
+                margin-right: 38px;
+            }
+        }
+
+    }
+
+    &__link{
+        color: $color-white;
+
+        transition: color $transition-duration $timing-function;
+
+        &:hover{
+            color: $color-olive;
+        }
+    }
+
+    &__icon{
+        display: inline-block;
+        fill: currentColor;
+
+        @include mq(desktop) {
+            width: 20px;
+            height: 20px;
+        }
+
+    }
+}
+
+.policy {
     display: flex;
-    flex-direction: column;
-    width: 264px;
-    padding-top: 58px;
-}
-
-.contactsBlock {
-    margin-bottom: 67px;
-}
-
-.contacts li{
-    display: flex;
-    font-family: Arial;
-    font-size: 18px;
-    &:not(:last-child) {
-        margin-bottom: 34px;
-    }
-}
-
-.contactLink{
-    margin-left: 16px;
-    transition: color $transition-duration $timing-function;
-    &:hover {
-        color: $color-grey;
-    }
-}
-
-.followTitle{
-    margin-bottom: 38px;
-}
-.followsIcons{
-    display: flex;
-}
-
-.followsIcons li{
-    margin-right: 38px;
-    cursor: pointer;
-    transition: color $transition-duration $timing-function;
-    &:not(:last-child) {
-        margin-right: 38px;
-    }
-
-}
-
-.followIcon{
-    transition: fill $transition-duration $timing-function;
-    &:hover path{
-        fill: $color-olive;
-    }
-    &:hover .youtubePath{
-        fill: $color-black;
-    }
-}
-
-.policyBlock{
-    font-family: Arial;
-    font-size: 15px;
-    color: $color-light-grey;
-    display: flex;
+    justify-content: center;
     align-items: center;
-    position: absolute;
-    min-width: 555px;
-    left: 30px;
-    bottom: -159px;
-}
-.policyBold{
-    font-family: Arial;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 27px;
-    cursor: pointer;
-}
-.policyDivider {
-    display: inline-block;
-    width: 1px;
-    height: 17px;
-    background-color: $color-white-text;
-    margin: 0 13px;
+
+    color: $color-light-grey;
+
+    @include mq(desktop) {
+        position: absolute;
+        bottom: 62px;
+        left: 80px;
+    }
+
+    &__baza {
+        font-family: Arial;
+        font-size: 7px;
+        font-weight: 400;
+        line-height: normal;
+
+        @include mq(desktop) {
+            font-size: 15px;
+        }
+    }
+
+    &__divider {
+        display: inline-block;
+        width: 1px;
+        height: 11px;
+        margin: 0 5px;
+
+        background-color: $color-white-text;
+
+        @include mq(desktop) {
+            height: 17px;
+            margin: 0 13px;
+        }
+    }
+
+    &__link {
+        font-family: Arial;
+        font-size: 8px;
+        font-weight: 700;
+        line-height: normal;
+
+        transition: color $transition-duration $timing-function;
+        
+        &:hover {
+            color: $color-green;
+        }    
+
+        @include mq(desktop) {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
 }
 
 
