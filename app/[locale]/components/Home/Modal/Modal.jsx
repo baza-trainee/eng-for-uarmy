@@ -1,5 +1,5 @@
 "use client";
-import { useLocale} from "next-intl";
+// import { useLocale} from "next-intl";
 import { useRouter } from "next/navigation";
 import styles from './Modal.module.scss';
 import Link from "next/link";
@@ -10,12 +10,12 @@ const Modal = () => {
     const onCloseClick = useCallback(() => {
     document.body.classList.remove('modal-open');
     router.back()
-  });
+    });
     return <div className={styles.backdrop} onClick={() => onCloseClick()}>
         <div className={styles.modal} onClick={(e) => {e.stopPropagation()}}>
             <button onClick={() => onCloseClick()}>
                 <svg className={styles.iconCross} width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M19.2932 20.0003L10 29.2935L10.7071 30.0006L20.0003 20.7074L29.2935 30.0006L30.0007 29.2935L20.7074 20.0003L30.0006 10.7071L29.2934 10L20.0003 19.2932L10.7072 10L10.0001 10.7071L19.2932 20.0003Z" fill="black"/>
+                    <path fillRule="evenodd" clipRule="evenodd" d="M19.2932 20.0003L10 29.2935L10.7071 30.0006L20.0003 20.7074L29.2935 30.0006L30.0007 29.2935L20.7074 20.0003L30.0006 10.7071L29.2934 10L20.0003 19.2932L10.7072 10L10.0001 10.7071L19.2932 20.0003Z" fill="#231F20"/>
                 </svg>
             </button>
             <h3 className={styles.modalTitle}>Donate</h3>

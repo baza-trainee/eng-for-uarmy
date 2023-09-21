@@ -1,3 +1,4 @@
+import partner_0 from './imageOfPartners/partnersImage.svg';
 import partner_1 from './imageOfPartners/partnersImage.svg';
 import partner_2 from './imageOfPartners/partnersImage.svg';
 import partner_3 from './imageOfPartners/partnersImage.svg';
@@ -11,18 +12,18 @@ import partner_10 from './imageOfPartners/partnersImage.svg';
 import partner_11 from './imageOfPartners/partnersImage.svg';
 import partner_12 from './imageOfPartners/partnersImage.svg';
 import partner_13 from './imageOfPartners/partnersImage.svg';
-import partner_14 from './imageOfPartners/partnersImage.svg';
-
-
-
-    
 
 const data = [
+    {
+        id: 0,
+        src: partner_0,
+        alt: "Fhoto of the partner zero",
+    },
     {
         id: 1,
         src: partner_1,
         alt: "Fhoto of the partner one",
-    },
+    }, 
     {
         id: 2,
         src: partner_2,
@@ -51,41 +52,36 @@ const data = [
     {
         id: 7,
         src: partner_7,
-        alt: "Fhoto of the partner six",
+        alt: "Fhoto of the partner seven",
     }, 
     {
         id: 8,
         src: partner_8,
-        alt: "Fhoto of the partner six",
-    }, 
-    {
+        alt: "Fhoto of the partner eight",
+    }, {
         id: 9,
         src: partner_9,
-        alt: "Fhoto of the partner six",
-    }, {
+        alt: "Fhoto of the partner nine",
+    }, 
+    {
         id: 10,
         src: partner_10,
-        alt: "Fhoto of the partner six",
+        alt: "Fhoto of the partner ten",
     }, 
     {
         id: 11,
         src: partner_11,
-        alt: "Fhoto of the partner six",
+        alt: "Fhoto of the partner eleven",
     }, 
     {
         id: 12,
         src: partner_12,
-        alt: "Fhoto of the partner six",
+        alt: "Fhoto of the partner twelve",
     }, 
     {
         id: 13,
         src: partner_13,
-        alt: "Fhoto of the partner six",
-    }, 
-    {
-        id: 14,
-        src: partner_14,
-        alt: "Fhoto of the partner six",
+        alt: "Fhoto of the partner thirteen",
     }
 ]
 
