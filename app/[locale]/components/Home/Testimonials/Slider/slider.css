@@ -1,11 +1,16 @@
 .my-swiper {
 	position: relative;
-	padding-bottom: 90px;
-}
 
-.container-slider {
-	padding-left: 96px;
-	padding-right: 96px;
+	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+		padding-bottom: 40px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		padding-left: 98px;
+		padding-right: 98px;
+		padding-bottom: 120px;
+	}
+
 }
 
 .my-swiper .swiper-button-prev,
@@ -13,16 +18,28 @@
 	position: absolute;
 	width: 68px;
 	height: 68px;
-	transform: translateY(-50px);
+	transform: translateY(-70px);
 	z-index: 1000;
 }
 
 .my-swiper .swiper-button-prev {
-	left: 30px;
+	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+		display: none;
+	}
+
+	@media screen and (min-width: 1280px) {
+		left: 30px;
+	}
 }
 
 .my-swiper .swiper-button-next {
-	right: 30px;
+	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+		display: none;
+	}
+
+	@media screen and (min-width: 1280px) {
+		right: 30px;
+	}
 }
 
 .my-swiper .swiper-button-prev::after,
@@ -34,23 +51,49 @@
 }
 
 .my-swiper .swiper-button-prev::after {
-	background-image: url("../../../../../../public/testimonials/erow-left.svg");
+	background-image: url("../../../../../../public/testimonials/arrow-left.svg");
+
 }
 
 .my-swiper .swiper-button-next::after {
-	background-image: url("../../../../../../public/testimonials/erow-right.svg");
+	background-image: url("../../../../../../public/testimonials/arrow-right.svg");
 }
 
+.my-swiper .swiper-button-prev:hover::after {
+	background-image: url("../../../../../../public/testimonials/arrow-left-hover.svg");
+
+}
+
+.my-swiper .swiper-button-next:hover::after {
+	background-image: url("../../../../../../public/testimonials/arrow-right-hover.svg");
+}
+
+
 .my-swiper .swiper-pagination-bullet {
-	width: 30px;
-	height: 8px;
 	background-color: #D9D9D9;
 	border-radius: 0;
 	opacity: 1;
+
+	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+		width: 30px;
+		height: 5px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		width: 36px;
+		height: 8px;
+	}
 }
 
+
 .my-swiper .swiper-pagination-bullet:not(:last-child) {
-	margin-right: 14px;
+	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+		margin-right: 10px;
+	}
+
+	@media screen and (min-width: 1280px) {
+		margin-right: 16px;
+	}
 }
 
 .my-swiper .swiper-pagination-bullet-active {
