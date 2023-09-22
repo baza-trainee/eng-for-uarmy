@@ -1,12 +1,12 @@
-import fhoto_1 from "../../../../../images/testimonials/example/butterflies.jpg";
-import fhoto_2 from "../../../../../images/testimonials/example/flowers.jpg";
-import fhoto_3 from "../../../../../images/testimonials/example/flowers_2.jpg";
-import fhoto_4 from "../../../../../images/testimonials/example/mountains.jpg";
-import fhoto_5 from "../../../../../images/testimonials/example/mountains_2.jpg";
-import fhoto_6 from "../../../../../images/testimonials/example/pink.jpg";
-import fhoto_7 from "../../../../../images/testimonials/example/road.jpg";
+import fhoto_1 from "../../../assets/images/testimonials/example/butterflies.jpg";
+import fhoto_2 from "../../../assets/images/testimonials/example/flowers.jpg";
+import fhoto_3 from "../../../assets/images/testimonials/example/flowers_2.jpg";
+import fhoto_4 from "../../../assets/images/testimonials/example/mountains.jpg";
+import fhoto_5 from "../../../assets/images/testimonials/example/mountains_2.jpg";
+import fhoto_6 from "../../../assets/images/testimonials/example/pink.jpg";
+import fhoto_7 from "../../../assets/images/testimonials/example/road.jpg";
 
-import authorFhoto from "../../../../../images/testimonials/mask-group.jpg";
+import authorFhoto from "../../../assets/images/testimonials/mask-group.jpg";
 
 export const data = [
   {

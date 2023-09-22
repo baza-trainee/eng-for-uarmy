@@ -72,7 +72,7 @@ const Footer = () => {
             <ul className={styles.social__list}>
               <li className={styles.social__item}>
                 <Link className={styles.social__link} href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer">
-                  <svg className={styles.social__icon} width="7" height="16" viewBox="0 0 7 16">
+                  <svg className={`${styles.social__icon} ${styles.social__iconFacebook}`} width="7" height="16" viewBox="0 0 7 16">
                     <path d="M1.58851 15.4551H4.6403V7.89315H6.7693L6.99341 5.36381H4.6403C4.6403 5.36381 4.6403 4.41857 4.6403 3.92314C4.6403 3.3234 4.75895 3.08872 5.34557 3.08872C5.81356 3.08872 7 3.08872 7 3.08872V0.455078C7 0.455078 5.25989 0.455078 4.88418 0.455078C2.61017 0.455078 1.58851 1.44595 1.58851 3.33643C1.58851 4.98572 1.58851 5.35729 1.58851 5.35729H0V7.91922H1.58851V15.4551Z" />
                   </svg>
                 </Link>
@@ -109,7 +109,7 @@ const Footer = () => {
         </div>
 
         <div className={styles.policy}>
-          <Link className={styles.policy__baza} href="https://baza-trainee.tech/ua" target="_blank">{t("policy-first")} &copy; {t("policy-second")}</Link>
+          <p className={styles.policy__baza}>{t("policy-first")} &copy; {t("policy-second")}</p>
                 
           <span className={styles.policy__divider}></span>
 

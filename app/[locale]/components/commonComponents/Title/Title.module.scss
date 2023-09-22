@@ -1,0 +1,42 @@
+@import '../../../styles/variables.module';
+@import '../../../styles/mixins.module';
+
+.title {
+    margin-bottom: 30px;
+
+    @include mq(desktop) {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 67px;
+    }
+
+    &__name {
+        margin-bottom: 10px;
+
+        font-family: inherit;
+        font-size: 30px;
+        font-weight: 400;
+        line-height: 1.2;
+
+        @include mq(desktop) {
+            margin-right: 80px;
+            margin-bottom: 0;
+
+            font-size: 64px;
+        }
+    }
+    &__description {
+        max-width: 322px;
+
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 1.5;
+
+        @include mq(desktop) {
+            margin-top: 10px;
+
+            font-size: 18px;
+        }
+    }
+}
