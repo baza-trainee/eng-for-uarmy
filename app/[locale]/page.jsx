@@ -13,13 +13,13 @@ const Home = ({searchParams}) => {
   return (
     <>
       <Hero />
-      <RunningLine />
+      {/* <RunningLine /> */}
       <Testimonials />
       <OurProjects />
-      <AboutUs />
+      {/* <AboutUs />
       <HelpUsGrows />
       <Partners />
-      <Media />
+      <Media /> */}
       {showModal && <Modal />}
     </>
   );
