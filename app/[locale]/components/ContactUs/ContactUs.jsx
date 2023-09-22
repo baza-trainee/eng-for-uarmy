@@ -1,19 +1,19 @@
-import styles from './ContactUs.module.scss'
-import ContactForm from "./ContactForm/ContactForm"
-import DonateSection from './DonateSection/DonateSection'
+"use client";
+import { useTranslations } from "next-intl";
+import Title from '../commonComponents/Title/Title';
+import ContactForm from "./ContactForm/ContactForm";
+import styles from './ContactUs.module.scss';
 
-const ContactUs = () =>{
+const ContactUs = () => {
+    const t = useTranslations("Contact us");
+
     return (
         <section className={styles.main}>
-            <div className={styles.title__block}>
-            <h1>Contacts page</h1>
-            <p>We value every connection that we’ve made along our journey. 
-                Let us know what’s on your mind by filling out the form below.</p>
-            </div>
-        <ContactForm />
-        <DonateSection />
+            <Title title={t("title")} description={t("desc")} />
+        
+            <ContactForm />
         </section>
     )
-}
+};
 
 export default ContactUs;

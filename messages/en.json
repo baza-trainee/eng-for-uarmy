@@ -69,7 +69,7 @@
   "Footer": {
     "homepage": "Homepage",
     "menu": "Menu",
-    "contacts": "Contacts",
+    "contacts": "Contact us",
     "study": "Study",
     "ourTeam": "Our team",
     "contactUs": "Contact us",
@@ -121,7 +121,7 @@
   },
   "Contact us": {
     "title": "Contact us",
-    "paragraph": "We value every connection we’ve made along our journey. Let us know what’s on your mind by filling out the form below.",
+    "desc": "We value every connection we’ve made along our journey. Let us know what’s on your mind by filling out the form below.",
     "type": "Type of request",
     "volonteer": "I’d like to volunteer",
     "partner": "I’d like to become a partner or sponsor",
