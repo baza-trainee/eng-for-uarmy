@@ -1,3 +1,4 @@
+import styles from "./Hero.module.scss"; 
 import "./SvgComponent.styles.scss"
 import Link from 'next/link';
 
@@ -57,20 +58,52 @@ export const Facebook = () => {
 
 export const ButtonBorder = ()=> {
   return <Link href="" target="_blank" rel="noopener noreferrer" className=''>
-        <svg className="svg-border" width="360" height="92" viewBox="0 0 360 92" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={styles.svgBorder} width="360" height="92" viewBox="0 0 360 92" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.5 0.5H359.5V91.5H36.2071L0.5 55.7929V0.5Z" />
+</svg>
+        </Link>
+}
+
+export const ButtonBorderMobile = ()=> {
+  return <Link href="" target="_blank" rel="noopener noreferrer" className=''>
+        <svg className={styles.svgBorder}  xmlns="http://www.w3.org/2000/svg" width="200" height="50" viewBox="0 0 200 50" fill="none">
+<path d="M0.5 29.7929V0.5H199.5V49.5H20.2071L0.5 29.7929Z" stroke="#231F20"/>
 </svg>
         </Link>
 }
 
 export const Arrow = () => {
   return<>
-  <svg width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg  width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9 8L18 17.5L9 27" stroke="#768728" strokeWidth="3"/>
 <path d="M18 8L27 17.5L18 27" stroke="#768728" strokeWidth="3"/>
 </svg>
 </>
 
 }
+
+
+
+export const HeroCardBorder = () => {
+  return<>
+  <svg className={styles.cardBorder} xmlns="http://www.w3.org/2000/svg" width="992" height="654" viewBox="0 0 992 654" fill="none">
+<path d="M991 1H1V535.91L127.936 653H991V1Z" stroke="#231F20"/>
+</svg>
+</>
+
+}
+
+
+export const HeroCardBorderMobil = () => {
+  return<>
+ <svg className={styles.cardBorder} xmlns="http://www.w3.org/2000/svg" width="290" height="442" viewBox="0 0 290 442" fill="none">
+<path d="M289 1H1V401L41 441H289V1Z" stroke="#231F20"/>
+</svg>
+</>
+
+}
+
+
+
 
   

@@ -1,53 +1,97 @@
 "use client";
 import Image from 'next/image'
-import "./Hero.styles.scss"; 
+import styles from "./Hero.module.scss"; 
 import { useLocale, useTranslations } from 'next-intl';
-import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow} from './SvgComponent';
+import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow, HeroCardBorder, HeroCardBorderMobil, ButtonBorderMobile} from './SvgComponent';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { usePathname } from 'next/navigation';
 import "./SvgComponent.styles.scss"
+import { useEffect, useState } from 'react';
  
 const Hero = () => {
 const locale = useLocale();
 const pathname = usePathname();
 const t = useTranslations("Hero");
-  return <section className='heroSection'>
-      <div className='hero'>
-        <div className='container'>
-            <div className='card'>
-            <Image className='card-border' src="/HeroImage/CardSvg.svg" alt="SVG Image" width={990} height={661} />
-                <h1 className='firstHead'>Eng for UArmy</h1>
-                <h2 className='secondHead'>{t("title")}</h2>
+const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1280);
+
+useEffect(() => {
+  const handleWindowResize = () => {
+    setIsLargeScreen(window.innerWidth >= 1280);
+  };
+
+  window.addEventListener("resize", handleWindowResize);
+
+  return () => {
+    window.removeEventListener("resize", handleWindowResize);
+  };
+}, []);
+
+
+  return <section className={styles.heroSection}>
+      <div className={styles.hero}>
+        <div className={styles.container}>
+            <div className={styles.card}>
+            {isLargeScreen ? (
+        <HeroCardBorder />
+      ) : (
+        <HeroCardBorderMobil />
+      )}
+                <h1 className={styles.firstHead}>Eng for UArmy</h1>
+                <h2 className={styles.secondHead}>{t("title")}</h2>
                 
-                <ul className='list'>
-                      <li className='li-item'>
+                <ul className={styles.list}>
+                      <li className={styles.liItem}>
                           <Arrow />
-                          <p className='li-txt'>{t("first-desc")}<strong className='li-bold-txt'>{t("first-desc-bold")}</strong></p>
+                          <p className={styles.liText}>{t("first-desc")}<strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong></p>
                       </li>
-                      <li className='li-item'>
+                      <li className={styles.liItem}>
                           <Arrow />
-                          <p className='li-txt'>{t("second-desc")}<span className='li-bold-txt'>{t("second-desc-bold")}</span>{t("second-desc2")}<span className='li-bold-txt'>{t("second-desc-bold2")}</span></p>
+                          <p className={styles.liText}>{t("second-desc")}<span className={styles.li_bold_txt}>{t("second-desc-bold")}</span>{t("second-desc2")}<span className={styles.li_bold_txt}>{t("second-desc-bold2")}</span></p>
                       </li>
-                      <li className='li-item'>
+                      <li className={styles.liItem}>
                           <Arrow />
-                          <p className='li-txt last-li-txt'>{t("third-desc")}<span className='li-bold-txt'>{t("third-desc-bold")}</span>{t("and")}<span className='li-bold-txt'>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
+                          <p className={styles.liText}>{t("third-desc")}<span className={styles.li_bold_txt}>{t("third-desc-bold")}</span>{t("and")}<span className={styles.li_bold_txt}>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
                       </li>
                 </ul>
-                <ul className='btnList'>
-                    <li><Link href={`https://www.youtube.com/@engforuarmy`} className="under-txt-btn">{t("study-btn")}</Link></li>
-                    <li tabIndex="0" className="under"><ScrollLink to="helpUsGrow" smooth={true} duration={500} className="under-txt-btn2" >{t("support-btn")}</ScrollLink><ButtonBorder /></li>
-                </ul>
+                <ul className={styles.btnList}>
+                <li>
+                  <Link
+                    href={`https://www.youtube.com/@engforuarmy`}
+                    className={styles.under_txt_btn}
+                    target="_blank" 
+                    rel="noopener noreferrer">
+                    {t("study-btn")}
+                  </Link>
+                      </li>
+                <li tabIndex="0" className={styles.under}>
+                  <ScrollLink 
+                  to="helpUsGrow" 
+                  smooth={true} 
+                  duration={500} 
+                  className={styles.under_txt_btn2} >
+                  {t("support-btn")}
+                  </ScrollLink>{isLargeScreen ? (
+                        <ButtonBorder />
+                      ) : (
+                        <ButtonBorderMobile />
+                      )}</li>
+                  </ul>
             </div>
 
-            <div className='contact-us-col'>
-                <Youtube/>
-                <Instagram/>
-                <Facebook/>
-                <Telegram/>
-            </div>
+            <div className={styles.your_container}>
+            {isLargeScreen && (
+                <div className={styles.contact_us_col}>
+                <Youtube />
+                <Instagram />
+                <Facebook />
+                <Telegram />
+                </div>
+            )}
+
+</div>
         </div>
-        <Image className='soldierImg' src="/HeroImage/soldier-transp.png" alt="soldierImg" width={796} height={523} priority/>
+        <Image className={styles.soldierImg} src="/HeroImage/soldier-transp.png" alt="soldierImg" width={796} height={523} priority/>
        </div>
     </section>
   
