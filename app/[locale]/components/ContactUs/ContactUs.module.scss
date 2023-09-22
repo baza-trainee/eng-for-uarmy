@@ -1,9 +1,13 @@
 @import '../../styles/variables.module';
+@import '../../styles/mixins.module';
 
 .main{
-  padding: 84px 80px 110px 80px;
-}
-
-.title__block{
-  margin-bottom: 87px;
+  width: $mobile;
+  margin: 0 auto;
+  padding: 20px $section-padding-mob 0;
+  
+  @include mq(desktop) {
+    width: $desktop;
+    padding: 84px $section-padding 0;
+  }
 }
