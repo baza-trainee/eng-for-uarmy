@@ -1,8 +1,8 @@
 @import "../../styles/variables.module";
 
 .section {
-	// 	padding-top: 30px;
-	// 	padding-bottom: 30px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 
 	// @media screen and (max-width: $tablet) {
 	// 	padding-top: 60px;
@@ -11,19 +11,20 @@
 
 	@media screen and (min-width: $desktop) {
 		padding-top: 80px;
-		padding-bottom: 120px;
+		padding-bottom: 100px;
 	}
 }
 
 .container {
-	// 	padding-left: 30px;
-	// 	padding-right: 30px;
+	width: 320px;
+	padding-left: $section-padding-mob;
+	padding-right: $section-padding-mob;
+	margin: 0 auto;
 
 	// @media screen and (max-width: $tablet) {
 	// 	padding-left: 60px;
 	// 	padding-bottom: 60px;
 	// }
-	margin: 0 auto;
 
 	@media screen and (min-width: $desktop) {
 		width: $desktop;
@@ -33,16 +34,31 @@
 }
 .NotFoundWrapper {
 	display: flex;
-	margin-bottom: 26px;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		flex-direction: column;
+		margin-bottom: 15px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-bottom: 26px;
+	}
 }
 
 .btnBackWrapper {
 	position: relative;
-	margin-right: 20px;
 
 	&:focus {
 		stroke-width: 3px;
 		color: $color-olive;
+	}
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-bottom: 30px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-right: 20px;
 	}
 }
 
@@ -50,16 +66,10 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: 170px;
-	height: 92px;
 	display: flex;
 	align-items: center;
-	padding: 26px 27px 26px 20px;
 	color: $color-black;
 	border: none;
-	font-size: 22px;
-	line-height: normal;
-	--size-corner: 36px;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
 	transition:
 		color $transition-duration $timing-function,
@@ -70,89 +80,162 @@
 		color: $color-white;
 		background-color: $color-olive;
 	}
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		width: 150px;
+		height: 50px;
+		padding: 12px 34px;
+		font-size: 13px;
+		line-height: 1.35;
+		--size-corner: 18px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 170px;
+		height: 92px;
+		padding: 26px 16px 26px 20px;
+		font-size: 22px;
+		line-height: normal;
+		--size-corner: 36px;
+	}
 }
 
 .errorWrapper {
 	position: relative;
-
-	&::before {
-		content: "";
-		display: inline-block;
-		width: 740px;
-		height: 403px;
-		background-image: url("../../../../public/404/border-404.svg");
-	}
 }
 
 .imgWrapper {
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 64px 72px 28px 73px;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		padding: 24px 32px 8px 31px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		padding: 64px 72px 28px 73px;
+	}
+}
+
+.img {
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		width: 225px;
+		height: 92px;
+	}
 }
 
 .title {
-	font-size: 28px;
-	line-height: 1.21;
-	letter-spacing: 0.35px;
 	text-align: center;
-	margin-top: 32px;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 15px;
+		line-height: 1.35;
+		margin-top: 8px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 28px;
+		line-height: 1.21;
+		letter-spacing: 0.35px;
+		margin-top: 32px;
+	}
 }
 
 .descrWrapper {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 80px;
-}
 
-.fourOrFour {
-	display: flex;
-	align-items: center;
-	color: #000;
-	font-size: 18px;
-	line-height: 1.5;
-	margin-right: 32px;
-	padding-top: 12px;
-	padding-bottom: 12px;
-
-	&::before {
-		content: "";
-		display: inline-block;
-		width: 14px;
-		height: 52px;
-		background-image: url("../../../../public/404/border-left.svg");
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-bottom: 50px;
 	}
 
-	&::after {
-		content: "";
-		display: inline-block;
-		width: 14px;
-		height: 52px;
-		background-image: url("../../../../public/404/border-right.svg");
+	@media screen and (min-width: $desktop) {
+		margin-bottom: 80px;
+	}
+}
+
+.fourOhFour {
+	display: flex;
+	align-items: center;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 13px;
+		line-height: normal;
+		margin-right: 12px;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 9px;
+			height: 34px;
+			background-image: url("../../../../public/404/border-left-mobile.svg");
+		}
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 9px;
+			height: 34px;
+			background-image: url("../../../../public/404/border-right-mobile.svg");
+		}
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 18px;
+		line-height: 1.5;
+		margin-right: 32px;
+
+		&::before {
+			content: "";
+			display: inline-block;
+			width: 14px;
+			height: 52px;
+			background-image: url("../../../../public/404/border-left.svg");
+		}
+
+		&::after {
+			content: "";
+			display: inline-block;
+			width: 14px;
+			height: 52px;
+			background-image: url("../../../../public/404/border-right.svg");
+		}
 	}
 }
 
 .descr {
-	width: 360px;
 	font-family: Arial;
-	font-size: 22px;
 	line-height: 1.5;
-	letter-spacing: -0.408px;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		max-width: 154px;
+		font-size: 13px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		max-width: 360px;
+		font-size: 22px;
+		letter-spacing: -0.408px;
+	}
 }
 
 .btnGoHomeWrapper {
 	position: relative;
-	width: 360px;
 	margin: 0 auto;
-
-	&:hover {
-		color: transparent;
-	}
 
 	&:focus {
 		stroke-width: 3px;
 		color: $color-grey;
+	}
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		width: 100%;
+	}
+
+	@media screen and (min-width: $desktop) {
+		max-width: 360px;
 	}
 }
 
@@ -165,10 +248,6 @@
 	align-items: center;
 	justify-content: center;
 	color: $color-ultra-light-grey;
-	font-size: 22px;
-	--size-corner: 36px;
-	width: 360px;
-	height: 92px;
 	border: transparent;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
 	transition: background-color $transition-duration $timing-function;
@@ -177,5 +256,19 @@
 
 	&:hover {
 		background-color: $color-olive;
+	}
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		width: 288px;
+		height: 50px;
+		font-size: 15px;
+		--size-corner: 18px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 360px;
+		height: 92px;
+		font-size: 22px;
+		--size-corner: 36px;
 	}
 }

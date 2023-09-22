@@ -7,8 +7,13 @@ import Image from "next/image";
 
 import {
   ArrowLeftSvg,
+  ArrowLeftSvgMobile,
   BorderBackSvg,
+  BorderBackSvgMobile,
+  BorderErrorSvg,
+  BorderErrorSvgMobile,
   BorderGoHomeFocusSvg,
+  BorderGoHomeFocusSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
 import errorImg from "../../../../public/404/404.png";
@@ -24,40 +29,48 @@ const NotFoundPage = ({ error }) => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.NotFoundWrapper}>
-          <div className={styles.btnBackWrapper}>
+          <div className={styles.btnBackWrapper} tabindex="1">
+            <BorderBackSvgMobile />
             <BorderBackSvg />
             <Link
               className={styles.btnBack}
               href=""
               onClick={() => router.back()}
             >
+              <ArrowLeftSvgMobile />
               <ArrowLeftSvg />
-              Back
+              {t("btnBack")}
             </Link>
           </div>
 
           <div className={styles.errorWrapper}>
+            <BorderErrorSvg />
+            <BorderErrorSvgMobile />
             <div className={styles.imgWrapper}>
-              <Image src={errorImg} alt="Error 404" width={595} height={245} />
-              <h4 className={styles.title}>Page not found</h4>
+              <Image
+                className={styles.img}
+                src={errorImg}
+                alt="Error 404"
+                width={595}
+                height={245}
+              />
+              <h4 className={styles.title}> {t("page")}</h4>
             </div>
           </div>
         </div>
 
         <div className={styles.descrWrapper}>
-          <div className={styles.fourOrFour}>
-            <span>four or four</span>
+          <div className={styles.fourOhFour}>
+            <span> {t("four")}</span>
           </div>
-          <p className={styles.descr}>
-            We couldn&apos;t find the page you&apos;re looking for but
-            that&apos;s 4.5.0 (all good).
-          </p>
+          <p className={styles.descr}>{t("text")}</p>
         </div>
 
-        <div className={styles.btnGoHomeWrapper}>
+        <div tabindex="2" className={styles.btnGoHomeWrapper}>
+          <BorderGoHomeFocusSvgMobile />
           <BorderGoHomeFocusSvg />
           <Link href={`/${locale}`} className={styles.goHome}>
-            <p>Go on homepage</p>
+            {t("btnHome")}
           </Link>
         </div>
       </div>

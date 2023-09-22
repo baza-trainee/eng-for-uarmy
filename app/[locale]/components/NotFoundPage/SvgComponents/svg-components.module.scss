@@ -1,14 +1,36 @@
 @import "../../../styles/variables.module";
 
-.arrow {
-	margin-right: 32px;
+.arrow,
+.arrowMobile {
+	margin-right: auto;
 }
 
-.arrowPath {
+.arrowPath,
+.arrowPathMobile {
 	fill: currentColor;
 }
 
 .borderBackPath,
-.borderGoHomePath {
+.borderBackPathMobile,
+.borderGoHomePath,
+.borderGoHomePathMobile {
 	stroke: currentColor;
+}
+
+.borderBack,
+.arrow,
+.borderError,
+.borderGoHome {
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		display: none;
+	}
+}
+
+.borderBackMobile,
+.arrowMobile,
+.borderErrorMobile,
+.borderGoHomeMobile {
+	@media screen and (min-width: $desktop) {
+		display: none;
+	}
 }
