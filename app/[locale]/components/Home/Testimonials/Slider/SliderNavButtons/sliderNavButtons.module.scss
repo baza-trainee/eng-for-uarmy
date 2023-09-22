@@ -1,5 +1,6 @@
 .btnWrapper {
-	transform: translateY(-316px);
+	position: relative;
+	transform: translateY(-240px);
 }
 
 .btnRight::before,
@@ -11,11 +12,15 @@
 }
 
 .btnLeft::before {
-	background-image: url("../../../../../../../public/testimonials/erow-left.svg");
+	background-image: url("../../../../../../../public/testimonials/arrow-left.svg");
 }
 
+// .btnLeft:focus::before {
+// 	background-color: tomato;
+// }
+
 .btnRight::before {
-	background-image: url("../../../../../../../public/testimonials/erow-right.svg");
+	background-image: url("../../../../../../../public/testimonials/arrow-right.svg");
 }
 
 .btnLeft,

@@ -7,6 +7,9 @@ import Footer from "./components/commonComponents/Footer/Footer";
 export const metadata = {
   title: "Eng for UArmy",
   description: "Eng for UArmy",
+  icons: {
+    icon: '/favicon.ico',
+  },
   viewport: {
     width: 'device-width',
     initialScale: 1,

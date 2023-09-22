@@ -1,5 +1,5 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 // import { useState, useEffect, useCallback } from "react";
 
 import { data } from "./data";
@@ -52,7 +52,6 @@ const Testimonials = () => {
 
   //   console.log(items);
 
-  const locale = useLocale();
   const t = useTranslations("Feedback");
   return (
     <section className={styles.section}>
