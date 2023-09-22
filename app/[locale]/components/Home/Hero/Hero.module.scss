@@ -1,11 +1,7 @@
-@import '../../../styles/reset.module';
+
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
-@font-face {
-    font-family: Furore; 
-    src: url('../../../assets/fonts/Furore.woff2') format('woff'); 
-    
-  }
+
 
 .heroSection{
   background-color: $color-ultra-light-grey;
@@ -32,7 +28,7 @@ position: relative;
 
 }
 
-.card-border{
+.cardBorder{
   position: absolute;
   top: 0px;
   right:0px;
@@ -62,7 +58,7 @@ position: relative;
   display: grid;
   margin-top: 18px;
 }
-.li-item{
+.liItem{
     display: flex;
     margin-top: 21px;
     align-items: center;
@@ -71,17 +67,16 @@ position: relative;
     }
 }
 
-.li-txt{
+.liText {
     display: block;
     font-family: Arial;
     margin-left: 28px;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
-    width: 100%;
 }
 
-.li-bold-txt{
+.li_bold_txt{
   font-weight: 700;
   line-height: 28px;
   letter-spacing: -0.408px;
@@ -94,7 +89,7 @@ position: relative;
   position: relative;
 }
 
-.contact-us-col{
+.contact_us_col{
     display: grid;
     grid-template-rows: 65px 65px 65px 65px;
     margin-left: 54px;
@@ -103,7 +98,7 @@ position: relative;
 }
 
 
-.under-txt-btn {
+.under_txt_btn {
   font-family: inherit;
   background-color: $color-black;
   display: flex;
@@ -131,9 +126,10 @@ position: relative;
       background-color: $color-black;
       border: 3px solid var(--grey, #8B8B8B);
   }
+
   }
 
-  .under-txt-btn2 {
+  .under_txt_btn2 {
     margin-left: 20px;
     position: relative;
     font-family: inherit;
@@ -159,9 +155,7 @@ position: relative;
           0 calc(100% - var(--size-corner)));
     }
   }
-  .under-txt-btn2:focus .svg-border {
-    stroke: var(--green, #798738); 
-}
+ 
 
 .soldierImg {
     position: absolute;
@@ -171,7 +165,7 @@ position: relative;
     pointer-events: none;
 
 }
-.svg-border{
+.svgBorder{
   stroke: currentColor;       
   position: absolute;
   top: 0;   
@@ -180,18 +174,153 @@ position: relative;
   pointer-events: none;
 
 }
-.under-txt-btn2:focus .svg-border {
-  stroke: var(--green, #798738); 
-}
 
 .under:focus{
   outline: none;
 }
 
-
-.under:focus .svg-border{
+.under:focus   .svgBorder{
     stroke: var(--green, #798738); 
     stroke-width: 3px;
     outline: 0;
     z-index: 1000;
+}
+
+.under:active  .svgBorder{
+  stroke: var(--green, #798738); 
+}
+
+
+
+
+@media (min-width: $mobile) and (max-width: $desktop) {
+  
+  .hero{   
+    width: $mobile;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+    padding-bottom: 142px;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    
+  }
+  .card{
+    position: relative;
+    width: 288px;
+    height: 440px;
+    padding: 20px 12px;
+  
+  }
+
+  .firstHead{
+    color: var(--black, #231F20);
+    font-family: Furore;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: normal;
+  }
+  
+  .secondHead{
+    color: var(--black, #231F20);
+    font-family: Furore;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 135%; /* 20.25px */
+  }
+  
+  .list{
+    display: grid;
+    margin-top: 18px;
+  }
+  .liItem{
+      margin-top: 15px;
+      &:first-child{
+        margin-top: 0;
+      }
+  }
+  
+  .liText{
+      display: block;
+      margin-left: 13px;
+      font-size: 13px;
+      font-style: normal;
+      line-height: 150%; 
+  }
+  
+  .li_bold_txt{
+    color: var(--black, #231F20);
+    font-feature-settings: 'case' on;
+    font-family: Arial;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+  }
+  .btnList{
+    margin-top: 20px;
+    width: 200px;
+    display: flex;
+    flex-direction:column;
+    flex-direction: column-reverse;
+    position: relative;
+  }
+  
+
+  
+  .under_txt_btn {
+    margin-top: 13px;
+    color: $color-white;
+    font-size: 13px;        
+    width: 150px;
+    height: 50px;
+    --size-corner: 20px;
+   
+    }
+  
+    .under_txt_btn2 {
+      margin-left: 0;
+      position: relative;
+      font-size: 13px;
+      --size-corner: 20px;
+      width: 200px;
+      height: 50px;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+      &:hover{
+          background-color: $color-olive;
+          color: $color-white;
+          clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+      }
+    }
+    .under_txt_btn2:focus .svgBorder {
+      stroke: var(--green, #798738); 
+  }
+  
+  .svgBorder{
+    top: 0;   
+    right: 0;
+  
+  }
+
+  .soldierImg {
+      width: 420px;
+      height: 275px;
+      right: -35px;
+      bottom: 0;
+    
+  
+  }
 }
