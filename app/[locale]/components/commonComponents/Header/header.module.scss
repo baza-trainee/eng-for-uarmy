@@ -59,7 +59,7 @@
   display: flex;
 }
 .mobileHeader.open .headerButton{
-  display: inline;
+  display: inline-block;
   
 }
 .mobileHeaderBox{
@@ -88,11 +88,18 @@
   display: inline-block;
   font-size: 15px;
   line-height: normal;
-  color: $color-grey;
+  color: #6D6E70;
   margin-bottom: 30px;
+  outline: none;
   transition: all $transition-duration $timing-function;
   &:hover{
     color: $color-black;
+  }
+  &:focus:not(:active) {
+    color: $color-olive; 
+  }
+  &:focus:not(:active)::before {
+    background-color: transparent;
   }
   &::before {
     content: "";
@@ -109,6 +116,8 @@
     background-color: $color-black;
   }
     @media screen and (min-width: $desktop) {
+      color: $color-grey;
+      display: block;
       font-size: 18px;
       line-height: 27px;
       margin-bottom: 0;
@@ -169,7 +178,8 @@
     }
 }
 .menuBurgerIcon{
-
+  background: none;
+  outline: none;
 }
 .crossIcon{
   position: absolute;
