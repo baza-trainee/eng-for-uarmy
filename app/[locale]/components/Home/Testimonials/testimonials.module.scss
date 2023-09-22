@@ -4,11 +4,6 @@
 	padding-top: 50px;
 	padding-bottom: 50px;
 
-	// @media screen and (min-width: $tablet) {
-	// 	padding-top: 60px;
-	// 	padding-bottom: 60px;
-	// }
-
 	@media screen and (min-width: $desktop) {
 		padding-top: 85px;
 		padding-bottom: 80px;
@@ -17,14 +12,9 @@
 
 .container {
 	width: $mobile;
-	padding-left: 16px;
-	padding-right: 16px;
+	padding-left: $section-padding-mob;
+	padding-right: $section-padding-mob;
 	margin: 0 auto;
-
-	// @media screen and (min-width: $tablet) {
-	// 	padding-left: 60px;
-	// 	padding-bottom: 60px;
-	// }
 
 	@media screen and (min-width: $desktop) {
 		width: $desktop;

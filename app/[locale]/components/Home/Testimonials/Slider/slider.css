@@ -1,16 +1,53 @@
 .my-swiper {
 	position: relative;
+}
 
-	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+	.my-swiper {
 		padding-bottom: 40px;
 	}
 
-	@media screen and (min-width: 1280px) {
+	.my-swiper .swiper-button-prev {
+		display: none;
+	}
+
+	.my-swiper .swiper-button-next {
+		display: none;
+	}
+
+	.my-swiper .swiper-pagination-bullet {
+		width: 30px;
+		height: 5px;
+	}
+
+	.my-swiper .swiper-pagination-bullet:not(:last-child) {
+		margin-right: 10px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.my-swiper {
 		padding-left: 98px;
 		padding-right: 98px;
 		padding-bottom: 120px;
 	}
 
+	.my-swiper .swiper-button-prev {
+		left: 30px;
+	}
+
+	.my-swiper .swiper-button-next {
+		right: 30px;
+	}
+
+	.my-swiper .swiper-pagination-bullet {
+		width: 36px;
+		height: 8px;
+	}
+
+	.my-swiper .swiper-pagination-bullet:not(:last-child) {
+		margin-right: 16px;
+	}
 }
 
 .my-swiper .swiper-button-prev,
@@ -20,26 +57,6 @@
 	height: 68px;
 	transform: translateY(-70px);
 	z-index: 1000;
-}
-
-.my-swiper .swiper-button-prev {
-	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
-		display: none;
-	}
-
-	@media screen and (min-width: 1280px) {
-		left: 30px;
-	}
-}
-
-.my-swiper .swiper-button-next {
-	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
-		display: none;
-	}
-
-	@media screen and (min-width: 1280px) {
-		right: 30px;
-	}
 }
 
 .my-swiper .swiper-button-prev::after,
@@ -73,27 +90,6 @@
 	background-color: #D9D9D9;
 	border-radius: 0;
 	opacity: 1;
-
-	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
-		width: 30px;
-		height: 5px;
-	}
-
-	@media screen and (min-width: 1280px) {
-		width: 36px;
-		height: 8px;
-	}
-}
-
-
-.my-swiper .swiper-pagination-bullet:not(:last-child) {
-	@media screen and (min-width: 320px) and (max-width: 1279.5px) {
-		margin-right: 10px;
-	}
-
-	@media screen and (min-width: 1280px) {
-		margin-right: 16px;
-	}
 }
 
 .my-swiper .swiper-pagination-bullet-active {
