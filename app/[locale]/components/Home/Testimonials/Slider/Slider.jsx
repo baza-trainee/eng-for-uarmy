@@ -18,10 +18,10 @@ import borderRightBottom from "../../../../../../public/testimonials/border-righ
 import borderLeftTop from "../../../../../../public/testimonials/border-left-top.svg";
 import borderLeftBottom from "../../../../../../public/testimonials/border-left-bottom.svg";
 
-import borderRightTopMobile from "../../../../../../public/testimonials/border-right-top-mobile.svg";
-import borderRightBottomMobile from "../../../../../../public/testimonials/border-right-bottom-mobile.svg";
-import borderLeftTopMobile from "../../../../../../public/testimonials/border-left-top-mobile.svg";
-import borderLeftBottomMobile from "../../../../../../public/testimonials/border-left-bottom-mobile.svg";
+// import borderRightTopMobile from "../../../../../../public/testimonials/border-right-top-mobile.svg";
+// import borderRightBottomMobile from "../../../../../../public/testimonials/border-right-bottom-mobile.svg";
+// import borderLeftTopMobile from "../../../../../../public/testimonials/border-left-top-mobile.svg";
+// import borderLeftBottomMobile from "../../../../../../public/testimonials/border-left-bottom-mobile.svg";
 
 const Slider = ({ data }) => {
   return (
