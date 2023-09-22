@@ -6,9 +6,12 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    height: 118px;
+    height: 60px;
     overflow: hidden;
     background-color: $color-banner;
+    @media screen and (min-width: $desktop) {
+        height: 122px;
+    }
 }
 
 .bannerText {
@@ -17,16 +20,25 @@
     width: 100%;
     white-space: nowrap;
     color: $color-black;
-    font-size: 36px;
-    line-height: 50px;
-    letter-spacing: 0.35px;
+    font-size: 15px;
+    font-weight: 400;
+    @media screen and (min-width: $desktop) {
+        font-size: 36px;
+        line-height: 50px;
+        letter-spacing: 0.35px;
+    }
    
 }
 
 .bannerDivider {
     display: inline-block;
-    width: 5px;
-    height: 46px;
+    width: 2px;
+    height: 20px;
+    margin: 0 19px;
     background-color: $color-black;
-    margin: 0 45px;
+    @media screen and (min-width: $desktop) {
+        width: 5px;
+        height: 46px;
+        margin: 0 45px;
+    }
 }

@@ -6,8 +6,9 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     align-items: center;
+    padding: 50px 0;
     justify-content: center;
     pointer-events: auto;
     background: rgba(255, 255, 255, 0.40);
@@ -17,30 +18,56 @@
 }
 .modal{
     position: relative;
+    width: calc(320px - 32px);
     background: #FFF;
     filter: drop-shadow(0px 8px 30px rgba(0, 0, 0, 0.10));
-    padding: 80px;
+    padding: 30px 19px;
+    scroll-behavior: auto;
+    @media screen and (min-width: $desktop) {
+            width: auto;
+            padding: 40px 70px 56px 70px;
+    }
 }
 .modalTitle{
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 400;
-    line-height: 34px;
-    letter-spacing: 0.35px;
+    line-height: 120%;
+    @media screen and (min-width: $desktop) {
+        font-size: 28px;
+        line-height: 34px;
+        letter-spacing: 0.35px;
+    }
 }
 .modalDesc{
     color: $color-black;
     font-family: Arial;
-    font-size: 18px;
-    line-height: 27px;
-    width: 491px;
-    margin: 32px 0;
+    width: 100%;
+    font-size: 13px;
+    line-height: 150%;
+    margin: 10px 0 20px 0;
+    @media screen and (min-width: $desktop) {
+        width: 491px;
+        font-size: 18px;
+        line-height: 27px;
+        margin: 24px 0;
+    }
 }
+
 .btnList{
-display: flex;
+    @media screen and (min-width: $desktop) {
+        display: flex;
+    }   
 }
+
 .btnList li{
-&:first-child {
-        margin-right: 20px;
+    &:first-child {
+        margin-bottom: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+        margin-bottom: 0;
+        &:first-child {
+            margin-right: 20px;
+        }
     }
 }
 .btn{
@@ -50,11 +77,11 @@ display: flex;
     align-items: center;
     justify-content: center;
     color: $color-ultra-light-grey;
-    font-size: 22px;
-    --size-corner: 36px;
-    padding: 28px 0px;
-    width: 359px;
-    height: 92px;
+    font-size: 15px;
+    --size-corner: 20px;
+    padding: 15px 0px;
+    width: 100%;
+    height: 50px;
     border: none;
     clip-path: polygon(0 0,
             100% 0,
@@ -64,6 +91,14 @@ display: flex;
             0 calc(100% - var(--size-corner)));
     transition: background-color $transition-duration $timing-function;
     cursor: pointer;
+
+    @media screen and (min-width: $desktop) {
+        --size-corner: 36px;
+        padding: 28px 0px;
+        width: 359px;
+        height: 92px;
+        font-size: 22px;
+    }
     &:hover {
         background-color: $color-olive;
     }
@@ -78,67 +113,90 @@ display: flex;
     }
 }
 .icon{
-margin-right: 28px;
-
+    margin-right: 28px;
+    @media screen and (max-width: $desktop) {
+        margin-right: 10px;
+        width: 16px;
+        height: 20px;
+    }
 }
 .infoCard{
     position: relative;
-    width: 738px;
-    height: 373px;
+    display: block;
     margin: 0 auto;
-    margin-top: 32px;
-    padding: 50px 109px 56px 130px;
+    width: 100%;
+    padding: 10px 6px;
+    margin-top: 30px;
     color: $color-black;
-    font-size: 18px;
+    border: 1px solid $color-black;
+    @media screen and (min-width: $desktop) {
+            width: 740px;
+            height: 347px;   
+            margin-top: 24px;
+            padding: 40px 110px 40px 130px;
+            border: none;
+            --border-color: #231F20;
+            --size-corner: 60px;
+            --border-width: 1px;
+            clip-path: polygon(0 0,
+                    100% 0,
+                    100% 100%,
+                    80% 100%,
+                    var(--size-corner) 100%,
+                    0 calc(100% - var(--size-corner)));
+        
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--border-color);
+                z-index: -2;
+            };
+        
+            &::after {
+                content: "";
+                background: #fff;
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                clip-path: polygon(var(--border-width) var(--border-width),
+                        100% var(--border-width),
+                        calc(100% - var(--border-width)) var(--border-width),
+                        calc(100% - var(--border-width)) calc(100% - var(--border-width)),
+                        calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
+                        var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
+            }
+        }
+}
+.dived{
+    @media screen and (min-width: $desktop) {
+            display: none;
+        }
+}
+.infoTitle{
     font-weight: 400;
-    line-height: 27px;
-    --border-color: #231F20;
-    --size-corner: 60px;
-    --border-width: 1px;
-    clip-path: polygon(0 0,
-                100% 0,
-                100% 100%,
-                80% 100%,
-                var(--size-corner) 100%,
-                0 calc(100% - var(--size-corner)));
-
-    &::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: var(--border-color);
-        z-index: -2;
-        };
-
-    &::after {
-        content: "";
-        background: #fff;
-        position: absolute;
-        inset: 0;
-        z-index: -1;
-        clip-path: polygon(var(--border-width) var(--border-width),
-                100% var(--border-width),
-                calc(100% - var(--border-width)) var(--border-width),
-                calc(100% - var(--border-width)) calc(100% - var(--border-width)),
-                calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
-                var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
-    }
-    & h4{
-        font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 30px;
+    @media screen and (min-width: $desktop) {
+            font-size: 18px;
+            line-height: 27px;
+            margin-bottom: 0;
     }
 }
-
 
 .infoItem{
-    margin-top: 24px;
-    width: 500px;
+    font-size: 13px;
     font-family: Arial;
-    margin-bottom: 20px;
+    margin-top: 10px;
+    @media screen and (min-width: $desktop) {
+        font-size: 18px;
+        line-height: 27px;
+        margin-top: 24px;
+        width: 500px;
+    }
 }
 .iconCross{
-    position: absolute;
-    right: 20px;
-    top: 20px;
+    display: block;
     & path {
         fill: $color-black;
         transition: fill $transition-duration $timing-function;
@@ -150,5 +208,17 @@ margin-right: 28px;
 
     &:active path {
         fill: $color-black;
+    }
+}
+.btnCross{
+    position: absolute;
+    right: 13px;
+    top: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    @media screen and (min-width: $desktop) {
+        right: 30px;
+        top: 30px;
     }
 }
