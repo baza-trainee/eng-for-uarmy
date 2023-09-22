@@ -138,5 +138,12 @@
     "donate": "Donate", 
     "support": "To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!",
     "bankDetails": "Bank details"
-  }
+  },
+  "404": {
+"btnBack": "Back",
+"page": "Page not found",
+"four": "four-oh-four",
+"text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
+"btnHome": "Go on homepage"
+}
 }
