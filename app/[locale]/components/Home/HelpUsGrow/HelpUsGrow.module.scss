@@ -7,27 +7,58 @@
 .sectionWrap{
     display: flex;
     flex-direction: column;
-    width: $desktop;
+    width: $mobile;
     margin: 0 auto;
-    padding: 100px $section-padding 86px $section-padding;
-}
-.sectionDesc{
-    font-family: Arial;
-    font-size: 18px;
-    line-height: 27px;
-    width: 320px;
-    color: $color-black;
-    margin-left: 80px;
-}
-.sectionTitle{
-    width: 400px;
-}
-.arrowIcon{
-    margin-top: 30px;
+    padding: 25px $mobile-padding;
+    @media screen and (min-width: $desktop) {
+        width: $desktop;
+        padding: 100px $section-padding 86px $section-padding;
+    }
 }
 .descWrap{
     display: flex;
-    margin-bottom: 52px;
+    flex-direction: column;
+    // margin-bottom: 30px;
+    @media screen and (min-width: $desktop) {
+        flex-direction: row;
+        margin-bottom: 52px;
+    }
+}
+.sectionDesc{
+    font-family: Arial;
+    color: $color-black;
+    font-size: 13px;
+    line-height: 150%;
+    width: 100%;
+    margin-top: 10px;
+    @media screen and (min-width: $desktop) {
+        font-size: 18px;
+        line-height: 27px;
+        width: 320px;
+        margin-left: 80px;
+        margin-top: 0;
+    }
+}
+.sectionTitle{
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 120%;
+    color: $color-black;
+    width: 150px;
+    @media screen and (min-width: $desktop) {
+        font-size: 48px;
+        line-height: 50px;
+        letter-spacing: 0.364px;
+        width: 400px;
+    }
+    
+}
+.arrowIcon{
+    display: none;
+    @media screen and (min-width: $desktop) {
+        display: block;
+        margin-top: 30px;
+    }
 }
 .anchor{
     display: block;
@@ -40,43 +71,61 @@
     }
 }
 .helpList{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
 }
 .helpItem{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    background-color: $color-white;
-    border: 1px solid $color-black; 
-    &:nth-child(odd) {
-        padding-left: 34px;
-        padding-right: 139px; 
-        border-left: none;
+    align-items: center; 
+    padding-top: 30px;
+    &:not(:last-child){
+        border-bottom: 1px solid $color-black;
+        padding-bottom: 30px;
     }
-    &:nth-child(even) {
-        padding-left: 139px;
-        padding-right: 34px;
-        border-right: none;
-    }
-    &:nth-child(-n+2){
-        padding-bottom: 39px;
-        border-top: none;
-    }
-    &:nth-child(n+3){
-        padding-top: 46px;
-        border-bottom: none;
-    }
+    @media screen and (min-width: $desktop) {
+            border: 1px solid $color-black;
+            padding: 0;
+            &:nth-child(odd) {
+                    padding-left: 34px;
+                    padding-right: 139px;
+                    border-left: none;
+                }
+            
+                &:nth-child(even) {
+                    padding-left: 139px;
+                    padding-right: 34px;
+                    border-right: none;
+                }
+            
+                &:nth-child(-n+2) {
+                    padding-bottom: 39px;
+                    border-top: none;
+                }
+            
+                &:nth-child(n+3) {
+                    padding-top: 46px;
+                    border-bottom: none;
+                }
+        }
+ 
 }
 .helpDesc{
     font-family: Arial;
-    font-size: 18px;
-    font-style: normal;
-    line-height: 27px;
     color: $color-grey;
-    width: 291px;
-    margin-bottom: 36px;
+    font-size: 13px;
+    line-height: 150%;
+    width: 100%;
+    margin-bottom: 15px;
+    @media screen and (min-width: $desktop) {
+        font-size: 18px;
+        line-height: 27px;
+        width: 291px;
+        margin-bottom: 36px;
+    }
 }
 .helpBtn{
     display: flex;

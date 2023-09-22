@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import styles from './HelpUsGrow.module.scss';
-import utilsStyles from '../../../styles/_utils.module.scss'
+import utilsStyles from '../../../styles/_utils.module.scss';
+
 const HelpUsGrows = () => {
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
@@ -14,7 +15,7 @@ const HelpUsGrows = () => {
         <div className={styles.sectionWrap}>
             <div className={styles.descWrap}>
                 <div>
-                    <h2 className={`${utilsStyles.h2} ${styles.sectionTitle}`}>{t("title")}</h2>
+                    <h2 className={styles.sectionTitle}>{t("title")}</h2>
                     <Image src='./large-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
                 </div>
                 <p className={styles.sectionDesc}>{t("desc")}</p>
