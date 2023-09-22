@@ -14,7 +14,7 @@ const Media = () => {
         <div className={styles.mediaSection}>
             <h2 className={`${utilsStyles.h2} ${styles.mediaTitle}`}>{t("title")}</h2>
             <MediaList list={medias} />
-            <svg className={styles.arrowBtn} width="78" height="75" viewBox="0 0 78 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <svg tabIndex={0} onClick={(e) => e.currentTarget.blur()} className={styles.arrowBtn} width="78" height="75" viewBox="0 0 78 75" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g id="erow">
                 <path id="Vector 24" d="M76.75 8.25L39 46L1.25 8.25" stroke-width="2"/>
                 </g>

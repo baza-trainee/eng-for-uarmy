@@ -15,8 +15,8 @@ const HeaderMobile = ({setMobileMenu, mobileMenu}) => {
   return <div className={`${styles.mobileHeader} ${mobileMenu && styles.open}`}>
       <div className={styles.mobileHeaderBox}>
       <svg className={styles.crossIcon} onClick={() => {setMobileMenu(!mobileMenu)} } xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
-        <rect width="26.155" height="1.74367" transform="matrix(0.704002 -0.710198 0.704002 0.710198 0.359375 18.5752)" fill="#768728"/>
-        <rect width="26.155" height="1.74367" transform="matrix(0.704002 0.710198 -0.704002 0.710198 1.22754 0.187012)" fill="#768728"/>
+        <rect width="26.155" height="1.74367" transform="matrix(0.704002 -0.710198 0.704002 0.710198 0.359375 18.5752)" fill="#231F20"/>
+        <rect width="26.155" height="1.74367" transform="matrix(0.704002 0.710198 -0.704002 0.710198 1.22754 0.187012)" fill="#231F20"/>
       </svg>
       <nav className={styles.navMobile} onClick={() =>{setMobileMenu(!mobileMenu)}}>
         <div>

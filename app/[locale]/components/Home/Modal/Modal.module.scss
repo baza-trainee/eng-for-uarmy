@@ -1,4 +1,5 @@
 @import '../../../styles/variables.module';
+@import '../../../styles/mixins.module';
 
 .backdrop{
     display: flex;
@@ -71,45 +72,22 @@
     }
 }
 .btn{
-    font-family: inherit;
-    background-color: $color-black;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: $color-black;
     color: $color-ultra-light-grey;
     font-size: 15px;
-    --size-corner: 20px;
     padding: 15px 0px;
     width: 100%;
     height: 50px;
-    border: none;
-    clip-path: polygon(0 0,
-            100% 0,
-            100% 100%,
-            80% 100%,
-            var(--size-corner) 100%,
-            0 calc(100% - var(--size-corner)));
-    transition: background-color $transition-duration $timing-function;
-    cursor: pointer;
+    @include cutBtn();
 
     @media screen and (min-width: $desktop) {
-        --size-corner: 36px;
         padding: 28px 0px;
         width: 359px;
         height: 92px;
         font-size: 22px;
-    }
-    &:hover {
-        background-color: $color-olive;
-    }
-
-    &:active,
-    &:focus {
-        background-color: $color-black;
-    }
-
-    &:focus:not(:active) {
-        border: 3px solid $color-black;
     }
 }
 .icon{

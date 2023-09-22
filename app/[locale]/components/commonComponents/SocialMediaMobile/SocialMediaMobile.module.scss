@@ -5,13 +5,59 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin-top: 30px;
 }
-.socialItem{
-    &:not(:last-child){
+.socialLi{
+    &:not(:last-child) {
         margin-bottom: 15px;
     }
 }
+.socialItem{
+    position: relative;
+    display: block;
+    width: 70px;
+    height: 50px;
+    --border-color: #231F20;
+    --size-corner: 15px;
+    --border-width: 1px;
+    outline: none;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+    
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: var(--border-color);
+                z-index: -2;
+            };
+            &::after {
+                content: "";
+                background: $color-ultra-light-grey;
+                position: absolute;
+                inset: 0;
+                z-index: -1;
+                clip-path: polygon(var(--border-width) var(--border-width),
+                        100% var(--border-width),
+                        calc(100% - var(--border-width)) var(--border-width),
+                        calc(100% - var(--border-width)) calc(100% - var(--border-width)),
+                        calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
+                        var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
+        }
+        &:hover {
+            --border-color: #798738;
+        }
+        &:focus:not(:active) {
+            --border-color: #798738;
+            --border-width: 3px;
+        }
+}
 .svgIcon {
+    display: block;
     stroke: currentColor;
     transition: stroke $transition-duration $timing-function;
 }
@@ -21,10 +67,11 @@
     transition: fill $transition-duration $timing-function;
 }
 
-.socialBtn:hover .svgIcon {
+
+.socialItem:hover .svgIcon {
     stroke: $color-olive;
 }
 
-.socialBtn:hover .back {
+.socialItem:hover .back {
     fill: $color-olive;
 }

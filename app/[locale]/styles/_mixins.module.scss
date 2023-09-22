@@ -60,3 +60,67 @@
         }
     }
 }
+
+@mixin cutBtn(){
+    position: relative;
+    font-family: inherit;
+    --border-color: #231F20;
+    --size-corner: 20px;
+    --border-width: 3px;
+    outline: none;
+    border: none;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+    transition: background-color $transition-duration $timing-function;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: var(--border-color);
+        z-index: -2;
+    }
+
+    &::after {
+        content: "";
+        background: $color-black;
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        clip-path: polygon(var(--border-width) var(--border-width),
+                100% var(--border-width),
+                calc(100% - var(--border-width)) var(--border-width),
+                calc(100% - var(--border-width)) calc(100% - var(--border-width)),
+                calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
+                var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
+    }
+
+        @media screen and (min-width: $desktop) {
+            --size-corner: 36px;
+        }
+
+    &:hover {
+        --border-color: #798738;
+    }
+
+    &:hover::after {
+        background: $color-olive;
+    }
+
+    &:active {
+        --border-color: #231F20;
+    }
+
+    &:active::after {
+        background: $color-black;
+    }
+
+    &:focus:not(:active) {
+        --border-color: #8b8b8b;
+    }
+}
