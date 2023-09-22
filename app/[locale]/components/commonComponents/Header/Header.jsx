@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from 'next/navigation';
 import { useState } from "react";
-import HeaderMobile from "./HeaderMobileElem";
+import HeaderMobile from "./HeaderMobile";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
 import styles from "./header.module.scss";
@@ -39,8 +39,8 @@ const Header = () => {
         <LangSwitcher locale={locale} pathname={currentPathname} />
         <button onClick={() => openMobileMenu()} className={styles.menuBtn}>
             <svg className={styles.menuBurgerIcon} xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
-              <rect width="22" height="1.42857" fill="#768728"/>
-              <rect y="8.57129" width="22" height="1.42857" fill="#768728"/>
+              <rect width="22" height="1.42857" fill="#231F20"/>
+              <rect y="8.57129" width="22" height="1.42857" fill="#231F20"/>
             </svg>
         </button>
         </div>

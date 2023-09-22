@@ -22,19 +22,22 @@ const HelpUsGrows = () => {
             <ul className={styles.helpList}>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("donate-desc")}</p>
-                    <Link href={`/${locale}?modal=true`} onClick={() => { document.body.classList.add('modal-open') }} className={styles.helpBtn}>{t("donate")}</Link>
+                        <Link href={`/${locale}?modal=true`} onClick={(e) => {
+                            e.currentTarget.blur()
+                            document.body.classList.add('modal-open')
+                        }} className={styles.helpBtn}>{t("donate")}</Link>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("volunteer-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("volunteer")}</Link>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("volunteer")}</Link>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("partner-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("partner")}</Link>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("partner")}</Link>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("spread-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("spread")}</Link>
+                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("spread")}</Link>
                 </li>
             </ul>
         </div>
