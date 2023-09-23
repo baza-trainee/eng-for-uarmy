@@ -1,13 +1,10 @@
 @import "../../../styles/variables.module";
 
 .section {
-	// 	padding-top: 30px;
-	// 	padding-bottom: 30px;
-
-	// @media screen and (max-width: $tablet) {
-	// 	padding-top: 60px;
-	// 	padding-bottom: 60px;
-	// }
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		padding-top: 20px;
+		padding-bottom: 50px;
+	}
 
 	@media screen and (min-width: $desktop) {
 		padding-top: 80px;
@@ -16,14 +13,13 @@
 }
 
 .container {
-	// 	padding-left: 30px;
-	// 	padding-right: 30px;
-
-	// @media screen and (max-width: $tablet) {
-	// 	padding-left: 60px;
-	// 	padding-bottom: 60px;
-	// }
 	margin: 0 auto;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		width: $mobile;
+		padding-left: $section-padding-mob;
+		padding-right: $section-padding-mob;
+	}
 
 	@media screen and (min-width: $desktop) {
 		width: $desktop;
@@ -33,51 +29,107 @@
 }
 
 .wrapper {
-	display: flex;
-	color: $color-black-text;
+	@media screen and (min-width: $desktop) {
+		display: flex;
+	}
 }
 
 .titleWrapper {
-	min-width: 520px;
-	margin-right: 50px;
-	// color: $color-black-text;
-}
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-bottom: 30px;
+	}
 
-.textWrapper {
-	margin-bottom: 40px;
+	@media screen and (min-width: $desktop) {
+		min-width: 520px;
+		margin-right: 50px;
+	}
 }
 
 .title {
-	font-size: 64px;
-	line-height: 1.25;
-	letter-spacing: 0.364px;
-	margin-bottom: 16px;
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 30px;
+		line-height: 1.2;
+		margin-bottom: 10px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 64px;
+		line-height: 1.25;
+		letter-spacing: 0.364px;
+		margin-bottom: 16px;
+	}
 }
 
 .textHead {
 	font-family: Arial;
-	font-size: 15px;
-	line-height: 1.53;
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 13px;
+		line-height: 1.5;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 15px;
+		line-height: 1.53;
+	}
+}
+
+.textWrapper {
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-bottom: 30px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-bottom: 40px;
+	}
 }
 
 .text {
 	font-family: Arial;
-	font-size: 18px;
 	line-height: 1.5;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 13px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 18px;
+	}
 }
 
 .subTitle {
-	font-size: 18px;
-	line-height: 1.5;
-	margin-bottom: 16px;
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		font-size: 15px;
+		line-height: 1.8;
+		margin-bottom: 5px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 16px;
+	}
 }
 
 .list {
 	list-style: disc;
-	margin-top: 24px;
-	padding-left: 20px;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-top: 10px;
+		padding-left: 20px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-top: 24px;
+		padding-left: 20px;
+	}
 }
 
 .item:not(:last-child) {
-	margin-bottom: 16px;
+	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+		margin-bottom: 10px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		margin-bottom: 16px;
+	}
 }
