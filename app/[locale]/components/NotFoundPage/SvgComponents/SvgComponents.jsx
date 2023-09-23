@@ -12,8 +12,8 @@ export const ArrowLeftSvg = () => {
     >
       <path
         className={styles.arrowPath}
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M12.3536 0L0.353554 12L0 12.3536L0.353554 12.7071L12.3536 24.7071L13.0607 24L1.91421 12.8536H27.7071V11.8536H1.91421L13.0607 0.707107L12.3536 0Z"
         fill="#231F20"
       />
@@ -34,7 +34,7 @@ export const ArrowLeftSvgMobile = () => {
       <path
         className={styles.arrowPathMobile}
         fill-rule="evenodd"
-        clip-rule="evenodd"
+        clipRule="evenodd"
         d="M9.87674 0.90625L1.20641 10.668L0.911499 11.0001L1.20641 11.3321L9.87674 21.0939L10.6244 20.4298L2.69308 11.5001H21.0885V10.5001H2.69308L10.6244 1.57032L9.87674 0.90625Z"
         fill="#231F20"
       />

@@ -1,17 +1,28 @@
 @import '../../../styles/variables.module';
 
 .mediaList{
-    display: flex;
-    flex-wrap: wrap;
-    margin: -16px -10px;
+    
+    @media screen and (min-width: $desktop) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -16px -10px;
+    }
 }
 .mediaCard{
     display: flex;
     align-items: center;
-    width: 360px;
+    width: 100%;
     border: 1px solid $color-black;
-    padding: 40px 22px 40px 30px;
-    margin: 16px 10px;
+    padding: 35px 34px 35px 34px;
+    &:not(:last-child){
+        margin-bottom: 20px;
+    }
+    @media screen and (min-width: $desktop) {
+        width: 360px;
+        padding: 40px 22px 40px 30px;
+        margin: 16px 10px;
+   
+     }
 }
 .mediaContent{
     display: flex;
@@ -22,24 +33,38 @@
 .mediaDesc{
     color: $color-black;
     font-family: Arial;
-    font-size: 18px;
-    line-height: 27px;
-    height: 81px;
-    margin-bottom: 31px;
+    font-size: 13px;
+    line-height: 150%;
+    height: 60px;
+    margin-bottom: 20px;
+    @media screen and (min-width: $desktop) {
+        font-size: 18px;
+        line-height: 27px;
+        height: 81px;
+        margin-bottom: 31px;
+
+    }
 }
 .btnReadMore{
     border: none;
     display: flex;
-    height: 50px;
-    padding: 16px;
+    height: 35px;
+    padding: 12px;
     justify-content: center;
     align-items: center;
     background-color: $color-olive;
     color: $color-white-text;
+    text-wrap: nowrap;
+    font-size: 10px;
     outline: none;
     cursor: pointer;
     transition: background-color $transition-duration $timing-function, color $transition-duration $timing-function;
+    @media screen and (min-width: $desktop) {
+        height: 50px;
+        padding: 16px;
+        font-size: 16px;
 
+    }
     &:hover {
         background-color: $color-green;
         color: $color-black;

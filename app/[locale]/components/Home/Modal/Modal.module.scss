@@ -199,4 +199,7 @@
         right: 30px;
         top: 30px;
     }
+    &:focus:not(:active) path{
+        fill: $color-olive;
+    }
 }
