@@ -75,7 +75,7 @@
             80% 100%,
             var(--size-corner) 100%,
             0 calc(100% - var(--size-corner)));
-    transition: background-color $transition-duration $timing-function;
+    transition: all $transition-duration $timing-function;
     cursor: pointer;
 
     &::before {
@@ -88,7 +88,7 @@
 
     &::after {
         content: "";
-        background: $color-black;
+        background-color: $color-black;
         position: absolute;
         inset: 0;
         z-index: -1;
@@ -109,7 +109,7 @@
     }
 
     &:hover::after {
-        background: $color-olive;
+        background-color: $color-olive;
     }
 
     &:active {

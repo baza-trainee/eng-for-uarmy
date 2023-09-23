@@ -177,9 +177,12 @@
 .menuBurgerIcon{
   background: none;
   outline: none;
-  fill: $color-black;
-  transition: fill $transition-duration $timing-function;
   cursor: pointer;
+
+  & rect{
+    transition: fill $transition-duration $timing-function;
+    fill: $color-black;
+  }
   &:hover rect{
     fill: $color-olive;
   }

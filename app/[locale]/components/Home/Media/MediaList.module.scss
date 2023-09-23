@@ -1,7 +1,6 @@
 @import '../../../styles/variables.module';
 
 .mediaList{
-    
     @media screen and (min-width: $desktop) {
         display: flex;
         flex-wrap: wrap;
@@ -13,22 +12,40 @@
     align-items: center;
     width: 100%;
     border: 1px solid $color-black;
-    padding: 35px 34px 35px 34px;
-    &:not(:last-child){
-        margin-bottom: 20px;
-    }
+    padding: 35px 34px 35px 10px;
+    
+    @media screen and (max-width: $desktop) {
+        &:not(:last-child) {
+            margin-bottom: 20px;
+        }
+     }
     @media screen and (min-width: $desktop) {
         width: 360px;
         padding: 40px 22px 40px 30px;
         margin: 16px 10px;
-   
      }
+}
+.mediaLogoWrap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
+    padding: 10px;
+    @media screen and (min-width: $desktop) {
+        width: 110px;
+        height: 110px;
+    }
 }
 .mediaContent{
     display: flex;
     flex-direction: column;
-    width: 167px;
-    margin-left: 28px;
+    margin-left: 19px;
+    @media screen and (min-width: $desktop) {
+        margin-left: 28px;
+        width: 167px;
+    }
 }
 .mediaDesc{
     color: $color-black;
