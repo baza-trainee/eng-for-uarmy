@@ -9,7 +9,7 @@
     flex-direction: column;
     width: $mobile;
     margin: 0 auto;
-    padding: 25px $mobile-padding;
+    padding: 25px $section-padding-mob;
     @media screen and (min-width: $desktop) {
         width: $desktop;
         padding: 100px $section-padding 86px $section-padding;
@@ -18,7 +18,6 @@
 .descWrap{
     display: flex;
     flex-direction: column;
-    // margin-bottom: 30px;
     @media screen and (min-width: $desktop) {
         flex-direction: row;
         margin-bottom: 52px;
