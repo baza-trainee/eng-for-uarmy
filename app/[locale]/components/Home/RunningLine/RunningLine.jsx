@@ -7,7 +7,7 @@ const RunningLine = () => {
     const t = useTranslations("RunningLine");
 
     return  <section className={styles.bannerContainer}>
-          <Marquee autoFill={true} speed={100}>
+          <Marquee autoFill={true} speed={110}>
             <p className={styles.bannerText}>
               {t("string")}
               <span className={styles.bannerDivider}></span>

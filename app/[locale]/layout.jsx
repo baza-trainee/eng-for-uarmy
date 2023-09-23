@@ -8,7 +8,7 @@ export const metadata = {
   title: "Eng for UArmy",
   description: "Eng for UArmy",
   icons: {
-    icon: '/favicon.ico',
+    icon: '/favicon.svg',
   },
   viewport: {
     width: 'device-width',
