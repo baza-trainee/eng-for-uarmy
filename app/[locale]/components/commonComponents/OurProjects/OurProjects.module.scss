@@ -1,11 +1,7 @@
-@import '../../../styles/reset.module';
+
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
-@font-face {
-    font-family: Furore; 
-    src: url('../../../assets/fonts/Furore.woff2') format('woff'); 
-    
-  }
+
 
   .ourProjects{
     margin: 0 auto;
@@ -16,6 +12,7 @@
     margin: 0 auto;
     width: $desktop;
   }
+
   .head{
     font-family: Furore;
     font-size: 48px;
@@ -26,31 +23,32 @@
     color: var(--black, #231F20);
   }
 
-  .our-projects-card{
+  .our_projects_card{
+    margin-left: 21px;
     position: relative;
     display: grid;
     justify-items: center;
+    &:first-child{
+      margin-left: 0;
+    }
     
 }
   
-
   .wraper{
     margin-top: 100px;
     display: flex;
     justify-content: center;
-    gap: 21px;
+    
     
   }
 
-  
-
-  .text-cont{
+  .textCont{
     display: grid;
     justify-items: center;
 
   }
 
-  .card-head{
+  .cardHead{
     color: var(--black, #171717);
     margin-top: 40px;
     text-align: center;
@@ -62,7 +60,7 @@
     letter-spacing: 0.35px;
   }
 
-  .card-text{
+  .cardText{
     width: 287px;
     margin-top: 40px;
     color: var(--grey, #8B8B8B);
@@ -75,7 +73,7 @@
 
   }
 
-  .card-button {
+  .cardButton {
     margin-top: 40px;
     display: flex;
     padding: 16px 38px;
@@ -83,6 +81,7 @@
     font-size: 16px;
     justify-content: center;
     width: 208px;
+    border: 3px solid transparent;
     color: $color-white-text;
     background-color: $color-olive;
     cursor: pointer;
@@ -91,95 +90,87 @@
       background-color: $color-green;
       color: var(--black, #231F20);
     }
-    &:focus{
+    &:active,
+    &:focus {
       border: 3px solid var(--black, #231F20);
       outline: none;
-   }
-  
-  @media screen and (max-width: 320px){
+    }
+   
+  }
+
+   @media (min-width: $mobile) and (max-width: $desktop){
 
     .ourProjects{
       width: $mobile;
-      padding: 0 20px 0 20px;
+      padding: 0 16px;
+      padding-bottom: 30px;
     }
-    .card-svg{
-      top: -16%;
-      width: 280px;
-      aspect-ratio: unset;
-    }
-    .card-img{
-      width: 280px;
+    
+    .cardImg{
+      width: 288px;
       height: 173px;
+      aspect-ratio: unset;
       
-    }
-    .ourProjects{
-      margin: 0 auto;
-      padding: 110px 0 200px 0; 
     }
     
     .head{
-      font-family: Furore;
+      width: 200px;
       font-size: 30px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 120%; 
       text-align: left;
+
     }
   
-    .our-projects-card{
-      position: relative;
-      display: grid;
-      justify-items: center;
-      
+    .our_projects_card{
+      display: flex;
+      padding-bottom: 21px;
+      height: 397px;
+      align-items: center;
+      flex-direction: column;
   }
     
   
     .wraper{
-      margin-top: 100px;
-      display: flex;
-      justify-content: center;
-      gap: 21px;
+      margin-top: 30px;
+     
       
     }
   
     .card-svg{
      position: absolute;
      pointer-events: none;
+    
     }
   
-    .text-cont{
+    .textCont{
       display: grid;
       justify-items: center;
+      margin-top: 20px;
   
     }
   
-    .card-head{
-      text-align: center;
-      font-family: Furore;
+    .cardHead{
+      margin-top: 0;
       font-size: 20px;
-      font-style: normal;
-      font-weight: 400;
       line-height: normal;
     }
   
-    .card-text{
-      text-align: center;
-      font-family: Arial;
+    .cardText{
+      width: 217px;
+      margin-top: 20px;
       font-size: 13px;
-      font-style: normal;
-      font-weight: 400;
-      line-height: 150%; 
+      line-height: 150%;
   
     }
   
-    .card-button {
-      width: 155px;
-      height: 40px;
+    .cardButton {
+      margin-top: 20px;
+      display: flex;
+      width: 150px;
       padding: 12px;
       justify-content: center;
       align-items: center;
-      gap: 6px;
+      font-size: 10px;
+      line-height: normal;
     }
 
   }
-}

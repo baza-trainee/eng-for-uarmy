@@ -1,52 +1,76 @@
 "use client";
 import { useLocale, useTranslations } from 'next-intl';
-import Image from 'next/image'
-import "./OurProjects.styles.scss"
-import Link from 'next/link';
-import { SvgBorder } from './SvgBorder';
+import styles from "./OurProjects.module.scss"
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { useEffect, useState } from 'react';
+import 'swiper/css';
+import { Project1, Project2, Project3 } from './OurProjects.cards';
+import { Navigation, Pagination } from "swiper/modules";
+
 
 
 const OurProjects = () => {
    const locale = useLocale();
    const t = useTranslations("OurProjects");
-   return <>
-        <section className='ourProjects'>
-            <div className='ourProjectsContainer' >
-                <h2 className='head'>{t("title")}</h2>
-                <ul className='wraper'>
-                    <li className='our-projects-card'>
-                    <SvgBorder />
-                    <Image className='card-img' src="/OurProjects/Rectangle.png" alt="Image" width={359} height={236} />
-                        <div className='text-cont'>
-                        <h3 className='card-head'>{t("youtube")}</h3>
-                        <p className='card-text'>{t("youtube-desc")}</p>
-                        <Link href={`https://www.youtube.com/@engforuarmy`} className="card-button">{t("learnMore")}</Link>
-                        
-                    </div>
-                    </li>
-                    <li className='our-projects-card'>
-                    <SvgBorder />
-                    <Image className='card-img' src="/OurProjects/Speaking.png" alt="Speaking" width={359} height={236} />
-                    <div className='text-cont'> 
-                        <h3 className='card-head'>{t("practice")}</h3>
-                        <p className='card-text'>{t("practice-desc")}</p>
-                        <Link href={`/${locale}`} className="card-button">{t("learnMore")}</Link>
-                    </div>
-                    </li>
-                    <li className='our-projects-card'>
-                    <SvgBorder />
-                    <Image className='card-img' src="/OurProjects/mobile.png" alt="mobile" width={359} height={236} />
-                        <div className='text-cont'>
-                        <h3 className='card-head'>{t("mobileApp")}</h3>
-                        <p className='card-text'>{t("mobileApp-desc")}</p>
-                        <Link href={`/${locale}`} className="card-button">{t("learnMore")}</Link>
-                        </div>
-                    </li>
+   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1279);
+    
+    useEffect(() => {
+        const handleWindowResize = () => {
+        setIsLargeScreen(window.innerWidth >= 1279);
+        };
+    
+        window.addEventListener("resize", handleWindowResize);
+    
+        return () => {
+        window.removeEventListener("resize", handleWindowResize);
+        };
+    }, []);
 
-                </ul>
-                </div>
-        </section>
+
+    return (
+        <>
+          <section className={styles.ourProjects}>
+            <div className={styles.ourProjectsContainer}>
+              <h2 className={styles.head}>{t("title")}</h2>
+              <ul className={styles.wraper}>
+                {isLargeScreen ? (
+                  <>
+                    <Project1 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
+                    <Project2 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
+                    <Project3 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
+                  </>
+                ) : (
+                  <Swiper
+                  className="my-swiper"
+                    modules={[Navigation, Pagination]}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{
+                      clickable: true,
+                      dynamicBullets: true,
+                    }}
+                    speed={700}
+                    loop={true}
+                    breakpoints={{
+                      320: {
+                        spaceBetween: 32,
+                      },
+                      768: {
+                        spaceBetween: 32,
+                      }
+                    }}
+                  >
+                    <SwiperSlide><Project1 t={t} locale={locale} isLargeScreen={isLargeScreen}/></SwiperSlide>
+                    <SwiperSlide><Project2 t={t} locale={locale} isLargeScreen={isLargeScreen}/></SwiperSlide>
+                    <SwiperSlide><Project3 t={t} locale={locale} isLargeScreen={isLargeScreen}/></SwiperSlide>
+                    
+                  </Swiper>
+                )}
+              </ul>
+            </div>
+          </section>
         </>
+      );
 
 }
 
