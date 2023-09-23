@@ -1,4 +1,4 @@
-@import '../../../styles/variables.module';
+@import "../../../styles/variables.module";
 
 @mixin filledTextStyle {
   color: $color-black;
@@ -10,102 +10,131 @@
   letter-spacing: -0.408px;
 }
 
-.form__wrapper{
-  position: relative;
-  padding: 70px 95px 80px 95px;
+.form {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 1104px;
+  padding: 70px 76px 80px 76px;
+  margin-top: 70px;
+  border: 1px solid black;
 }
 
-.cardSVG{
-  position: absolute;
-  top: 0px;
-  left:0px;
-  pointer-events: none;
+.form__mainblock {
+  display: flex;
+  margin-bottom: 76px;
+  .form__block:last-child {
+    margin-right: 0;
+  }
 }
 
-.form{
-    display: flex;
-    flex-direction: column; 
-    align-items: flex-start;
-    width: 951px;
-    margin-top: 70px;
-    .form__button { 
-        margin-left: auto; 
-      }
-    
+.form__block {
+  display: flex;
+  width: 430px;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 80px;
 }
 
-.form__mainblock{
-    display: flex;
-    margin-bottom: 76px;
-    gap: 20px;
+.form__item1 {
+  margin-bottom: 60px;
+  margin-top: 60px;
 }
 
-.form__block{
-    display: flex;
-    width: 455px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 60px;
-}
-
-
-.form__input{
+.form__input {
+  width: 100%;
+  height: 43px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid $color-black-text;
+  @include filledTextStyle();
+  ::placeholder {
+    color: $color-light-grey;
+  }
+  &:focus {
+    outline: none;
+  }
+  @media screen and (mix-width: $desktop) {
     width: 360px;
     height: 43px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid $color-black-text;
-    @include filledTextStyle();
-    ::placeholder {
-        color: $color-light-grey;
-      }
-      &:focus {
-        outline: none;
-      }
-    @media screen and (mix-width: $desktop) {
-        width: 360px;
-        height: 43px;
-        padding: 32px 0px 10px 0px;
-      }
+    padding: 32px 0px 10px 0px;
+  }
+}
+
+.form__textarea {
+  width: 430px;
+  height: 42px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #000;
+  @include filledTextStyle();
+  &:focus {
+    outline: none;
+  }
 }
 
 .form__textarea{
-    width: 455px;
-    height: 42px;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid #000;
-    @include filledTextStyle();
-    &:focus {
-        outline: none;
-      }
+  scrollbar-color: $color-olive;
 }
 
-.form__button{
+.form__textarea::-webkit-scrollbar {
+  width: 8px;
+}
+
+.form__textarea::-webkit-scrollbar-corner{
+  display: none;
+}
+
+.form__textarea::-webkit-resizer{
+  display: none;
+}
+
+.form__textarea::-webkit-scrollbar-thumb {
+background-color: $color-olive;
+outline: none;
+}
+
+.form__button {
+  width: 272px;
+  height: 92px;
+  font-family: inherit;
+  background-color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #f9f9f9;
+  font-size: 22px;
+  --size-corner: 36px;
+  border: none;
+  -webkit-clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    var(--size-corner) 100%,
+    0 calc(100% - var(--size-corner))
+  );
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    80% 100%,
+    var(--size-corner) 100%,
+    0 calc(100% - var(--size-corner))
+  );
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  &:hover {
+    background-color: $color-olive;
+  }
+  &:active,
+  &:focus {
+    background-color: $color-black;
+    border: 3px solid $color-grey;
+  }
+  @media screen and (mix-width: $desktop) {
     width: 272px;
     height: 92px;
-    font-family: inherit;
-    background-color: $color-black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #F9F9F9;
-    font-size: 22px;
-    --size-corner: 36px;
-    border: none;
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
-    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-    cursor: pointer;
-    &:hover {
-      background-color: $color-olive;
   }
-  &:active, &:focus {
-      background-color: $color-black;
-      border: 3px solid $color-grey;
-  }
-    @media screen and (mix-width: $desktop) {
-        width: 272px;
-        height: 92px;
-      }
 }
