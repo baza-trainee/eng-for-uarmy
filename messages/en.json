@@ -75,7 +75,8 @@
     "contactUs": "Contact us",
     "follow": "Follow",
     "policy-first": "Developed by Baza Trainee Ukraine 2023",
-    "policy-second": "All rights reserved"
+    "policy-second": "All rights reserved",
+    "policy-link": "Website privacy policy"
   },
   "OurTeam": {
     "title": "Our team",
@@ -115,7 +116,7 @@
     "name-17": "Aliona Nikitchyna",
     "role-17": "Volunteer",
     "join": "Want to join our project?",
-    "joinOffer": "Check out our job vacancies or reach out to become volunteer",
+    "joinOffer": "Check out our job vacancies or reach out to become a volunteer",
     "vacancies": "Job vacancies",
     "volunteer": "Volunteer"
   },

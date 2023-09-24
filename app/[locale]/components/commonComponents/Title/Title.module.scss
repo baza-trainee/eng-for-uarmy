@@ -7,7 +7,7 @@
     @include mq(desktop) {
         display: flex;
         align-items: flex-start;
-        margin-bottom: 67px;
+        margin-bottom: 77px;
     }
 
     &__name {
@@ -26,7 +26,7 @@
         }
     }
     &__description {
-        max-width: 322px;
+        max-width: 350px;
 
         font-family: Arial;
         font-size: 13px;
@@ -34,8 +34,7 @@
         line-height: 1.5;
 
         @include mq(desktop) {
-            margin-top: 10px;
-
+            margin-top: 6px; 
             font-size: 18px;
         }
     }
