@@ -113,7 +113,7 @@ const Footer = () => {
                 
           <span className={styles.policy__divider}></span>
 
-          <Link href={`/${locale}/privacy-policy`} className={styles.policy__link}>Privacy policy</Link>
+          <Link href={`/${locale}/privacy-policy`} className={styles.policy__link}>{t("policy-link")}</Link>
         </div>
       </div>
     </footer>
