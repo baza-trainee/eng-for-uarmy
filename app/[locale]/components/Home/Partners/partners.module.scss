@@ -1,5 +1,6 @@
 @import '../../../styles/variables.module'; 
 @import '../../../styles/utils.module';
+@import '../../../styles/mixins.module';
 
 @font-face {
     font-family: Furore; 
@@ -8,82 +9,127 @@
 .partnersSection{
         background-color: $color-ultra_light_grey;
 }
+
 .partners {
-    max-height: 793px;
-    width: $desktop;
-    margin: 0 auto;
-    padding: 96px 0 120px 0;
-    max-width: $desktop;
+        max-height: 793px;
+        width: $desktop;
+        margin: 0 auto;
+        padding: 96px 0 120px 0;
+        max-width: $desktop;
 }
 
 .title {
-    color: $color-black;
-    font-family: Furore;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    text-align: center;
-    padding-bottom: 42px;
+        width: $desktop;
+        color: $color-black;
+        font-family: Furore;
+        font-size: 48px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        text-align: center;
+        padding-bottom: 42px;
 }
 
 .icons {
-    width: 179px;
-    height: 179px;
-    display: inline-block;
-    transition: transform 0.3s ease;
-    margin: 0;
-    padding: 27px 27px 24px 27px;
-    &:hover {
-        transform: scale(1.1);
-    }
+        width: $desktop;
+        width: 179px;
+        height: 179px;
+        display: inline-block;
+        transition: transform 0.3s ease;
+        margin: 0;
+        padding: 27px 27px 24px 27px;
+        &:hover {
+            transform: scale(1.1);
+        }
 }
 
 .imageSlider {
-    overflow-x: hidden;
-    overflow-y: hidden; 
-    width: 100%;
-    display: flex;
-    justify-content: center;
+        width: $desktop;
+        overflow-x: hidden;
+        overflow-y: hidden; 
+        width: 100%;
+        display: flex;
+        justify-content: center;
 }
 
 .helpItem {
-    display: flex;
-    flex-direction: column;
-    gap: 36px;
-    align-items: center;
-    background-color: $color-ultra-light-grey;
-    border: none; 
-    padding-top: 70px;
+        width: $desktop;
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        align-items: center;
+        background-color: $color-ultra-light-grey;
+        border: none; 
+        padding-top: 70px;
 }
 
 .helpBtn{
-    font-family: inherit;
-    background-color: $color-black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $color-ultra-light-grey;
-    font-size: 22px;
-    --size-corner: 36px;
-    width: 482px;
-    height: 92px;
-    border: none;
-    clip-path: polygon(0 0,
+        width: $desktop;
+        font-family: inherit;
+        background-color: $color-black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $color-ultra-light-grey;
+        font-size: 22px;
+        --size-corner: 36px;
+        width: 482px;
+        height: 92px;
+        border: none;
+        clip-path: polygon(0 0,
             100% 0,
             100% 100%,
             80% 100%,
             var(--size-corner) 100%,
             0 calc(100% - var(--size-corner)));
-    transition: background-color $transition-duration $timing-function;
-    cursor: pointer;
-    &:hover{
-        background-color: $color-olive;
-    }
-    &:active,
-    &:focus{
-        background-color: $color-black;
-        border: 3px solid $color-grey;
-        color: $color-ultra-light-grey;
-    }
+        transition: background-color $transition-duration $timing-function;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-olive;
+        }
+        &:active,
+        &:focus{
+            background-color: $color-black;
+            border: 3px solid $color-grey;
+            color: $color-ultra-light-grey;
+        }  
 }
+
+@media (max-width: $desktop) {
+   .partners {
+    width: $mobile;
+    padding: 25px $section-padding-mob 25px $section-padding-mob;
+   }
+   .title {
+    width: $mobile;
+    font-family: Furore;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 35px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-bottom: 0;
+   }
+   .icons {
+    width: $mobile;
+    width: 135px;
+    height: 135px;
+    padding: 50px 76.5px 10px 76.5px;
+    display: inline-block;
+    margin: 0;
+   }
+   .imageSlider{
+    width: $mobile;
+    padding: 0;
+   }
+   .helpItem{
+    width: $mobile;
+    text-align: center;
+    padding-top: 50px;
+   }
+   .helpBtn {
+    width: $mobile;
+   }
+}
+
+  

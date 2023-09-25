@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import { Swiper, SwiperSlide} from "swiper/react";
 import {  Navigation, Pagination } from "swiper/modules";
 
@@ -8,12 +9,37 @@ import styles from './partners.module.scss';
 
 import Image from "next/image";
 
+
 const Slider = ({ data }) => {
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const getSlidesPerView = () => {
+      return window.innerWidth > 1279 ? 3 : 1;
+    }
+  
+    const handleResize = () => {
+      const newSlidesPerView = getSlidesPerView();
+  
+      if (slidesPerView !== newSlidesPerView) {
+        setSlidesPerView(newSlidesPerView);
+      }
+    }
+  
+    window.addEventListener('resize', handleResize);
+  
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [slidesPerView]);
+  
+
+
     return (
         <Swiper
             modules={[Navigation, Pagination]}
             spaceBetween={72}
-            slidesPerView={3}
+            slidesPerView={slidesPerView}
             navigation
             pagination={{
             clickable: true,
@@ -21,7 +47,7 @@ const Slider = ({ data }) => {
           }}
           speed={700}
           loop={true}
-          className="my-swiper container-slider"
+          className={`my-swiper container-slider`}
          >
          {data.map(({ id, src, alt }) => (
             <SwiperSlide className={styles.imageSlider} key={id}>
