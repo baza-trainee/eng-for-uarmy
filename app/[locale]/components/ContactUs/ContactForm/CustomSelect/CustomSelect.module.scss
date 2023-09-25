@@ -1,12 +1,16 @@
 @import "../../../../styles/variables.module";
+@import "../../../../styles/mixins.module";
 
 .custom__select {
   position: relative;
-  width: 200px;
+  width: 100%;
+  @include mq(desktop) {
+    width: 200px;
+  }
 }
 
 .select__trigger {
-  width: 430px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,24 +23,40 @@
   line-height: 253%;
   padding-bottom: 7px;
   cursor: pointer;
-  &.select__triggerBorder{
-    border-bottom: none;
-  }
-  // @media (min-width: $desktop) {
+  // &.select__triggerBorder{
+  //   border-bottom: none;
+  // }
+  @include mq(desktop) {
+    width: 430px;
     font-size: 22px;
     line-height: 150%;
     letter-spacing: -0.408px;
-  // }
+    &.select__triggerBorder{
+      border-bottom: none;
+    }
+  }
+}
+
+.select__svg{
+  width: 24px;
+  height: 24px;
+  @include mq(desktop) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .select__selected{
   color: $color-black;
   font-family: Arial;
-  font-size: 22px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
   letter-spacing: -0.408px;
+  @include mq(desktop) {
+    font-size: 22px;
+  }
 }
 
 .options {
@@ -52,25 +72,34 @@
   font-style: normal;
   font-weight: 700;
   line-height: 215%;
-  // @media (min-width: $desktop) {
+  @include mq(desktop) {
     font-size: 18px;
     line-height: 155%;
     letter-spacing: -0.408px;
     width: 430px;
-  // }
+  }
 }
 
 .options li {
   padding: calc(36px - (13px * 2.15)) 20px calc(36px - (13px * 2.15)) 20px;
   cursor: pointer;
+  @include mq(desktop) {
+
+  }
 }
 
 .options li:last-child {
   margin-bottom: 10px;
+  @include mq(desktop) {
+
+  }
 }
 
 .options li:first-child {
   margin-top: 10px;
+  @include mq(desktop) {
+
+  }
 }
 
 .options li:hover {
