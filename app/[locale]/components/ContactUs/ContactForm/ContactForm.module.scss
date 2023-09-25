@@ -1,9 +1,10 @@
 @import "../../../styles/variables.module";
+@import "../../../styles/mixins.module";
 
 @mixin filledTextStyle {
   color: $color-black;
   font-family: Arial;
-  font-size: 22px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 700;
   line-height: 150%;
@@ -15,31 +16,47 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1104px;
-  padding: 70px 76px 80px 76px;
-  margin-top: 70px;
+  width: 100%;
+  padding: 20px 12px 30px 12px;
   border: 1px solid black;
+  @include mq(desktop) {
+    width: 1104px;
+    padding: 70px 76px 80px 76px;
+    align-items: flex-end;
+    font-size: 22px;
+  }
 }
 
 .form__mainblock {
+  margin-bottom: 100px;
+  @include mq(desktop) {
   display: flex;
   margin-bottom: 76px;
   .form__block:last-child {
     margin-right: 0;
+   }
   }
 }
 
 .form__block {
+  margin-bottom: 30px;
+  @include mq(desktop) {
   display: flex;
   width: 430px;
   flex-direction: column;
   align-items: flex-start;
   margin-right: 80px;
+  margin-bottom: 0px;
+  }
 }
 
 .form__item1 {
-  margin-bottom: 60px;
-  margin-top: 60px;
+  margin-bottom: 30px;
+    margin-top: 30px;
+  @include mq(desktop) {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
 }
 
 .form__input {
@@ -55,16 +72,15 @@
   &:focus {
     outline: none;
   }
-  @media screen and (mix-width: $desktop) {
-    width: 360px;
+  @include mq(desktop) {
     height: 43px;
-    padding: 32px 0px 10px 0px;
+    font-size: 22px;
   }
 }
 
 .form__textarea {
-  width: 430px;
-  height: 42px;
+  width: 100%;
+  height: 43px;
   background: transparent;
   border: none;
   border-bottom: 1px solid #000;
@@ -72,6 +88,10 @@
   &:focus {
     outline: none;
   }
+  @include mq(desktop) {
+    font-size: 22px;
+  }
+  
 }
 
 .form__textarea{
@@ -79,7 +99,11 @@
 }
 
 .form__textarea::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
+  @include mq(desktop) {
+    width: 8px;
+    
+  }
 }
 
 .form__textarea::-webkit-scrollbar-corner{
@@ -96,15 +120,15 @@ outline: none;
 }
 
 .form__button {
-  width: 272px;
-  height: 92px;
+  width: 200px;
+  height: 50px;
   font-family: inherit;
   background-color: $color-black;
   display: flex;
   align-items: center;
   justify-content: center;
   color: #f9f9f9;
-  font-size: 22px;
+  font-size: 13px;
   --size-corner: 36px;
   border: none;
   -webkit-clip-path: polygon(
@@ -133,8 +157,9 @@ outline: none;
     background-color: $color-black;
     border: 3px solid $color-grey;
   }
-  @media screen and (mix-width: $desktop) {
+  @include mq(desktop) {
     width: 272px;
     height: 92px;
+    font-size: 22px;
   }
 }
