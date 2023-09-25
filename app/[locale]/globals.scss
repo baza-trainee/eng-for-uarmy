@@ -9,7 +9,7 @@
 
 html {
 	box-sizing: border-box;
-	width: 100%;
+	width: 100vw;
 	overflow-x: hidden;
 	scroll-behavior: smooth;
 }
@@ -71,6 +71,7 @@ ol {
 *::before,
 *::after {
 	box-sizing: inherit;
+	-webkit-tap-highlight-color: transparent;
 }
 
 @media (prefers-color-scheme: dark) {

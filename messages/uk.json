@@ -23,7 +23,7 @@
     "support-btn": "Підтримати проєкт"
   },
   "RunningLine": {
-    "string": "Понад 6,000 військових уже навчаються. Приєднуйся!"
+    "string": "Понад 6 000 військових уже навчаються. Приєднуйся!"
   },
   "Feedback": {
     "title": "Військові про курс",
@@ -140,10 +140,10 @@
     "bankDetails": "Банківські реквізити"
   },
   "404": {
-	"btnBack": "Назад",
-	"page": "Сторінку не знайдено",
-	"four": "four-oh-four",
-	"text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
-	"btnHome": "На головну"
-}
+    "btnBack": "Назад",
+    "page": "Сторінку не знайдено",
+    "four": "four-oh-four",
+    "text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
+    "btnHome": "На головну"
+  }
 }

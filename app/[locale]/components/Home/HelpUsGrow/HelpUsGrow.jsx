@@ -3,12 +3,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
 import styles from './HelpUsGrow.module.scss';
-import utilsStyles from '../../../styles/_utils.module.scss';
 
 const HelpUsGrows = () => {
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
-
     return <>
         <span className={styles.anchor} id='helpUsGrow'></span>
         <section className={styles.section} id='helpUsGrow'>
@@ -25,7 +23,6 @@ const HelpUsGrows = () => {
                     <p className={styles.helpDesc}>{t("donate-desc")}</p>
                         <Link href={`/${locale}?modal=true`} onClick={(e) => {
                             e.currentTarget.blur()
-                            document.body.classList.add('modal-open')
                         }} className={styles.helpBtn}>{t("donate")}</Link>
                 </li>
                 <li className={styles.helpItem}>
