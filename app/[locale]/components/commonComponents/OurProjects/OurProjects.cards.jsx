@@ -7,8 +7,6 @@ import styles from "./OurProjects.module.scss"
 
 
 export const Project1 = ({t, isLargeScreen})=>{
-
-console.log(isLargeScreen);
     return (
     <>
      <li className={styles.our_projects_card}>

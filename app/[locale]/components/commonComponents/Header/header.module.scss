@@ -167,18 +167,14 @@
 .menuBtn{
   border: none;
   outline: none;
+  background-color: transparent;
   cursor: pointer;
   display: block;
-  
     @media screen and (min-width: $desktop) {
       display: none;
     }
 }
 .menuBurgerIcon{
-  background: none;
-  outline: none;
-  cursor: pointer;
-
   & rect{
     transition: fill $transition-duration $timing-function;
     fill: $color-black;
