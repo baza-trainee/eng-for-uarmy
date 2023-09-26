@@ -95,7 +95,7 @@
         }  
 }
 
-@media (max-width: $desktop) {
+@media (max-width: 1279.5px) {
    .partners {
     width: $mobile;
     padding: 25px $section-padding-mob 25px $section-padding-mob;
@@ -124,11 +124,15 @@
    }
    .helpItem{
     width: $mobile;
-    text-align: center;
     padding-top: 50px;
+    align-items: start;
    }
    .helpBtn {
-    width: $mobile;
+    width: 288px;
+    height: 50px;
+    font-size: 13px;
+    --size-corner: 20px;
+    position: relative;
    }
 }
 

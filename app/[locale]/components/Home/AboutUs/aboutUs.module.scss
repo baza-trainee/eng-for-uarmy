@@ -33,6 +33,14 @@
     max-height: 1000px;
 }
 
+.mobileImage {
+    display: none;
+    width: 288px;
+    height: 175px;
+    align-items: center;
+    justify-content: center;
+}
+
 .rightside {
     flex: 1;
     margin: 0 auto;
@@ -79,3 +87,41 @@
     text-align: left;
     padding: 50px 80px 0 115px;
 }
+
+@media (max-width: 1279.5px) {
+    .aboutUs {
+        width: $mobile;
+        padding: 20px $section-padding-mob 25px $section-padding-mob;
+        max-height: none;
+        flex-direction: column;
+    }
+
+    .image {
+        display: none; 
+    }
+    
+    .mobileImage {
+        display: block; 
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+    .mobileContent {
+        order: 2;
+    }
+    
+    .title {
+        text-align: left;
+        font-size: 30px;
+        line-height: 34.53px;
+        margin: 0;
+        padding: 0;
+        order: 1;
+    }
+
+    .paragraphOne, .paragraphTwo, .paragraphThree {
+        padding: 0 0 25px 0;
+        font-size: 13px;
+        line-height: 19.5px;
+    }
+} 
