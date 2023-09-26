@@ -11,7 +11,8 @@ import Image from "next/image";
 
 
 const Slider = ({ data }) => {
-  const [slidesPerView, setSlidesPerView] = useState(3);
+  const [isReady, setIsReady] = useState(false);
+  const [slidesPerView, setSlidesPerView] = useState(1);
 
   useEffect(() => {
     const getSlidesPerView = () => {
@@ -27,12 +28,13 @@ const Slider = ({ data }) => {
     }
   
     window.addEventListener('resize', handleResize);
+
+    setIsReady(true);
   
     return () => {
       window.removeEventListener('resize', handleResize);
     };
   }, [slidesPerView]);
-  
 
 
     return (
