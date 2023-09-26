@@ -26,7 +26,7 @@ const DonateSection = () => {
                 </Link>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <Link href={`/${locale}/contact`} className={styles.linkButtons}>
+                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons}>
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
                 </Link>
