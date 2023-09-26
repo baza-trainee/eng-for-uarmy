@@ -81,7 +81,10 @@
     &::before {
         content: "";
         position: absolute;
-        inset: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
         background: var(--border-color);
         z-index: -2;
     }
@@ -90,7 +93,10 @@
         content: "";
         background-color: $color-black;
         position: absolute;
-        inset: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
         z-index: -1;
         clip-path: polygon(var(--border-width) var(--border-width),
                 100% var(--border-width),

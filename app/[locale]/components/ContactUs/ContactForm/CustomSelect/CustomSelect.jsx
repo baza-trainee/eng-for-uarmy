@@ -38,6 +38,7 @@ const CustomSelect = ({requestTypeHandler}) => {
           {selectedOption}
         </span>
         <svg
+        className={styles.select__svg}
           xmlns="http://www.w3.org/2000/svg"
           width="32"
           height="32"
@@ -59,13 +60,6 @@ const CustomSelect = ({requestTypeHandler}) => {
           ))}
         </ul>
       )}
-      {/* <input 
-      type="hidden" 
-      name="requestType" 
-      value={selectedOption} 
-      onChange={()=>console.log(selectedOption)}
-      required
-      /> */}
     </div>
   );
 };

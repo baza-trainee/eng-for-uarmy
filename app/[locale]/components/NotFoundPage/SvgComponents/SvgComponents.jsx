@@ -33,7 +33,7 @@ export const ArrowLeftSvgMobile = () => {
     >
       <path
         className={styles.arrowPathMobile}
-        fill-rule="evenodd"
+        fillRule="evenodd"
         clipRule="evenodd"
         d="M9.87674 0.90625L1.20641 10.668L0.911499 11.0001L1.20641 11.3321L9.87674 21.0939L10.6244 20.4298L2.69308 11.5001H21.0885V10.5001H2.69308L10.6244 1.57032L9.87674 0.90625Z"
         fill="#231F20"
