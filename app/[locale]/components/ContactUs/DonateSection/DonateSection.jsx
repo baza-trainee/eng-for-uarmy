@@ -35,7 +35,8 @@ const DonateSection = () => {
         <div className={styles.bankDetails}>
             <Image className={styles.cardSVG} src='../outlineBorders.svg' alt='card border' width={739} height={373}/>
             <h1 className={styles.bankDetailtitle}>{t("bankDetails")}</h1>
-            <p className={styles.bankDetailsText}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
+            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
+            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>Отримувач:<br/> БО «Благодійний фонд «ОСВІТУМ»</p>
             <p className={styles.bankDetailsText}>КОД ЄДРПОУ 44966920</p>
             <p className={styles.bankDetailsText}>БАНК  УКРСИББАНК: п/р <br /> UA373510050000026007879183309</p>
             <p className={styles.bankDetailsText}>Призначення: благодійний внесок</p>
