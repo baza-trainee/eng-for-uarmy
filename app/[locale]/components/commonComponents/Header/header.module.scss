@@ -16,9 +16,16 @@
   padding: 16px $section-padding-mob;
   
   @media screen and (min-width: $desktop) {
-        width: $desktop;
-        padding: 32px $section-padding;
-      }
+    width: $desktop;
+    padding: 32px $section-padding;
+  }
+}
+.scrolling{
+  padding: 10px $section-padding;
+  & .logo{
+    width: 75px;
+    height: 34px;
+  }
 }
 .logo {
   width: 60px;

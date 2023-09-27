@@ -4,7 +4,6 @@ import { useTranslations, useLocale } from "next-intl";
 import MediaList from "./MediaList";
 import medias from "@/app/[locale]/libs/fakeMediaList";
 import styles from "./Media.module.scss";
-import utilsStyles from '../../../styles/_utils.module.scss'
 
 const Media = () => {
     const t = useTranslations("Media");
@@ -17,7 +16,7 @@ const Media = () => {
             <svg tabIndex={0} onClick={(e) => e.currentTarget.blur()} className={styles.arrowBtn} xmlns="http://www.w3.org/2000/svg" width="78" height="41" viewBox="0 0 78 41" fill="none">
                 <path d="M1 1L39 39L77 1" stroke="#231F20" strokeWidth="2"/>
             </svg>
-            <Link href={`/${locale}/contact`} className={styles.mediaBtn}>{t("button")}</Link>
+            <Link href={`/${locale}/contact?action=spread`} className={styles.mediaBtn}>{t("button")}</Link>
         </div>
     </section>
 }

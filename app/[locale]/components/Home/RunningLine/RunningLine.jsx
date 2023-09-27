@@ -1,12 +1,42 @@
 "use client";
+import { useRef, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Marquee from 'react-fast-marquee';
 import styles from './RunningLine.module.scss';
 
 const RunningLine = () => {
-    const t = useTranslations("RunningLine");
+  const t = useTranslations("RunningLine");
 
-    return  <section className={styles.bannerContainer}>
+  const boxRef = useRef();
+  const [y, setY] = useState(0);
+
+ const getPosition = () => {
+  const rect = boxRef.current.getBoundingClientRect();
+  const upperPosition = rect.top;
+  setY(upperPosition);
+};
+
+  useEffect(() => {
+    getPosition();
+    const handleScroll = () => {
+      getPosition();
+    };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+  };
+  }, []);
+  useEffect(() => {
+    if (y < 845) {
+      const header = document.getElementById("header");
+      header.classList.add('header_scrolling__RVm05');
+    } else {
+      header.classList.remove('header_scrolling__RVm05')
+   }
+  }, [y])
+  
+    return  <section className={styles.bannerContainer} ref={boxRef}>
           <Marquee autoFill={true} speed={110}>
             <p className={styles.bannerText}>
               {t("string")}

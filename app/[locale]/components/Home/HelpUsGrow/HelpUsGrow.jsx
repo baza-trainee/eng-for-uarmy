@@ -27,15 +27,15 @@ const HelpUsGrows = () => {
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("volunteer-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("volunteer")}</Link>
+                    <Link href={`/${locale}/contact?action=volunteer`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("volunteer")}</Link>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("partner-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("partner")}</Link>
+                    <Link href={`/${locale}/contact?action=partner`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("partner")}</Link>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("spread-desc")}</p>
-                    <Link href={`/${locale}/contact`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("spread")}</Link>
+                    <Link href={`/${locale}/contact?action=spread`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("spread")}</Link>
                 </li>
             </ul>
         </div>
