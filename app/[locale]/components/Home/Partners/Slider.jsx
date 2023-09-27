@@ -9,16 +9,15 @@ import styles from './partners.module.scss';
 
 import Image from "next/image";
 
+const getSlidesPerView = () => {
+  return window.innerWidth > 1279 ? 3 : 1;
+}
 
 const Slider = ({ data }) => {
   const [isReady, setIsReady] = useState(false);
-  const [slidesPerView, setSlidesPerView] = useState(1);
+  const [slidesPerView, setSlidesPerView] = useState(getSlidesPerView());
 
   useEffect(() => {
-    const getSlidesPerView = () => {
-      return window.innerWidth > 1279 ? 3 : 1;
-    }
-  
     const handleResize = () => {
       const newSlidesPerView = getSlidesPerView();
   
