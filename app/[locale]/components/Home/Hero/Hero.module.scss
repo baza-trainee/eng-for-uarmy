@@ -1,6 +1,7 @@
 
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
+@import '../../../styles/_mixins.module';
 
 
 .heroSection{
@@ -110,22 +111,11 @@ position: relative;
   width: 270px;
   height: 92px;
   border: none;
-  z-index: 1000;
-  clip-path: polygon(0 0,
-          100% 0,
-          100% 100%,
-          80% 100%,
-          var(--size-corner) 100%,
-          0 calc(100% - var(--size-corner)));
-  transition: background-color $transition-duration $timing-function;
-  cursor: pointer;
-  &:hover{
-      background-color: $color-olive;
-  }
-  &:focus{
-      background-color: $color-black;
-      border: 3px solid var(--grey, #8B8B8B);
-  }
+  z-index: 2;
+ @include cutBtn;
+ &:not(:active){
+  background-color: $color-black;
+ }
 
   }
 
@@ -193,7 +183,7 @@ position: relative;
 
 
 
-@media (min-width: $mobile) and (max-width: $desktop) {
+@media (min-width: $mobile) and (max-width: 1279.5px) {
   
   .hero{   
     width: $mobile;
@@ -217,7 +207,7 @@ position: relative;
   }
 
   .firstHead{
-    color: var(--black, #231F20);
+    color:  $color-black;
     font-family: Furore;
     font-size: 30px;
     font-style: normal;
@@ -227,7 +217,7 @@ position: relative;
   }
   
   .secondHead{
-    color: var(--black, #231F20);
+    color:  $color-black;
     font-family: Furore;
     font-size: 15px;
     font-style: normal;
@@ -240,22 +230,31 @@ position: relative;
     margin-top: 18px;
   }
   .liItem{
+    display: grid;
+    grid-template-columns: 30px 233px;
       margin-top: 15px;
       &:first-child{
         margin-top: 0;
+      }
+      &:last-child{
+        grid-template-columns: 30px 245px;
       }
   }
   
   .liText{
       display: block;
-      margin-left: 13px;
+      width: 100%;
+      margin-left: 0;
       font-size: 13px;
       font-style: normal;
       line-height: 150%; 
+      
+      
+    
   }
   
   .li_bold_txt{
-    color: var(--black, #231F20);
+    color: $color-black;
     font-feature-settings: 'case' on;
     font-family: Arial;
     font-size: 13px;
@@ -294,16 +293,7 @@ position: relative;
       border: none;
       cursor: pointer;
       z-index: 2;
-      &:hover{
-          background-color: $color-olive;
-          color: $color-white;
-          clip-path: polygon(0 0,
-            100% 0,
-            100% 100%,
-            80% 100%,
-            var(--size-corner) 100%,
-            0 calc(100% - var(--size-corner)));
-      }
+  
     }
     .under_txt_btn2:focus .svgBorder {
       stroke: var(--green, #798738); 
