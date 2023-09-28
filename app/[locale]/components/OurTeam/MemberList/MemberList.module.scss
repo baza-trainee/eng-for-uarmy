@@ -41,6 +41,7 @@
             80% 100%,
             var(--size-corner) 100%,
             0 calc(100% - var(--size-corner)));
+        object-fit: cover;    
 
         @include mq(desktop) {
             width: 265px;
