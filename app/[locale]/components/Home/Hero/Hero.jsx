@@ -13,19 +13,18 @@ const Hero = () => {
 const locale = useLocale();
 const pathname = usePathname();
 const t = useTranslations("Hero");
-const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1280);
+const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 1280);
 
 useEffect(() => {
   const handleWindowResize = () => {
-    setIsLargeScreen(window.innerWidth >= 1280);
+    setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1280);
   };
 
   window.addEventListener("resize", handleWindowResize);
-
   return () => {
     window.removeEventListener("resize", handleWindowResize);
   };
-}, []);
+}, [isLargeScreen]);
 
 
   return <section className={styles.heroSection}>
@@ -43,7 +42,7 @@ useEffect(() => {
                 <ul className={styles.list}>
                       <li className={styles.liItem}>
                           <Arrow />
-                          <p className={styles.liText}>{t("first-desc")}<strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong></p>
+                          <p className={styles.liText}>{t("first-desc")}<strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong>{t("first-desc2")}<strong className={styles.li_bold_txt}>{t("first-desc-bold2")}</strong></p>
                       </li>
                       <li className={styles.liItem}>
                           <Arrow />
@@ -51,7 +50,7 @@ useEffect(() => {
                       </li>
                       <li className={styles.liItem}>
                           <Arrow />
-                          <p className={styles.liText}>{t("third-desc")}<span className={styles.li_bold_txt}>{t("third-desc-bold")}</span>{t("and")}<span className={styles.li_bold_txt}>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
+                          <p className={styles.liText}>{t("third-desc")}<span className={styles.li_bold_txt} style={{ whiteSpace: 'nowrap' }}>{t("third-desc-bold")}</span> {t("and")}<span className={styles.li_bold_txt}>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
                       </li>
                 </ul>
                 <ul className={styles.btnList}>

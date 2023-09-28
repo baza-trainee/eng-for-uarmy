@@ -74,9 +74,9 @@ export const ButtonBorderMobile = ()=> {
 
 export const Arrow = () => {
   return<>
-  <svg  width="36" height="35" viewBox="0 0 36 35" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M9 8L18 17.5L9 27" stroke="#768728" strokeWidth="3"/>
-<path d="M18 8L27 17.5L18 27" stroke="#768728" strokeWidth="3"/>
+  <svg className="svgArrow " viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M2.30225 1.93018L8.99992 8.99994L2.30225 16.0697" stroke="#768728" strokeWidth="2.23256"/>
+<path d="M9 1.93018L15.6977 8.99994L9 16.0697" stroke="#768728" strokeWidth="2.23256"/>
 </svg>
 </>
 
