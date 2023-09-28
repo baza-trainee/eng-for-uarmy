@@ -1,5 +1,9 @@
 @import '../../../styles/variables.module';
+.svgArrow {
 
+    width: 35px;
+    height: 35px;
+}
 
 .svg-icon {
     stroke: currentColor;
@@ -21,6 +25,11 @@
 }
 
 
+@media (min-width: $mobile) and (max-width: $desktop) {
 
+.svgArrow {
 
- 
+    width: 18px;
+    height: 18px;
+}
+}

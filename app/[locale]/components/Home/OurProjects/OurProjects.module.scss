@@ -8,7 +8,7 @@
     padding: 80px 0 200px 0; 
   }
   
-  .ourProjectsContaine{
+  .ourProjectsContainer{
     margin: 0 auto;
     width: $desktop;
   }
@@ -98,12 +98,17 @@
    
   }
 
-   @media (min-width: $mobile) and (max-width: $desktop){
+  @media (min-width: $mobile) and (max-width: 1279.5px){
 
     .ourProjects{
+      padding-top: 0;
+      padding-bottom: 50px;
+    }
+
+    .ourProjectsContainer{
+      margin: 0 auto;
       width: $mobile;
       padding: 0 16px;
-      padding-bottom: 30px;
     }
     
     .cardImg{
@@ -117,15 +122,16 @@
       width: 200px;
       font-size: 30px;
       text-align: left;
+      margin-bottom: 30px;
 
     }
   
     .our_projects_card{
       display: flex;
-      padding-bottom: 21px;
       height: 397px;
       align-items: center;
       flex-direction: column;
+      padding-bottom:45px;
   }
     
   

@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from 'next-intl';
 import styles from "./OurProjects.module.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { useEffect, useState } from 'react';
-import 'swiper/css';
+import './slider.css'
 import { Project1, Project2, Project3 } from './OurProjects.cards';
 import { Navigation, Pagination } from "swiper/modules";
 
@@ -12,11 +12,11 @@ import { Navigation, Pagination } from "swiper/modules";
 const OurProjects = () => {
    const locale = useLocale();
    const t = useTranslations("OurProjects");
-   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1279);
+   const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 1280);
     
     useEffect(() => {
         const handleWindowResize = () => {
-        setIsLargeScreen(window.innerWidth >= 1279);
+        setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1280);
         };
     
         window.addEventListener("resize", handleWindowResize);
@@ -24,7 +24,7 @@ const OurProjects = () => {
         return () => {
         window.removeEventListener("resize", handleWindowResize);
         };
-    }, []);
+    }, [isLargeScreen]);
 
 
     return (
@@ -32,16 +32,16 @@ const OurProjects = () => {
           <section className={styles.ourProjects}>
             <div className={styles.ourProjectsContainer}>
               <h2 className={styles.head}>{t("title")}</h2>
-              <ul className={styles.wraper}>
+             
                 {isLargeScreen ? (
-                  <>
+                  <div className={styles.wraper}>
                     <Project1 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
                     <Project2 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
                     <Project3 t={t} locale={locale} isLargeScreen={isLargeScreen}/>
-                  </>
+                  </div>
                 ) : (
                   <Swiper
-                  className="my-swiper"
+                  className="mySwiper"
                     modules={[Navigation, Pagination]}
                     slidesPerView={1}
                     navigation
@@ -66,7 +66,7 @@ const OurProjects = () => {
                     
                   </Swiper>
                 )}
-              </ul>
+             
             </div>
           </section>
         </>
