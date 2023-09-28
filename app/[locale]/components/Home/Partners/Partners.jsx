@@ -1,5 +1,5 @@
 "use client";
-import React, {useState} from 'react';
+import React from 'react';
 import styles from './partners.module.scss';
 import { useLocale, useTranslations } from 'next-intl';
 import Link from 'next/link';
@@ -16,7 +16,7 @@ const Partners = () => {
             <Slider data={data} />
         <div>
             <div className={styles.helpItem}>
-                <Link href={`/${locale}/contact`} className={styles.helpBtn}>{t("becomePartner")}</Link>
+                <Link href={`/${locale}/contact?action=partner`} className={styles.helpBtn}>{t("becomePartner")}</Link>
             </div>   
         </div>
         </div>

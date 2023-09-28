@@ -82,6 +82,9 @@
     padding: 15px 0px;
     width: 100%;
     height: 50px;
+    &:not(:active){
+        background-color: $color-black;
+    }
     @include cutBtn();
 
     @media screen and (min-width: $desktop) {

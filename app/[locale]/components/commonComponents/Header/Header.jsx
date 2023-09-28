@@ -22,7 +22,7 @@ const Header = () => {
   }
 
   return <header className={styles.headerBox}>
-      <div className={styles.header}>
+      <div id="header" className={`${styles.header}`}>
       <Image src='/logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority />
         <nav className={styles.nav}>
           <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` || pathname === '/' ? styles.activeLink : ''}`}>{t("home")}</Link>
