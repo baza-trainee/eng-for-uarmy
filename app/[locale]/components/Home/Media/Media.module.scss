@@ -13,7 +13,7 @@
     @media screen and (min-width: $desktop) {
         align-items: center;
         width: $desktop;
-        padding: 106px $section-padding 120px $section-padding;
+        padding: 80px $section-padding 100px $section-padding;
     }
 }
 .mediaBtn {
@@ -59,8 +59,8 @@
         width: 76px;
         height: 38px;
         margin: 0 auto;
-        margin-top: 62px;
-        margin-bottom: 89px;
+        margin-top: 47px;
+        margin-bottom: 60px;
         & path{
             stroke-width: 2px;
         }
@@ -76,7 +76,7 @@
         font-size: 48px;
         line-height: 50px;
         letter-spacing: 0.364px;
-        margin-bottom: 75px;
+        margin-bottom: 60px;
     }
     
 }

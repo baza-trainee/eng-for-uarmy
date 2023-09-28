@@ -14,15 +14,26 @@
   width: $mobile;
   margin: 0 auto;
   padding: 16px $section-padding-mob;
-  
+  transition: padding $transition-duration $timing-function;
   @media screen and (min-width: $desktop) {
-        width: $desktop;
-        padding: 32px $section-padding;
-      }
+    width: $desktop;
+    padding: 32px $section-padding;
+  }
+}
+.scrolling{
+ @media screen  and (min-width: $desktop){
+  padding: 10px $section-padding;
+  
+  & .logo {
+    width: 75px;
+    height: 34px;
+  }
+ }
 }
 .logo {
   width: 60px;
   height: 26px;
+  transition: width $transition-duration $timing-function, height $transition-duration $timing-function;
   @media screen and (min-width: $desktop) {
       width: 170px;
       height: 76px;

@@ -106,9 +106,9 @@
                 var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
     }
 
-        @media screen and (min-width: $desktop) {
-            --size-corner: 36px;
-        }
+    @media screen and (min-width: $desktop) {
+        --size-corner: 36px;
+    }
 
     &:hover {
         --border-color: #798738;
