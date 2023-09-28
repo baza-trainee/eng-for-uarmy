@@ -1,4 +1,5 @@
 "use client";
+import throttle from "lodash.throttle";
 import { useRef, useState, useEffect } from "react";
 import { useTranslations } from "next-intl";
 import Marquee from 'react-fast-marquee';
@@ -18,9 +19,9 @@ const RunningLine = () => {
 
   useEffect(() => {
     getPosition();
-    const handleScroll = () => {
-      getPosition();
-    };
+    const handleScroll = throttle(() => {
+      getPosition()
+    }, 500)
 
   window.addEventListener("scroll", handleScroll);
   return () => {
