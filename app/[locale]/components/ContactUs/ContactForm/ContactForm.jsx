@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./ContactForm.module.scss";
@@ -37,10 +38,7 @@ const ContactForm = () => {
     //send data to backend//
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:3001", {
-        method: "POST",
-        body: formDataObject,
-      });
+      const response = await sendEmail(formDataObject);
       if (response.ok) {
         setRequestType("Type of request");
         e.target.reset();

@@ -32,6 +32,8 @@
     }    
 
     &__img {
+        width: 130px;
+        height: 150px;
         --size-corner: 45px;
         clip-path: polygon(0 0,
             100% 0,
@@ -39,6 +41,11 @@
             80% 100%,
             var(--size-corner) 100%,
             0 calc(100% - var(--size-corner)));
+
+        @include mq(desktop) {
+            width: 265px;
+            height: 266px;
+        }
     }
 
     &__info {

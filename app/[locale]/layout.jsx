@@ -29,7 +29,7 @@ const RootLayout = async ({ children, params: { locale }}) => {
     return console.log(error);
   }
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning={true}>
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
           <Header />

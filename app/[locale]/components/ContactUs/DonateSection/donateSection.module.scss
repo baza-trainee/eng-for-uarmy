@@ -119,3 +119,110 @@ width: 360px;
     text-align: left;
     padding-top: 20px;
 }
+.textMobile {
+    display: none;
+}
+
+@media (max-width: 1279.5px) {
+    .pageContainer {
+        width: $mobile;
+        padding: 50px $section-padding-mob 50px $section-padding-mob;
+        max-height: none;
+        flex-direction: column;
+    }
+    .sectionWrap{
+        width: $mobile;
+        margin: 0;
+        padding: 0 $section-padding-mob 0 $section-padding-mob;
+    }
+    .descWrap{
+        display: flex;
+        flex-direction: column;
+        width: $mobile;
+        margin: 0px;
+    }
+    .linkArea {
+        width: $mobile;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0;
+    }
+    .arrowIcon {
+        display: none;
+    }
+    .title{
+        margin: 0 auto;
+        font-size: 30px;
+        font-family: Furore;
+        font-weight: 400;
+        line-height: 36px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .supportText {
+        max-width: 288px;
+        margin-top: 10px;
+        margin-bottom: 50px;
+        display: block;
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0em;
+        text-align: left;
+    }
+    .linkButtons {
+        margin: 0 0 30px 0;
+        width: 288px;
+        height: 50px;
+        --size-corner: 20px;
+        font-size: 15px;
+        text-align: center;
+    }
+    .paypallBtnIcon {
+        width: 16.6px;
+        height: 20px;
+        margin: 15px 10px 15px 95px;
+    }
+    .buymeacoffeeBtnIcon {
+        width: 16.6px;
+        height: 20px;
+        margin: 15px 10px 15px 95px;
+    }
+    .bankDetails{
+        width: 288px;
+        height: 266px;
+        margin: 20px 0 0 0;
+        padding: 20px 0 31px 12px;
+        border: 1px solid $color-black;
+        display: block;
+    }
+    .cardSVG{
+        display: none;
+    }
+    .bankDetailstitle {
+        font-family: Furore;
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0px;
+        text-align: left;
+    }
+    .bankDetailsText {
+        font-family: Arial;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 15px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding: 15px 0 0 0;
+    }
+    .textMobile{
+        margin-top: 15px;
+        display: block;
+    }
+    .textDesktop {
+        display: none;
+    }
+}
