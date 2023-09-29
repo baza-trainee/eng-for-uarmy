@@ -1,35 +1,30 @@
-@import '../../../styles/variables.module';
+@import "../../../styles/variables.module";
 .svgArrow {
-
-    width: 35px;
-    height: 35px;
+	width: 35px;
+	height: 35px;
 }
 
 .svg-icon {
-    stroke: currentColor;
-    transition: stroke $transition-duration $timing-function;
-
+	stroke: currentColor;
+	transition: stroke $transition-duration $timing-function;
 }
 
 .back {
-    fill: currentColor; 
-    transition: fill $transition-duration $timing-function;
+	fill: currentColor;
+	transition: fill $transition-duration $timing-function;
 }
 
 .social-btn:hover .svg-icon {
-    stroke: #798738;
+	stroke: #798738;
 }
 
 .social-btn:hover .back {
-    fill: var(--green, #798738);
+	fill: var(--green, #798738);
 }
-
 
 @media (min-width: $mobile) and (max-width: $desktop) {
-
-.svgArrow {
-
-    width: 18px;
-    height: 18px;
-}
+	.svgArrow {
+		width: 18px;
+		height: 18px;
+	}
 }

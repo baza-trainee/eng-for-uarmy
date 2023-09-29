@@ -18,9 +18,9 @@ import {
 
 import errorImg from "../../../../public/404/404.png";
 
-import styles from "./not-found-page.module.scss";
+import styles from "./not-found.module.scss";
 
-const NotFoundPage = ({ error }) => {
+const NotFound = () => {
   const locale = useLocale();
   const t = useTranslations("404");
   const router = useRouter();
@@ -29,7 +29,7 @@ const NotFoundPage = ({ error }) => {
     <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.NotFoundWrapper}>
-          <div className={styles.btnBackWrapper} tabindex="1">
+          <div className={styles.btnBackWrapper} tabIndex="1">
             <BorderBackSvgMobile />
             <BorderBackSvg />
             <Link
@@ -66,7 +66,7 @@ const NotFoundPage = ({ error }) => {
           <p className={styles.descr}>{t("text")}</p>
         </div>
 
-        <div tabindex="2" className={styles.btnGoHomeWrapper}>
+        <div tabIndex="2" className={styles.btnGoHomeWrapper}>
           <BorderGoHomeFocusSvgMobile />
           <BorderGoHomeFocusSvg />
           <Link href={`/${locale}`} className={styles.goHome}>
@@ -78,4 +78,4 @@ const NotFoundPage = ({ error }) => {
   );
 };
 
-export default NotFoundPage;
+export default NotFound;

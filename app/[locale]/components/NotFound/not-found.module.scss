@@ -2,12 +2,7 @@
 
 .section {
 	padding-top: 20px;
-	padding-bottom: 20px;
-
-	// @media screen and (max-width: $tablet) {
-	// 	padding-top: 60px;
-	// 	padding-bottom: 60px;
-	// }
+	padding-bottom: 50px;
 
 	@media screen and (min-width: $desktop) {
 		padding-top: 80px;
@@ -16,15 +11,10 @@
 }
 
 .container {
-	width: 320px;
+	width: $mobile;
 	padding-left: $section-padding-mob;
 	padding-right: $section-padding-mob;
 	margin: 0 auto;
-
-	// @media screen and (max-width: $tablet) {
-	// 	padding-left: 60px;
-	// 	padding-bottom: 60px;
-	// }
 
 	@media screen and (min-width: $desktop) {
 		width: $desktop;
@@ -32,6 +22,7 @@
 		padding-right: $section-padding;
 	}
 }
+
 .NotFoundWrapper {
 	display: flex;
 
@@ -41,7 +32,7 @@
 	}
 
 	@media screen and (min-width: $desktop) {
-		margin-bottom: 26px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -49,6 +40,7 @@
 	position: relative;
 
 	&:focus {
+		outline: none;
 		stroke-width: 3px;
 		color: $color-olive;
 	}
@@ -87,13 +79,13 @@
 		padding: 12px 34px;
 		font-size: 13px;
 		line-height: 1.35;
-		--size-corner: 18px;
+		--size-corner: 19px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		width: 170px;
 		height: 92px;
-		padding: 26px 16px 26px 20px;
+		padding: 26px 16px;
 		font-size: 22px;
 		line-height: normal;
 		--size-corner: 36px;
@@ -126,7 +118,9 @@
 }
 
 .title {
-	text-align: center;
+	// text-align: center;
+	display: flex;
+	justify-content: center;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
 		font-size: 15px;
@@ -144,20 +138,21 @@
 
 .descrWrapper {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
 		margin-bottom: 50px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		margin-bottom: 80px;
+		margin-bottom: 60px;
 	}
 }
 
 .fourOhFour {
 	display: flex;
+	justify-content: center;
 	align-items: center;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
@@ -226,6 +221,7 @@
 	margin: 0 auto;
 
 	&:focus {
+		outline: none;
 		stroke-width: 3px;
 		color: $color-grey;
 	}
@@ -247,8 +243,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	color: $color-ultra-light-grey;
-	border: transparent;
+	color: $color-white;
+	border: none;
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
 	transition: background-color $transition-duration $timing-function;
 	cursor: pointer;
@@ -262,13 +258,13 @@
 		width: 288px;
 		height: 50px;
 		font-size: 15px;
-		--size-corner: 18px;
+		--size-corner: 19px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		width: 360px;
 		height: 92px;
 		font-size: 22px;
-		--size-corner: 36px;
+		--size-corner: 35px;
 	}
 }
