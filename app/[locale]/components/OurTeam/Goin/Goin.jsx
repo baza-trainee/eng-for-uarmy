@@ -13,16 +13,20 @@ const Goin = () => {
 
             <p className={styles.goin__desc}>{t("joinOffer")}</p>
 
-            <Image src='/large-arrow.svg' alt='arrow icon' width={96} height={96} />
+            <Image src='/large-arrow.svg'
+                alt='arrow icon'
+                width={96}
+                height={96}
+                className={styles.goin__img} />
 
             <div className={styles.goin__wrapper}>
-                {/* <a href='https://www.work.ua/'
+                {/* <MainLink href='https://www.work.ua/'
                     className={styled.mainLink}
                     target="_blank" 
                     rel="noopener noreferre" 
                     aria-label="button Work.ua">
                     {t("vacancies")}
-                </a> */}
+                </MainLink> */}
                 
                 <MainLink path='contact'>{t("volunteer")}</MainLink>
             </div>

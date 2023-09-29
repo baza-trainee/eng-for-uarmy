@@ -48,6 +48,14 @@
         }
     }
 
+    &__img{
+        display: none;
+
+        @include mq(desktop) {
+            display: inline;
+        }
+    }
+
     &__wrapper{
         @include mq(desktop) {
             display: flex;
