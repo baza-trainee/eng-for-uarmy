@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./ContactForm.module.scss";
+import btnStyles from '../../commonComponents/MainLink/MainLink.module.scss';
 import CustomSelect from "./CustomSelect/CustomSelect";
 
 const ContactForm = () => {
   const [requestType, setRequestType] = useState("Type of request");
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const error = () => toast.error("Something went wrong...");
 
   const requestTypeHandler = (value) => {
     if (value === "Type of request") {
@@ -51,55 +49,40 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.form__wrapper}>
-      {isError && (
-        <ToastContainer 
-        position="top-right" 
-        autoClose={5000} 
-        hideProgressBar={false}
-        >
-          {error()}
-        </ToastContainer>
-      )}
-      <form className={styles.form} onSubmit={formHandler} id="form">
-        <div className={styles.form__mainblock}>
-          <div className={styles.form__block}>
-            <CustomSelect requestTypeHandler={requestTypeHandler} />
-            <input
-              type="text"
-              name="name"
-              placeholder="Your name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              required
-              className={`${styles.form__input} ${styles.form__item1}`}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-              required
-              className={`${styles.form__input} ${styles.form__item2}`}
-            />
-          </div>
-          <div className={styles.form__block}>
-            <textarea
-              name="request"
-              id="request"
-              cols="30"
-              rows="10"
-              required
-              className={styles.form__textarea}
-              placeholder="Tell us more about your request"
-              onKeyUp={handleKeyUp}
-            ></textarea>
-          </div>
+    <form className={styles.form} onSubmit={formHandler} id="form">
+      <div className={styles.form__wrapper}>
+        <div className={styles.form__blockLeft}>
+        <CustomSelect requestTypeHandler={requestTypeHandler} />
+            
+        <input type="text"
+          name="name"
+          placeholder="Your name"
+          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+          required
+          className={`${styles.form__input} ${styles.form__inputName}`} />
+
+        <input type="email"
+          name="email"
+          placeholder="Your email"
+          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+          required
+          className={styles.form__input} />
         </div>
-        <button type="submit" className={styles.form__button}>
-          send
-        </button>
-      </form>
-    </div>
+
+        <div className={styles.form__blockRight}>
+          <textarea name="request"
+            id="request"
+            cols="30"
+            rows="10"
+            required
+            className={`${styles.form__input} ${styles.form__textarea}`}
+            placeholder="Tell us more about your request"
+            onKeyUp={handleKeyUp} />
+        </div>
+      </div>
+      
+      <button type="submit" className={`${btnStyles.mainLink} ${styles.form__btn}`}>Send</button>
+    </form>
   );
 };
 
