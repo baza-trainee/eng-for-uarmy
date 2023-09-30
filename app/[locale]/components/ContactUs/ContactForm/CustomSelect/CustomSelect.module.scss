@@ -62,12 +62,13 @@
 }
 
 .options {
+  position: absolute;
+  z-index: 20;
+  width: 100%;
   list-style-type: none;
   padding: 0;
   margin: 0;
-  position: absolute;
   background-color: $color-white-text;
-  width: 100%;
   color: $color-black;
   font-family: Arial;
   font-size: 13px;
@@ -78,7 +79,7 @@
     font-size: 18px;
     line-height: 155%;
     letter-spacing: -0.408px;
-    width: 430px;
+    width: 360px;
   }
 }
 

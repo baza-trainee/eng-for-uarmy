@@ -40,15 +40,11 @@ const CustomSelect = ({requestTypeHandler}) => {
       {isOpen && (
         <ul className={styles.options}>
           {options.map((option) => (
-            <li
-              key={option.label}
-              onClick={() => handleOptionClick( option.label)}
-            >
+            <li key={option.label}
+              onClick={() => handleOptionClick( option.label)}>
               {option.label}
-            </li>
-          ))}
-        </ul>
-      )}
+            </li>))}
+        </ul>)}
     </div>
   );
 };

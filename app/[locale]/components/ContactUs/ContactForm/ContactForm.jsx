@@ -17,10 +17,16 @@ const ContactForm = () => {
     setRequestType(value);
   };
 
-  const handleKeyUp = (e) => {
-    e.target.style.height = "43px";
-    e.target.style.height = `${e.target.scrollHeight}px`;
-    e.target.style.height = `${Math.min(e.target.scrollHeight, 246)}px`;
+  const handleInput = (e) => {
+    const textarea = e.target;
+    const initialHeight = textarea.style.height;
+
+    textarea.style.height = `${e.target.scrollHeight}px`;
+
+    if (textarea.style.height !== initialHeight) {
+      const wrapper = document.querySelector(`.${styles.form__wrapper}`);
+      wrapper.style.marginBottom = "60px";
+    }
   };
 
   const formHandler = async (e) => {
@@ -53,31 +59,44 @@ const ContactForm = () => {
       <div className={styles.form__wrapper}>
         <div className={styles.form__blockLeft}>
         <CustomSelect requestTypeHandler={requestTypeHandler} />
+          <label className={styles.form__field}>
+            <input type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              required
+              placeholder=''
+              className={`${styles.form__input} ${styles.form__inputName}`} />
             
-        <input type="text"
-          name="name"
-          placeholder="Your name"
-          pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-          required
-          className={`${styles.form__input} ${styles.form__inputName}`} />
-
-        <input type="email"
-          name="email"
-          placeholder="Your email"
-          pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-          required
-          className={styles.form__input} />
+            <span className={styles.form__label}>Your name</span>
+          </label>   
+        
+          <label className={styles.form__field}>
+            <input type="email"
+            name="email"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            required
+            placeholder=''
+            className={styles.form__input} /> 
+            
+            <span className={styles.form__label}>Your email</span>
+          </label>
         </div>
 
         <div className={styles.form__blockRight}>
-          <textarea name="request"
-            id="request"
-            cols="30"
-            rows="10"
-            required
-            className={`${styles.form__input} ${styles.form__textarea}`}
-            placeholder="Tell us more about your request"
-            onKeyUp={handleKeyUp} />
+          <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
+            <textarea name="request"
+              id="request"
+              cols="30"
+              rows="10"
+              required
+              placeholder=''
+              className={`${styles.form__input} ${styles.form__textarea}`}
+              onInput={handleInput} />
+            
+            <span className={`${styles.form__label} ${styles.form__labelTextarea}`}>
+              Tell us more about your request
+            </span>
+          </label>
         </div>
       </div>
       

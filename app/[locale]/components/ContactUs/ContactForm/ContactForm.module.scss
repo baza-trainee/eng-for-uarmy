@@ -40,6 +40,15 @@
     }
   }
 
+  &__blockRight{
+    position: relative;
+  }
+
+  &__field{
+    position: relative;
+    height: 100%;
+  }
+
   &__input{
     width: 100%;
     padding-top: 12px;
@@ -50,12 +59,15 @@
     
     background: transparent;
 
-    ::placeholder {
-      color: $color-grey;
-    }
-
     &:focus {
       outline: none;
+    }
+
+    &:focus + .form__label,
+    &:not(:placeholder-shown) + .form__label{
+      font-size: 10px;
+      line-height: 1.2;
+      transform: translateY(-12px);
     }
 
     @include mq(desktop) {
@@ -74,14 +86,46 @@
     }
   }
 
+  &__label{
+    position: absolute;
+    z-index: 10;
+    top: 2px;
+    left: 0;
+    display: block;
+    @include filledTextStyle();
+
+    color: $color-grey;
+
+    transform: translateY(0);
+    transition: transform $transition-duration $timing-function;
+  }
+
+  &__labelTextarea{
+    top: -12px;
+  }
+
   &__textarea{
     height: 42px;
+    min-height: 42px;
+    max-height: 111px;
+    overflow-y: auto;
     @include filledTextStyle();
 
     @include mq(desktop) {
       width: 455px;
       height: 76px;
+      min-height: 76px;
+      max-height: 348px;
     }
+  }
+
+  &__textarea::-webkit-resizer{
+    display: none;
+  }
+
+  &__textarea::-webkit-scrollbar-thumb{
+    cursor: pointer;
+    background-color: $color-green;
   }
 
   button {
@@ -95,26 +139,20 @@
   }
 }
 
-.form__textarea{
-  scrollbar-color: $color-olive;
-}
-
 .form__textarea::-webkit-scrollbar {
   width: 5px;
+  height: 50px;
   @include mq(desktop) {
     width: 8px;
+    height: 123px;
   }
 }
 
-.form__textarea::-webkit-scrollbar-corner{
-  display: none;
-}
+// .form__textarea::-webkit-scrollbar-corner{
+//   display: none;
+// }
 
-.form__textarea::-webkit-resizer{
-  display: none;
-}
-
-.form__textarea::-webkit-scrollbar-thumb {
-background-color: $color-olive;
-outline: none;
-}
+// .form__textarea::-webkit-scrollbar-thumb {
+//   cursor: pointer;
+//   background-color: $color-green;
+// }
