@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
-import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import styles from "./ContactForm.module.scss";
+import btnStyles from '../../commonComponents/MainLink/MainLink.module.scss';
 import CustomSelect from "./CustomSelect/CustomSelect";
 
 const ContactForm = () => {
   const [requestType, setRequestType] = useState("Type of request");
   const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const error = () => toast.error("Something went wrong...");
 
   const requestTypeHandler = (value) => {
     if (value === "Type of request") {
@@ -19,10 +17,16 @@ const ContactForm = () => {
     setRequestType(value);
   };
 
-  const handleKeyUp = (e) => {
-    e.target.style.height = "43px";
-    e.target.style.height = `${e.target.scrollHeight}px`;
-    e.target.style.height = `${Math.min(e.target.scrollHeight, 246)}px`;
+  const handleInput = (e) => {
+    const textarea = e.target;
+    const initialHeight = textarea.style.height;
+
+    textarea.style.height = `${e.target.scrollHeight}px`;
+
+    if (textarea.style.height !== initialHeight) {
+      const wrapper = document.querySelector(`.${styles.form__wrapper}`);
+      wrapper.style.marginBottom = "60px";
+    }
   };
 
   const formHandler = async (e) => {
@@ -51,55 +55,53 @@ const ContactForm = () => {
   };
 
   return (
-    <div className={styles.form__wrapper}>
-      {isError && (
-        <ToastContainer 
-        position="top-right" 
-        autoClose={5000} 
-        hideProgressBar={false}
-        >
-          {error()}
-        </ToastContainer>
-      )}
-      <form className={styles.form} onSubmit={formHandler} id="form">
-        <div className={styles.form__mainblock}>
-          <div className={styles.form__block}>
-            <CustomSelect requestTypeHandler={requestTypeHandler} />
-            <input
-              type="text"
+    <form className={styles.form} onSubmit={formHandler} id="form">
+      <div className={styles.form__wrapper}>
+        <div className={styles.form__blockLeft}>
+        <CustomSelect requestTypeHandler={requestTypeHandler} />
+          <label className={styles.form__field}>
+            <input type="text"
               name="name"
-              placeholder="Your name"
               pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
               required
-              className={`${styles.form__input} ${styles.form__item1}`}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your email"
-              pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-              required
-              className={`${styles.form__input} ${styles.form__item2}`}
-            />
-          </div>
-          <div className={styles.form__block}>
-            <textarea
-              name="request"
+              placeholder=''
+              className={`${styles.form__input} ${styles.form__inputName}`} />
+            
+            <span className={styles.form__label}>Your name</span>
+          </label>   
+        
+          <label className={styles.form__field}>
+            <input type="email"
+            name="email"
+            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
+            required
+            placeholder=''
+            className={styles.form__input} /> 
+            
+            <span className={styles.form__label}>Your email</span>
+          </label>
+        </div>
+
+        <div className={styles.form__blockRight}>
+          <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
+            <textarea name="request"
               id="request"
               cols="30"
               rows="10"
               required
-              className={styles.form__textarea}
-              placeholder="Tell us more about your request"
-              onKeyUp={handleKeyUp}
-            ></textarea>
-          </div>
+              placeholder=''
+              className={`${styles.form__input} ${styles.form__textarea}`}
+              onInput={handleInput} />
+            
+            <span className={`${styles.form__label} ${styles.form__labelTextarea}`}>
+              Tell us more about your request
+            </span>
+          </label>
         </div>
-        <button type="submit" className={styles.form__button}>
-          send
-        </button>
-      </form>
-    </div>
+      </div>
+      
+      <button type="submit" className={`${btnStyles.mainLink} ${styles.form__btn}`}>Send</button>
+    </form>
   );
 };
 
