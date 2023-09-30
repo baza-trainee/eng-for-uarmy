@@ -1,5 +1,5 @@
 @import "./styles/_variables.module.scss";
-@import './styles/mixins.module';
+@import "./styles/mixins.module";
 
 * {
 	box-sizing: border-box;
@@ -16,11 +16,11 @@ html {
 
 body {
 	margin: 0;
-	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-	Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue",
+		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-weight: 400; 
+	font-weight: 400;
 	background-color: $color-ultra-light-grey;
 	color: $color-black;
 }
@@ -32,13 +32,10 @@ body {
 }
 main {
 	margin-top: 58px;
-	min-height: 100vh;
 
 	@include mq(desktop) {
 		margin-top: 140px;
 	}
-	
-	
 }
 
 h1,
