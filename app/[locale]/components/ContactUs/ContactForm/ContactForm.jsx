@@ -19,13 +19,20 @@ const ContactForm = () => {
 
   const handleInput = (e) => {
     const textarea = e.target;
-    const initialHeight = textarea.style.height;
-
     textarea.style.height = `${e.target.scrollHeight}px`;
 
-    if (textarea.style.height !== initialHeight) {
+    const fieldTextarea = document.querySelector(`.${styles.form__fieldTextarea}`);
+    fieldTextarea.style.position = "absolute";
+    if (window.innerWidth < 1280) {
+      fieldTextarea.style.top = "27px";
+      fieldTextarea.style.left = "0";
+      fieldTextarea.style.width = "100%";
+
       const wrapper = document.querySelector(`.${styles.form__wrapper}`);
-      wrapper.style.marginBottom = "60px";
+      wrapper.style.marginBottom = "200px";
+    } else {
+      fieldTextarea.style.left = "-455px";
+      fieldTextarea.style.top = "61px";
     }
   };
 
@@ -58,7 +65,8 @@ const ContactForm = () => {
     <form className={styles.form} onSubmit={formHandler} id="form">
       <div className={styles.form__wrapper}>
         <div className={styles.form__blockLeft}>
-        <CustomSelect requestTypeHandler={requestTypeHandler} />
+          <CustomSelect requestTypeHandler={requestTypeHandler} />
+          
           <label className={styles.form__field}>
             <input type="text"
               name="name"

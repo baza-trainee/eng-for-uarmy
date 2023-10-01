@@ -24,6 +24,7 @@
   }
 
   &__wrapper{
+    position: relative;
     margin-bottom: 100px;
     @include mq(desktop) {
       display: flex;
@@ -36,6 +37,8 @@
     margin-bottom: 30px;
 
     @include mq(desktop) {
+      width: 455px;
+      margin-right: 20px;
       margin-bottom: 0;
     }
   }
@@ -68,6 +71,12 @@
       font-size: 10px;
       line-height: 1.2;
       transform: translateY(-12px);
+
+      @include mq(desktop) {
+        font-size: 18px;
+        line-height: 1.5;
+        transform: translateY(-31px);
+      }
     }
 
     @include mq(desktop) {
@@ -98,16 +107,25 @@
 
     transform: translateY(0);
     transition: transform $transition-duration $timing-function;
+
+    @include mq(desktop) {
+      top: -7px;
+    }
   }
 
   &__labelTextarea{
     top: -12px;
+
+    @include mq(desktop) {
+      top: -29px;
+    }
   }
 
   &__textarea{
     height: 42px;
     min-height: 42px;
     max-height: 111px;
+    padding-top: 0;
     overflow-y: auto;
     @include filledTextStyle();
 
@@ -147,10 +165,6 @@
     height: 123px;
   }
 }
-
-// .form__textarea::-webkit-scrollbar-corner{
-//   display: none;
-// }
 
 // .form__textarea::-webkit-scrollbar-thumb {
 //   cursor: pointer;
