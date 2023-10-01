@@ -1,8 +1,11 @@
 @import "../../../styles/variables.module";
 
-.arrow,
+.arrow {
+	margin-right: 18px;
+}
+
 .arrowMobile {
-	margin-right: auto;
+	margin-right: 10px;
 }
 
 .arrowPath,
