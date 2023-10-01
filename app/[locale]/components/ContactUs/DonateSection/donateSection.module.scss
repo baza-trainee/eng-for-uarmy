@@ -21,12 +21,11 @@
 .sectionWrap{
     width: $desktop;
     margin: 0 auto;
-    padding: 135px $section-padding 100px;
+    padding: 100px $section-padding 100px;
 }
 
 .descWrap{
     display: flex;
-    margin-bottom: 96px;
     width: $desktop;
 }
 
@@ -41,10 +40,18 @@ width: 360px;
 .title{
     height: 51px;
     margin-right: 80px;
+    color: $color-black;
+    font-family: inherit; 
+    font-size: 48px; 
+    font-weight: 400; 
+    line-height: 50px; 
+    letter-spacing: 0.36399999260902405px;
+    text-align: left;
+    color: $color-black;
 }
 
 .arrowIcon{
-    margin-top: 16px;
+    margin-top: 30px;
 }
 
 
@@ -63,7 +70,7 @@ width: 360px;
     display: flex;
     align-items: center;
     background-color: $color-black;
-    color: $color-white;
+    color: $color-ultra-light-grey;
     font-size: 22px;
     --size-corner: 36px;
     clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
@@ -90,7 +97,7 @@ width: 360px;
     width: 739px;
     height: 373px;
     padding: 57px 0 58px 131px;
-    margin: 72px 271px 0px 271px; 
+    margin: 40px 271px 0px 271px; 
 }
 
 .cardSVG{
