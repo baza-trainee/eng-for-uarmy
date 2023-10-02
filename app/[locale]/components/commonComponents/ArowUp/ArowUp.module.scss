@@ -1,0 +1,45 @@
+@import "../../../styles/variables.module";
+
+.ArowUpbtn{
+    position: fixed;
+    z-index: 100;
+    bottom: 36px;
+    right: 10px;
+    cursor: pointer;
+    filter: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.12));
+
+}
+
+.svgArrowUp{
+    width: 88px;
+    height: 91px;
+    transition: fill $transition-duration $timing-function, stroke $transition-duration $timing-function;
+}
+
+.ArowUpbtn:hover .ArowBorder {
+    stroke:$color-olive;
+  
+}
+
+.ArowUpbtn:hover .Circle {
+    fill:$color-olive;
+  
+}
+
+.ArowUpbtn:hover .Arow {
+    fill:$color-white;
+  
+}
+
+@media (min-width: $mobile) and (max-width: 1279.5px) {
+    .svgArrowUp{
+        width: 41px;
+        height: 41px;
+    }
+
+.ArowUpbtn{
+    left: calc(100% - 60px)
+}
+}
+
+

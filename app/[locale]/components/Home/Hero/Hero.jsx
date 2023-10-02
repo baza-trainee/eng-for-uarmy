@@ -27,7 +27,7 @@ useEffect(() => {
 }, [isLargeScreen]);
 
 
-  return <section className={styles.heroSection}>
+  return <section className={styles.heroSection} id='Hero'>
       <div className={styles.hero}>
         <div className={styles.container}>
             <div className={styles.card}>
