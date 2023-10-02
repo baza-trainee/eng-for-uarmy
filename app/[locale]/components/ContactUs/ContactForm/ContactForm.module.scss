@@ -1,5 +1,6 @@
 @import "../../../styles/variables.module";
 @import "../../../styles/mixins.module";
+@import "../../../styles/animation.module";
 
 @mixin filledTextStyle {
   font-family: Arial;
@@ -211,11 +212,3 @@
 //   cursor: pointer;
 //   background-color: $color-green;
 // }
-@keyframes spin{
-  0% {
-    transform: rotate(0deg);
-  }
-  0% {
-    transform: rotate(360deg);
-  }
-}
