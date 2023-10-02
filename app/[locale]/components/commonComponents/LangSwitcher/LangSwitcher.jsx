@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "./langSwitcher.module.scss";
+import styles from "./LangSwitcher.module.scss";
 
 const LangSwitcher = ({ locale, pathname }) => {
   const [currentLang, setCurrentLang] = useState('УКР')

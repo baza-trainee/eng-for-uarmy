@@ -1,12 +1,10 @@
 "use client";
-import { useTranslations, useLocale } from 'next-intl';
-import styles from './donateSection.module.scss';
+import { useTranslations} from 'next-intl';
 import Link from 'next/link';
 import Image from 'next/image';
-import utilsStyles from '../../../styles/_utils.module.scss'
+import styles from './donateSection.module.scss';
 
 const DonateSection = () => {
-    const locale = useLocale();
     const t = useTranslations("Contact us");
 
     return <section className={styles.pageContainer}>
@@ -20,13 +18,13 @@ const DonateSection = () => {
         </div>
         <div className={styles.linkArea}>
             <div clasname={styles.paypallBtn}>
-                <Link href={`https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE`} className={styles.linkButtons} target="_blank" rel="noopener noreferrer">
+                <Link href='https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE' className={styles.linkButtons} target="_blank" rel="noopener noreferrer" onClick={(e) => e.currentTarget.blur()}>
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
                     <p>PAYPAL</p>
                 </Link>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons} target="_blank" rel="noopener noreferrer">
+                <Link href='https://www.buymeacoffee.com/engforuarmy' className={styles.linkButtons} target="_blank" rel="noopener noreferrer" onClick={(e) => e.currentTarget.blur()}>
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
                 </Link>

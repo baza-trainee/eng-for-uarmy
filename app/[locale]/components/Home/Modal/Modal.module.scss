@@ -26,7 +26,7 @@
     scroll-behavior: auto;
     @media screen and (min-width: $desktop) {
             width: auto;
-            padding: 40px 70px 56px 70px;
+            padding: 40px 70px 55px 70px;
     }
 }
 .modalTitle{
@@ -55,6 +55,7 @@
 }
 
 .btnList{
+    // margin-bottom: 30px;
     @media screen and (min-width: $desktop) {
         display: flex;
     }   
@@ -113,9 +114,8 @@
     border: 1px solid $color-black;
     @media screen and (min-width: $desktop) {
             width: 740px;
-            height: 347px;   
             margin-top: 24px;
-            padding: 44px 107px 45px 134px;
+            padding: 44px 107px 43px 134px;
             border: none;
             --border-color: #231F20;
             --size-corner: 60px;
