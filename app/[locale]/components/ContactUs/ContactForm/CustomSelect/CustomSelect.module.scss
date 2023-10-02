@@ -4,8 +4,10 @@
 .custom__select {
   position: relative;
   width: 100%;
+  margin-bottom: 30px;
   @include mq(desktop) {
     width: 360px;
+    margin-bottom: 60px;
   }
 }
 
