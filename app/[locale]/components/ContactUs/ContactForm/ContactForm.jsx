@@ -79,7 +79,7 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${styles.form__inputName}`} />
                 <span className={styles.form__label}>Your name</span>
-                {errors.name && touched.name && <p>{errors.name}</p>}
+                {errors.name && touched.name && <p className={styles.form__error}>{errors.name}</p>}
               </label>
 
               <label className={styles.form__field}>
@@ -91,7 +91,7 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                   onBlur={handleBlur}
                   className={styles.form__input} /> 
                 <span className={styles.form__label}>Your email</span>
-                {errors.email && touched.email && <p>{errors.email}</p>}
+                {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
               </label>
                 {/* <FieldForm>Images
                     <InputForm
@@ -118,7 +118,7 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                   onInput={handleInput} />
                 <span className={`${styles.form__label} ${styles.form__labelTextarea}`}>
                   Tell us more about your request</span>
-                {errors.request && touched.request && <p>{errors.request}</p>}
+                {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
               </label>
             </div>
           </div>  

@@ -87,11 +87,9 @@
   }
 
   &__inputName{
-    margin-top: 30px;
     margin-bottom: 30px;
 
     @include mq(desktop) {
-      margin-top: 60px;
       margin-bottom: 60px;
     }
   }
@@ -195,6 +193,18 @@
       width: 44px;
       height: 44px;
       margin-right: 12px;
+    }
+  }
+
+  &__error{
+    font-family: Arial;
+    font-size: 8px;
+    line-height: 1.3px;
+
+    color: $color-error;
+
+    @include mq(desktop) {
+      font-size: 12px;
     }
   }
 }
