@@ -92,7 +92,7 @@ export const BorderErrorSvg = () => {
     >
       <path
         d="M0.5 295.559V0.5H739.5V402.5H107.707L0.5 295.559Z"
-        stroke="black"
+        stroke="#231F20"
       />
     </svg>
   );
