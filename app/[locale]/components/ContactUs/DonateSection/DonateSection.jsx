@@ -20,13 +20,13 @@ const DonateSection = () => {
         </div>
         <div className={styles.linkArea}>
             <div clasname={styles.paypallBtn}>
-                <Link href={`/${locale}/contact`} className={styles.linkButtons}>
+                <Link href={`https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE`} className={styles.linkButtons} target="_blank" rel="noopener noreferrer">
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
                     <p>PAYPAL</p>
                 </Link>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons} target="_blank">
+                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons} target="_blank" rel="noopener noreferrer">
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
                 </Link>

@@ -73,6 +73,11 @@
 		background-color: $color-olive;
 	}
 
+	&:active {
+		color: inherit;
+		background-color: transparent;
+	}
+
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
 		width: 150px;
 		height: 50px;
@@ -252,6 +257,10 @@
 
 	&:hover {
 		background-color: $color-olive;
+	}
+
+	&:active {
+		background-color: transparent;
 	}
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {

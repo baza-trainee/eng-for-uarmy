@@ -60,7 +60,7 @@
         align-items: center;
         background-color: $color-ultra-light-grey;
         border: none; 
-        padding-top: 70px;
+        padding-top: 60px;
 }
 
 .helpBtn{
@@ -84,15 +84,7 @@
             0 calc(100% - var(--size-corner)));
         transition: background-color $transition-duration $timing-function;
         cursor: pointer;
-        &:hover{
-            background-color: $color-olive;
-        }
-        &:active,
-        &:focus{
-            background-color: $color-black;
-            border: 3px solid $color-grey;
-            color: $color-ultra-light-grey;
-        }  
+        @include cutBtn(); 
 }
 
 @media (max-width: 1279.5px) {
