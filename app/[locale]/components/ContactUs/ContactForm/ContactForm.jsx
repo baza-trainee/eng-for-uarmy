@@ -1,21 +1,14 @@
 import React, { useState } from "react";
+import { useFormik } from 'formik';
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
-import "react-toastify/dist/ReactToastify.css";
+import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
+import CustomSelect from "./CustomSelect/CustomSelect";
 import styles from "./ContactForm.module.scss";
 import btnStyles from '../../commonComponents/MainLink/MainLink.module.scss';
-import CustomSelect from "./CustomSelect/CustomSelect";
 
 const ContactForm = () => {
   const [requestType, setRequestType] = useState("Type of request");
-  const [isError, setIsError] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-
-  const requestTypeHandler = (value) => {
-    if (value === "Type of request") {
-      return;
-    }
-    setRequestType(value);
-  };
 
   const handleInput = (e) => {
     const textarea = e.target;
@@ -36,80 +29,105 @@ const ContactForm = () => {
     }
   };
 
-  const formHandler = async (e) => {
-    e.preventDefault();
-    setIsError(false);
-    const formData = new FormData(e.target);
-
-    let formDataObject = {};
-    formData.forEach((value, key) => {
-      formDataObject[key] = value;
-    });
-    formDataObject["requestType"] = requestType;
-    //send data to backend//
+const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
+  initialValues: {
+    name: '',
+    email: '',
+    request: '',
+  },
+  validationSchema: emailSchema,
+  onSubmit: async ({ name, email, request }, { resetForm }) => {
     try {
       setIsLoading(true);
-      const response = await sendEmail(formDataObject);
-      if (response.ok) {
-        setRequestType("Type of request");
-        e.target.reset();
-      } 
-    } catch {
-      setIsError(true);
+
+      const emailData = {
+        requestType: requestType,
+        name,
+        email,
+        request
+      };
+
+      const data = await sendEmail(emailData);
+      console.log(data.message);
+
+      setRequestType("Type of request");
+      resetForm();
+    } catch (err) {
+        console.log(err);
     } finally {
       setIsLoading(false);
     }
-  };
+  }  
+});
 
   return (
-    <form className={styles.form} onSubmit={formHandler} id="form">
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.form__wrapper}>
         <div className={styles.form__blockLeft}>
-          <CustomSelect requestTypeHandler={requestTypeHandler} />
-          
+          <CustomSelect requestType={requestType} setRequestType={setRequestType}/>  
+
           <label className={styles.form__field}>
             <input type="text"
               name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              required
+              value={values.name}
               placeholder=''
+              onChange={handleChange}
+              onBlur={handleBlur}
               className={`${styles.form__input} ${styles.form__inputName}`} />
-            
             <span className={styles.form__label}>Your name</span>
-          </label>   
-        
+            {errors.name && touched.name && <p>{errors.name}</p>}
+          </label>
+
           <label className={styles.form__field}>
             <input type="email"
-            name="email"
-            pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"
-            required
-            placeholder=''
-            className={styles.form__input} /> 
-            
+              name="email"
+              value={values.email}
+              placeholder=''
+              onChange={handleChange}
+              onBlur={handleBlur}
+              className={styles.form__input} /> 
             <span className={styles.form__label}>Your email</span>
+            {errors.email && touched.email && <p>{errors.email}</p>}
           </label>
-        </div>
-
+            {/* <FieldForm>Images
+                <InputForm
+                    type="file"
+                    name="images"
+                    multiple 
+                    onChange={e => setFieldValue('images', e.currentTarget.files)}
+                    />
+            </FieldForm> */}
+          
+        </div> 
+        
         <div className={styles.form__blockRight}>
           <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
-            <textarea name="request"
-              id="request"
+            <textarea
+              name="request"
+              value={values.request}
               cols="30"
               rows="10"
-              required
               placeholder=''
+              onChange={handleChange}
+              onBlur={handleBlur}
               className={`${styles.form__input} ${styles.form__textarea}`}
               onInput={handleInput} />
-            
             <span className={`${styles.form__label} ${styles.form__labelTextarea}`}>
-              Tell us more about your request
-            </span>
+              Tell us more about your request</span>
+            {errors.request && touched.request && <p>{errors.request}</p>}
           </label>
         </div>
+      </div>  
+
+      <div className={styles.form__btnWrapper}>
+        <button type="submit"
+          disabled={isLoading}
+          className={`${btnStyles.mainLink} ${styles.form__btn}`}>
+          {isLoading && <span className={styles.form__spinner}></span>}
+          Send
+        </button>
       </div>
-      
-      <button type="submit" className={`${btnStyles.mainLink} ${styles.form__btn}`}>Send</button>
-    </form>
+    </form> 
   );
 };
 
