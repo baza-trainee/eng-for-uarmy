@@ -3,6 +3,7 @@ import { NextIntlClientProvider } from "next-intl";
 import fonts from './assets/fonts/fontsSrc';
 import Header from "./components/commonComponents/Header/Header";
 import Footer from "./components/commonComponents/Footer/Footer";
+import HeaderTrigger from "./components/commonComponents/HeaderTrigger/HeaderTrigger";
 
 export const metadata = {
   title: "Eng for UArmy",
@@ -33,7 +34,10 @@ const RootLayout = async ({ children, params: { locale }}) => {
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
           <Header />
-          <main>{children}</main>
+          <main>
+            <HeaderTrigger/>
+            {children}
+          </main>
           <Footer />
         </body>
       </NextIntlClientProvider>

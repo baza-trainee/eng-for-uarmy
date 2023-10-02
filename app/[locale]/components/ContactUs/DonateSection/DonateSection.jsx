@@ -13,8 +13,8 @@ const DonateSection = () => {
     <div className={styles.sectionWrap}>
         <div className={styles.descWrap}>
             <div>
-                <h2 className={`${utilsStyles.h2} ${styles.title}`}>{t("donate")}</h2>
-                <Image src='../large-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
+                <h2 className={styles.title}>{t("donate")}</h2>
+                <Image src='../donate-us-arrow.svg' alt='arrow icon' width={96} height={96} className={styles.arrowIcon} />
             </div>
             <p className={styles.supportText}>{t("support")}</p>
         </div>
@@ -22,11 +22,11 @@ const DonateSection = () => {
             <div clasname={styles.paypallBtn}>
                 <Link href={`/${locale}/contact`} className={styles.linkButtons}>
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
-                    <p>PAYPALL</p>
+                    <p>PAYPAL</p>
                 </Link>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons}>
+                <Link href={`https://www.buymeacoffee.com/engforuarmy`} className={styles.linkButtons} target="_blank">
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
                 </Link>
