@@ -1,13 +1,23 @@
-@import '../../styles/variables.module';
-@import '../../styles/mixins.module';
+@import "../../styles/variables.module";
+@import "../../styles/mixins.module";
 
-.main{
-  width: $mobile;
-  margin: 0 auto;
-  padding: 20px $section-padding-mob 0;
-  
-  @include mq(desktop) {
-    width: $desktop;
-    padding: 84px $section-padding 0;
-  }
+.main {
+	padding-top: 20px;
+
+	@include mq(desktop) {
+		padding-top: 80px;
+	}
+}
+
+.container {
+	width: $mobile;
+	padding-left: $section-padding-mob;
+	padding-right: $section-padding-mob;
+	margin: 0 auto;
+
+	@include mq(desktop) {
+		width: $desktop;
+		padding-left: $section-padding;
+		padding-right: $section-padding;
+	}
 }
