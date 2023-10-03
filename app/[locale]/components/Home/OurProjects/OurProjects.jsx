@@ -49,7 +49,7 @@ const OurProjects = () => {
                       clickable: true,
                       dynamicBullets: true,
                     }}
-                    speed={700}
+                    speed={400}
                     loop={true}
                     breakpoints={{
                       320: {
