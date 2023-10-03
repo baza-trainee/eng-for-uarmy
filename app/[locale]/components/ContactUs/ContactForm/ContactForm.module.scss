@@ -187,6 +187,15 @@
     }
   }
 
+  &__inputError{
+    border-color: $color-error;
+
+    &:focus + .form__labelError,
+    &:not(:placeholder-shown) + .form__labelError{
+      color: $color-error;
+    }
+  }
+
   &__error{
     margin-top: 8px;
     font-family: Arial;

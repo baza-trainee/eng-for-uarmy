@@ -64,8 +64,12 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                   placeholder=''
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={styles.form__input} />
-                <span className={styles.form__label}>Your name</span>
+                  className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
+                
+                <span className={`${styles.form__label} ${errors.name && touched.name && styles.form__labelError}`}>
+                  Your name
+                </span>
+
                 {errors.name && touched.name && <p className={styles.form__error}>{errors.name}</p>}
               </label>
 
@@ -76,8 +80,12 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                   placeholder=''
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={styles.form__input} /> 
-                <span className={styles.form__label}>Your email</span>
+                  className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
+                
+                <span className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
+                  Your email
+                </span>
+
                 {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
               </label>
             </div> 
@@ -89,10 +97,16 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                 placeholder=''
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`${styles.form__input} ${styles.form__textarea}`}
-                onInput={handleInput} />
-              <span className={styles.form__label}>
-                Tell us more about your request</span>
+                onInput={handleInput}
+                className={`
+                  ${styles.form__input} 
+                  ${styles.form__textarea} 
+                  ${errors.request && touched.request && styles.form__inputError}`} />
+              
+              <span className={`${styles.form__label} ${errors.request && touched.request && styles.form__labelError}`}>
+                Tell us more about your request
+              </span>
+
               {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
             </label>
           </div>  
@@ -106,7 +120,6 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
             </button>
           </div>
         </form >
-        
       : <Thanks />}
     </>   
   );
