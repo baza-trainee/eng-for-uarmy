@@ -15,22 +15,6 @@ const ContactForm = () => {
   const handleInput = (e) => {
     const textarea = e.target;
     textarea.style.height = `${e.target.scrollHeight}px`;
-
-    const fieldTextarea = document.querySelector(
-      `.${styles.form__fieldTextarea}`
-    );
-    fieldTextarea.style.position = "absolute";
-    if (window.innerWidth < 1280) {
-      fieldTextarea.style.top = "27px";
-      fieldTextarea.style.left = "0";
-      fieldTextarea.style.width = "100%";
-
-      const wrapper = document.querySelector(`.${styles.form__wrapper}`);
-      wrapper.style.marginBottom = "200px";
-    } else {
-      fieldTextarea.style.left = "-455px";
-      fieldTextarea.style.top = "61px";
-    }
   };
 
   const {
@@ -84,7 +68,9 @@ const ContactForm = () => {
                 setRequestType={setRequestType}
               />
 
-              <label className={styles.form__field}>
+              <label
+                className={`${styles.form__field} ${styles.form__fieldName}`}
+              >
                 <input
                   type="text"
                   name="name"
@@ -92,7 +78,7 @@ const ContactForm = () => {
                   placeholder=""
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`${styles.form__input} ${styles.form__inputName}`}
+                  className={styles.form__input}
                 />
                 <span className={styles.form__label}>Your name</span>
                 {errors.name && touched.name && (
@@ -115,41 +101,25 @@ const ContactForm = () => {
                   <p className={styles.form__error}>{errors.email}</p>
                 )}
               </label>
-              {/* <FieldForm>Images
-                    <InputForm
-                        type="file"
-                        name="images"
-                        multiple 
-                        onChange={e => setFieldValue('images', e.currentTarget.files)}
-                        />
-                </FieldForm> */}
             </div>
 
-            <div className={styles.form__blockRight}>
-              <label
-                className={`${styles.form__field} ${styles.form__fieldTextarea}`}
-              >
-                <textarea
-                  name="request"
-                  value={values.request}
-                  cols="30"
-                  rows="10"
-                  placeholder=""
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={`${styles.form__input} ${styles.form__textarea}`}
-                  onInput={handleInput}
-                />
-                <span
-                  className={`${styles.form__label} ${styles.form__labelTextarea}`}
-                >
-                  Tell us more about your request
-                </span>
-                {errors.request && touched.request && (
-                  <p className={styles.form__error}>{errors.request}</p>
-                )}
-              </label>
-            </div>
+            <label className={styles.form__field}>
+              <textarea
+                name="request"
+                value={values.request}
+                placeholder=""
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`${styles.form__input} ${styles.form__textarea}`}
+                onInput={handleInput}
+              />
+              <span className={styles.form__label}>
+                Tell us more about your request
+              </span>
+              {errors.request && touched.request && (
+                <p className={styles.form__error}>{errors.request}</p>
+              )}
+            </label>
           </div>
 
           <div className={styles.form__btnWrapper}>

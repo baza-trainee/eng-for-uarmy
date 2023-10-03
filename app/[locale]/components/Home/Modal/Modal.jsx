@@ -18,7 +18,7 @@ const Modal = () => {
             <h3 className={styles.modalTitle}>{t("donate")}</h3>
             <p className={styles.modalDesc}>{t("support")}</p>
             <ul className={styles.btnList}>
-                <li><Link href={'/'} className={styles.btn} onClick={(e) => e.currentTarget.blur()}>
+                <li><Link href='https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE' target="_blank" rel="noopener noreferrer" className={styles.btn} onClick={(e) => e.currentTarget.blur()}>
                         <svg className={styles.icon} xmlns="http://www.w3.org/2000/svg" width="30" height="36" viewBox="0 0 30 36" fill="none">
                             <g clipPath="url(#clip0_627_1101)">
                             <path opacity="0.8" d="M12.0416 8.13789C12.2228 8.05028 12.4244 8.00151 12.6358 8.00151H21.2608C22.2822 8.00151 23.2347 8.06925 24.1056 8.2115C24.3552 8.25215 24.5972 8.29911 24.8321 8.35285C25.067 8.40569 25.2953 8.4653 25.5164 8.53124C25.627 8.5642 25.7358 8.59807 25.8424 8.63375C26.2705 8.77917 26.6688 8.94852 27.0352 9.14677C27.4668 6.34548 27.0321 4.44061 25.5431 2.71504C23.9026 0.814692 20.9406 0 17.1499 0H6.14777C5.37329 0 4.71427 0.573536 4.5926 1.3512L0.0118839 30.8946C-0.079153 31.4781 0.364486 32.0051 0.944013 32.0051H7.7367L11.2756 9.18335C11.348 8.71549 11.6437 8.33208 12.0412 8.13789H12.0416Z" fill="white"/>

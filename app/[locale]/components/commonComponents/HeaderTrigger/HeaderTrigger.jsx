@@ -10,7 +10,6 @@ const HeaderTrigger = () => {
     const getPosition = () => {
         const rect = boxRef.current.getBoundingClientRect();
         const upperPosition = rect.top;
-        console.log(upperPosition);
         setY(upperPosition);
     };
 
