@@ -3,6 +3,7 @@ import { useFormik } from 'formik';
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
 import CustomSelect from "./CustomSelect/CustomSelect";
+import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
 import btnStyles from '../../commonComponents/MainLink/MainLink.module.scss';
 
@@ -14,20 +15,6 @@ const ContactForm = () => {
   const handleInput = (e) => {
     const textarea = e.target;
     textarea.style.height = `${e.target.scrollHeight}px`;
-
-    const fieldTextarea = document.querySelector(`.${styles.form__fieldTextarea}`);
-    fieldTextarea.style.position = "absolute";
-    if (window.innerWidth < 1280) {
-      fieldTextarea.style.top = "27px";
-      fieldTextarea.style.left = "0";
-      fieldTextarea.style.width = "100%";
-
-      const wrapper = document.querySelector(`.${styles.form__wrapper}`);
-      wrapper.style.marginBottom = "200px";
-    } else {
-      fieldTextarea.style.left = "-455px";
-      fieldTextarea.style.top = "61px";
-    }
   };
 
 const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
@@ -70,14 +57,14 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
             <div className={styles.form__blockLeft}>
               <CustomSelect requestType={requestType} setRequestType={setRequestType}/>  
 
-              <label className={styles.form__field}>
+              <label className={`${ styles.form__field} ${styles.form__fieldName}`}>
                 <input type="text"
                   name="name"
                   value={values.name}
                   placeholder=''
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={`${styles.form__input} ${styles.form__inputName}`} />
+                  className={styles.form__input} />
                 <span className={styles.form__label}>Your name</span>
                 {errors.name && touched.name && <p className={styles.form__error}>{errors.name}</p>}
               </label>
@@ -93,34 +80,21 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
                 <span className={styles.form__label}>Your email</span>
                 {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
               </label>
-                {/* <FieldForm>Images
-                    <InputForm
-                        type="file"
-                        name="images"
-                        multiple 
-                        onChange={e => setFieldValue('images', e.currentTarget.files)}
-                        />
-                </FieldForm> */}
-              
             </div> 
             
-            <div className={styles.form__blockRight}>
-              <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
-                <textarea
-                  name="request"
-                  value={values.request}
-                  cols="30"
-                  rows="10"
-                  placeholder=''
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  className={`${styles.form__input} ${styles.form__textarea}`}
-                  onInput={handleInput} />
-                <span className={`${styles.form__label} ${styles.form__labelTextarea}`}>
-                  Tell us more about your request</span>
-                {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
-              </label>
-            </div>
+            <label className={styles.form__field}>
+              <textarea
+                name="request"
+                value={values.request}
+                placeholder=''
+                onChange={handleChange}
+                onBlur={handleBlur}
+                className={`${styles.form__input} ${styles.form__textarea}`}
+                onInput={handleInput} />
+              <span className={styles.form__label}>
+                Tell us more about your request</span>
+              {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
+            </label>
           </div>  
 
           <div className={styles.form__btnWrapper}>
@@ -133,7 +107,7 @@ const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFiel
           </div>
         </form >
         
-      : <div>Thanks</div>}
+      : <Thanks />}
     </>   
   );
 };
