@@ -32,7 +32,7 @@ const DonateSection = () => {
         </div>
         <div className={styles.bankDetails}>
             <Image className={styles.cardSVG} src='../outlineBorders.svg' alt='card border' width={739} height={373}/>
-            <h1 className={styles.bankDetailtitle}>{t("bankDetails")}</h1>
+            <h1 className={styles.bankDetailstitle}>{t("bankDetails")}</h1>
             <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
             <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>Отримувач:<br/> БО «Благодійний фонд «ОСВІТУМ»</p>
             <p className={styles.bankDetailsText}>КОД ЄДРПОУ 44966920</p>

@@ -60,12 +60,12 @@ width: 360px;
     width: $desktop;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    padding-left: 191px;
 }
 
 .linkButtons {
     text-decoration: none; 
-    margin: 0 10px;
+    margin-right: 20px;
     height: 92px;
     width: 359px;
     display: flex;
@@ -92,7 +92,7 @@ width: 360px;
     width: 739px;
     height: 373px;
     padding: 57px 0 58px 131px;
-    margin: 40px 271px 0px 271px; 
+    margin: 40px 271px 0px 191px; 
 }
 
 .cardSVG{
@@ -108,8 +108,6 @@ width: 360px;
     font-weight: 400;
     line-height: 27px;
     letter-spacing: 0px;
-    margin: 57px 0 0 0;
-    padding-left: 131px;
 }
 
 .bankDetailsText {
@@ -120,6 +118,7 @@ width: 360px;
     letter-spacing: 0px;
     text-align: left;
     padding-top: 20px;
+    color: $color-black;
 }
 .textMobile {
     display: none;
@@ -150,6 +149,7 @@ width: 360px;
         flex-direction: column;
         justify-content: center;
         margin: 0;
+        padding: 0;
     }
     .arrowIcon {
         display: none;
