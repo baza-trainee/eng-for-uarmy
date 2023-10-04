@@ -116,7 +116,11 @@
     min-height: 30px;
     max-height: 99px;
     padding-top: 0;
-    overflow-y: auto;
+    overflow-y: hidden;
+    scrollbar-color: #f2f1f1;
+    -ms-overflow-style: none;
+    scrollbar-width: thin;
+    cursor: pointer;
     @include filledTextStyle();
 
     @include mq(desktop) {
@@ -127,11 +131,20 @@
     }
   }
 
-  &__textarea::-webkit-resizer{
+  &__textarea::-webkit-scrollbar {
+    width: 5px;
+    background-color: $color-green;
+  
+    @include mq(desktop) {
+      width: 8px;
+    }
+  }
+  
+  &__textarea::-webkit-resizer {
     display: none;
   }
-
-  &__textarea::-webkit-scrollbar-thumb{
+  
+  &__textarea::-webkit-scrollbar-thumb {
     cursor: pointer;
     background-color: $color-green;
   }
@@ -209,17 +222,3 @@
     }
   }
 }
-
-.form__textarea::-webkit-scrollbar {
-  width: 5px;
-  height: 50px;
-  @include mq(desktop) {
-    width: 8px;
-    height: 123px;
-  }
-}
-
-// .form__textarea::-webkit-scrollbar-thumb {
-//   cursor: pointer;
-//   background-color: $color-green;
-// }

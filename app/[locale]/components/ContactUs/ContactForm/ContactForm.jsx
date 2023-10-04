@@ -15,6 +15,10 @@ const ContactForm = () => {
   const handleInput = (e) => {
     const textarea = e.target;
     textarea.style.height = `${e.target.scrollHeight}px`;
+
+    if (textarea.scrollHeight > 43) {
+      textarea.style.overflowY = "visible";
+    }
   };
 
 const { values, errors, touched, handleBlur, handleChange, handleSubmit, setFieldValue } = useFormik({
