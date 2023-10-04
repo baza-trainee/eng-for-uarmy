@@ -15,6 +15,10 @@ const ContactForm = () => {
   const handleInput = (e) => {
     const textarea = e.target;
     textarea.style.height = `${e.target.scrollHeight}px`;
+
+    if (textarea.scrollHeight > 43) {
+      textarea.style.overflowY = "visible";
+    }
   };
 
   const {
@@ -63,62 +67,59 @@ const ContactForm = () => {
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
-              <CustomSelect
-                requestType={requestType}
-                setRequestType={setRequestType}
-              />
+              <CustomSelect requestType={requestType} setRequestType={setRequestType} />
 
               <label
-                className={`${styles.form__field} ${styles.form__fieldName}`}
-              >
-                <input
-                  type="text"
+                className={`${styles.form__field} ${styles.form__fieldName}`}>
+                <input type="text"
                   name="name"
                   value={values.name}
-                  placeholder=""
+                  placeholder=''
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={styles.form__input}
-                />
-                <span className={styles.form__label}>Your name</span>
-                {errors.name && touched.name && (
-                  <p className={styles.form__error}>{errors.name}</p>
-                )}
+                  className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
+                
+                <span className={`${styles.form__label} ${errors.name && touched.name && styles.form__labelError}`}>
+                  Your name
+                </span>
+
+                {errors.name && touched.name && <p className={styles.form__error}>{errors.name}</p>}
               </label>
 
               <label className={styles.form__field}>
-                <input
-                  type="email"
+                <input type="email"
                   name="email"
                   value={values.email}
-                  placeholder=""
+                  placeholder=''
                   onChange={handleChange}
                   onBlur={handleBlur}
-                  className={styles.form__input}
-                />
-                <span className={styles.form__label}>Your email</span>
-                {errors.email && touched.email && (
-                  <p className={styles.form__error}>{errors.email}</p>
-                )}
+                  className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
+                
+                <span className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
+                  Your email
+                </span>
+
+                {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
               </label>
             </div>
 
             <label className={styles.form__field}>
-              <textarea
-                name="request"
+              <textarea name="request"
                 value={values.request}
-                placeholder=""
+                placeholder=''
                 onChange={handleChange}
                 onBlur={handleBlur}
-                className={`${styles.form__input} ${styles.form__textarea}`}
                 onInput={handleInput}
-              />
-              <span className={styles.form__label}>
+                className={`
+                  ${styles.form__input} 
+                  ${styles.form__textarea} 
+                  ${errors.request && touched.request && styles.form__inputError}`} />
+              
+              <span className={`${styles.form__label} ${errors.request && touched.request && styles.form__labelError}`}>
                 Tell us more about your request
               </span>
-              {errors.request && touched.request && (
-                <p className={styles.form__error}>{errors.request}</p>
-              )}
+
+              {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
             </label>
           </div>
 
@@ -132,10 +133,8 @@ const ContactForm = () => {
               Send
             </button>
           </div>
-        </form>
-      ) : (
-        <Thanks />
-      )}
+        </form>)
+      : <Thanks /> }
     </>
   );
 };

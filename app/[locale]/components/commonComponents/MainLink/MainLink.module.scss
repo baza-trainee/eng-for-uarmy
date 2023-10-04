@@ -56,14 +56,18 @@
         background-color: $color-olive;
     }
 
-    &:focus {
-        border: 3px solid $color-grey;
-
-        &::before{
-            border: 3px solid $color-grey;
-        }
+    &:active {
+        border-color: $color-black;
     }
 
+    &:focus:not(:active) {
+        border-color: $color-grey;
+
+        &::before{
+            border-color: $color-grey;
+        }
+    }
+    
     @include mq(desktop) {
         display: inline-flex;
         height: 92px;
