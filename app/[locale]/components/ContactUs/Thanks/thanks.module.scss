@@ -1,0 +1,135 @@
+@import "../../../styles/variables.module";
+
+.thanksWrapper {
+	border: 1px solid $color-black;
+	padding: 40px 12px 30px;
+	margin: 0 auto;
+
+	@media screen and (min-width: $desktop) {
+		padding: 80px 275px 72px;
+	}
+}
+
+.letterWrapper {
+	position: relative;
+	margin: 0 auto;
+	display: block;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 101px;
+		margin-bottom: 50px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 212px;
+		margin-bottom: 40px;
+	}
+}
+
+.lettterImg {
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 101px;
+		height: 61px;
+	}
+}
+
+.recieveIconImg {
+	position: absolute;
+	top: 0;
+	right: 0;
+	transform: translate(50%, -50%);
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 21px;
+		height: 20px;
+	}
+}
+
+.title {
+	font-weight: 400;
+	text-align: center;
+	line-height: normal;
+	color: $color-olive;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		font-size: 30px;
+		margin-bottom: 50px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 64px;
+		margin-bottom: 40px;
+	}
+}
+
+.text {
+	font-family: Arial;
+	text-align: center;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		font-size: 13px;
+		line-height: 2.07;
+		margin-bottom: 85px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 40px;
+	}
+}
+
+.btnBackWrapper {
+	position: relative;
+	margin: 0 auto;
+	width: 200px;
+
+	&:focus {
+		outline: none;
+		stroke-width: 3px;
+		color: $color-olive;
+	}
+}
+
+.btnBack {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	color: $color-black;
+	line-height: normal;
+
+	border: none;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+	transition:
+		color $transition-duration $timing-function,
+		background-color $transition-duration $timing-function;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-white;
+		background-color: $color-olive;
+	}
+
+	&:active {
+		color: inherit;
+		background-color: transparent;
+	}
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 200px;
+		height: 50px;
+		padding: 10px 61px;
+		font-size: 13px;
+		--size-corner: 20px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		width: 236px;
+		height: 92px;
+		padding: 26px 37px;
+		font-size: 22px;
+		--size-corner: 36px;
+	}
+}
