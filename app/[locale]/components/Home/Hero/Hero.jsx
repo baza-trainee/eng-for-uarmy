@@ -42,7 +42,7 @@ useEffect(() => {
                 <ul className={styles.list}>
                       <li className={styles.liItem}>
                           <Arrow />
-                          <p className={styles.liText}>{t("first-desc")}<strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong>{t("first-desc2")}<strong className={styles.li_bold_txt}>{t("first-desc-bold2")}</strong></p>
+                          <p className={`${styles.liText} ${styles.transfer}`}>{t("first-desc")} <strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong>{t("first-desc2")}<strong className={styles.li_bold_txt}>{t("first-desc-bold2")}</strong></p>
                       </li>
                       <li className={styles.liItem}>
                           <Arrow />
@@ -50,7 +50,7 @@ useEffect(() => {
                       </li>
                       <li className={styles.liItem}>
                           <Arrow />
-                          <p className={styles.liText}>{t("third-desc")}<span className={styles.li_bold_txt} style={{ whiteSpace: 'nowrap' }}>{t("third-desc-bold")}</span> {t("and")}<span className={styles.li_bold_txt}>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
+                          <p className={styles.liText}>{t("third-desc")}<span className={styles.li_bold_txt} style={{ whiteSpace: 'nowrap' }}>{t("third-desc-bold")}</span> {t("and")}<span className={`${styles.li_bold_txt} ${styles.transfer}`} style={{ wordBreak: 'break-word' }}>{t("third-desc-bold2")}</span>{t("third-desc-bold3")}</p>
                       </li>
                 </ul>
                 <ul className={styles.btnList}>

@@ -81,8 +81,6 @@ position: relative;
   font-weight: 700;
   line-height: 28px;
   letter-spacing: -0.408px;
-  margin-left: 5px;
-  margin-right: 5px;
 }
 .btnList{
   margin-top: 54px;
@@ -261,6 +259,7 @@ position: relative;
     font-style: normal;
     font-weight: 700;
     line-height: 150%;
+    margin: 0;
   }
   .btnList{
     margin-top: 20px;
@@ -272,7 +271,13 @@ position: relative;
   }
   
 
-  
+  .transfer br {
+    display: block;
+    content: "";
+    margin: 0;
+    padding: 0;
+  }
+
   .under_txt_btn {
     margin-top: 13px;
     color: $color-white;
