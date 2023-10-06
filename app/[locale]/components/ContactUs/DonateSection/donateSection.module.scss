@@ -117,10 +117,13 @@ width: 360px;
     line-height: 27px;
     letter-spacing: 0px;
     text-align: left;
-    padding-top: 20px;
+    padding-top: 24px;
     color: $color-black;
 }
 .textMobile {
+    display: none;
+}
+.firstParagraphTextMobile {
     display: none;
 }
 
@@ -195,7 +198,7 @@ width: 360px;
     }
     .bankDetails{
         width: 288px;
-        height: 266px;
+        height: 257px;
         margin: 20px 0 0 0;
         padding: 20px 0 31px 12px;
         border: 1px solid $color-black;
@@ -221,8 +224,11 @@ width: 360px;
         text-align: left;
         padding: 15px 0 0 0;
     }
-    .textMobile{
+    .firstParagraphTextMobile {
         margin-top: 15px;
+        display: block;
+    }
+    .textMobile{
         display: block;
     }
     .textDesktop {
