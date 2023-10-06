@@ -7,11 +7,10 @@ import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
-const ContactForm = ({searchParams}) => {
-  const [requestType, setRequestType] = useState("Type of request");
+const ContactForm = ({action}) => {
+  const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
-  console.log("searchParams", searchParams);
 
   const handleInput = (e) => {
     const textarea = e.target;
@@ -71,7 +70,7 @@ const ContactForm = ({searchParams}) => {
               <CustomSelect
                 requestType={requestType}
                 setRequestType={setRequestType}
-                searchParams={searchParams} />
+                action={action} />
 
               <label
                 className={`${styles.form__field} ${styles.form__fieldName}`}>

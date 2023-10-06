@@ -14,6 +14,7 @@ import { ArowUp } from "./components/commonComponents/ArowUp/ArowUp";
   
 const Home = ({searchParams}) => {
   const showModal = searchParams?.modal;
+  
   useEffect(() => {
     if (showModal) {
       document.body.classList.add('modal-open');

@@ -1,20 +1,36 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useMemo } from "react";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ requestType, setRequestType, searchParams }) => {
+const CustomSelect = ({ requestType, setRequestType, action }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const action = searchParams?.action;
 
-  console.log("searchParams", searchParams);
-  console.log("action", action);
-
-  const options = [
+  const options = useMemo(() => [
     { label: "I’d like to volunteer" },
     { label: "I’d like to become a partner or sponsor" },
     { label: "I’d like to spread the word" },
     { label: "I have questions and/or feedback" },
     { label: "Other" },
-  ];
+  ], []);
+
+  useEffect(() => {
+    switch (action) {
+      case "volunteer":
+      setRequestType(options[0].label);
+      break;
+
+    case "partner":
+      setRequestType(options[1].label);
+      break;
+
+    case "spread":
+      setRequestType(options[2].label);
+      break;
+
+    default:
+      setRequestType("Type of request");
+  }
+    console.log("action", action);
+  }, [action, options, setRequestType]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
