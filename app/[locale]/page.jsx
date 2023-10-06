@@ -10,7 +10,6 @@ import Media from "./components/Home/Media/Media";
 import Testimonials from "./components/Home/Testimonials/Testimonials";
 import Modal from "./components/Home/Modal/Modal";
 import { bindPrevent } from "./libs/preventTab";
-import { ArowUp } from "./components/commonComponents/ArowUp/ArowUp";
   
 const Home = ({searchParams}) => {
   const showModal = searchParams?.modal;
@@ -34,7 +33,6 @@ const Home = ({searchParams}) => {
       <HelpUsGrows />
       <Partners />
       <Media />
-      <ArowUp/>
       {showModal && <Modal />}
     </>
   );
