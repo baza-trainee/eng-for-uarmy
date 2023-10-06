@@ -26,7 +26,7 @@ const openBuyMeACoffeeApp = () => {
     if (navigator.userAgent.match(/Android/i)) {
         window.location.href = buymeacoffeeAppUrl;
     } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id123456789';
+        window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id1480229954';
     } else {
         window.open(buymeacoffeeWebUrl);
     }
