@@ -210,7 +210,10 @@
   }
 
   &__error{
-    margin-top: 8px;
+    position: absolute;
+    bottom: -18px;
+    left: 0;
+
     font-family: Arial;
     font-size: 10px;
     line-height: 1.3;
@@ -219,6 +222,7 @@
 
     @include mq(desktop) {
       font-size: 12px;
+      bottom: -24px;
     }
   }
 }

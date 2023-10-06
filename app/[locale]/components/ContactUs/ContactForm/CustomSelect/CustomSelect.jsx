@@ -1,8 +1,12 @@
 import React, { useState } from "react";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({requestType, setRequestType}) => {
+const CustomSelect = ({ requestType, setRequestType, searchParams }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const action = searchParams?.action;
+
+  console.log("searchParams", searchParams);
+  console.log("action", action);
 
   const options = [
     { label: "I’d like to volunteer" },

@@ -3,10 +3,12 @@ import { useTranslations } from "next-intl";
 import Title from "../commonComponents/Title/Title";
 import ContactForm from "./ContactForm/ContactForm";
 import styles from "./ContactUs.module.scss";
-// import Thanks from "./Thanks/Thanks";
 
-const ContactUs = () => {
+const ContactUs = ({searchParams}) => {
   const t = useTranslations("Contact us");
+  const action = searchParams?.action;
+  console.log("searchParams", searchParams);
+  console.log("action", action);
 
   return (
     <section className={styles.main}>
@@ -14,7 +16,6 @@ const ContactUs = () => {
         <Title title={t("title")} description={t("desc")} />
 
         <ContactForm />
-        {/* <Thanks /> */}
       </div>
     </section>
   );
