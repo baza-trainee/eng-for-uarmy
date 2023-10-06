@@ -64,21 +64,24 @@
   &__input{
     width: 100%;
     padding-bottom: 10px;
+    outline: transparent;
     border: none;
     border-bottom: 1px solid $color-black;
+    border-radius: 0;
     @include filledTextStyle();
     
-    background: transparent;
+    background-color: transparent;
 
-    &:focus {
-      outline: none;
+    &::placeholder{
+      opacity: 0;
     }
 
     &:focus + .form__label,
-    &:not(:placeholder-shown) + .form__label
-    {
+    &:not(:placeholder-shown) + .form__label {
       font-size: 10px;
       line-height: 1.2;
+      -webkit-transform: translateY(0);
+      -moz-transform: translateY(0);
       transform: translateY(0);
 
       @include mq(desktop) {
@@ -93,7 +96,7 @@
     }
   }
 
-  &__label{
+  &__label {
     position: absolute;
     z-index: 10;
     top: 0;
@@ -103,10 +106,14 @@
 
     color: $color-grey;
 
+    -webkit-transform: translateY(13px);
+    -moz-transform: translateY(13px);
     transform: translateY(13px);
     transition: transform $transition-duration $timing-function;
 
     @include mq(desktop) {
+      -webkit-transform: translateY(32px);
+      -moz-transform: translateY(32px);
       transform: translateY(32px);
     }
   }

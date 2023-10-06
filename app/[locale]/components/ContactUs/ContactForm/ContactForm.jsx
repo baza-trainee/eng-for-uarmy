@@ -7,7 +7,7 @@ import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
-const ContactForm = ({action}) => {
+const ContactForm = ({ action }) => {
   const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
@@ -21,15 +21,7 @@ const ContactForm = ({action}) => {
     }
   };
 
-  const {
-    values,
-    errors,
-    touched,
-    handleBlur,
-    handleChange,
-    handleSubmit,
-    setFieldValue,
-  } = useFormik({
+  const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: "",
       email: "",
@@ -77,7 +69,7 @@ const ContactForm = ({action}) => {
                 <input type="text"
                   name="name"
                   value={values.name}
-                  placeholder=''
+                  placeholder='Your name'
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
@@ -93,7 +85,7 @@ const ContactForm = ({action}) => {
                 <input type="email"
                   name="email"
                   value={values.email}
-                  placeholder=''
+                  placeholder='Your email'
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
@@ -109,7 +101,7 @@ const ContactForm = ({action}) => {
             <label className={styles.form__field}>
               <textarea name="request"
                 value={values.request}
-                placeholder=''
+                placeholder='Tell us more about your request'
                 onChange={handleChange}
                 onBlur={handleBlur}
                 onInput={handleInput}
