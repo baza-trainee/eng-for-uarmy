@@ -1,11 +1,36 @@
 "use client";
 import { useTranslations} from 'next-intl';
-import Link from 'next/link';
 import Image from 'next/image';
 import styles from './donateSection.module.scss';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
+    
+    const openPayPalApp = () => {
+        const paypalAppUrl = 'intent://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE#Intent;scheme=https;package=com.paypal.android;end';
+        const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+
+        if (navigator.userAgent.match(/Android/i)) {
+            window.location.href = paypalAppUrl;
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id283646709';
+        } else {
+            window.open(paypalWebUrl);
+        }
+    };
+
+const openBuyMeACoffeeApp = () => {
+    const buymeacoffeeAppUrl = 'intent://www.buymeacoffee.com/engforuarmy#Intent;scheme=https;package=com.buymeacoffee.android;end';
+    const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
+
+    if (navigator.userAgent.match(/Android/i)) {
+        window.location.href = buymeacoffeeAppUrl;
+    } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id123456789';
+    } else {
+        window.open(buymeacoffeeWebUrl);
+    }
+};
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
@@ -17,17 +42,17 @@ const DonateSection = () => {
             <p className={styles.supportText}>{t("support")}</p>
         </div>
         <div className={styles.linkArea}>
-            <div clasname={styles.paypallBtn}>
-                <Link href='https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE' className={styles.linkButtons} target="_blank" rel="noopener noreferrer" onClick={(e) => e.currentTarget.blur()}>
+            <div clasName={styles.paypallBtn}>
+                <button className={styles.linkButtons} onClick={openPayPalApp}>
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
                     <p>PAYPAL</p>
-                </Link>
+                </button>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <Link href='https://www.buymeacoffee.com/engforuarmy' className={styles.linkButtons} target="_blank" rel="noopener noreferrer" onClick={(e) => e.currentTarget.blur()}>
+                <button className={styles.linkButtons} onClick={openBuyMeACoffeeApp}>
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
-                </Link>
+                </button>
             </div>
         </div>
         <div className={styles.bankDetails}>
