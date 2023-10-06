@@ -28,7 +28,7 @@ const Goin = () => {
                     {t("vacancies")}
                 </MainLink> */}
                 
-                <MainLink path='contact'>{t("volunteer")}</MainLink>
+                <MainLink path='contact?action=volunteer'>{t("volunteer")}</MainLink>
             </div>
         </section>
     )
