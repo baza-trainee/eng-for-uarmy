@@ -8,6 +8,7 @@ import HeaderMobile from "./HeaderMobile";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
 import styles from "./header.module.scss";
+import { ArowUp } from "../ArowUp/ArowUp";
 
 const Header = () => {
   const t = useTranslations("Header");
@@ -46,6 +47,7 @@ const Header = () => {
         </div>
     </div>
     <HeaderMobile setMobileMenu={setMobileMenu} mobileMenu={mobileMenu} />
+    <ArowUp/>
     </header>
   
 };
