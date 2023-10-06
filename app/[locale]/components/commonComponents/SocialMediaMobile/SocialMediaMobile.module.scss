@@ -17,6 +17,7 @@
     display: block;
     width: 70px;
     height: 50px;
+    color: #231F20;
     --border-color: #231F20;
     --size-corner: 15px;
     --border-width: 1px;
@@ -54,13 +55,17 @@
                         calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
                         var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
         }
-        &:hover {
+        &:active {
+            color: #798738;
             --border-color: #798738;
         }
-        &:focus:not(:active) {
-            --border-color: #798738;
-            --border-width: 3px;
-        }
+        // &:active {
+        //     --border-color: #798738;
+        // }
+        // &:focus:not(:active) {
+        //     --border-color: #798738;
+        //     --border-width: 3px;
+        // }
 }
 .svgIcon {
     display: block;
@@ -74,10 +79,10 @@
 }
 
 
-.socialItem:hover .svgIcon {
+.socialItem:active .svgIcon {
     stroke: $color-olive;
 }
 
-.socialItem:hover .back {
+.socialItem:active .back {
     fill: $color-olive;
 }
