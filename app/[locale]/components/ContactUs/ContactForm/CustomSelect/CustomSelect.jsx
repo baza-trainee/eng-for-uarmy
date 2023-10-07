@@ -1,16 +1,18 @@
 import React, { useEffect, useState, useMemo } from "react";
+import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
 const CustomSelect = ({ requestType, setRequestType, action }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const t = useTranslations("Contact us");
 
   const options = useMemo(() => [
-    { label: "I’d like to volunteer" },
-    { label: "I’d like to become a partner or sponsor" },
-    { label: "I’d like to spread the word" },
-    { label: "I have questions and/or feedback" },
-    { label: "Other" },
-  ], []);
+    { label: t("volunteer") },
+    { label: t("partner") },
+    { label: t("spread") },
+    { label: t("questions") },
+    { label: t("other") },
+  ], [t]);
 
   useEffect(() => {
     switch (action) {
@@ -27,10 +29,10 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
       break;
 
     default:
-      setRequestType("Type of request");
+      setRequestType(t("type"));
   }
     console.log("action", action);
-  }, [action, options, setRequestType]);
+  }, [action, options, setRequestType, t]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -41,7 +43,7 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
     setIsOpen(false);
   };
 
-  const changeStyle = requestType !== "Type of request";
+  const changeStyle = requestType !== t("type");
 
   return (
     <div className={styles.select}>
