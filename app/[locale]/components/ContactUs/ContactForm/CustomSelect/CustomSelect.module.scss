@@ -1,7 +1,7 @@
 @import "../../../../styles/variables.module";
 @import "../../../../styles/mixins.module";
 
-.custom__select {
+.select {
   position: relative;
   width: 100%;
   margin-bottom: 30px;
@@ -9,6 +9,26 @@
     width: 360px;
     height: 75px;
     margin-bottom: 60px;
+  }
+
+  &__btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    color: $color-black;
+    background-color: transparent;
+  }
+
+  &__icon {
+    width: 25px;
+    height: 25px;
+    stroke: currentColor;
+  
+    @include mq(desktop) {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
 
@@ -39,15 +59,6 @@
     &.select__triggerBorder{
       border-bottom: none;
     }
-  }
-}
-
-.select__svg{
-  width: 24px;
-  height: 24px;
-  @include mq(desktop) {
-    width: 32px;
-    height: 32px;
   }
 }
 
