@@ -44,15 +44,21 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
   const changeStyle = requestType !== "Type of request";
 
   return (
-    <div className={styles.custom__select}>
+    <div className={styles.select}>
       <div className={`${styles.select__trigger} ${isOpen ? styles.select__triggerBorder : ""}`}
         onClick={toggleDropdown}>
         <span className={`${changeStyle ? styles.select__selected : ""}`}>
           {requestType}
         </span>
-        <svg className={styles.select__svg} width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <path d="M5 11L16 22L27 11" stroke="black" />
-        </svg>
+        <button className={styles.select__btn}>
+          {!isOpen
+            ? <svg className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <path d="M3.90625 8.59375L12.5 17.1875L21.0938 8.59375" />
+            </svg>
+            : <svg className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
+              <path d="M21.0938 16.4062L12.5 7.8125L3.90625 16.4062" />
+            </svg>}
+        </button>
       </div>
 
       {isOpen && (

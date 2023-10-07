@@ -33,7 +33,7 @@ const ContactForm = ({ action }) => {
         setIsLoading(true);
 
         const emailData = {
-          requestType: requestType,
+          requestType: requestType === "Type of request" ? "Other" : requestType,
           name,
           email,
           request,
@@ -42,7 +42,7 @@ const ContactForm = ({ action }) => {
         const data = await sendEmail(emailData);
         console.log(data.message);
 
-        setRequestType("Type of request");
+        setRequestType(null);
         resetForm();
         setIsSubmit(true);
       } catch (err) {
@@ -98,24 +98,26 @@ const ContactForm = ({ action }) => {
               </label>
             </div>
 
-            <label className={styles.form__field}>
-              <textarea name="request"
-                value={values.request}
-                placeholder='Tell us more about your request'
-                onChange={handleChange}
-                onBlur={handleBlur}
-                onInput={handleInput}
-                className={`
-                  ${styles.form__input} 
-                  ${styles.form__textarea} 
-                  ${errors.request && touched.request && styles.form__inputError}`} />
-              
-              <span className={`${styles.form__label} ${errors.request && touched.request && styles.form__labelError}`}>
-                Tell us more about your request
-              </span>
+            <div>
+              <label className={styles.form__field}>
+                <textarea name="request"
+                  value={values.request}
+                  placeholder='Tell us more about your request'
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  onInput={handleInput}
+                  className={`
+                    ${styles.form__input} 
+                    ${styles.form__textarea} 
+                    ${errors.request && touched.request && styles.form__inputError}`} />
+                
+                <span className={`${styles.form__label} ${errors.request && touched.request && styles.form__labelError}`}>
+                  Tell us more about your request
+                </span>
 
-              {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
-            </label>
+                {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
+              </label>
+            </div>
           </div>
 
           <div className={styles.form__btnWrapper}>
