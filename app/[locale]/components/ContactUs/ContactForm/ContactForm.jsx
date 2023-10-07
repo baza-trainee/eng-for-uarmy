@@ -53,6 +53,8 @@ const ContactForm = ({ action }) => {
     },
   });
 
+  const disabled = !values.name || !values.email || !values.request || isLoading;
+
   return (
     <>
       {!isSubmit
@@ -123,7 +125,7 @@ const ContactForm = ({ action }) => {
           <div className={styles.form__btnWrapper}>
             <button
               type="submit"
-              disabled={isLoading}
+              disabled={disabled}
               className={`${btnStyles.mainLink} ${styles.form__btn}`}
             >
               {isLoading && <span className={styles.form__spinner}></span>}
