@@ -33,7 +33,7 @@ const ContactForm = ({ action }) => {
         setIsLoading(true);
 
         const emailData = {
-          requestType: requestType,
+          requestType: requestType === "Type of request" ? "Other" : requestType,
           name,
           email,
           request,
@@ -42,7 +42,7 @@ const ContactForm = ({ action }) => {
         const data = await sendEmail(emailData);
         console.log(data.message);
 
-        setRequestType("Type of request");
+        setRequestType(null);
         resetForm();
         setIsSubmit(true);
       } catch (err) {
