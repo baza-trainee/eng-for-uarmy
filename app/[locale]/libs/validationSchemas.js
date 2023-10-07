@@ -14,5 +14,5 @@ export const emailSchema = yup.object().shape({
         .string()
         .trim()
         .max(2000, 'Maximum 2000 characters')
-        .optional(),
+        .required('Please enter your request'),
 });
