@@ -5,12 +5,13 @@ import {  Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import Image from "next/image";
 import styles from './partners.module.scss';
 
-import Image from "next/image";
 
 const getSlidesPerView = () => {
-  return window.innerWidth > 1279 ? 3 : 1;
+  const innerWidth = (typeof window !== 'undefined' ? window.innerWidth : '')
+  return innerWidth > 1279 ? 3 : 1;
 }
 
 const Slider = ({ data }) => {
@@ -52,7 +53,7 @@ const Slider = ({ data }) => {
          >
          {data.map(({ id, src, alt }) => (
             <SwiperSlide className={styles.imageSlider} key={id}>
-              <Image className={styles.icons} src={src} alt={alt} />
+              <Image className={styles.icons} src={src} alt={alt} loading = 'lazy' />
             </SwiperSlide>
           ))}
         </Swiper>

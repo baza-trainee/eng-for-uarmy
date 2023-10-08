@@ -1,15 +1,7 @@
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
 
-@font-face {
-    font-family: Furore;
-    src: url('../../../assets/fonts/Furore.woff2') format('woff');
-}
 
-@font-face {
-    font-family: arial;
-    src: url('../../../assets/fonts/ArialMT.woff2') format('woff');
-}
 
 .aboutUsSection {
     background-color: $color-ultra_light_grey;
@@ -49,7 +41,6 @@
 .title {
     padding: 56px 176px 45px 114px;
     color: $color-black;
-    font-family: Furore;
     font-size: 48px;
     font-style: normal;
     font-weight: 400;

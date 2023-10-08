@@ -1,7 +1,10 @@
+// import AboutProject from "../../components/Study/AboutProject/AboutProject";
+// import OrderForStudy from "../../components/Study/OrderForStudy/OrderForStudy";
 const StudyPage = () => {
   return (
     <>
-      <h1>Study page</h1>
+      {/* <AboutProject />
+      <OrderForStudy /> */}
 
     </>
   );

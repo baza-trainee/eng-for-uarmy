@@ -2,15 +2,6 @@
 @import '../../../styles/utils.module';
 @import '../../../styles/mixins.module';
 
-@font-face {
-    font-family: Furore;
-    src: url('../../../assets/fonts/Furore.woff2') format('woff');
-}
-
-@font-face {
-    font-family: arial;
-    src: url('../../../assets/fonts/ArialMT.woff2') format('woff');
-}
 
 .pageContainer {
     display: flex;
@@ -103,7 +94,6 @@ width: 360px;
   }
 
 .bankDetailstitle {
-    font-family: Furore;
     font-size: 18px;
     font-weight: 400;
     line-height: 27px;
@@ -160,7 +150,6 @@ width: 360px;
     .title{
         margin: 0 auto;
         font-size: 30px;
-        font-family: Furore;
         font-weight: 400;
         line-height: 36px;
         letter-spacing: 0px;
@@ -208,7 +197,6 @@ width: 360px;
         display: none;
     }
     .bankDetailstitle {
-        font-family: Furore;
         font-size: 15px;
         font-weight: 400;
         line-height: 20px;

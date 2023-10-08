@@ -42,7 +42,7 @@ const openBuyMeACoffeeApp = () => {
             <p className={styles.supportText}>{t("support")}</p>
         </div>
         <div className={styles.linkArea}>
-            <div clasName={styles.paypallBtn}>
+            <div className={styles.paypallBtn}>
                 <button className={styles.linkButtons} onClick={openPayPalApp}>
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
                     <p>PAYPAL</p>
