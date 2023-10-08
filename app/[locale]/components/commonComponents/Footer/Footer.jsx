@@ -12,7 +12,7 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
         <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200}
-          className={styles.footer__logo} priority />
+          className={styles.footer__logo} />
 
         <div className={styles.menu}>
           <h3 className={styles.footer__title}>{t("menu")}</h3>

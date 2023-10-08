@@ -3,7 +3,7 @@ import "./SvgComponent.styles.scss"
 import Link from 'next/link';
 
 export const Facebook = () => {
-    return <Link href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn'>
+    return <Link href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn' aria-label="Open facebook page of Eng for uarmy">
         <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
 <g clipPath="url(#clip0_1_1623)">
@@ -19,7 +19,7 @@ export const Facebook = () => {
   }
 
   export const Youtube =()=>  {
-    return <Link href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn'>
+    return <Link href="https://www.youtube.com/@engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn' aria-label="Open youtube channel of Eng for uarmy">
         <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="#F2F1F1" xmlns="http://www.w3.org/2000/svg">
 <path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
 <path className="back" fillRule="evenodd" clipRule="evenodd" d="M49.9054 23.5696C51.1116 23.8829 52.0525 24.7999 52.3787 25.9711C53.2318 29.3122 53.1762 35.629 52.3966 39.0224C52.074 40.1935 51.1295 41.1071 49.9234 41.4238C46.5181 42.2417 31.2664 42.1408 28.0583 41.4238C26.8521 41.1106 25.9112 40.1935 25.585 39.0224C24.7803 35.8379 24.8359 29.1034 25.5671 25.9885C25.8897 24.8173 26.8342 23.9037 28.0404 23.587C32.5926 22.6647 48.2853 22.9623 49.9054 23.5696ZM37 29L44 32.5L37 36V29Z"/>
@@ -29,7 +29,7 @@ export const Facebook = () => {
 
   
   export const Instagram =()=> {
-    return <Link href="https://www.instagram.com/engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn'>
+    return <Link href="https://www.instagram.com/engforuarmy/" target="_blank" rel="noopener noreferrer" className='social-btn' aria-label="Open instagram page of Eng for uarmy">
         <svg className="svg-icon" width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M76 66V1H1V46.2564L20.2569 66H76Z" strokeLinecap="square"/>
             <g clipPath="url(#clip0_217_117)">
@@ -47,7 +47,7 @@ export const Facebook = () => {
   }
 
   export const Telegram =()=> {
-    return <Link href="https://t.me/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn'>
+    return <Link href="https://t.me/ENGforUARMY" target="_blank" rel="noopener noreferrer" className='social-btn' aria-label="Open telegram channel of Eng for uarmy">
         <svg className="svg-icon"width="77" height="67" viewBox="0 0 77 67" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M76 66V1H1V46.2564L20.2569 66H76Z"  strokeLinecap="square"/>
 <path className="back" d="M25.3595 32.8537C27.8094 31.5665 30.5574 30.4786 33.1109 29.3908C37.5206 27.6178 41.9304 25.8623 46.4101 24.2392C47.2851 23.9555 48.8418 23.6866 49 24.9243C48.9132 26.6638 48.58 28.4033 48.335 30.1254C47.7401 33.9389 47.0401 37.7363 46.3569 41.5324C46.1288 42.8036 44.467 43.4566 43.4003 42.6364C40.8454 40.9972 38.2906 39.3581 35.7707 37.6855C34.949 36.8826 35.7175 35.7292 36.4539 35.1592C38.5538 33.1855 40.7755 31.4956 42.7717 29.4215C43.3149 28.1838 41.7218 29.2208 41.1968 29.538C38.327 31.4287 35.5271 33.4358 32.4823 35.1084C30.9424 35.9273 29.1225 35.2248 27.5826 34.7738C26.1995 34.2386 24.1696 33.6873 25.3595 32.851V32.8537Z" />

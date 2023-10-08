@@ -59,7 +59,8 @@ useEffect(() => {
                     href={`https://www.youtube.com/@engforuarmy`}
                     className={styles.under_txt_btn}
                     target="_blank" 
-                    rel="noopener noreferrer">
+                    rel="noopener noreferrer"
+                    aria-label="Open Youtube channel of ENG for UArmy">
                     {t("study-btn")}
                   </Link>
                       </li>
@@ -68,7 +69,8 @@ useEffect(() => {
                   to="helpUsGrow" 
                   smooth={true} 
                   duration={500} 
-                  className={styles.under_txt_btn2} >
+                  className={styles.under_txt_btn2}
+                  aria-label="Move to Help us grow section">
                   {t("support-btn")}
                   </ScrollLink>{isLargeScreen ? (
                         <ButtonBorder />

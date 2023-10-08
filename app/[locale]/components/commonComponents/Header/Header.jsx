@@ -40,7 +40,7 @@ const Header = () => {
           </Link>
         </nav>
         <div className={styles.headerWrapper}>
-          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
+          <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()} aria-label="Move to Help us grow section">{t("button")}</Link>
         <LangSwitcher locale={locale} pathname={currentPathname} />
         <button onClick={() => openMobileMenu()} className={styles.menuBtn}>
             <svg className={styles.menuBurgerIcon} xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
