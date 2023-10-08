@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
@@ -11,6 +12,7 @@ const ContactForm = ({ action }) => {
   const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
+  const t = useTranslations("Contact us");
 
   const handleInput = (e) => {
     const textarea = e.target;
@@ -33,7 +35,7 @@ const ContactForm = ({ action }) => {
         setIsLoading(true);
 
         const emailData = {
-          requestType: requestType === "Type of request" ? "Other" : requestType,
+          requestType: requestType === t("type") ? t("other") : requestType,
           name,
           email,
           request,
@@ -53,6 +55,8 @@ const ContactForm = ({ action }) => {
     },
   });
 
+  const disabled = !values.name || !values.email || !values.request || isLoading;
+
   return (
     <>
       {!isSubmit
@@ -69,13 +73,13 @@ const ContactForm = ({ action }) => {
                 <input type="text"
                   name="name"
                   value={values.name}
-                  placeholder='Your name'
+                  placeholder={t("name")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
                 
                 <span className={`${styles.form__label} ${errors.name && touched.name && styles.form__labelError}`}>
-                  Your name
+                  {t("name")}
                 </span>
 
                 {errors.name && touched.name && <p className={styles.form__error}>{errors.name}</p>}
@@ -85,13 +89,13 @@ const ContactForm = ({ action }) => {
                 <input type="email"
                   name="email"
                   value={values.email}
-                  placeholder='Your email'
+                  placeholder={t("email")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
                 
                 <span className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
-                  Your email
+                  {t("email")}
                 </span>
 
                 {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
@@ -102,7 +106,7 @@ const ContactForm = ({ action }) => {
               <label className={styles.form__field}>
                 <textarea name="request"
                   value={values.request}
-                  placeholder='Tell us more about your request'
+                  placeholder={t("tellUs")}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   onInput={handleInput}
@@ -112,7 +116,7 @@ const ContactForm = ({ action }) => {
                     ${errors.request && touched.request && styles.form__inputError}`} />
                 
                 <span className={`${styles.form__label} ${errors.request && touched.request && styles.form__labelError}`}>
-                  Tell us more about your request
+                  {t("tellUs")}
                 </span>
 
                 {errors.request && touched.request && <p className={styles.form__error}>{errors.request}</p>}
@@ -121,13 +125,11 @@ const ContactForm = ({ action }) => {
           </div>
 
           <div className={styles.form__btnWrapper}>
-            <button
-              type="submit"
-              disabled={isLoading}
-              className={`${btnStyles.mainLink} ${styles.form__btn}`}
-            >
+            <button type="submit"
+              disabled={disabled}
+              className={`${btnStyles.mainLink} ${styles.form__btn}`}>
               {isLoading && <span className={styles.form__spinner}></span>}
-              Send
+              {t("send")}
             </button>
           </div>
         </form>)

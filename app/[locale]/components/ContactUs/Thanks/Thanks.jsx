@@ -1,14 +1,9 @@
 "use client";
-
 import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import Image from "next/image";
-
 import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
-
 import recieveIconImg from "../../../../../public/thanks/recieve_ic_desktop.svg";
-
 import styles from "./thanks.module.scss";
 import {
   ArrowLeftSvg,
@@ -47,9 +42,8 @@ const Thanks = () => {
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href=""
-          //   href={`/${locale}/contact`}
-          onClick={() => router.back()}
+          href={`/${locale}`}
+          // onClick={() => router.back({ query: { action: "null" } })}
         >
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />

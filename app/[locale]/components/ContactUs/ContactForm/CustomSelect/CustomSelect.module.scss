@@ -18,6 +18,10 @@
     border: none;
     color: $color-black;
     background-color: transparent;
+
+    &:focus{
+      outline: none;
+    }
   }
 
   &__icon {
