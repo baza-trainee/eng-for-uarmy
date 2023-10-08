@@ -55,7 +55,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled = !values.name || !values.email || !values.request || isLoading;
+  const disabled = errors.name || errors.email || errors.request || isLoading;
 
   return (
     <>

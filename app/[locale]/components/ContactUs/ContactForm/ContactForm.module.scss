@@ -125,8 +125,8 @@
     padding-top: 0;
     resize: none;
     overflow-y: hidden;
-    scrollbar-color: #f2f1f1;
     -ms-overflow-style: none;
+    scrollbar-color: $color-ultra-light-grey $color-green;
     scrollbar-width: thin;
     cursor: pointer;
     @include filledTextStyle();
@@ -141,7 +141,7 @@
 
   &__textarea::-webkit-scrollbar {
     width: 5px;
-    background-color: $color-green;
+    background-color: $color-ultra-light-grey;
   
     @include mq(desktop) {
       width: 8px;
