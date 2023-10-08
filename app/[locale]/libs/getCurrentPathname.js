@@ -3,7 +3,7 @@ const getCurrentPathname = (pathname) => {
     if (currentPath === 'en' || currentPath === 'uk') {
         return '/'
     } else {
-        return currentPath
+        return currentPath + window.location.search
     }
-}
+} 
 export default getCurrentPathname;

@@ -2,8 +2,8 @@
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from 'next/navigation';
-import { useState } from "react";
+import { usePathname, useSearchParams } from 'next/navigation';
+import { useEffect, useState } from "react";
 import HeaderMobile from "./HeaderMobile";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
@@ -14,10 +14,14 @@ const Header = () => {
   const t = useTranslations("Header");
   const locale = useLocale();
   const pathname = usePathname();
-  const currentPathname = getCurrentPathname(pathname);
-
   const [mobileMenu, setMobileMenu] = useState(false);
+  const [currentPathname, setCurrentPathname] = useState('');
 
+  useEffect(() => {
+    const path = getCurrentPathname(pathname);
+    setCurrentPathname(path)
+  }, [pathname])
+  
   const openMobileMenu = () => {
     setMobileMenu(!mobileMenu)
   }
