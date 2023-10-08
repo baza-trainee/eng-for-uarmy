@@ -5,10 +5,12 @@ export const emailSchema = yup.object().shape({
         .string()
         .trim()
         .matches(/[a-zA-Zа-яА-ЯіІїЇґҐёЁєЄ]/, 'Please enter on alphabets only')
+        .max(50, 'Maximum 50 characters')
         .required('Please enter your name'),
     email: yup
         .string()
         .email('Invalid email address')
+        .max(50, 'Maximum 50 characters')
         .required('Please enter your email'),
     request: yup
         .string()
