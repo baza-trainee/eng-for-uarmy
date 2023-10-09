@@ -1,18 +1,38 @@
 import React, { useState } from "react";
+import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
 import CustomSelect from "./CustomSelect/CustomSelect";
+import { DebounceInput } from 'react-debounce-input';
 import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const ContactForm = ({ action }) => {
+  const [savedValues, setSavedValues] = useLocalStorage('formValues', {
+    requestType: "",
+    name:"",
+    email: "",
+    request: "",
+  });
   const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
+
+  const handleInputChange = (e) => {
+    handleChange(e);
+
+    console.log ("e.target", e.target.value)
+
+    setSavedValues({
+      name: e.target.name === 'name' ? e.target.value : values.name,
+      email: e.target.name === 'email' ? e.target.value : values.email,
+      request: e.target.name === 'request' ? e.target.value : values.request,
+    });
+  };
 
   const handleInput = (e) => {
     const textarea = e.target;
@@ -25,9 +45,9 @@ const ContactForm = ({ action }) => {
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      name: "",
-      email: "",
-      request: "",
+      name: savedValues.name,
+      email: savedValues.email,
+      request: savedValues.request,
     },
     validationSchema: emailSchema,
     onSubmit: async ({ name, email, request }, { resetForm }) => {
@@ -68,13 +88,13 @@ const ContactForm = ({ action }) => {
                 setRequestType={setRequestType}
                 action={action} />
 
-              <label
-                className={`${styles.form__field} ${styles.form__fieldName}`}>
-                <input type="text"
+              <label className={`${styles.form__field} ${styles.form__fieldName}`}>
+                <DebounceInput type="text"
                   name="name"
                   value={values.name}
                   placeholder={t("name")}
-                  onChange={handleChange}
+                  debounceTimeout={500}
+                  onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
                 
@@ -86,11 +106,12 @@ const ContactForm = ({ action }) => {
               </label>
 
               <label className={styles.form__field}>
-                <input type="email"
+                <DebounceInput type="email"
                   name="email"
                   value={values.email}
                   placeholder={t("email")}
-                  onChange={handleChange}
+                  debounceTimeout={500}
+                  onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
                 
@@ -104,10 +125,12 @@ const ContactForm = ({ action }) => {
 
             <div>
               <label className={styles.form__field}>
-                <textarea name="request"
+                <DebounceInput element="textarea"
+                  name="request"
                   value={values.request}
                   placeholder={t("tellUs")}
-                  onChange={handleChange}
+                  debounceTimeout={500}
+                  onChange={handleInputChange}
                   onBlur={handleBlur}
                   onInput={handleInput}
                   className={`

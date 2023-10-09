@@ -3,7 +3,6 @@
 
 .select {
   position: relative;
-  width: 100%;
   margin-bottom: 30px;
   @include mq(desktop) {
     width: 360px;
@@ -11,16 +10,56 @@
     margin-bottom: 60px;
   }
 
+  &__trigger {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 0 10px;
+    border-bottom: 1px solid $color-black-text;
+    cursor: pointer;
+  
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.5;
+  
+    color: $color-grey;
+  
+    @include mq(desktop) {
+      width: 360px;
+      padding: 32px 0 10px;
+
+      font-size: 22px;
+      letter-spacing: -0.408px;
+  
+      &.select__triggerBorder {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__selected {
+    color: $color-black;
+  }
+
   &__btn{
     display: flex;
     justify-content: center;
     align-items: center;
     border: none;
+    cursor: pointer;
+
     color: $color-black;
     background-color: transparent;
 
-    &:focus{
+    &:hover{
+      color: $color-green;
+    }
+
+    &:focus:not(:active){
       outline: none;
+      color: $color-olive;
     }
   }
 
@@ -36,93 +75,48 @@
   }
 }
 
-.select__trigger {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 0 10px;
-  border-bottom: 1px solid $color-black-text;
-  cursor: pointer;
-
-  font-family: Arial;
-  font-size: 13px;
-  font-weight: 700;
-  line-height: 1.5;
-
-  color: $color-grey;
-  // &.select__triggerBorder{
-  //   border-bottom: none;
-  // }
-  @include mq(desktop) {
-    width: 360px;
-    padding: 32px 0 10px;
-    font-size: 22px;
-    letter-spacing: -0.408px;
-    
-    &.select__triggerBorder{
-      border-bottom: none;
-    }
-  }
-}
-
-.select__selected{
-  color: $color-black;
-  font-family: Arial;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 150%;
-  letter-spacing: -0.408px;
-  @include mq(desktop) {
-    font-size: 22px;
-  }
-}
-
 .options {
   position: absolute;
-  z-index: 20;
   width: 100%;
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  z-index: 20;
+  padding: 20px 0;
+
   background-color: $color-white-text;
-  color: $color-black;
-  font-family: Arial;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 215%;
   @include mq(desktop) {
+    padding: 10px 0;
+
     font-size: 18px;
     line-height: 155%;
     letter-spacing: -0.408px;
     width: 360px;
   }
-}
 
-.options li {
-  padding: calc(36px - (13px * 2.15)) 20px calc(36px - (13px * 2.15)) 20px;
-  cursor: pointer;
-  @include mq(desktop) {
+  &__item{
+    padding: 10px 12px;
+    cursor: pointer;
 
+    transition: background-color $transition-duration $timing-function;
+
+    &:hover{
+      background-color: $color-green;
+    }
+    
+    @include mq(desktop) {
+      padding: 10px 24px;
+    }
+  }
+
+  &__label{
+    font-family: Arial;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 2.15;
+
+    @include mq(desktop) {
+      font-size: 18px;
+      line-height: 1.6;
+      letter-spacing: -0.408px;
+    }
   }
 }
 
-.options li:last-child {
-  margin-bottom: 10px;
-  @include mq(desktop) {
-
-  }
-}
-
-.options li:first-child {
-  margin-top: 10px;
-  @include mq(desktop) {
-
-  }
-}
-
-.options li:hover {
-  background-color: $color-green;
-}

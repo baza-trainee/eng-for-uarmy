@@ -47,11 +47,12 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
 
   return (
     <div className={styles.select}>
-      <div className={`${styles.select__trigger} ${isOpen ? styles.select__triggerBorder : ""}`}>
-        <span className={`${changeStyle ? styles.select__selected : ""}`}>
+      <div onClick={toggleDropdown}
+        className={`${styles.select__trigger} ${isOpen && styles.select__triggerBorder}`}>
+        <p className={`${changeStyle && styles.select__selected}`}>
           {requestType}
-        </span>
-        <button type="button" className={styles.select__btn} onClick={toggleDropdown}>
+        </p>
+        <button type="button" className={styles.select__btn}>
           {!isOpen
             ? <svg className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
               <path d="M3.90625 8.59375L12.5 17.1875L21.0938 8.59375" />
@@ -66,8 +67,9 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
         <ul className={styles.options}>
           {options.map((option) => (
             <li key={option.label}
+              className={styles.options__item}
               onClick={() => handleOptionClick(option.label)}>
-              {option.label}
+              <p className={styles.options__label}>{option.label}</p>
             </li>))}
         </ul>)}
     </div>
