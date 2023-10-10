@@ -10,9 +10,9 @@ const DonateSection = () => {
         const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE&useraction=commit';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
-        if (navigator.userAgent.match(/Android/i)) {
+        if (navigator.userAgent.match(/Android/i) && window.location.href !== paypalAppUrl) {
             window.location.href = paypalAppUrl;
-        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && window.location.href !== paypalAppUrl) {
             window.location.href = paypalAppUrl;
         } else {
             window.open(paypalWebUrl);
@@ -23,9 +23,9 @@ const openBuyMeACoffeeApp = () => {
     const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy?useraction=commit';
     const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
-    if (navigator.userAgent.match(/Android/i)) {
+    if (navigator.userAgent.match(/Android/i) && window.location.href !== buymeacoffeeAppUrl) {
         window.location.href = buymeacoffeeAppUrl;
-    } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+    } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i) && window.location.href !== buymeacoffeeAppUrl) {
         window.location.href = buymeacoffeeAppUrl;
     } else {
         window.open(buymeacoffeeWebUrl);
