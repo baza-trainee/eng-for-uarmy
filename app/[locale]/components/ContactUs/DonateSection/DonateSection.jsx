@@ -8,11 +8,11 @@ const DonateSection = () => {
 
     const isMobileDevice = () => {
         return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-          navigator.userAgent
+            navigator.userAgent
         );
-      };
+    };
 
-      const checkAppExists = async (appUrl) => {
+    const checkAppExists = async (appUrl) => {
         try {
             const response = await fetch(appUrl, { method: 'HEAD' });
             return response.status === 200;
@@ -21,36 +21,32 @@ const DonateSection = () => {
         }
     };
     
+    const openAppOrWebUrl =  async (appUrl, webUrl) => {
+    
+        if (isMobileDevice()) {
+            const appExists = await checkAppExists(appUrl);
+            if (appExists) {
+                window.open(appUrl, '_system', 'location=yes');
+            } else {
+                window.open(webUrl, '_blank');
+            }
+          } else {
+                window.open(webUrl, '_blank');
+          }
+        };
+
     const openPayPalApp = () => {
         const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-    
-        if (isMobileDevice()) {
-            const appExists = checkAppExists(paypalAppUrl);
-            if (appExists) {
-              window.open(paypalAppUrl, '_system', 'location=yes');
-            } else {
-              window.open(paypalWebUrl, '_blank');
-            }
-          } else {
-            window.open(paypalWebUrl, '_blank');
-          }
-        };
+          
+        openAppOrWebUrl(paypalAppUrl, paypalWebUrl);
+    };
     
     const openBuyMeACoffeeApp = () => {
         const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
     
-        if (isMobileDevice()) {
-            const appExists = checkAppExists(buymeacoffeeAppUrl);
-            if (appExists) {
-              window.open(buymeacoffeeAppUrl, '_system', 'location=yes');
-            } else {
-              window.open(buymeacoffeeWebUrl, '_blank');
-            }
-          } else {
-            window.open(buymeacoffeeWebUrl, '_blank');
-          }
+        openAppOrWebUrl(buymeacoffeeAppUrl, buymeacoffeeWebUrl)
     };
     
     
