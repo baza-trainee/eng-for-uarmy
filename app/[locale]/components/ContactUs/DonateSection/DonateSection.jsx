@@ -7,7 +7,7 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE&useraction=commit';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
         if (navigator.userAgent.match(/Android/i)) {
@@ -20,7 +20,7 @@ const DonateSection = () => {
     };
 
 const openBuyMeACoffeeApp = () => {
-    const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
+    const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy?useraction=commit';
     const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
     if (navigator.userAgent.match(/Android/i)) {
