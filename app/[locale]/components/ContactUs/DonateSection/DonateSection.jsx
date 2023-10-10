@@ -7,16 +7,16 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'paypall://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
         const xhr = new XMLHttpRequest();
         xhr.open('HEAD', paypalAppUrl, true);
         xhr.onload = function () {
             if (xhr.status === 200) {
-                window.location.href = buymeacoffeeAppUrl;
+                window.location.href = paypalAppUrl;
             } else {
-                window.open(buymeacoffeeWebUrl);
+                window.open(paypalWebUrl);
             }
         };
         xhr.send();
