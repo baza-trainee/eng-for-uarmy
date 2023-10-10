@@ -10,25 +10,23 @@ const DonateSection = () => {
         const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
     
-        // Перевірка, чи можливо відкрити додаток PayPal
         const openApp = () => {
             window.open(paypalAppUrl, '_system', 'location=yes');
         };
     
-        // Якщо додаток недоступний, відкрити веб-сайт PayPal
         const openWeb = () => {
             window.open(paypalWebUrl, '_blank');
         };
     
-        // Спробувати відкрити додаток, якщо неможливо - відкрити веб-сайт
-        if (window.open(paypalAppUrl, '_system', 'location=yes')) {
+        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
+            openApp();
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             openApp();
         } else {
             openWeb();
         }
     };
     
-    // Аналогічно для BuyMeACoffee
     const openBuyMeACoffeeApp = () => {
         const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
@@ -41,12 +39,15 @@ const DonateSection = () => {
             window.open(buymeacoffeeWebUrl, '_blank');
         };
     
-        if (window.open(buymeacoffeeAppUrl, '_system', 'location=yes')) {
+        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
+            openApp();
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
             openApp();
         } else {
             openWeb();
         }
     };
+    
     
 
     return <section className={styles.pageContainer}>
