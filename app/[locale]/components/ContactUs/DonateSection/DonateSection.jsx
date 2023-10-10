@@ -20,13 +20,13 @@ const DonateSection = () => {
     };
 
 const openBuyMeACoffeeApp = () => {
-    const buymeacoffeeAppUrl = 'intent://www.buymeacoffee.com/engforuarmy#Intent;scheme=https;package=com.buymeacoffee.android;end';
+    const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
     const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
     if (navigator.userAgent.match(/Android/i)) {
         window.location.href = buymeacoffeeAppUrl;
     } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id1480229954';
+        window.location.href = buymeacoffeeAppUrl;
     } else {
         window.open(buymeacoffeeWebUrl);
     }
