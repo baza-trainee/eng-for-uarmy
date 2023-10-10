@@ -9,7 +9,7 @@ const scrollToTop = () => {
   };
 
 export const ArowUp = () => {
-    return <ScrollLink  to="top" onClick={scrollToTop} className={styles.ArowUpbtn} aria-label="Go up to the top of the page">
+    return <ScrollLink  to="top" onClick={scrollToTop} className={styles.ArowUpbtn} role='button' aria-label="Go up to the top of the page">
                 <svg className={styles.svgArrowUp} viewBox="0 0 88 91" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <circle className={styles.Circle} cx="45.5" cy="41.5" r="37.5" fill="#F9F9F9"/>
                         <circle className={styles.ArowBorder} cx="45.5" cy="41.5" r="37" stroke="#231F20"/>
