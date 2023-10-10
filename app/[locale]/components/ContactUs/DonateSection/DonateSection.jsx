@@ -31,7 +31,6 @@ const openBuyMeACoffeeApp = () => {
          window.open(buymeacoffeeWebUrl, '_blank');
      }
  };
-};
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
