@@ -7,13 +7,14 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'intent://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE#Intent;scheme=https;package=com.paypal.android;end';
+        const paypalAppAndroidUrl = 'paypall://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppIOSUrl = 'paypall://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
         if (navigator.userAgent.match(/Android/i)) {
-            window.location.href = paypalAppUrl;
+            window.location.href = paypalAppAndroidUrl;
         } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id283646709';
+            window.location.href = paypalAppIOSUrl;
         } else {
             window.open(paypalWebUrl);
         }
