@@ -28,7 +28,7 @@
     "string": "Over 6,000 soldiers are already learning. Join them now!"
   },
   "Feedback": {
-    "title": "Learners’ feedback",
+    "title": "Testimonials",
     "desc": "Read what some of our Military English learners have said about our course."
   },
   "OurProjects": {
@@ -147,7 +147,7 @@
     "page": "Page not found",
     "four": "four-oh-four",
     "text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
-    "btnHome": "Go on homepage"
+    "btnHome": "Back to homepage"
   },
   "Validation": {
     "alphabet": "Please enter on alphabets only",
