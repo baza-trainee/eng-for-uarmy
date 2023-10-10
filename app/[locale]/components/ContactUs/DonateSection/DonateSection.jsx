@@ -7,8 +7,8 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppAndroidUrl = 'paypall://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-        const paypalAppIOSUrl = 'paypall://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppAndroidUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppIOSUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
         if (navigator.userAgent.match(/Android/i)) {
