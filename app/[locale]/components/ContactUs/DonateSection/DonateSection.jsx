@@ -21,11 +21,14 @@ const openBuyMeACoffeeApp = () => {
     const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
     const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
-    if (navigator.userAgent.match(/Android/i) && navigator.userAgent.match(/iPhone|iPad|iPod/i) && window.location.href !== buymeacoffeeAppUrl) {
-        window.location.href = buymeacoffeeAppUrl;
-    } else {
-        window.open(buymeacoffeeWebUrl);
-    }
+     const isAppAvailable = window.open(buymeacoffeeAppUrl, '_self');
+
+     if (isAppAvailable) {
+         window.location.href = buymeacoffeeAppUrl;
+     } else {
+         window.open(buymeacoffeeWebUrl, '_blank');
+     }
+ };
 };
 
     return <section className={styles.pageContainer}>
