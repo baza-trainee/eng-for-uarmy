@@ -11,26 +11,26 @@ const DonateSection = () => {
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
         if (navigator.userAgent.match(/Android/i)) {
-            window.location.href = paypalAppUrl;
+            window.location.href = paypalAppUrl || paypalWebUrl;
         } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            window.location.href = paypalAppUrl;
+            window.location.href = paypalAppUrl || paypalWebUrl;
         } else {
             window.open(paypalWebUrl);
         }
     };
 
-const openBuyMeACoffeeApp = () => {
-    const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy#Intent;scheme=https;package=com.buymeacoffee.android;end';
-    const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
+    const openBuyMeACoffeeApp = () => {
+        const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy#Intent;scheme=https;package=com.buymeacoffee.android;end';
+        const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
-    if (navigator.userAgent.match(/Android/i)) {
-        window.location.href = buymeacoffeeAppUrl;
-    } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        window.location.href = buymeacoffeeAppUrl;
-    } else {
-        window.open(buymeacoffeeWebUrl);
-    }
-};
+        if (navigator.userAgent.match(/Android/i)) {
+            window.location.href = buymeacoffeeAppUrl || buymeacoffeeWebUrl;
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            window.location.href = buymeacoffeeAppUrl || buymeacoffeeWebUrl;
+        } else {
+            window.open(buymeacoffeeWebUrl);
+        }
+    };
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
