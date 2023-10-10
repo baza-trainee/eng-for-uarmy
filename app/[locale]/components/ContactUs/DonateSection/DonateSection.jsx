@@ -10,10 +10,12 @@ const DonateSection = () => {
         const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
-        if (navigator.userAgent.match(/Android/i) && navigator.userAgent.match(/iPhone|iPad|iPod/i) && window.location.href !== paypalAppUrl) {
+        const isAppAvailable = window.open(paypalAppUrl, '_self');
+
+        if (isAppAvailable) {
             window.location.href = paypalAppUrl;
         } else {
-            window.open(paypalWebUrl);
+            window.open(paypalWebUrl, '_blank');
         }
     };
 
