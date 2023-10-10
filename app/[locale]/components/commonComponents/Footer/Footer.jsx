@@ -12,10 +12,10 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.footer__container}>
         <Image src='/logo-footer.svg' alt='logo-footer' width={200} height={200}
-          className={styles.footer__logo} priority />
+          className={styles.footer__logo} />
 
         <div className={styles.menu}>
-          <h4 className={styles.footer__title}>{t("menu")}</h4>
+          <h3 className={styles.footer__title}>{t("menu")}</h3>
 
           <nav>
               <ul className={styles.menu__list}>
@@ -41,7 +41,7 @@ const Footer = () => {
         <div className={styles.footer__follows}>
 
           <div className={styles.contacts}>
-            <h4 className={styles.footer__title}>{t("contacts")}</h4>
+            <h3 className={styles.footer__title}>{t("contacts")}</h3>
 
             <ul>
               <li className={styles.contacts__item}>
@@ -68,7 +68,7 @@ const Footer = () => {
           </div>
 
           <div className={styles.social}>
-            <h4 className={`${styles.footer__title} ${styles.social__title}`}>{t("follow")}</h4>
+            <h3 className={`${styles.footer__title} ${styles.social__title}`}>{t("follow")}</h3>
             <ul className={styles.social__list}>
               <li className={styles.social__item}>
                 <Link className={styles.social__link} href="https://www.facebook.com/ENGforUARMY" target="_blank" rel="noopener noreferrer">

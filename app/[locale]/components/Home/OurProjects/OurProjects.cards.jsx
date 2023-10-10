@@ -4,14 +4,11 @@ import { SvgBorder, SvgBorderMobile } from './SvgBorder';
 import styles from "./OurProjects.module.scss"
 
 
-
-
 export const Project1 = ({t, isLargeScreen})=>{
     return (
-    <>
      <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
-            <Image className={styles.cardImg} src="/OurProjects/Rectangle.png" alt="Image" width={359} height={236} />
+            <Image className={styles.cardImg} src="/OurProjects/first-project.jpg" alt="Project channel image" width={359} height={236} />
                 <div className={styles.textCont}>
                 <h3 className={styles.cardHead}>{t("youtube")}</h3>
                 <p className={styles.cardText}>{t("youtube-desc")}</p>
@@ -22,43 +19,35 @@ export const Project1 = ({t, isLargeScreen})=>{
                 
             </div>
     </div>
-    
-    </>
     )
 }
 
 export const Project2 = ({t, locale, isLargeScreen})=>{
 
     return (
-    <>
     <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
-            <Image className={styles.cardImg} src="/OurProjects/Speaking.png" alt="Speaking" width={359} height={236} />
+            <Image className={styles.cardImg} src="/OurProjects/second-project.jpg" alt="Speaking image" width={359} height={236} />
                 <div className={styles.textCont}> 
                     <h3 className={styles.cardHead}>{t("practice")}</h3>
                     <p className={styles.cardText}>{t("practice-desc")}</p>
                     <Link href={`/${locale}`} className={styles.cardButton}>{t("learnMore")}</Link>
                 </div>
         </div>
-        
-    </>
     )
 }
 
 export const Project3 = ({t, locale, isLargeScreen})=>{
 
     return (
-    <>
     <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
-            <Image className={styles.cardImg} src="/OurProjects/mobile.png" alt="mobile" width={359} height={236} />
+            <Image className={styles.cardImg} src="/OurProjects/third-project.jpg" alt="Mobile app image" width={359} height={236} />
                     <div className={styles.textCont}>
                     <h3 className={styles.cardHead}>{t("mobileApp")}</h3>
                     <p className={styles.cardText}>{t("mobileApp-desc")}</p>
                     <Link href={`/${locale}`}  className={styles.cardButton}>{t("learnMore")} </Link>
                 </div>
         </div>
-        
-    </>
     )
 }

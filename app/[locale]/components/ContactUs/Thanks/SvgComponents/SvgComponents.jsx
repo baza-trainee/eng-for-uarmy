@@ -57,6 +57,7 @@ export const BorderBackSvg = () => {
         id="Rectangle 3"
         d="M0.5 0.5H235.5V91.5H36.2071L0.5 55.7929V0.5Z"
         stroke="#231F20"
+        vector-effect="non-scaling-stroke"
       />
     </svg>
   );
@@ -76,6 +77,7 @@ export const BorderBackSvgMobile = () => {
         className={styles.borderBackPathMobile}
         d="M0.5 29.7929V0.5H199.5V49.5H20.2071L0.5 29.7929Z"
         stroke="#231F20"
+        vector-effect="non-scaling-stroke"
       />
     </svg>
   );

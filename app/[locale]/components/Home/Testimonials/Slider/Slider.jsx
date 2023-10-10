@@ -84,11 +84,11 @@ const Slider = ({ data }) => {
             priority
           />
           <div className={styles.reviewWrapper}>
-            <h4 className={styles.reviewText}>
+            <h3 className={styles.reviewText}>
               &ldquo; Lorem ipsum dolor sit amet, consectetur adipiscing elit.
               Nunc vulputate libero et velit interdum, acaliquet odio
               mattis.&rdquo;
-            </h4>
+            </h3>
 
             <p className={styles.authorName}>Name Example</p>
             <p className={styles.authorProfession}>Profession example</p>

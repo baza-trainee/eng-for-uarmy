@@ -85,30 +85,30 @@
         padding-bottom: 30px;
     }
     @media screen and (min-width: $desktop) {
-            border: 1px solid $color-black;
-            padding: 0;
-            &:nth-child(odd) {
-                    padding-left: 34px;
-                    padding-right: 139px;
-                    border-left: none;
-                }
-            
-                &:nth-child(even) {
-                    padding-left: 139px;
-                    padding-right: 34px;
-                    border-right: none;
-                }
-            
-                &:nth-child(-n+2) {
-                    padding-bottom: 36px;
-                    border-top: none;
-                }
-            
-                &:nth-child(n+3) {
-                    padding-top: 46px;
-                    padding-bottom: 0;
-                    border-bottom: none;
-                }
+        border: 1px solid $color-black;
+        padding: 0;
+        &:nth-child(odd) {
+                padding-left: 34px;
+                padding-right: 139px;
+                border-left: none;
+            }
+        
+            &:nth-child(even) {
+                padding-left: 139px;
+                padding-right: 34px;
+                border-right: none;
+            }
+        
+            &:nth-child(-n+2) {
+                padding-bottom: 36px;
+                border-top: none;
+            }
+        
+            &:nth-child(n+3) {
+                padding-top: 46px;
+                padding-bottom: 0;
+                border-bottom: none;
+            }
         }
  
 }
@@ -136,9 +136,9 @@
     font-size: 15px;
     @include cutBtn();
     @media screen and (min-width: $desktop) {
-            width: 270px;
-            height: 92px;
-            font-size: 22px;
+        width: 270px;
+        height: 92px;
+        font-size: 22px;
     }
 }
 
