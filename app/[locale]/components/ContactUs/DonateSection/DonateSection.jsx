@@ -5,47 +5,52 @@ import styles from './donateSection.module.scss';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
+
+    const isMobileDevice = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        );
+      };
+
+      const checkAppExists = async (appUrl) => {
+        try {
+            const response = await fetch(appUrl, { method: 'HEAD' });
+            return response.status === 200;
+        } catch (error) {
+            return false;
+        }
+    };
     
     const openPayPalApp = () => {
         const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
     
-        const openApp = () => {
-            window.open(paypalAppUrl, '_system', 'location=yes');
-        };
-    
-        const openWeb = () => {
+        if (isMobileDevice()) {
+            const appExists = checkAppExists(paypalAppUrl);
+            if (appExists) {
+              window.open(paypalAppUrl, '_system', 'location=yes');
+            } else {
+              window.open(paypalWebUrl, '_blank');
+            }
+          } else {
             window.open(paypalWebUrl, '_blank');
+          }
         };
-    
-        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
-            openApp();
-        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            openApp();
-        } else {
-            openWeb();
-        }
-    };
     
     const openBuyMeACoffeeApp = () => {
         const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
     
-        const openApp = () => {
-            window.open(buymeacoffeeAppUrl, '_system', 'location=yes');
-        };
-    
-        const openWeb = () => {
+        if (isMobileDevice()) {
+            const appExists = checkAppExists(buymeacoffeeAppUrl);
+            if (appExists) {
+              window.open(buymeacoffeeAppUrl, '_system', 'location=yes');
+            } else {
+              window.open(buymeacoffeeWebUrl, '_blank');
+            }
+          } else {
             window.open(buymeacoffeeWebUrl, '_blank');
-        };
-    
-        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
-            openApp();
-        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            openApp();
-        } else {
-            openWeb();
-        }
+          }
     };
     
     
