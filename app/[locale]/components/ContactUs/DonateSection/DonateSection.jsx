@@ -7,30 +7,48 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-
-        const isAppAvailable = window.open(paypalAppUrl, '_self');
-
-        if (isAppAvailable) {
-            window.location.href = paypalAppUrl;
-        } else {
+    
+        const openApp = () => {
+            window.open(paypalAppUrl, '_system', 'location=yes');
+        };
+    
+        const openWeb = () => {
             window.open(paypalWebUrl, '_blank');
+        };
+    
+        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
+            openApp();
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            openApp();
+        } else {
+            openWeb();
         }
     };
-
-const openBuyMeACoffeeApp = () => {
-    const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
-    const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
-
-     const isAppAvailable = window.open(buymeacoffeeAppUrl, '_self');
-
-     if (isAppAvailable) {
-         window.location.href = buymeacoffeeAppUrl;
-     } else {
-         window.open(buymeacoffeeWebUrl, '_blank');
-     }
- };
+    
+    const openBuyMeACoffeeApp = () => {
+        const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
+        const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
+    
+        const openApp = () => {
+            window.open(buymeacoffeeAppUrl, '_system', 'location=yes');
+        };
+    
+        const openWeb = () => {
+            window.open(buymeacoffeeWebUrl, '_blank');
+        };
+    
+        if (navigator.userAgent.match(/Android/i) && typeof Android !== "undefined") {
+            openApp();
+        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
+            openApp();
+        } else {
+            openWeb();
+        }
+    };
+    
+    
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
