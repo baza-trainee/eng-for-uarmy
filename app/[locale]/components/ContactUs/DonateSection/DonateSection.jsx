@@ -7,29 +7,45 @@ const DonateSection = () => {
     const t = useTranslations("Contact us");
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-        const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-        const isAppAvailable = window.open(paypalAppUrl, '_self');
-
-        if (isAppAvailable) {
-            window.location.href = paypalAppUrl;
+        const payPalAppUrl = 'paypal://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        const payPalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+        
+        if (/android/i.test(userAgent)) {
+            window.location.href = payPalAppUrl;
+            setTimeout(() => {
+                window.location.href = payPalWebUrl;
+            }, 1000);
+        } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+            window.location.href = payPalAppUrl;
+            setTimeout(() => {
+                window.location.href = payPalWebUrl;
+            }, 1000);
         } else {
-            window.open(paypalWebUrl, '_blank');
+            window.open(payPalWebUrl, '_blank');
         }
     };
 
 const openBuyMeACoffeeApp = () => {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
     const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
     const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
 
-     const isAppAvailable = window.open(buymeacoffeeAppUrl, '_self');
-
-     if (isAppAvailable) {
-         window.location.href = buymeacoffeeAppUrl;
-     } else {
-         window.open(buymeacoffeeWebUrl, '_blank');
-     }
+    if (/android/i.test(userAgent)) {
+        window.location.href = buymeacoffeeAppUrl;
+        setTimeout(() => {
+            window.location.href = buymeacoffeeWebUrl;
+        }, 1000);
+    } else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        window.location.href = buymeacoffeeAppUrl;
+        setTimeout(() => {
+            window.location.href = buymeacoffeeWebUrl;
+        }, 1000);
+    } else {
+        window.open(buymeacoffeeWebUrl, '_blank');
+    }
  };
 
     return <section className={styles.pageContainer}>
