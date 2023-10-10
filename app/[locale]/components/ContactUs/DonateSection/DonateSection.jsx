@@ -9,34 +9,45 @@ const DonateSection = () => {
     const openPayPalApp = () => {
         const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-
-        const xhr = new XMLHttpRequest();
-        xhr.open('HEAD', paypalAppUrl, true);
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                window.location.href = paypalAppUrl;
-            } else {
-                window.open(paypalWebUrl);
-            }
+    
+        // Перевірка, чи можливо відкрити додаток PayPal
+        const openApp = () => {
+            window.open(paypalAppUrl, '_system', 'location=yes');
         };
-        xhr.send();
+    
+        // Якщо додаток недоступний, відкрити веб-сайт PayPal
+        const openWeb = () => {
+            window.open(paypalWebUrl, '_blank');
+        };
+    
+        // Спробувати відкрити додаток, якщо неможливо - відкрити веб-сайт
+        if (window.open(paypalAppUrl, '_system', 'location=yes')) {
+            openApp();
+        } else {
+            openWeb();
+        }
     };
-
+    
+    // Аналогічно для BuyMeACoffee
     const openBuyMeACoffeeApp = () => {
         const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
-
-        const xhr = new XMLHttpRequest();
-        xhr.open('HEAD', buymeacoffeeAppUrl, true);
-        xhr.onload = function () {
-            if (xhr.status === 200) {
-                window.location.href = buymeacoffeeAppUrl;
-            } else {
-                window.open(buymeacoffeeWebUrl);
-            }
+    
+        const openApp = () => {
+            window.open(buymeacoffeeAppUrl, '_system', 'location=yes');
         };
-        xhr.send();
+    
+        const openWeb = () => {
+            window.open(buymeacoffeeWebUrl, '_blank');
+        };
+    
+        if (window.open(buymeacoffeeAppUrl, '_system', 'location=yes')) {
+            openApp();
+        } else {
+            openWeb();
+        }
     };
+    
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
