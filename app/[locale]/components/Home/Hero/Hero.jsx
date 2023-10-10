@@ -1,17 +1,14 @@
 "use client";
 import Image from 'next/image'
-import styles from "./Hero.module.scss"; 
-import { useLocale, useTranslations } from 'next-intl';
-import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow, HeroCardBorder, HeroCardBorderMobil, ButtonBorderMobile} from './SvgComponent';
+import { useTranslations } from 'next-intl';
 import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
-import { usePathname } from 'next/navigation';
-import "./SvgComponent.styles.scss"
 import { useEffect, useState } from 'react';
+import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow, HeroCardBorder, HeroCardBorderMobil, ButtonBorderMobile} from './SvgComponent';
+import "./SvgComponent.styles.scss"
+import styles from "./Hero.module.scss"; 
  
 const Hero = () => {
-const locale = useLocale();
-const pathname = usePathname();
 const t = useTranslations("Hero");
 const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 1280);
 
@@ -60,7 +57,7 @@ useEffect(() => {
                     className={styles.under_txt_btn}
                     target="_blank" 
                     rel="noopener noreferrer"
-                    aria-label="Open Youtube channel of ENG for UArmy">
+                    aria-label="Start studying on Youtube channel of ENG for UArmy">
                     {t("study-btn")}
                   </Link>
                       </li>
@@ -72,7 +69,8 @@ useEffect(() => {
                   className={styles.under_txt_btn2}
                   aria-label="Move to Help us grow section">
                   {t("support-btn")}
-                  </ScrollLink>{isLargeScreen ? (
+                  </ScrollLink>
+                  {isLargeScreen ? (
                         <ButtonBorder />
                       ) : (
                         <ButtonBorderMobile />

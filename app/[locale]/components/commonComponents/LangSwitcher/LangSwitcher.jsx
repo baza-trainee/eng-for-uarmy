@@ -45,11 +45,15 @@ const LangSwitcher = ({ locale, pathname }) => {
     <div className={styles.langItem} tabIndex={0} onClick={(e) => {
       e.currentTarget.blur()
       onLangClick()
-    }}
-    aria-label="Open language switcher">
+      }}
+      aria-label="Open language switcher">
       <span className={styles.switchLang}>{currentLang}</span>
-      {isOpenSwitcher ? <Image src='/arrow-up.svg' alt='arrow up icon' width={8} height={4} /> :
-        <Image src='/arrow-down.svg' alt='arrow down icon' width={8} height={4}/>
+      {isOpenSwitcher ? <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="Vector 2" d="M9 5L5 1L1 5" stroke="#231F20"/>
+                        </svg> :
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path id="Vector 2" d="M1 1L5 5L9 1" stroke="#231F20"/>
+                        </svg>
       }
     </div>
     {isOpenSwitcher ? <Link href={locale === 'uk' ? `/en/${pathname}` : `/uk/${pathname}`} className={`${styles.langItem} ${styles.selectedLang}`} onClick={() => onChangeLang()} aria-label="Change language">

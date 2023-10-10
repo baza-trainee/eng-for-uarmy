@@ -82,7 +82,7 @@
 @media (max-width: 1279.5px) {
     .aboutUs {
         width: $mobile;
-        padding: 20px $section-padding-mob 25px $section-padding-mob;
+        padding: 20px $section-padding-mob 0 $section-padding-mob;
         max-height: none;
         flex-direction: column;
     }
