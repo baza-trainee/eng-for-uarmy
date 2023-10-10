@@ -1,8 +1,9 @@
+"use client";
 import React, { useEffect, useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ requestType, setRequestType, action }) => {
+const CustomSelect = ({ action, requestType, setRequestType }) => {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Contact us");
 
@@ -15,24 +16,25 @@ const CustomSelect = ({ requestType, setRequestType, action }) => {
   ], [t]);
 
   useEffect(() => {
-    switch (action) {
-      case "volunteer":
-      setRequestType(options[0].label);
-      break;
+    if (!requestType || action) {
+      switch (action) {
+        case "volunteer":
+        setRequestType(options[0].label);
+        break;
 
-    case "partner":
-      setRequestType(options[1].label);
-      break;
+      case "partner":
+        setRequestType(options[1].label);
+        break;
 
-    case "spread":
-      setRequestType(options[2].label);
-      break;
+      case "spread":
+        setRequestType(options[2].label);
+        break;
 
-    default:
-      setRequestType(t("type"));
-  }
-    console.log("action", action);
-  }, [action, options, setRequestType, t]);
+      default:
+        setRequestType(t("type"));
+      }
+    }
+  }, [action, options,requestType, setRequestType, t]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

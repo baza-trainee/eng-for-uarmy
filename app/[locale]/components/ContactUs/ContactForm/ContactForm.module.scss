@@ -126,8 +126,8 @@
     resize: none;
     overflow-y: hidden;
     -ms-overflow-style: none;
-    scrollbar-color: $color-ultra-light-grey $color-green;
-    scrollbar-width: thin;
+    scrollbar-color: $color-green $color-ultra-light-grey;
+    scrollbar-width: 5px;
     cursor: pointer;
     @include filledTextStyle();
 
@@ -136,6 +136,7 @@
       height: 43px;
       min-height: 43px;
       max-height: 314px;
+      scrollbar-width: 8px;
     }
   }
 

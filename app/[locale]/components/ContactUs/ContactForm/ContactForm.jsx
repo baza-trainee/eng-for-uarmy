@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
@@ -12,12 +13,11 @@ import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const ContactForm = ({ action }) => {
   const [savedValues, setSavedValues] = useLocalStorage('formValues', {
-    requestType: "",
     name:"",
     email: "",
     request: "",
   });
-  const [requestType, setRequestType] = useState(null);
+  const [requestType, setRequestType] = useLocalStorage('requestType', null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
@@ -75,7 +75,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled = errors.name || errors.email || errors.request || isLoading;
+  const disabled =!values.name || !values.email || !values.request || errors.name || errors.email || errors.request || isLoading;
 
   return (
     <>
@@ -83,10 +83,9 @@ const ContactForm = ({ action }) => {
         ? (<form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
-              <CustomSelect
+              <CustomSelect action={action}
                 requestType={requestType}
-                setRequestType={setRequestType}
-                action={action} />
+                setRequestType={setRequestType} />
 
               <label className={`${styles.form__field} ${styles.form__fieldName}`}>
                 <DebounceInput type="text"
