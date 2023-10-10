@@ -13,7 +13,6 @@ const Media = () => {
     const [mediaList, setMediaList] = useState(medias);
     const [currentList, setCurrentList] = useState([]);
     const [screenWidth, setScreenWidth] = useState(1280)
-    console.log(screenWidth);
 
     useEffect(() => {
         const innerWidth = window.innerWidth
