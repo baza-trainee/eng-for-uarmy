@@ -10,8 +10,8 @@ import styles from './partners.module.scss';
 
 
 const getSlidesPerView = () => {
-  const innerWidth = (typeof window !== 'undefined' ? window.innerWidth : '')
-  return innerWidth > 1279 ? 3 : 1;
+  // const innerWidth = (typeof window !== 'undefined' ? window.innerWidth : '')
+  return window.innerWidth > 1279 ? 3 : 1;
 }
 
 const Slider = ({ data }) => {
@@ -53,7 +53,7 @@ const Slider = ({ data }) => {
          >
          {data.map(({ id, src, alt }) => (
             <SwiperSlide className={styles.imageSlider} key={id}>
-              <Image className={styles.icons} src={src} alt={alt} loading = 'lazy' />
+              <Image className={styles.icons} src={src} alt={alt} loading='lazy' />
             </SwiperSlide>
           ))}
         </Swiper>
