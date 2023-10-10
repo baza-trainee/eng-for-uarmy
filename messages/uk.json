@@ -148,5 +148,9 @@
     "four": "four-oh-four",
     "text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
     "btnHome": "На головну"
+  },
+  "Validation": {
+    "alphabet": "Використовуйте тільки букви",
+    "min": "Мінімум 2 символи"
   }
 }
