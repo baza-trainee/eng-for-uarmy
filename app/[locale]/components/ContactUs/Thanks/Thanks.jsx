@@ -13,7 +13,6 @@ import {
 } from "./SvgComponents/SvgComponents";
 
 const Thanks = () => {
-  const locale = useLocale();
   const t = useTranslations("Contact us");
 
   return (
@@ -42,7 +41,8 @@ const Thanks = () => {
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href={`/${locale}`}
+          href=''
+          onClick={() => router.back()}
           // onClick={() => router.back({ query: { action: "null" } })}
         >
           <ArrowLeftSvgMobile />

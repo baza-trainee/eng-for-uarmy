@@ -54,6 +54,8 @@ const ContactForm = ({ action }) => {
       try {
         setIsLoading(true);
 
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxV0k1aH-sNiLpcCWWhk5zE_sNqJLOxPlsE9o-2OjPX8r6tSMXAG7GRrpH2bmpoyHjk/exec';
+
         const emailData = {
           requestType: requestType === t("type") ? t("other") : requestType,
           name,
@@ -61,10 +63,22 @@ const ContactForm = ({ action }) => {
           request,
         };
 
-        const data = await sendEmail(emailData);
-        console.log(data.message);
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('email', email);
+        formData.append('request', request);
+        formData.append('requestType', requestType === t("type") ? t("other") : requestType);
 
+        // send to Google Sheet
+        fetch(scriptURL, { method: 'POST', body: formData })
+          .then(response => console.log('Success!', response))
+          .catch(error => console.error('Error!', error.message))
+
+        // send to email
+        await sendEmail(formData);
+        
         setRequestType(null);
+        setSavedValues({ name: '', email: '', request: '' });
         resetForm();
         setIsSubmit(true);
       } catch (err) {
@@ -75,7 +89,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled =!values.name || !values.email || !values.request || errors.name || errors.email || errors.request || isLoading;
+  const disabled = errors.name || errors.email || errors.request || isLoading;
 
   return (
     <>
