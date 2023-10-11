@@ -24,7 +24,7 @@ const Footer = () => {
                 </li>
 
                 <li className={styles.menu__item}>
-                  <Link className={styles.menu__link} href={`/${locale}/study`}>{t("study")}</Link>
+                  <Link className={styles.menu__link} href={`/${locale}#ourProjects`}>{t("study")}</Link>
                 </li>
 
                 <li className={styles.menu__item}>

@@ -2,7 +2,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useEffect, useState } from "react";
 import HeaderMobile from "./HeaderMobile";
 import LangSwitcher from "../LangSwitcher/LangSwitcher";
@@ -25,13 +25,13 @@ const Header = () => {
   const openMobileMenu = () => {
     setMobileMenu(!mobileMenu)
   }
-
+  
   return <header className={styles.headerBox}>
       <div id="header" className={`${styles.header}`}>
       <Image src='/logo.svg' alt='logo' width={170} height={76} className={styles.logo} priority />
         <nav className={styles.nav}>
           <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` || pathname === '/' ? styles.activeLink : ''}`}>{t("home")}</Link>
-          <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link>
+        <Link href={`/${locale}#ourProjects`} className={styles.navLink} >{t("study")}</Link>
           <Link href={`/${locale}/team`} className={`${styles.navLink} ${currentPathname === 'team' ? styles.activeLink : ''}`} locale={locale}>
             {t("team")}
           </Link>

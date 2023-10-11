@@ -2,9 +2,9 @@
 import { useTranslations, useLocale } from "next-intl";
 import Link from "next/link";
 import { usePathname } from 'next/navigation';
-import styles from "./header.module.scss";
 import getCurrentPathname from "../../../libs/getCurrentPathname";
 import SocialMediaMobile from "../SocialMediaMobile/SocialMediaMobile";
+import styles from "./header.module.scss";
 
 const HeaderMobile = ({setMobileMenu, mobileMenu}) => {
   const t = useTranslations("Header");
@@ -23,7 +23,7 @@ const HeaderMobile = ({setMobileMenu, mobileMenu}) => {
           <Link href={`/${locale}`} className={`${styles.navLink} ${pathname === `/${locale}` || pathname === '/' ? styles.activeLink : ''}`}>{t("home")}</Link>
         </div>
         <div>
-          <Link href={`/${locale}/study`} className={`${styles.navLink} ${currentPathname === 'study' ? styles.activeLink : ''}`}>{t("study")}</Link></div>
+          <Link href={`/${locale}#ourProjects`} className={`${styles.navLink}`}>{t("study")}</Link></div>
         <div><Link href={`/${locale}/team`} className={`${styles.navLink} ${currentPathname === 'team' ? styles.activeLink : ''}`} locale={locale}>
             {t("team")}
           </Link></div>

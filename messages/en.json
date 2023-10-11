@@ -1,7 +1,7 @@
 {
   "Header": {
     "home": "Homepage",
-    "study": "Study",
+    "study": "Our projects",
     "team": "Our team",
     "contact": "Contact Us",
     "button": "Help us grow"
@@ -72,7 +72,7 @@
     "homepage": "Homepage",
     "menu": "Menu",
     "contacts": "Contact us",
-    "study": "Study",
+    "study": "Our projects",
     "ourTeam": "Our team",
     "contactUs": "Contact us",
     "follow": "Follow",

@@ -1,11 +1,11 @@
 "use client";
 import { useLocale, useTranslations } from 'next-intl';
-import styles from "./OurProjects.module.scss"
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { useEffect, useState } from 'react';
-import './slider.css'
-import { Project1, Project2, Project3 } from './OurProjects.cards';
 import { Navigation, Pagination } from "swiper/modules";
+import { useEffect, useState } from 'react';
+import { Project1, Project2, Project3 } from './OurProjects.cards';
+import './slider.css'
+import styles from "./OurProjects.module.scss"
 
 
 
@@ -28,7 +28,8 @@ const OurProjects = () => {
 
 
     return (
-        <>
+      <>
+          <span className={styles.anchor} id='ourProjects'></span>
           <section className={styles.ourProjects}>
             <div className={styles.ourProjectsContainer}>
               <h2 className={styles.head}>{t("title")}</h2>

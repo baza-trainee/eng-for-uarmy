@@ -178,3 +178,15 @@
     }
 
   }
+  
+.anchor {
+  display: block;
+  height: 60px;
+  margin-top: -60px;
+  visibility: hidden;
+
+  @media screen and (min-width: $desktop) {
+    height: 35px;
+    margin-top: -35px;
+  }
+}
