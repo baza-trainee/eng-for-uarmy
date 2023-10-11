@@ -34,7 +34,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
         setRequestType(t("type"));
       }
     }
-  }, [action, options,requestType, setRequestType, t]);
+  }, [action, options, requestType, setRequestType, t]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
