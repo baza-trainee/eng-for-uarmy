@@ -42,7 +42,7 @@ const Header = () => {
         <div className={styles.headerWrapper}>
           <Link href={`/${locale}#helpUsGrow`} className={styles.headerButton} onClick={(e) => e.currentTarget.blur()} aria-label="Move to Help us grow section">{t("button")}</Link>
         <LangSwitcher locale={locale} pathname={currentPathname} />
-        <button onClick={() => openMobileMenu()} className={styles.menuBtn}>
+        <button onClick={() => openMobileMenu()} className={styles.menuBtn} aria-label="Open mobile menu">
             <svg className={styles.menuBurgerIcon} xmlns="http://www.w3.org/2000/svg" width="22" height="10" viewBox="0 0 22 10" fill="none">
               <rect width="22" height="1.42857" fill="#231F20"/>
               <rect y="8.57129" width="22" height="1.42857" fill="#231F20"/>

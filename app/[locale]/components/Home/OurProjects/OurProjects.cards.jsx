@@ -27,11 +27,11 @@ export const Project2 = ({t, locale, isLargeScreen})=>{
     return (
     <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
-            <Image className={styles.cardImg} src="/OurProjects/second-project.jpg" alt="Speaking image" width={359} height={236} />
+            <Image className={styles.cardImg} src="/OurProjects/second-project.jpeg" alt="Speaking image" width={359} height={236} />
                 <div className={styles.textCont}> 
                     <h3 className={styles.cardHead}>{t("practice")}</h3>
                     <p className={styles.cardText}>{t("practice-desc")}</p>
-                    <Link href={`/${locale}`} className={styles.cardButton}>{t("learnMore")}</Link>
+                    <Link href={`/${locale}`} className={styles.cardButton} style={{ visibility: 'hidden' }}>{t("learnMore")} </Link>
                 </div>
         </div>
     )
@@ -46,7 +46,7 @@ export const Project3 = ({t, locale, isLargeScreen})=>{
                     <div className={styles.textCont}>
                     <h3 className={styles.cardHead}>{t("mobileApp")}</h3>
                     <p className={styles.cardText}>{t("mobileApp-desc")}</p>
-                    <Link href={`/${locale}`}  className={styles.cardButton}>{t("learnMore")} </Link>
+                    <Link href={`/${locale}`} className={styles.cardButton} style={{ visibility: 'hidden' }}>{t("learnMore")}</Link>
                 </div>
         </div>
     )

@@ -5,32 +5,51 @@ import styles from './donateSection.module.scss';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
-    
-    const openPayPalApp = () => {
-        const paypalAppUrl = 'intent://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE#Intent;scheme=https;package=com.paypal.android;end';
-        const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
 
-        if (navigator.userAgent.match(/Android/i)) {
-            window.location.href = paypalAppUrl;
-        } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-            window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id283646709';
-        } else {
-            window.open(paypalWebUrl);
-        }
+    const isMobileDevice = () => {
+        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+            navigator.userAgent
+        );
     };
 
-const openBuyMeACoffeeApp = () => {
-    const buymeacoffeeAppUrl = 'intent://www.buymeacoffee.com/engforuarmy#Intent;scheme=https;package=com.buymeacoffee.android;end';
-    const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
+    const checkAppExists = async (appUrl) => {
+        try {
+            const response = await fetch(appUrl, { method: 'HEAD' });
+            return response.status === 200;
+        } catch (error) {
+            return false;
+        }
+    };
+    
+    const openAppOrWebUrl =  async (appUrl, webUrl) => {
+    
+        if (isMobileDevice()) {
+            const appExists = await checkAppExists(appUrl);
+            if (appExists) {
+                window.open(appUrl, '_system', 'location=yes');
+            } else {
+                window.open(webUrl, '_blank');
+            }
+          } else {
+                window.open(webUrl, '_blank');
+          }
+        };
 
-    if (navigator.userAgent.match(/Android/i)) {
-        window.location.href = buymeacoffeeAppUrl;
-    } else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
-        window.location.href = 'itms-apps://itunes.apple.com/app/apple-store/id1480229954';
-    } else {
-        window.open(buymeacoffeeWebUrl);
-    }
-};
+    const openPayPalApp = () => {
+        const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
+        const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
+          
+        openAppOrWebUrl(paypalAppUrl, paypalWebUrl);
+    };
+    
+    const openBuyMeACoffeeApp = () => {
+        const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
+        const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
+    
+        openAppOrWebUrl(buymeacoffeeAppUrl, buymeacoffeeWebUrl)
+    };
+    
+    
 
     return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
