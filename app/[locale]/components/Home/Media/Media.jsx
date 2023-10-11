@@ -3,7 +3,6 @@ import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
 import medias from "@/app/[locale]/libs/fakeMediaList";
-import smoothScrolling from "@/app/[locale]/libs/smoothScrolling";
 import MediaList from "./MediaList";
 import styles from "./Media.module.scss";
 
@@ -31,7 +30,6 @@ const Media = () => {
         }
     }
     const wrapList = () => {
-        smoothScrolling(screenWidth)
         if (mediaList.length === currentList.length) {
             const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 6)
             setCurrentList(newMedia) 
@@ -39,16 +37,20 @@ const Media = () => {
     }
    
     return <section className={styles.section}>
+        <span className={styles.anchor} id='media'></span>
         <div className={styles.mediaSection}>
             <h2 className={styles.mediaTitle}>{t("title")}</h2>
             <MediaList list={currentList} />
             {mediaList.length === currentList.length ?
-                <svg tabIndex={0} onClick={(e) => {
-                    e.currentTarget.blur()
-                    wrapList()
-                    }} className={styles.arrowBtn} xmlns="http://www.w3.org/2000/svg" width="78" height="41" viewBox="0 0 78 41" fill="none">
+                <Link href={`/${locale}#media`} style={{margin: '0 auto'}}>
+                    <svg tabIndex={0} onClick={(e) => {
+                        e.currentTarget.blur()
+                        wrapList()
+                        }} className={styles.arrowBtn} xmlns="http://www.w3.org/2000/svg" width="78" height="41" viewBox="0 0 78 41" fill="none">
                         <path d="M77 40L39 2L1 40" stroke="#231F20" strokeWidth="2" />
-                </svg> :
+                    </svg>
+                </Link>  
+                 :
                 <svg tabIndex={0} onClick={(e) => {
                     e.currentTarget.blur()
                     unWrapList()
