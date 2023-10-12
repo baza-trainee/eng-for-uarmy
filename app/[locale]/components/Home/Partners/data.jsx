@@ -1,9 +1,10 @@
 import partner_0 from './imageOfPartners/1_RELOU.S_1.svg';
 import partner_1 from './imageOfPartners/2_.svg';
 import partner_2 from './imageOfPartners/3_Kyiv_Military_Hub.svg';
-import partner_3 from './imageOfPartners/Balakun.svg';
-import partner_4 from './imageOfPartners/logonadpsu.svg';
-import partner_5 from './imageOfPartners/TESOL_-_UKRAINE_1.svg';
+import partner_3 from './imageOfPartners/logonadpsu.svg';
+import partner_4 from './imageOfPartners/TESOL_-_UKRAINE_1.svg';
+import partner_5 from './imageOfPartners/6 Odesa Military Academy.svg';
+import partner_6 from './imageOfPartners/Balakun.svg';
 
 const data = [
     {
@@ -30,11 +31,16 @@ const data = [
         id: 4,
         src: partner_4,
         alt: "Photo of the partner four",
-    }, 
+    },
     {
         id: 5,
         src: partner_5,
         alt: "Photo of the partner five",
+    },  
+    {
+        id: 6,
+        src: partner_6,
+        alt: "Photo of the partner six",
     }, 
 ]
 
