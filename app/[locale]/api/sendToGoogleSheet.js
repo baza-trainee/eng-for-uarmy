@@ -1,11 +1,14 @@
 import axios from 'axios';
+import { GOOGLE_SHEET_URL } from '../constants/urls';
 
-axios.defaults.baseURL = 'https://script.google.com/macros/s/AKfycbxV0k1aH-sNiLpcCWWhk5zE_sNqJLOxPlsE9o-2OjPX8r6tSMXAG7GRrpH2bmpoyHjk/exec';
+axios.defaults.baseURL = GOOGLE_SHEET_URL;
 
 export const sendToGoogleSheet = async (formData ) => {
     try {
-        const res = await axios.post('', formData );
-        return res;
+        const { data } = await axios.post('', formData);
+        console.log('response', data.result);
+    
+        return data;
     } catch (error) {
         console.log('error', error);
     }

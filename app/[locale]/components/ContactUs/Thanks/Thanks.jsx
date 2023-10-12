@@ -12,8 +12,11 @@ import {
   BorderBackSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
-const Thanks = () => {
+const Thanks = ({setIsSubmit}) => {
+  const locale = useLocale();
   const t = useTranslations("Contact us");
+
+
 
   return (
     <div className={styles.thanksWrapper}>
@@ -41,10 +44,8 @@ const Thanks = () => {
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href=''
-          onClick={() => router.back()}
-          // onClick={() => router.back({ query: { action: "null" } })}
-        >
+          href={`/${locale}/contact`}
+          onClick={()=>setIsSubmit(false)}>
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />
           {t("back")}

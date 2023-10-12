@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
+import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
 import CustomSelect from "./CustomSelect/CustomSelect";
@@ -54,27 +55,23 @@ const ContactForm = ({ action }) => {
       try {
         setIsLoading(true);
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxV0k1aH-sNiLpcCWWhk5zE_sNqJLOxPlsE9o-2OjPX8r6tSMXAG7GRrpH2bmpoyHjk/exec';
+        const type = requestType === t("type") ? t("other") : requestType;
 
         // send to Google Sheet
         const formData = new FormData();
         formData.append('Name', name);
         formData.append('Email', email);
         formData.append('Request', request);
-        formData.append('Type of request', requestType === t("type") ? t("other") : requestType);
-
-        fetch(scriptURL, { method: 'POST', body: formData })
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
+        formData.append('Type of request', type);
+        await sendToGoogleSheet(formData);
 
         // send to email
         const emailData = {
-          requestType: requestType === t("type") ? t("other") : requestType,
+          requestType: type,
           name,
           email,
           request,
         };
-
         await sendEmail(emailData);
         
         setRequestType(t("type"));
@@ -169,7 +166,7 @@ const ContactForm = ({ action }) => {
             </button>
           </div>
         </form>)
-      : <Thanks /> }
+        : <Thanks setIsSubmit={setIsSubmit} /> }
     </>
   );
 };

@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect, useState, useMemo } from "react";
 import { useTranslations } from "next-intl";
+import { useRouter } from "next/navigation";
 import styles from "./CustomSelect.module.scss";
 
 const CustomSelect = ({ action, requestType, setRequestType }) => {
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Contact us");
+  const router = useRouter();
 
   const options = useMemo(() => [
     { label: t("volunteer") },
@@ -16,7 +18,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
   ], [t]);
 
   useEffect(() => {
-    if (!requestType || action) {
+    if (!requestType) {
       switch (action) {
         case "volunteer":
         setRequestType(options[0].label);
