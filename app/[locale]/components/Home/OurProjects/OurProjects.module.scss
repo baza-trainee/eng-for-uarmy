@@ -24,13 +24,29 @@
 
   .our_projects_card{
     margin-left: 21px;
+    width: 360px;
     position: relative;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     justify-items: center;
     &:first-child{
       margin-left: 0;
     }
+
     
+}
+
+.imageContainer{
+  width: 359px;
+  height: 205px;
+  overflow: hidden;
+}
+
+
+.cardImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
   
   .wraper{
@@ -44,12 +60,12 @@
   .textCont{
     display: grid;
     justify-items: center;
+    padding: 24px 16px 40px 16px;
 
   }
 
   .cardHead{
     color: var(--black, #171717);
-    margin-top: 40px;
     text-align: center;
     font-size: 28px;
     font-style: normal;
@@ -60,8 +76,8 @@
 
   .cardText{
     width: 287px;
-    margin-top: 40px;
     color: var(--grey, #8B8B8B);
+    margin-top: 16px;
     text-align: center;
     font-family: Arial;
     font-size: 18px;
@@ -72,7 +88,7 @@
   }
 
   .cardButton {
-    margin-top: 40px;
+    margin-top: 24px;
     display: flex;
     padding: 16px 38px;
     font-family: inherit;
@@ -109,10 +125,11 @@
       padding: 0 16px;
     }
     
-    .cardImg{
+
+    .imageContainer{
       width: 288px;
       height: 173px;
-      aspect-ratio: unset;
+      overflow: hidden;
       
     }
     
@@ -126,6 +143,7 @@
   
     .our_projects_card{
       display: flex;
+      width: 288px;
       height: 397px;
       align-items: center;
       flex-direction: column;
@@ -144,13 +162,13 @@
      pointer-events: none;
     
     }
-  
     .textCont{
       display: grid;
       justify-items: center;
-      margin-top: 20px;
+      padding: 20px 40px 21px 36px;
   
     }
+ 
   
     .cardHead{
       margin-top: 0;
