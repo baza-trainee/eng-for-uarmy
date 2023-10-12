@@ -1,5 +1,5 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
@@ -12,8 +12,7 @@ import {
   BorderBackSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
-const Thanks = () => {
-  const locale = useLocale();
+const Thanks = ({ setIsSubmit }) => {
   const t = useTranslations("Contact us");
 
   return (
@@ -42,9 +41,9 @@ const Thanks = () => {
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href={`/${locale}`}
-          // onClick={() => router.back({ query: { action: "null" } })}
-        >
+          href=''
+          onClick={() => setIsSubmit(false)}
+          aria-label="Back button">
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />
           {t("back")}

@@ -16,7 +16,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
   ], [t]);
 
   useEffect(() => {
-    if (!requestType || action) {
+    if (!requestType) {
       switch (action) {
         case "volunteer":
         setRequestType(options[0].label);
@@ -34,7 +34,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
         setRequestType(t("type"));
       }
     }
-  }, [action, options,requestType, setRequestType, t]);
+  }, [action, options, requestType, setRequestType, t]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

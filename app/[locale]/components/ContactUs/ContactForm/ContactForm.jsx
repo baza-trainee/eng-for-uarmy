@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
+import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
 import CustomSelect from "./CustomSelect/CustomSelect";
@@ -17,15 +18,15 @@ const ContactForm = ({ action }) => {
     email: "",
     request: "",
   });
-  const [requestType, setRequestType] = useLocalStorage('requestType', null);
+  const [requestType, setRequestType] = useState( null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
 
+  console.log("isSubmit", isSubmit);
+
   const handleInputChange = (e) => {
     handleChange(e);
-
-    console.log ("e.target", e.target.value)
 
     setSavedValues({
       name: e.target.name === 'name' ? e.target.value : values.name,
@@ -54,17 +55,27 @@ const ContactForm = ({ action }) => {
       try {
         setIsLoading(true);
 
+        const type = requestType === t("type") ? t("other") : requestType;
+
+        // send to Google Sheet
+        const formData = new FormData();
+        formData.append('Name', name);
+        formData.append('Email', email);
+        formData.append('Request', request);
+        formData.append('Type of request', type);
+        await sendToGoogleSheet(formData);
+
+        // send to email
         const emailData = {
-          requestType: requestType === t("type") ? t("other") : requestType,
+          requestType: type,
           name,
           email,
           request,
         };
-
-        const data = await sendEmail(emailData);
-        console.log(data.message);
-
-        setRequestType(null);
+        await sendEmail(emailData);
+        
+        setRequestType(t("type"));
+        setSavedValues({ name: '', email: '', request: '' });
         resetForm();
         setIsSubmit(true);
       } catch (err) {
@@ -75,7 +86,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled =!values.name || !values.email || !values.request || errors.name || errors.email || errors.request || isLoading;
+  const disabled = errors.name || errors.email || errors.request || isLoading;
 
   return (
     <>
@@ -155,7 +166,7 @@ const ContactForm = ({ action }) => {
             </button>
           </div>
         </form>)
-      : <Thanks /> }
+        : <Thanks setIsSubmit={setIsSubmit} /> }
     </>
   );
 };
