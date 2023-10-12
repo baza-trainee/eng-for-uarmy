@@ -10,8 +10,8 @@ import styles from './partners.module.scss';
 
 
 const getSlidesPerView = () => {
-  // const innerWidth = (typeof window !== 'undefined' ? window.innerWidth : '')
-  return window.innerWidth > 1279 ? 3 : 1;
+  const innerWidth = (typeof window !== 'undefined' ? window.innerWidth : '')
+  return innerWidth > 1279 ? 3 : 1;
 }
 
 const Slider = ({ data }) => {
