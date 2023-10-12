@@ -4,7 +4,7 @@
     @media screen and (min-width: $desktop) {
         display: flex;
         flex-wrap: wrap;
-        margin: -16px -10px;
+        margin: -10px;
     }
 }
 .mediaCard{
@@ -20,9 +20,10 @@
         }
      }
     @media screen and (min-width: $desktop) {
-        width: 360px;
-        padding: 40px 22px 40px 30px;
-        margin: 16px 10px;
+        width: calc((100% - 40px)/ 2);
+        height: 254px;
+        padding: 36px 32px;
+        margin: 10px;
      }
 }
 .mediaLogoWrap{
@@ -44,8 +45,9 @@
     margin-left: 19px;
     overflow: hidden;
     @media screen and (min-width: $desktop) {
-        margin-left: 28px;
-        width: 167px;
+        align-items: flex-end;
+        margin-left: 32px;
+        width: 100%;
     }
 }
 .mediaDesc{
@@ -61,9 +63,8 @@
     -webkit-line-clamp: 3;
     white-space: pre-wrap;
     @media screen and (min-width: $desktop) {
-        font-size: 18px;
-        line-height: 27px;
-        height: 81px;
+        font-size: 13px;
+        line-height: 20px;
         margin-bottom: 30px;
 
     }
@@ -88,9 +89,9 @@
     }
     @media screen and (min-width: $desktop) {
         height: 50px;
+        width: 167px;;
         padding: 16px;
         font-size: 16px;
-
         &:hover {
             background-color: $color-green;
             color: $color-black;
