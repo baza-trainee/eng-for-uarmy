@@ -16,7 +16,7 @@ const Media = () => {
     useEffect(() => {
         const innerWidth = window.innerWidth
         setScreenWidth(innerWidth)
-        const newMedia = innerWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 6)
+        const newMedia = innerWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 4)
         setCurrentList(newMedia) 
     }, [])
     
@@ -24,14 +24,14 @@ const Media = () => {
         if (mediaList.length > currentList.length) {
             const newList = screenWidth < 1280 ?
                 mediaList.slice(currentList.length, currentList.length + 3) :
-                mediaList.slice(currentList.length, currentList.length + 6)
+                mediaList.slice(currentList.length, currentList.length + 4)
             const newMedia = currentList.concat(newList)
             setCurrentList(newMedia)
         }
     }
     const wrapList = () => {
         if (mediaList.length === currentList.length) {
-            const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 6)
+            const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 4)
             setCurrentList(newMedia) 
         }
     }

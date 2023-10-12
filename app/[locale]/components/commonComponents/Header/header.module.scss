@@ -13,7 +13,7 @@
   justify-content: space-between;
   width: $mobile;
   margin: 0 auto;
-  padding: 16px $section-padding-mob;
+  padding: 17px $section-padding-mob;
   transition: padding $transition-duration $timing-function;
   @media screen and (min-width: $desktop) {
     width: $desktop;

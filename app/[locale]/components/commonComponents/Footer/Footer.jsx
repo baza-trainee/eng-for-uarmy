@@ -109,11 +109,19 @@ const Footer = () => {
         </div>
 
         <div className={styles.policy}>
-          <p className={styles.policy__baza}>{t("policy-first")} &copy; {t("policy-second")}</p>
-                
-          <span className={styles.policy__divider}></span>
+          <div className={styles.policy__list}>
+            <Link href={`/`} className={styles.policy__link}>{t("policy-right")}</Link>
+              <span className={styles.policy__divider}></span>
+            <Link href={`/`} className={styles.policy__link}>{t("statute")}</Link>
+              <span className={styles.policy__divider}></span>
+            <Link href={`/`} className={styles.policy__link}>{t("report")}</Link>
 
-          <Link href={`/${locale}/privacy-policy`} className={styles.policy__link}>{t("policy-link")}</Link>
+          </div>
+          <div className={styles.policy__listLow}>
+            <p className={styles.policy__baza}>{t("policy-first")} &copy; {t("policy-second")}</p>
+              <span className={styles.policy__divider}></span> 
+            <Link href={`/${locale}/privacy-policy`} className={`${styles.policy__bold}`}>{t("policy-link")}</Link>
+          </div>
         </div>
       </div>
     </footer>

@@ -222,22 +222,33 @@
 .policy {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
-
     color: $color-light-grey;
 
     @include mq(desktop) {
         position: absolute;
+        align-items: flex-start;
         bottom: 62px;
         left: 80px;
     }
-
+    &__list{
+        display: flex;
+        align-items: center;
+    }
+    &__listLow{
+        display: flex;
+        align-items: center;
+        margin-top: 8px;
+        @include mq(desktop) {
+            align-items: baseline;
+        }
+    }
     &__baza {
         font-family: Arial;
         font-size: 7px;
         font-weight: 400;
         line-height: normal;
-
         &:focus{
             outline: none;
         }
@@ -256,28 +267,39 @@
         background-color: $color-white-text;
 
         @include mq(desktop) {
-            height: 17px;
-            margin: 0 13px;
+            height: 16px;
+            margin: 0 16px;
         }
     }
-
+    &__bold{
+        font-weight: 700;
+        font-family: Arial;
+        font-size: 8px;
+        outline: none;
+        transition: color $transition-duration $timing-function;
+        
+        &:hover{
+            outline: none;
+            color: $color-green;
+        }
+        @include mq(desktop) {
+            font-size: 18px;
+        }
+    }
     &__link {
         font-family: Arial;
         font-size: 8px;
-        font-weight: 700;
         line-height: normal;
-
         transition: color $transition-duration $timing-function;
         
-        &:hover,
-        &:focus {
+        &:hover{
             outline: none;
             color: $color-green;
         }    
 
         @include mq(desktop) {
-            font-size: 18px;
-            line-height: 1.5;
+            font-size: 12px;
+            line-height: 16px;
         }
     }
 }
