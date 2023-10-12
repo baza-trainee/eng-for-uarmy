@@ -1,17 +1,9 @@
-import partner_0 from './imageOfPartners/partnersImage.svg';
-import partner_1 from './imageOfPartners/partnersImage.svg';
-import partner_2 from './imageOfPartners/partnersImage.svg';
-import partner_3 from './imageOfPartners/partnersImage.svg';
-import partner_4 from './imageOfPartners/partnersImage.svg';
-import partner_5 from './imageOfPartners/partnersImage.svg';
-import partner_6 from './imageOfPartners/partnersImage.svg';
-import partner_7 from './imageOfPartners/partnersImage.svg';
-import partner_8 from './imageOfPartners/partnersImage.svg';
-import partner_9 from './imageOfPartners/partnersImage.svg';
-import partner_10 from './imageOfPartners/partnersImage.svg';
-import partner_11 from './imageOfPartners/partnersImage.svg';
-import partner_12 from './imageOfPartners/partnersImage.svg';
-import partner_13 from './imageOfPartners/partnersImage.svg';
+import partner_0 from './imageOfPartners/1_RELOU.S_1.svg';
+import partner_1 from './imageOfPartners/2_.svg';
+import partner_2 from './imageOfPartners/3_Kyiv_Military_Hub.svg';
+import partner_3 from './imageOfPartners/Balakun.svg';
+import partner_4 from './imageOfPartners/logonadpsu.svg';
+import partner_5 from './imageOfPartners/TESOL_-_UKRAINE_1.svg';
 
 const data = [
     {
@@ -44,45 +36,6 @@ const data = [
         src: partner_5,
         alt: "Photo of the partner five",
     }, 
-    {
-        id: 6,
-        src: partner_6,
-        alt: "Photo of the partner six",
-    }, 
-    {
-        id: 7,
-        src: partner_7,
-        alt: "Photo of the partner seven",
-    }, 
-    {
-        id: 8,
-        src: partner_8,
-        alt: "Photo of the partner eight",
-    }, {
-        id: 9,
-        src: partner_9,
-        alt: "Photo of the partner nine",
-    }, 
-    {
-        id: 10,
-        src: partner_10,
-        alt: "Photo of the partner ten",
-    }, 
-    {
-        id: 11,
-        src: partner_11,
-        alt: "Photo of the partner eleven",
-    }, 
-    {
-        id: 12,
-        src: partner_12,
-        alt: "Photo of the partner twelve",
-    }, 
-    {
-        id: 13,
-        src: partner_13,
-        alt: "Photo of the partner thirteen",
-    }
 ]
 
 export default data;
