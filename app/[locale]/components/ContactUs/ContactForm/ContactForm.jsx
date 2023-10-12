@@ -17,7 +17,7 @@ const ContactForm = ({ action }) => {
     email: "",
     request: "",
   });
-  const [requestType, setRequestType] = useLocalStorage('requestType', null);
+  const [requestType, setRequestType] = useState( null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
@@ -58,10 +58,10 @@ const ContactForm = ({ action }) => {
 
         // send to Google Sheet
         const formData = new FormData();
-        formData.append('name', name);
-        formData.append('email', email);
-        formData.append('request', request);
-        formData.append('requestType', requestType === t("type") ? t("other") : requestType);
+        formData.append('Name', name);
+        formData.append('Email', email);
+        formData.append('Request', request);
+        formData.append('Type of request', requestType === t("type") ? t("other") : requestType);
 
         fetch(scriptURL, { method: 'POST', body: formData })
           .then(response => console.log('Success!', response))
