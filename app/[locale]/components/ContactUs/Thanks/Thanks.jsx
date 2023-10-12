@@ -1,5 +1,5 @@
 "use client";
-import { useLocale, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
 import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
@@ -12,11 +12,8 @@ import {
   BorderBackSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
-const Thanks = ({setIsSubmit}) => {
-  const locale = useLocale();
+const Thanks = ({ setIsSubmit }) => {
   const t = useTranslations("Contact us");
-
-
 
   return (
     <div className={styles.thanksWrapper}>
@@ -44,7 +41,7 @@ const Thanks = ({setIsSubmit}) => {
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href={`/${locale}/contact`}
+          href=''
           onClick={()=>setIsSubmit(false)}>
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />
