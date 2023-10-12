@@ -16,7 +16,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
   ], [t]);
 
   useEffect(() => {
-    if (!requestType || action) {
+    if (!requestType) {
       switch (action) {
         case "volunteer":
         setRequestType(options[0].label);

@@ -1,5 +1,6 @@
 import axios from 'axios';
+import { HOST_URL } from '../constants/urls';
 
 export const host = axios.create({
-  baseURL: 'https://eng-for-uarmy-backend.onrender.com',
+  baseURL: HOST_URL,
 });
