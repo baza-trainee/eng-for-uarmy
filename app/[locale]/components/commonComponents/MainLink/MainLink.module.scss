@@ -57,7 +57,12 @@
     }
 
     &:active {
-        border-color: $color-black;
+        border-color: transparent;
+        background-color: $color-black;
+
+        &::before {
+            border-color: transparent;
+        }
     }
 
     &:focus:not(:active) {

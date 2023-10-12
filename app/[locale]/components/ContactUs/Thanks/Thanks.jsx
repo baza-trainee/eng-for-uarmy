@@ -42,7 +42,8 @@ const Thanks = ({ setIsSubmit }) => {
         <Link
           className={styles.btnBack}
           href=''
-          onClick={()=>setIsSubmit(false)}>
+          onClick={() => setIsSubmit(false)}
+          aria-label="Back button">
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />
           {t("back")}
