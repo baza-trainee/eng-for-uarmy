@@ -21,7 +21,7 @@
     "and": "and ",
     "third-desc-bold2": "veterans ",
     "third-desc-bold3": "for new opportunities.",
-    "study-btn": "Start studying",
+    "study-btn": "Start learning",
     "support-btn": "Support the project"
   },
   "RunningLine": {
@@ -144,6 +144,18 @@
     "donate": "Donate",
     "support": "To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!",
     "bankDetails": "Bank details"
+  },
+  "bankDetails": {
+    "title": "Bank details",
+    "p-1": "Charity foundation \"OSVITUM\"",
+    "p-2-1": "USD",
+    "p-2-2": "IBAN Code: UA103510050000026007879183310",
+    "p-3-1": "Name of the bank: JSC UKRSIBBANK,",
+    "p-3-2": "ANDRIIVSKA STREET 2/12 KYIV, UKRAINE",
+    "p-4": "Bank SWIFT Code: KHABUA2K",
+    "p-5": "Сorrespondent bank: acc. 020061151200138",
+    "p-6": "BNP PARIBAS U.S.A. - New York Branch New York , USA",
+    "p-7": "Bank SWIFT Code: BNPAUS3N"
   },
   "404": {
     "btnBack": "Back",
