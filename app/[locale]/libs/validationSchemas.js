@@ -10,8 +10,16 @@ export const emailSchema = yup.object().shape({
         .required('Please enter your name'),
     email: yup
         .string()
-        .matches(/^(?=.{1,255}$)[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z0-9.-]+$/,
+        .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
             'Invalid email address')
+        .test('no-cyrillic', 'Invalid email address', function (value) {
+            if (value) {
+                const domain = value.split('@')[1].split('.')[0];
+                const cyrillicRegex = /[а-яА-ЯіІїЇґҐёЁєЄ]/;
+                return !cyrillicRegex.test(domain);
+            }
+            return true;
+        })
         .max(50, 'Maximum 50 characters')
         .required('Please enter your email'),
     request: yup
