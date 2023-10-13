@@ -3,7 +3,7 @@
 
 .backdrop{
     display: flex;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
@@ -15,15 +15,14 @@
     background: rgba(255, 255, 255, 0.40);
     backdrop-filter: blur(25px);
     z-index: 101;
-    // overflow-y: hidden;
 }
 .modal{
     position: relative;
     width: calc(320px - 32px);
     background: #FFF;
+    overflow: auto;
     filter: drop-shadow(0px 8px 30px rgba(0, 0, 0, 0.10));
-    padding: 30px 19px;
-    scroll-behavior: auto;
+    padding: 28px 19px;
     @media screen and (min-width: $desktop) {
             width: auto;
             padding: 40px 70px 55px 70px;
@@ -55,7 +54,6 @@
 }
 
 .btnList{
-    // margin-bottom: 30px;
     @media screen and (min-width: $desktop) {
         display: flex;
     }   
@@ -115,7 +113,7 @@
     @media screen and (min-width: $desktop) {
             width: 740px;
             margin-top: 24px;
-            padding: 44px 107px 43px 134px;
+            padding: 40px 107px 40px 134px;
             border: none;
             --border-color: #231F20;
             --size-corner: 60px;
