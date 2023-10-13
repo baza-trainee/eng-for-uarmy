@@ -46,15 +46,10 @@
         stroke-width: 1px;
         transition: stroke $transition-duration $timing-function;
     }
-    &:hover path{
+    &:active path{
         stroke: $color-green;
     }
-    &:active path{
-        stroke: $color-black;
-    }
-    &:focus:not(:active) path{
-        stroke: $color-olive;
-    }
+    
     @media screen and (min-width: $desktop) {
         width: 76px;
         height: 39px;
@@ -63,6 +58,17 @@
         margin-bottom: 74px;
         & path{
             stroke-width: 2px;
+        }
+        &:hover path {
+            stroke: $color-green;
+        }
+
+        &:active path {
+            stroke: $color-black;
+        }
+
+        &:focus:not(:active) path {
+            stroke: $color-olive;
         }
     }
 }
