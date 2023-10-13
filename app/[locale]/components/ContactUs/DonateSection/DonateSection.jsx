@@ -2,56 +2,48 @@
 import { useTranslations} from 'next-intl';
 import Image from 'next/image';
 import styles from './donateSection.module.scss';
+import { isMobile } from 'react-device-detect';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
 
-    const isMobileDevice = () => {
-        return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-            navigator.userAgent
-        );
-    };
+    const openAppOrWebUrl = (appUrl, webUrl) => {
+        if (isMobile) {
+            let appOpened = false;
+            document.location.href = appUrl;
 
-    const checkAppExists = async (appUrl) => {
-        try {
-            const response = await fetch(appUrl, { method: 'HEAD' });
-            return response.status === 200;
-        } catch (error) {
-            return false;
+            const timeoutId = setTimeout(() => {
+            if (!appOpened) {
+                window.open(webUrl);
+            }
+        }, 10);
+
+        window.addEventListener('blur', () => {
+            appOpened = true;
+            clearTimeout(timeoutId); 
+        });
+        } else {
+            window.open(webUrl, '_blank');
         }
     };
     
-    const openAppOrWebUrl =  async (appUrl, webUrl) => {
-    
-        if (isMobileDevice()) {
-            const appExists = await checkAppExists(appUrl);
-            if (appExists) {
-                window.open(appUrl, '_system', 'location=yes');
-            } else {
-                window.open(webUrl, '_blank');
-            }
-          } else {
-                window.open(webUrl, '_blank');
-          }
-        };
-
     const openPayPalApp = () => {
         const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-          
+    
         openAppOrWebUrl(paypalAppUrl, paypalWebUrl);
     };
     
     const openBuyMeACoffeeApp = () => {
-        const buymeacoffeeAppUrl = 'buymeacoffee://www.buymeacoffee.com/engforuarmy';
+        const buymeacoffeeAppUrl = 'buymeacoffee://engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
     
-        openAppOrWebUrl(buymeacoffeeAppUrl, buymeacoffeeWebUrl)
+        openAppOrWebUrl(buymeacoffeeAppUrl, buymeacoffeeWebUrl);
     };
     
-    
 
-    return <section className={styles.pageContainer}>
+
+ return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
         <div className={styles.descWrap}>
             <div>
