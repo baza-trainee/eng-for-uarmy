@@ -21,7 +21,7 @@ const Goin = () => {
 
             <div className={styles.goin__wrapper}>
                 <MainLink className={styles.goin__btn}
-                    href='https://www.work.ua/jobs/by-company/2559879/'
+                    url='https://www.work.ua/jobs/by-company/2559879/'
                     target="_blank" 
                     rel="noopener noreferre" 
                     aria-label="button Work.ua">

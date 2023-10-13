@@ -26,6 +26,7 @@
 
   &__wrapper{
     margin-bottom: 100px;
+    transition: margin-bottom 500ms $timing-function;
     @include mq(desktop) {
       display: flex;
       justify-content: space-between;
@@ -131,7 +132,7 @@
     scrollbar-width: 5px;
     cursor: pointer;
     @include filledTextStyle();
-    transition: height 500ms $timing-function;
+    transition: height 500ms $timing-function 250ms;
 
     @include mq(desktop) {
       width: 455px;
@@ -140,9 +141,12 @@
       scrollbar-width: 8px;
     }
 
+    &:placeholder-shown{
+      overflow-y: hidden;
+    }
+
     &:focus {
       height: 314px;
-      overflow-y: auto;
     }
   }
 

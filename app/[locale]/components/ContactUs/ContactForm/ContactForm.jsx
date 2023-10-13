@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
@@ -34,14 +34,15 @@ const ContactForm = ({ action }) => {
   };
 
   const handleInput = (e) => {
-    // const textarea = e.target;
-    // textarea.style.height = `${e.target.scrollHeight}px`;
-    // // textarea:placeholder - shown.style.height = '30px';
-
-    // if (textarea.scrollHeight > 43) {
-    //   textarea.style.overflowY = "visible";
-    // }
-  };
+    const textarea = e.target;
+    if (textarea.scrollHeight > 43) {
+      textarea.style.overflowY = "auto";
+    }
+  }
+  const handleFocus = (e) => {
+    const wrapper = document.querySelector(`.${styles.form__wrapper}`);
+    wrapper.style.marginBottom = "60px";
+  }
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -169,6 +170,7 @@ const ContactForm = ({ action }) => {
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   onInput={handleInput}
+                  onFocus={handleFocus}
                   className={`
                     ${styles.form__input} 
                     ${styles.form__textarea} 
