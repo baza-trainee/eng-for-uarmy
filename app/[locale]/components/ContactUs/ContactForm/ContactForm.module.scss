@@ -124,19 +124,25 @@
     max-height: 99px;
     padding-top: 0;
     resize: none;
-    overflow-y: hidden;
     -ms-overflow-style: none;
+    overflow-y: hidden;
+    // for Mozilla
     scrollbar-color: $color-green $color-ultra-light-grey;
     scrollbar-width: 5px;
     cursor: pointer;
     @include filledTextStyle();
+    transition: height 500ms $timing-function;
 
     @include mq(desktop) {
       width: 455px;
       height: 43px;
-      min-height: 43px;
       max-height: 314px;
       scrollbar-width: 8px;
+    }
+
+    &:focus {
+      height: 314px;
+      overflow-y: auto;
     }
   }
 
