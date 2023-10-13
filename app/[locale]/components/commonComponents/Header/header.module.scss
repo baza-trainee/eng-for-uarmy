@@ -2,9 +2,9 @@
 
 .headerBox{
   position: fixed;
+  top: 0;
   width: 100vw;
   background-color: $color-ultra-light-grey;
-  top: 0;
   z-index: 100;
 }
 .header {
@@ -124,8 +124,8 @@
     background-color: $color-black;
   }
   @media screen and (min-width: $desktop) {
-    color: $color-grey;
     display: block;
+    color: $color-grey;
     font-size: 18px;
     line-height: 27px;
     margin-bottom: 0;
