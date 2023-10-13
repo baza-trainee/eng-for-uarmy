@@ -97,7 +97,6 @@
 }
 
 .contacts{
-    min-width: 149px;
     margin-bottom: 30px;
 
     @include mq(desktop) {
@@ -155,6 +154,8 @@
 }
 
 .social{
+    min-width: 170px;
+
     &__title{
         margin-bottom: 30px; 
 
