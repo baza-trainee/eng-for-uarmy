@@ -28,7 +28,7 @@
 	position: relative;
 	display: flex;
 
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
 		flex-direction: column;
 		flex-basis: 224px;
 		padding-left: 32px;
@@ -38,69 +38,75 @@
 	}
 
 	@media screen and (min-width: $desktop) {
-		padding-top: 70px;
-		padding-bottom: 57px;
+		padding-top: 24px;
+		padding-bottom: 42px;
 	}
 }
 
 .reviewImg {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		width: 100%;
-		height: 142px;
-		object-fit: cover;
+	object-fit: cover;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		margin: 0 auto;
 		margin-bottom: 20px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		margin-left: 95px;
+		width: 100%;
+		padding-left: 84px;
+		margin-right: 20px;
 	}
 }
 
 .reviewWrapper {
 	@media screen and (min-width: $desktop) {
-		margin-left: 40px;
-		margin-right: 72px;
+		padding-right: 84px;
 	}
 }
 
 .reviewText {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		font-size: 15px;
+	font-family: Arial;
+
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		font-size: 11px;
 		line-height: 1.35;
 		margin-bottom: 20px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		font-size: 28px;
-		line-height: 1.21;
-		letter-spacing: 0.35px;
-		margin-bottom: 26px;
+		width: 569px;
+		font-size: 18px;
+		line-height: 1.5;
+		margin-bottom: 32px;
 	}
 }
 
 .authorName {
-	font-family: Arial;
 	line-height: 1.5;
+	margin-bottom: 8px;
 
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		font-size: 13px;
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		font-size: 9px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		font-size: 22px;
+		font-size: 18px;
 	}
 }
 
 .authorProfession {
 	font-family: Arial;
-	line-height: 1.5;
-	color: $color-grey;
+	font-weight: 700;
+	line-height: 1.53;
+	color: $color-black;
 
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		font-size: 10px;
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 200px;
+		font-size: 8px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		font-size: 18px;
+		width: 326px;
+		font-size: 13px;
 	}
 }
