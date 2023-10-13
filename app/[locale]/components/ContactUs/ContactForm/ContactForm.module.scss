@@ -132,7 +132,7 @@
     scrollbar-width: 5px;
     cursor: pointer;
     @include filledTextStyle();
-    transition: height 500ms $timing-function 250ms;
+    transition: height 500ms $timing-function 300ms;
 
     @include mq(desktop) {
       width: 455px;

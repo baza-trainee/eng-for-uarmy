@@ -42,6 +42,9 @@ const ContactForm = ({ action }) => {
   const handleFocus = (e) => {
     const wrapper = document.querySelector(`.${styles.form__wrapper}`);
     wrapper.style.marginBottom = "60px";
+    
+    const labelTextarea = document.querySelector(`.${styles.form__fieldTextarea}`);
+    labelTextarea.style.paddingTop = "20px";
   }
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
@@ -161,7 +164,7 @@ const ContactForm = ({ action }) => {
             </div>
 
             <div>
-              <label className={styles.form__field}>
+              <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
                 <DebounceInput element="textarea"
                   name="request"
                   value={values.request}

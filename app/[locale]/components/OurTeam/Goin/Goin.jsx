@@ -20,11 +20,9 @@ const Goin = () => {
                 className={styles.goin__img} />
 
             <div className={styles.goin__wrapper}>
-                <MainLink className={styles.goin__btn}
-                    url='https://www.work.ua/jobs/by-company/2559879/'
-                    target="_blank" 
-                    rel="noopener noreferre" 
-                    aria-label="button Work.ua">
+                <MainLink
+                    url='https://www.work.ua/jobs/by-company/2559879/' 
+                    aria-label="Work.ua link">
                     {t("vacancies")}
                 </MainLink>
                 
