@@ -34,12 +34,13 @@ const ContactForm = ({ action }) => {
   };
 
   const handleInput = (e) => {
-    const textarea = e.target;
-    textarea.style.height = `${e.target.scrollHeight}px`;
+    // const textarea = e.target;
+    // textarea.style.height = `${e.target.scrollHeight}px`;
+    // // textarea:placeholder - shown.style.height = '30px';
 
-    if (textarea.scrollHeight > 43) {
-      textarea.style.overflowY = "visible";
-    }
+    // if (textarea.scrollHeight > 43) {
+    //   textarea.style.overflowY = "visible";
+    // }
   };
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
