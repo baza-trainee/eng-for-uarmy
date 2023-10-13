@@ -70,7 +70,7 @@
     border-radius: 0;
     @include filledTextStyle();
     
-    background-color: transparent;
+    background-color: $color-ultra-light-grey;
 
     &::placeholder{
       opacity: 0;

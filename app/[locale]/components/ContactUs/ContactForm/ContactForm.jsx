@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
-import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
+import * as yup from 'yup';
 import CustomSelect from "./CustomSelect/CustomSelect";
 import { DebounceInput } from 'react-debounce-input';
 import Thanks from "../Thanks/Thanks";
@@ -22,8 +22,6 @@ const ContactForm = ({ action }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
-
-  console.log("isSubmit", isSubmit);
 
   const handleInputChange = (e) => {
     handleChange(e);
@@ -50,7 +48,34 @@ const ContactForm = ({ action }) => {
       email: savedValues.email,
       request: savedValues.request,
     },
-    validationSchema: emailSchema,
+    validationSchema: yup.object().shape({
+      name: yup
+          .string()
+          .trim()
+          .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ]+$/, t("alphabet"))
+          .min(2, t("min"))
+          .max(50, t("max50"))
+          .required( t("requiredName") ),
+      email: yup
+          .string()
+          .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+              t("invalid"))
+          .test('no-cyrillic', t("invalid"), function (value) {
+              if (value) {
+                  const domain = value.split('@')[1];
+                  const cyrillicRegex = /[а-яА-ЯіІїЇґҐёЁєЄ]/;
+                  return !cyrillicRegex.test(domain);
+              }
+              return true;
+          })
+          .max(50, t("max50"))
+          .required( t("requiredEmail") ),
+      request: yup
+          .string()
+          .trim()
+          .max(2000, t("max2000"))
+          .required(t("requiredRequest")),
+      }),
     onSubmit: async ({ name, email, request }, { resetForm }) => {
       try {
         setIsLoading(true);

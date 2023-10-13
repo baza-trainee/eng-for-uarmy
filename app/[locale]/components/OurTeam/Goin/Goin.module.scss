@@ -60,7 +60,14 @@
         @include mq(desktop) {
             display: flex;
             justify-content: center;
-            gap: 18px;
         }
     } 
+
+    &__wrapper a:first-child{
+        margin-bottom: 30px;
+        @include mq(desktop) {
+            margin-bottom: 0;
+            margin-right: 18px;
+        }
+    }
 }    
