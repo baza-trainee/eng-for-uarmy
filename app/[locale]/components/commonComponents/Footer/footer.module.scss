@@ -5,17 +5,16 @@
     background-color: $color-black;
 
     &__container {
-        overflow: hidden;
         position: relative;
         width: $mobile;
-        margin: 0 auto;
         padding: 0 0 27px;
+        margin: 0 auto;
+        overflow: hidden;
     
         @include mq(desktop) {
+            display: flex;
             width: $desktop;
             padding: 10px 50px 62px;
-            display: flex;
-
             color: $color-white;
         }
     }
@@ -32,17 +31,14 @@
 
     &__title {
         margin-bottom: 20px;
-
-        text-align: left;
         font-size: 15px;
         font-weight: 400;
         line-height: normal;
-
         color: $color-green;
+        text-align: left;
 
         @include mq(desktop) {
             margin-bottom: 30px;
-
             font-size: 28px;
         } 
     }      
@@ -102,7 +98,6 @@
 
 .contacts{
     margin-bottom: 30px;
-    min-width: 149px;
 
     @include mq(desktop) {
         margin-bottom: 67px;
@@ -110,8 +105,8 @@
      
     &__item{
         &:not(:last-child) {
-                margin-bottom: 20px;
-            }
+            margin-bottom: 20px;
+        }
 
         @include mq(desktop) {
             &:not(:last-child) {
@@ -123,31 +118,32 @@
     &__link{
         display: flex;
         align-items: center;
-
         font-family: Arial;
         font-size: 13px;
         font-weight: 400;
         line-height: 1.5;
-        
         color: $color-white;
-
         transition: color $transition-duration $timing-function;
         
-        &:hover,
-        &:focus { 
+        &:active { 
             color: $color-olive;
             outline: none;
         }
 
         @include mq(desktop) {
             font-size: 18px;
+            &:hover,
+            &:focus {
+                color: $color-olive;
+                outline: none;
+            }
         }
     }  
     
     &__icon{
         display: inline-block;
-        fill: currentColor;
         margin-right: 10px;
+        fill: currentColor;
 
         @include mq(desktop) {
            width: 22px;
@@ -158,6 +154,8 @@
 }
 
 .social{
+    min-width: 170px;
+
     &__title{
         margin-bottom: 30px; 
 
@@ -188,16 +186,20 @@
         display: inline-block;
         border: 1px solid transparent;
         color: $color-white;
-
+        outline: none;
         transition: color $transition-duration $timing-function;
-
-        &:hover{
+        &:active {
             color: $color-olive;
         }
 
-        &:focus{
-            outline: none;
-            border: 1px solid $color-olive;
+        @include mq(desktop) {
+            &:hover{
+                color: $color-olive;
+            }
+
+            &:focus:not(:active){
+                border: 1px solid $color-olive;
+            } 
         }
     }
 
@@ -213,9 +215,9 @@
 
     &__iconFacebook{
         @include mq(desktop) {
-                width: 10px;
-                height: 20px;
-            }
+            width: 10px;
+            height: 20px;
+        }
     }
 }
 
@@ -272,14 +274,13 @@
         }
     }
     &__bold{
-        font-weight: 700;
         font-family: Arial;
         font-size: 8px;
+        font-weight: 700;
         outline: none;
         transition: color $transition-duration $timing-function;
         
         &:hover{
-            outline: none;
             color: $color-green;
         }
         @include mq(desktop) {
@@ -290,10 +291,10 @@
         font-family: Arial;
         font-size: 8px;
         line-height: normal;
+        outline: none;
         transition: color $transition-duration $timing-function;
         
         &:hover{
-            outline: none;
             color: $color-green;
         }    
 

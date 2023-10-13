@@ -69,6 +69,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
         <ul className={styles.options}>
           {options.map((option) => (
             <li key={option.label}
+              tabIndex='0'
               className={styles.options__item}
               onClick={() => handleOptionClick(option.label)}>
               <p className={styles.options__label}>{option.label}</p>

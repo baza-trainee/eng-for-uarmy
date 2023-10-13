@@ -140,9 +140,17 @@
     "name": "Your name",
     "email": "Your email",
     "tellUs": "Tell us more about your request",
+    "requiredName": "Please enter your name",
+    "requiredEmail": "Please enter your email",
+    "requiredRequest": "Please enter your request",
+    "alphabet": "Please use letters only",
+    "min": "Minimum 2 characters",
+    "max50": "Maximum 50 characters",
+    "max2000": "Maximum 2000 characters",
+    "invalid": "Invalid email address",
     "send": "Send",
-    "thanks": "Thanks for your message!",
-    "getBack": "We'll get back to you as soon as we can.",
+    "thanks": "Thanks!",
+    "getBack": "We got your message and will get back to you as soon as we can.",
     "back": "Back",
     "donate": "Donate",
     "support": "To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!",
@@ -154,9 +162,5 @@
     "four": "four-oh-four",
     "text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
     "btnHome": "Back to homepage"
-  },
-  "Validation": {
-    "alphabet": "Please enter on alphabets only",
-    "min": "Minimum 2 characters"
   }
 }

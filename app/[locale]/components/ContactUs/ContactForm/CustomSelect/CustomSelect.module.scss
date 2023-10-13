@@ -97,7 +97,8 @@
 
     transition: background-color $transition-duration $timing-function;
 
-    &:hover{
+    &:focus{
+      outline: none;
       background-color: $color-green;
     }
     
