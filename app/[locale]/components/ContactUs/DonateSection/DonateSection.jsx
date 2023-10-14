@@ -6,39 +6,23 @@ import { isMobile } from 'react-device-detect';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
-
-    const openAppOrWebUrl = (appUrl, webUrl) => {
+    
+    const openMobile = (webUrl) => {
         if (isMobile) {
-            let appOpened = false;
-            document.location.href = appUrl;
-
-            const timeoutId = setTimeout(() => {
-            if (!appOpened) {
-                window.open(webUrl);
-            }
-        }, 10);
-
-        window.addEventListener('blur', () => {
-            appOpened = true;
-            clearTimeout(timeoutId); 
-        });
+            document.location.href = webUrl;
         } else {
-            window.open(webUrl, '_blank');
-        }
+            window.open(webUrl, '_blank')
+        };
     };
     
     const openPayPalApp = () => {
-        const paypalAppUrl = 'paypal://donate/?hosted_button_id=5C35VYTTJGBQE';
         const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-    
-        openAppOrWebUrl(paypalAppUrl, paypalWebUrl);
+        openMobile(paypalWebUrl);
     };
     
     const openBuyMeACoffeeApp = () => {
-        const buymeacoffeeAppUrl = 'buymeacoffee://engforuarmy';
         const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
-    
-        openAppOrWebUrl(buymeacoffeeAppUrl, buymeacoffeeWebUrl);
+        openMobile(buymeacoffeeWebUrl);
     };
     
 
