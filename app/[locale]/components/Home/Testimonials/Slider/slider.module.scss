@@ -29,15 +29,18 @@
 	display: flex;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		height: 468px;
 		flex-direction: column;
 		flex-basis: 224px;
-		padding-left: 32px;
+		justify-content: space-evenly;
+		padding-top: 20px;
+		padding-bottom: 20px;
 		padding-right: 32px;
-		padding-top: 26px;
-		padding-bottom: 26px;
+		padding-left: 32px;
 	}
 
 	@media screen and (min-width: $desktop) {
+		height: 350px;
 		padding-top: 24px;
 		padding-bottom: 42px;
 	}
@@ -47,20 +50,22 @@
 	object-fit: cover;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
+		width: 132px;
+		height: 120px;
 		margin: 0 auto;
 		margin-bottom: 20px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		width: 100%;
-		padding-left: 84px;
+		margin-left: 84px;
 		margin-right: 20px;
 	}
 }
 
 .reviewWrapper {
 	@media screen and (min-width: $desktop) {
-		padding-right: 84px;
+		margin-right: 84px;
 	}
 }
 
@@ -68,9 +73,10 @@
 	font-family: Arial;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
-		font-size: 11px;
-		line-height: 1.35;
-		margin-bottom: 20px;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.33;
+		margin-bottom: 22px;
 	}
 
 	@media screen and (min-width: $desktop) {
@@ -83,29 +89,32 @@
 
 .authorName {
 	line-height: 1.5;
-	margin-bottom: 8px;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
-		font-size: 9px;
+		font-family: Arial;
+		font-size: 13px;
+		font-weight: 700;
+		margin-bottom: 8px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		font-size: 18px;
+		margin-bottom: 8px;
 	}
 }
 
 .authorProfession {
 	font-family: Arial;
-	font-weight: 700;
-	line-height: 1.53;
+	line-height: 1.5;
 	color: $color-black;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
 		width: 200px;
-		font-size: 8px;
+		font-size: 10px;
 	}
 
 	@media screen and (min-width: $desktop) {
+		font-weight: 700;
 		width: 326px;
 		font-size: 13px;
 	}

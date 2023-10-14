@@ -27,7 +27,6 @@ const Slider = ({ authors }) => {
       }}
       speed={700}
       loop={true}
-      autoHeight={true}
       breakpoints={{
         320: {
           spaceBetween: 32,
