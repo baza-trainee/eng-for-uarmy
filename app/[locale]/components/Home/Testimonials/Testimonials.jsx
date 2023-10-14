@@ -1,11 +1,8 @@
 "use client";
-import { useTranslations } from "next-intl";
-// import { useState, useEffect, useCallback } from "react";
-
-import { data } from "./data";
+import { useTranslations, useLocale } from "next-intl";
+import Slider from "./Slider/Slider";
 
 import styles from "./testimonials.module.scss";
-import Slider from "./Slider/Slider";
 
 const Testimonials = () => {
   //   const [rewies, setRewies] = useState([]);
@@ -50,17 +47,27 @@ const Testimonials = () => {
   //     }
   //   }, [rewies]);
 
-  //   console.log(items);
-
+  const locale = useLocale();
   const t = useTranslations("Feedback");
+
+  const authors = Array.from({ length: 2 }, (_, idx) => ({
+    id: idx + 1,
+    photo: `/feedback/author-${String(idx + 1).padStart(2, "0")}.jpg`,
+    review: t(`review-${idx + 1}`),
+    name: t(`name-${idx + 1}`),
+    role: t(`role-${idx + 1}`),
+  }));
+
   return (
-    <section className={styles.section}>
+    <section
+      className={`${styles.section} ${locale === "en" ? styles.isNone : ""}`}
+    >
       <div className={styles.container}>
         <div className={styles.titleWrapper}>
           <h2 className={styles.title}>{t("title")}</h2>
           <p className={styles.subscription}>{t("desc")}</p>
         </div>
-        <Slider data={data} />
+        <Slider authors={authors} />
       </div>
     </section>
   );
