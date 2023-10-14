@@ -113,7 +113,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled = errors.name || errors.email || errors.request || isLoading;
+  const disabled = Object.keys(errors).length > 0 && Object.keys(touched).length === 3 || isLoading;
 
   return (
     <>
