@@ -2,30 +2,10 @@
 import { useTranslations} from 'next-intl';
 import Image from 'next/image';
 import styles from './donateSection.module.scss';
-import { isMobile } from 'react-device-detect';
+import Link from 'next/link';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
-    
-    const openMobile = (webUrl) => {
-        if (isMobile) {
-            document.location.href = webUrl;
-        } else {
-            window.open(webUrl, '_blank')
-        };
-    };
-    
-    const openPayPalApp = () => {
-        const paypalWebUrl = 'https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE';
-        openMobile(paypalWebUrl);
-    };
-    
-    const openBuyMeACoffeeApp = () => {
-        const buymeacoffeeWebUrl = 'https://www.buymeacoffee.com/engforuarmy';
-        openMobile(buymeacoffeeWebUrl);
-    };
-    
-
 
  return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
@@ -38,16 +18,16 @@ const DonateSection = () => {
         </div>
         <div className={styles.linkArea}>
             <div className={styles.paypallBtn}>
-                <button className={styles.linkButtons} onClick={openPayPalApp}>
+                <Link className={styles.linkButtons} href="https://www.paypal.com/donate/?hosted_button_id=5C35VYTTJGBQE" target="_blank">
                     <Image src='../paypallBtn.svg' alt='paypall button' width={30} height={36} className={styles.paypallBtnIcon}></Image>
                     <p>PAYPAL</p>
-                </button>
+                </Link>
             </div>
             <div className={styles.buymeacoffeeBtn}>
-                <button className={styles.linkButtons} onClick={openBuyMeACoffeeApp}>
+                <Link className={styles.linkButtons} href="https://www.buymeacoffee.com/engforuarmy" target="_blank">
                     <Image src='../buymeacoffeBtn.svg' alt='buymeacoffee button' width={27} height={39} className={styles.buymeacoffeeBtnIcon}></Image>
                     <p>BUYMEACOFFEE</p>
-                </button>
+                </Link>
             </div>
         </div>
         <div className={styles.bankDetails}>
