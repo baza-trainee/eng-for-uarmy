@@ -10,6 +10,10 @@
 	}
 }
 
+.section.isNone {
+	display: none;
+}
+
 .container {
 	width: $mobile;
 	padding-left: $section-padding-mob;
@@ -26,10 +30,8 @@
 .titleWrapper {
 	display: flex;
 
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
 		flex-direction: column;
-		width: 288px;
-		margin: 0 auto;
 		margin-bottom: 30px;
 	}
 
@@ -40,28 +42,29 @@
 }
 
 .title {
-	max-width: 180px;
+	display: inline-block;
 	font-size: 30px;
 	line-height: 1.2;
 	margin-bottom: 10px;
 
 	@media screen and (min-width: $desktop) {
-		max-width: 380px;
+		width: 380px;
 		font-size: 48px;
 		line-height: 1.04;
 		letter-spacing: 0.364px;
+		margin-bottom: 0;
 		margin-right: 96px;
 	}
 }
 
 .subscription {
-	width: 100%;
+	display: inline-block;
 	font-family: Arial;
 	font-size: 13px;
 	line-height: 1.5;
 
 	@media screen and (min-width: $desktop) {
-		max-width: 290px;
+		max-width: 306px;
 		font-size: 18px;
 	}
 }

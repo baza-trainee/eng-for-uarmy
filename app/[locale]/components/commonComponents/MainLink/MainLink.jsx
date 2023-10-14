@@ -7,7 +7,9 @@ const MainLink = ({ path, url, children }) => {
 
     return (
         <Link href={path ? `/${locale}/${path}` : url}
-            className={styles.mainLink}>
+            className={styles.mainLink}
+            target={url && "_blank"}
+            rel={url && "noopener noreferre"}>
             {children}
         </Link>
     );
