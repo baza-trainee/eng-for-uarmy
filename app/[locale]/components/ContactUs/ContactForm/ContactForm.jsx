@@ -39,13 +39,11 @@ const ContactForm = ({ action }) => {
       textarea.style.overflowY = "auto";
     }
   }
+
   const handleFocus = (e) => {
     const wrapper = document.querySelector(`.${styles.form__wrapper}`);
     wrapper.style.marginBottom = "60px";
-    
-    const labelTextarea = document.querySelector(`.${styles.form__fieldTextarea}`);
-    labelTextarea.style.paddingTop = "20px";
-  }
+  }  
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
