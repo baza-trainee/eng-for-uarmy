@@ -29,10 +29,9 @@
 	display: flex;
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
-		height: 468px;
+		height: 460px;
 		flex-direction: column;
 		flex-basis: 224px;
-		justify-content: space-evenly;
 		padding-top: 20px;
 		padding-bottom: 20px;
 		padding-right: 32px;
