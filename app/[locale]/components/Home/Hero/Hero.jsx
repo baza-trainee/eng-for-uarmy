@@ -36,7 +36,7 @@ useEffect(() => {
                 <h1 className={styles.firstHead}>Eng for UArmy</h1>
                 <h2 className={styles.secondHead}>{t("title")}</h2>
                 
-                <ul className={styles.list}>
+                <ul tabIndex="-1" className={styles.list}>
                       <li className={styles.liItem}>
                           <Arrow />
                           <p className={`${styles.liText} ${styles.transfer}`}>{t("first-desc")} <strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong>{t("first-desc2")}<strong className={styles.li_bold_txt}>{t("first-desc-bold2")}</strong></p>
