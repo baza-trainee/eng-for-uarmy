@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
+import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
-import { emailSchema } from "@/app/[locale]/libs/validationSchemas";
+import * as yup from 'yup';
 import CustomSelect from "./CustomSelect/CustomSelect";
 import { DebounceInput } from 'react-debounce-input';
 import Thanks from "../Thanks/Thanks";
@@ -22,8 +23,6 @@ const ContactForm = ({ action }) => {
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
 
-  console.log("isSubmit", isSubmit);
-
   const handleInputChange = (e) => {
     handleChange(e);
 
@@ -36,12 +35,15 @@ const ContactForm = ({ action }) => {
 
   const handleInput = (e) => {
     const textarea = e.target;
-    textarea.style.height = `${e.target.scrollHeight}px`;
-
     if (textarea.scrollHeight > 43) {
-      textarea.style.overflowY = "visible";
+      textarea.style.overflowY = "auto";
     }
-  };
+  }
+
+  const handleFocus = (e) => {
+    const wrapper = document.querySelector(`.${styles.form__wrapper}`);
+    wrapper.style.marginBottom = "60px";
+  }  
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -49,32 +51,55 @@ const ContactForm = ({ action }) => {
       email: savedValues.email,
       request: savedValues.request,
     },
-    validationSchema: emailSchema,
+    validationSchema: yup.object().shape({
+      name: yup
+          .string()
+          .trim()
+          .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ]+$/, t("alphabet"))
+          .min(2, t("min"))
+          .max(50, t("max50"))
+          .required( t("requiredName") ),
+      email: yup
+          .string()
+          .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+              t("invalid"))
+          .test('no-cyrillic', t("invalid"), function (value) {
+              if (value) {
+                  const domain = value.split('@')[1];
+                  const cyrillicRegex = /[а-яА-ЯіІїЇґҐёЁєЄ]/;
+                  return !cyrillicRegex.test(domain);
+              }
+              return true;
+          })
+          .max(50, t("max50"))
+          .required( t("requiredEmail") ),
+      request: yup
+          .string()
+          .trim()
+          .max(2000, t("max2000"))
+          .required(t("requiredRequest")),
+      }),
     onSubmit: async ({ name, email, request }, { resetForm }) => {
       try {
         setIsLoading(true);
 
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxV0k1aH-sNiLpcCWWhk5zE_sNqJLOxPlsE9o-2OjPX8r6tSMXAG7GRrpH2bmpoyHjk/exec';
+        const type = requestType === t("type") ? t("other") : requestType;
 
         // send to Google Sheet
         const formData = new FormData();
         formData.append('Name', name);
         formData.append('Email', email);
         formData.append('Request', request);
-        formData.append('Type of request', requestType === t("type") ? t("other") : requestType);
-
-        fetch(scriptURL, { method: 'POST', body: formData })
-          .then(response => console.log('Success!', response))
-          .catch(error => console.error('Error!', error.message))
+        formData.append('Type of request', type);
+        await sendToGoogleSheet(formData);
 
         // send to email
         const emailData = {
-          requestType: requestType === t("type") ? t("other") : requestType,
+          requestType: type,
           name,
           email,
           request,
         };
-
         await sendEmail(emailData);
         
         setRequestType(t("type"));
@@ -89,7 +114,7 @@ const ContactForm = ({ action }) => {
     },
   });
 
-  const disabled = errors.name || errors.email || errors.request || isLoading;
+  const disabled = Object.keys(errors).length > 0 && Object.keys(touched).length === 3 || isLoading;
 
   return (
     <>
@@ -137,7 +162,7 @@ const ContactForm = ({ action }) => {
             </div>
 
             <div>
-              <label className={styles.form__field}>
+              <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
                 <DebounceInput element="textarea"
                   name="request"
                   value={values.request}
@@ -146,6 +171,7 @@ const ContactForm = ({ action }) => {
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   onInput={handleInput}
+                  onFocus={handleFocus}
                   className={`
                     ${styles.form__input} 
                     ${styles.form__textarea} 
@@ -169,7 +195,7 @@ const ContactForm = ({ action }) => {
             </button>
           </div>
         </form>)
-      : <Thanks /> }
+        : <Thanks setIsSubmit={setIsSubmit} /> }
     </>
   );
 };

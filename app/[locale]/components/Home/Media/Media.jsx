@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
+import mediaEng from "@/app/[locale]/libs/fakeMediaListEng";
 import medias from "@/app/[locale]/libs/fakeMediaList";
 import MediaList from "./MediaList";
 import styles from "./Media.module.scss";
@@ -9,29 +10,40 @@ import styles from "./Media.module.scss";
 const Media = () => {
     const t = useTranslations("Media");
     const locale = useLocale();
-    const [mediaList, setMediaList] = useState(medias);
+    const [mediaList, setMediaList] = useState([]);
     const [currentList, setCurrentList] = useState([]);
     const [screenWidth, setScreenWidth] = useState(1280)
 
     useEffect(() => {
+         if (locale === "en") {
+             setMediaList(mediaEng)
+        } else {
+             setMediaList(medias)
+        } 
         const innerWidth = window.innerWidth
         setScreenWidth(innerWidth)
-        const newMedia = innerWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 6)
-        setCurrentList(newMedia) 
-    }, [])
     
+    }, [])
+
+    useEffect(() => {
+        const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 4)
+        setCurrentList(newMedia) 
+    }, [screenWidth, mediaList])
+    
+
     const unWrapList = () => {
         if (mediaList.length > currentList.length) {
             const newList = screenWidth < 1280 ?
                 mediaList.slice(currentList.length, currentList.length + 3) :
-                mediaList.slice(currentList.length, currentList.length + 6)
+                mediaList.slice(currentList.length, currentList.length + 4)
             const newMedia = currentList.concat(newList)
             setCurrentList(newMedia)
         }
     }
+
     const wrapList = () => {
         if (mediaList.length === currentList.length) {
-            const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 6)
+            const newMedia = screenWidth < 1280 ? mediaList.slice(0, 3) : mediaList.slice(0, 4)
             setCurrentList(newMedia) 
         }
     }

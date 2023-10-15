@@ -29,7 +29,13 @@
   },
   "Feedback": {
     "title": "Testimonials",
-    "desc": "Read what some of our Military English learners have said about our course."
+    "desc": "Read what some of our Military English learners have said about our course.",
+    "review-1": "The project is adapted to the requirements and opportunities that currently limit the military in learning the language: minimum time, maximum information. The presentation of the material is interesting - in a combined way: the main part is in an understandable native language, and the terms are provided in English in a relaxed but rich way. It is definitely useful, very relevant, and I often recommend it. Comparison with national realities is important, which improves understanding of the new material. I am sincerely grateful to Ms. Olena for her efforts, creativity and approach.",
+    "name-1": "Natalia,",
+    "role-1": "Head of the Educational and Research Center for Foreign Languages",
+    "review-2": "The project is adapted to the requirements and opportunities that currently limit the military in learning the language: minimum time, maximum information. The presentation of the material is interesting - in a combined way: the main part is in an understandable native language, and the terms are provided in English in a relaxed but rich way.",
+    "name-2": "Natalia,",
+    "role-2": "Head of the Educational and Research Center for Foreign Languages"
   },
   "OurProjects": {
     "title": "Our projects",
@@ -79,7 +85,10 @@
     "follow": "Follow",
     "policy-first": "Developed by Baza Trainee Ukraine 2023",
     "policy-second": "All rights reserved",
-    "policy-link": "Website privacy policy"
+    "policy-link": "Website privacy policy",
+    "statute": "Statute",
+    "report": "Report",
+    "policy-right": "Conditions of use"
   },
   "OurTeam": {
     "title": "Our team",
@@ -135,13 +144,33 @@
     "name": "Your name",
     "email": "Your email",
     "tellUs": "Tell us more about your request",
+    "requiredName": "Please enter your name",
+    "requiredEmail": "Please enter your email",
+    "requiredRequest": "Please enter your request",
+    "alphabet": "Please use letters only",
+    "min": "Minimum 2 characters",
+    "max50": "Maximum 50 characters",
+    "max2000": "Maximum 2000 characters",
+    "invalid": "Invalid email address",
     "send": "Send",
-    "thanks": "Thanks for your message!",
-    "getBack": "We'll get back to you as soon as we can.",
+    "thanks": "Thanks!",
+    "getBack": "We got your message and will get back to you as soon as we can.",
     "back": "Back",
     "donate": "Donate",
     "support": "To support us with a donation, please use one of the options below. Thank you for helping Ukrainian soldiers break the language barrier!",
     "bankDetails": "Bank details"
+  },
+  "bankDetails": {
+    "title": "Bank details",
+    "p-1": "Charity foundation \"OSVITUM\"",
+    "p-2-1": "USD",
+    "p-2-2": "IBAN Code: UA103510050000026007879183310",
+    "p-3-1": "Name of the bank: JSC UKRSIBBANK,",
+    "p-3-2": "ANDRIIVSKA STREET 2/12 KYIV, UKRAINE",
+    "p-4": "Bank SWIFT Code: KHABUA2K",
+    "p-5": "Сorrespondent bank: acc. 020061151200138",
+    "p-6": "BNP PARIBAS U.S.A. - New York Branch New York , USA",
+    "p-7": "Bank SWIFT Code: BNPAUS3N"
   },
   "404": {
     "btnBack": "Back",
@@ -149,9 +178,5 @@
     "four": "four-oh-four",
     "text": "We couldn't find the page you're looking for but that's 4.5.0 (all good).",
     "btnHome": "Back to homepage"
-  },
-  "Validation": {
-    "alphabet": "Please enter on alphabets only",
-    "min": "Minimum 2 characters"
   }
 }

@@ -19,11 +19,12 @@ const HeaderTrigger = () => {
             getPosition()
         }, 500)
 
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-        window.removeEventListener("scroll", handleScroll);
-    };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
     }, []);
+    
     useEffect(() => {
     if (y < 40) {
         const header = document.getElementById("header");

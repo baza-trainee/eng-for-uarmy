@@ -26,6 +26,7 @@
 
   &__wrapper{
     margin-bottom: 100px;
+    transition: margin-bottom 500ms $timing-function 100ms;
     @include mq(desktop) {
       display: flex;
       justify-content: space-between;
@@ -50,6 +51,7 @@
 
     @include mq(desktop) {
       padding-top: 32px;
+      height: 75px;
     }
   }
 
@@ -70,7 +72,7 @@
     border-radius: 0;
     @include filledTextStyle();
     
-    background-color: transparent;
+    background-color: $color-ultra-light-grey;
 
     &::placeholder{
       opacity: 0;
@@ -124,19 +126,28 @@
     max-height: 99px;
     padding-top: 0;
     resize: none;
-    overflow-y: hidden;
     -ms-overflow-style: none;
+    overflow-y: hidden;
+    // for Mozilla
     scrollbar-color: $color-green $color-ultra-light-grey;
     scrollbar-width: 5px;
     cursor: pointer;
     @include filledTextStyle();
+    transition: height 500ms $timing-function 300ms;
 
     @include mq(desktop) {
       width: 455px;
       height: 43px;
-      min-height: 43px;
       max-height: 314px;
       scrollbar-width: 8px;
+    }
+
+    &:placeholder-shown{
+      overflow-y: hidden;
+    }
+
+    &:focus {
+      height: 314px;
     }
   }
 

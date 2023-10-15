@@ -20,13 +20,11 @@ const Goin = () => {
                 className={styles.goin__img} />
 
             <div className={styles.goin__wrapper}>
-                {/* <MainLink href='https://www.work.ua/'
-                    className={styled.mainLink}
-                    target="_blank" 
-                    rel="noopener noreferre" 
-                    aria-label="button Work.ua">
+                <MainLink
+                    url='https://www.work.ua/jobs/by-company/2559879/' 
+                    aria-label="Work.ua link">
                     {t("vacancies")}
-                </MainLink> */}
+                </MainLink>
                 
                 <MainLink path='contact?action=volunteer'>{t("volunteer")}</MainLink>
             </div>
