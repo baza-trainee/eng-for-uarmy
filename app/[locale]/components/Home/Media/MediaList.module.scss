@@ -12,9 +12,10 @@
     align-items: center;
     width: 100%;
     border: 1px solid $color-black;
-    padding: 35px 34px 35px 10px;
+    padding: 30px 14px;
     
     @media screen and (max-width: $desktop) {
+        height: 275px;
         &:not(:last-child) {
             margin-bottom: 20px;
         }
@@ -22,7 +23,7 @@
     @media screen and (min-width: $desktop) {
         width: calc((100% - 40px)/ 2);
         height: 254px;
-        padding: 36px 32px;
+        padding: 32px;
         margin: 10px;
      }
 }
@@ -44,6 +45,8 @@
     flex-direction: column;
     margin-left: 19px;
     overflow: hidden;
+    height: 100%;
+    justify-content: space-between;
     @media screen and (min-width: $desktop) {
         align-items: flex-end;
         margin-left: 32px;
@@ -55,18 +58,15 @@
     font-family: Arial;
     font-size: 13px;
     line-height: 150%;
-    height: 60px;
-    margin-bottom: 20px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 8;
     white-space: pre-wrap;
     @media screen and (min-width: $desktop) {
-        font-size: 13px;
-        line-height: 20px;
-        margin-bottom: 30px;
-
+        font-size: 15px;
+        line-height: 23px;
+        -webkit-line-clamp: 5;
     }
 }
 .btnReadMore{

@@ -54,7 +54,7 @@ const Media = () => {
             <h2 className={styles.mediaTitle}>{t("title")}</h2>
             <MediaList list={currentList} />
             {mediaList.length === currentList.length ?
-                <Link href={`/${locale}#media`} style={{margin: '0 auto'}}>
+                <Link href={`/${locale}#media`} style={{margin: '0 auto', outline: "none"}}>
                     <svg tabIndex={0} onClick={(e) => {
                         e.currentTarget.blur()
                         wrapList()
