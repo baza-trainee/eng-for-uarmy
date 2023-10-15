@@ -36,7 +36,7 @@ useEffect(() => {
                 <h1 className={styles.firstHead}>Eng for UArmy</h1>
                 <h2 className={styles.secondHead}>{t("title")}</h2>
                 
-                <ul className={styles.list}>
+                <ul tabIndex="-1" className={styles.list}>
                       <li className={styles.liItem}>
                           <Arrow />
                           <p className={`${styles.liText} ${styles.transfer}`}>{t("first-desc")} <strong className={styles.li_bold_txt}>{t("first-desc-bold")}</strong>{t("first-desc2")}<strong className={styles.li_bold_txt}>{t("first-desc-bold2")}</strong></p>
@@ -52,7 +52,7 @@ useEffect(() => {
                 </ul>
                 <ul className={styles.btnList}>
                 <li>
-                  <Link
+                  <Link tabIndex="0" 
                     href={`https://www.youtube.com/@engforuarmy`}
                     className={styles.under_txt_btn}
                     target="_blank" 
@@ -81,10 +81,10 @@ useEffect(() => {
             <div className={styles.your_container}>
             {isLargeScreen && (
                 <div className={styles.contact_us_col}>
-                <Youtube />
-                <Instagram />
-                <Facebook />
-                <Telegram />
+                <Youtube tabIndex="0"/>
+                <Instagram tabIndex="0"/>
+                <Facebook tabIndex="0"/>
+                <Telegram tabIndex="0"/>
                 </div>
             )}
 

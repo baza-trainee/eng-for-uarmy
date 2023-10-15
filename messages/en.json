@@ -21,7 +21,7 @@
     "and": "and ",
     "third-desc-bold2": "veterans ",
     "third-desc-bold3": "for new opportunities.",
-    "study-btn": "Start learning",
+    "study-btn": "LEARNING",
     "support-btn": "Support the project"
   },
   "RunningLine": {
@@ -40,12 +40,13 @@
   "OurProjects": {
     "title": "Our projects",
     "learnMore": "Learn more",
-    "youtube": "YouTube channel",
-    "youtube-desc": "Our video lessons let you learn Military English anywhere and anytime, starting with the most essential grammar and vocabulary",
-    "practice": "Speaking practice",
-    "practice-desc": "Our speaking clubs let you use your newly acquired knowledge by having real conversations with your peers and volunteers",
-    "mobileApp": "Mobile app",
-    "mobileApp-desc": "Our mobile app will let you fully immerse yourself in the learning process, set goals and track your progress towards them"
+    "youtube": "Video course “Army English” ",
+    "youtube-desc": "Regular video lessons based on STANAG 6001 on the YouTube channel allow you to learn Military English anywhere and anytime, from basic grammar and vocabulary to more specialized military topics.",
+    "practice": "Speaking practice with speakers of English",
+    "practice-desc": "We bring together Ukrainian military personnel and English-speaking volunteers for conversational online meetings and practice communicating in English.",
+    "mobileApp": "English courses for units of the Armed Forces",
+    "mobileApp-desc": "During the span of a year, Olena Chekryzhova, teacher and the founder of the project, held regular classes in groups of units of the Armed Forces, making it possible to analyze the peculiarities of military language training and to plan a video course.",
+    "mobileApp-desc2": "At the moment, the project is paused."
   },
   "AboutUs": {
     "title": "About us",
