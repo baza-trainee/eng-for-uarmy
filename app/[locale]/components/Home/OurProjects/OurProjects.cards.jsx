@@ -52,6 +52,7 @@ export const Project3 = ({t, locale, isLargeScreen})=>{
                     <div className={styles.textCont}>
                     <h3 className={styles.cardHead}>{t("mobileApp")}</h3>
                     <p className={styles.cardText}>{t("mobileApp-desc")}</p>
+                    <p className={styles.cardText2}>{t("mobileApp-desc2")}</p>
                     <Link href={`/${locale}`} className={styles.cardButton} style={{ visibility: 'hidden' }}>{t("learnMore")}</Link>
                 </div>
         </div>

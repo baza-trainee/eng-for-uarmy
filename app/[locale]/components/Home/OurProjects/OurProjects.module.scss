@@ -37,7 +37,7 @@
 }
 
 .imageContainer{
-  width: 359px;
+  width: 360px;
   height: 205px;
   overflow: hidden;
 }
@@ -58,9 +58,12 @@
   }
 
   .textCont{
-    display: grid;
+    display: flex;
+    height: calc(720px - 205px);
+    flex-direction: column;
     justify-items: center;
-    padding: 24px 16px 40px 16px;
+    align-items: center;
+    padding: 24px 16px 24px 16px;
 
   }
 
@@ -75,6 +78,7 @@
   }
 
   .cardText{
+    position: relative;
     width: 287px;
     color: var(--grey, #8B8B8B);
     margin-top: 16px;
@@ -84,11 +88,28 @@
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
+    
+  }
 
+  .cardText2{
+    width: 287px;
+    color: var(--grey, #8B8B8B);
+    margin-top: 16px;
+    text-align: center;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    
   }
 
   .cardButton {
-    margin-top: 24px;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    justify-self: end;
     display: flex;
     padding: 16px 38px;
     font-family: inherit;
@@ -128,7 +149,6 @@
 
     .imageContainer{
       width: 288px;
-      height: 173px;
       overflow: hidden;
       
     }
@@ -144,7 +164,7 @@
     .our_projects_card{
       display: flex;
       width: 288px;
-      height: 397px;
+      height: 612px;
       align-items: center;
       flex-direction: column;
       padding-bottom:45px;
@@ -163,9 +183,9 @@
     
     }
     .textCont{
-      display: grid;
-      justify-items: center;
-      padding: 20px 40px 21px 36px;
+      position: relative;
+      padding: 20px 40px 24px 36px;
+      height: calc(612px - 205px);
   
     }
  
@@ -178,15 +198,21 @@
   
     .cardText{
       width: 217px;
-      margin-top: 20px;
+      margin-top: 50px;
+      font-size: 13px;
+      line-height: 150%;
+  
+    }
+
+    .cardText2{
+
       font-size: 13px;
       line-height: 150%;
   
     }
   
     .cardButton {
-      margin-top: 20px;
-      display: flex;
+      position: absolute;
       width: 130px;
       padding: 12px;
       justify-content: center;
