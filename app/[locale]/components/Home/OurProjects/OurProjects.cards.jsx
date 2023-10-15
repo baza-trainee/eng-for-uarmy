@@ -9,7 +9,7 @@ export const Project1 = ({t, isLargeScreen})=>{
      <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
             <div className={styles.imageContainer}>
-            <Image className={styles.cardImg} src="/OurProjects/first-project.webp"  alt="Project channel image" width={359} height={255} />
+            <Image className={styles.cardImg} src="/OurProjects/first-project.webp"  alt="Project channel image" priority="true" width={359} height={255} />
             </div>
                 <div className={styles.textCont}>
                 <h3 className={styles.cardHead}>{t("youtube")}</h3>
@@ -30,7 +30,7 @@ export const Project2 = ({t, locale, isLargeScreen})=>{
     <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
     <div className={styles.imageContainer}>
-            <Image className={styles.cardImg} src="/OurProjects/second-project.webp" alt="Speaking image" width={359} height={255} />
+            <Image className={styles.cardImg} src="/OurProjects/second-project.webp" alt="Speaking image" priority="true" width={359} height={255} />
             </div>
                 <div className={styles.textCont}> 
                     <h3 className={styles.cardHead}>{t("practice")}</h3>
@@ -47,7 +47,7 @@ export const Project3 = ({t, locale, isLargeScreen})=>{
     <div className={styles.our_projects_card}>
     {isLargeScreen ? ( <SvgBorder />) : (<SvgBorderMobile/>)}
     <div className={styles.imageContainer}>
-            <Image className={styles.cardImg} src="/OurProjects/third-project.webp" alt="Mobile app image" width={359} height={205} />
+            <Image className={styles.cardImg} src="/OurProjects/third-project.webp" alt="Mobile app image" priority="true" width={359} height={205} />
             </div>
                     <div className={styles.textCont}>
                     <h3 className={styles.cardHead}>{t("mobileApp")}</h3>

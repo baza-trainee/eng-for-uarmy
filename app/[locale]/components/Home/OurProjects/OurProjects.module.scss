@@ -73,6 +73,7 @@
     font-size: 28px;
     font-style: normal;
     font-weight: 400;
+    min-height: 104px;
     line-height: 34px; /* 121.429% */
     letter-spacing: 0.35px;
   }
@@ -184,7 +185,6 @@
     }
     .textCont{
       position: relative;
-      padding: 20px 40px 24px 36px;
       height: calc(612px - 205px);
   
     }
@@ -192,13 +192,14 @@
   
     .cardHead{
       margin-top: 0;
+      min-height: 72px;
       font-size: 20px;
       line-height: normal;
     }
   
     .cardText{
       width: 217px;
-      margin-top: 50px;
+      margin-top: 20px;
       font-size: 13px;
       line-height: 150%;
   
