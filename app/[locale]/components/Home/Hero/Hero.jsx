@@ -52,7 +52,7 @@ useEffect(() => {
                 </ul>
                 <ul className={styles.btnList}>
                 <li>
-                  <Link
+                  <Link tabIndex="0" 
                     href={`https://www.youtube.com/@engforuarmy`}
                     className={styles.under_txt_btn}
                     target="_blank" 
@@ -81,10 +81,10 @@ useEffect(() => {
             <div className={styles.your_container}>
             {isLargeScreen && (
                 <div className={styles.contact_us_col}>
-                <Youtube />
-                <Instagram />
-                <Facebook />
-                <Telegram />
+                <Youtube tabIndex="0"/>
+                <Instagram tabIndex="0"/>
+                <Facebook tabIndex="0"/>
+                <Telegram tabIndex="0"/>
                 </div>
             )}
 

@@ -14,8 +14,19 @@
 	transition: fill $transition-duration $timing-function;
 }
 
-.social-btn:hover .svg-icon {
+.social-btn:hover .svg-icon  {
 	stroke: #798738;
+}
+
+.social-btn:focus {
+    outline: none;
+}
+
+.social-btn:focus .iconBorder  {
+	stroke: var(--green, #798738); 
+    outline: none;
+	stroke-width: 3px;
+    
 }
 
 .social-btn:hover .back {
