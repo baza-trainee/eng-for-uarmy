@@ -1,12 +1,14 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useTranslations} from "next-intl";
+import { useLocale, useTranslations} from "next-intl";
 import Link from "next/link";
 import styles from './Modal.module.scss';
 
 const Modal = () => {
     const t = useTranslations("Contact us");
+    const b = useTranslations("bankDetails");
     const router = useRouter()
+    const locale = useLocale();
 
     return <div id='modal' className={styles.backdrop} onClick={() => router.back()} aria-label="Close modal">
         <div className={styles.modal} onClick={(e) => {e.stopPropagation()}}>
@@ -49,11 +51,23 @@ const Modal = () => {
                 </li>
             </ul>
             <div className={styles.infoCard}>
-                <h3 className={styles.infoTitle}>{t("bankDetails")}</h3>
-                <p className={styles.infoItem}>Отримувач: <br className={styles.dived}/> БО «Благодійний фонд «ОСВІТУМ»</p>
-                <p className={styles.infoItem}>КОД ЄДРПОУ: <br className={styles.dived}/> 44966920</p>
-                <p className={styles.infoItem}>БАНК  УКРСИББАНК: п/р UA373510050000026007879183309</p>
-                <p className={styles.infoItem}>Призначення: <br className={styles.dived}/> благодійний внесок</p>
+                {locale === 'uk' ? 
+                <><h3 className={styles.infoTitle}>{b("title")}</h3>
+                <p className={styles.infoItem}>{b("p-1-title")} <br className={styles.dived}/>{b("p-1-desc")}</p>
+                <p className={styles.infoItem}>{b("p-2-title")} <br className={styles.dived}/>{b("p-2-desc")}</p>
+                <p className={styles.infoItem}>{b("p3")}</p>
+                <p className={styles.infoItem}>{b("p-4-title")} <br className={styles.dived}/>{b("p-4-desc")}</p></>
+                :
+                <><h3 className={styles.infoTitle}>{b("title")}</h3>
+                <p className={styles.infoItem}>{b("p-1")}</p>
+                <p className={styles.infoItem}><span>{b("p-2-1")}</span><p>{b("p-2-2")}</p></p>
+                <p className={styles.infoItem}>{b("p-3-1")}<div style={{width: "230px"}}>{b("p-3-2")}</div></p>
+                <p className={styles.infoItem}>{b("p-4")}</p>
+                <p className={styles.infoItem}>{b("p-5")}</p>
+                <p className={styles.infoItem} style={{maxWidth: "330px"}}>{b("p-6")}</p>
+                <p className={styles.infoItem}>{b("p-7")}</p>
+                </>
+                }
             </div>
           </div>
       </div>

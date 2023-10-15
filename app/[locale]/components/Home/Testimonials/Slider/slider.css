@@ -2,9 +2,9 @@
 	position: relative;
 }
 
-@media screen and (min-width: 320px) and (max-width: 1279.5px) {
+@media screen and (min-width: 320px) and (max-width: 1279.98px) {
 	.my-swiper {
-		padding-bottom: 40px;
+		padding-bottom: 36px;
 	}
 
 	.my-swiper .swiper-button-prev {
@@ -29,7 +29,8 @@
 	.my-swiper {
 		padding-left: 98px;
 		padding-right: 98px;
-		padding-bottom: 120px;
+		padding-bottom: 90px;
+		padding-bottom: 58px;
 	}
 
 	.my-swiper .swiper-button-prev {
@@ -55,7 +56,7 @@
 	position: absolute;
 	width: 68px;
 	height: 68px;
-	transform: translateY(-70px);
+	transform: translateY(-40px);
 	z-index: 1000;
 }
 

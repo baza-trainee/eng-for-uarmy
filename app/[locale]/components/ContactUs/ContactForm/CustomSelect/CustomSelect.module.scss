@@ -52,14 +52,14 @@
 
     color: $color-black;
     background-color: transparent;
+    transition: color $transition-duration $timing-function;
 
     &:hover{
       color: $color-green;
     }
 
-    &:focus:not(:active){
+    &:focus{
       outline: none;
-      color: $color-olive;
     }
   }
 
@@ -98,6 +98,11 @@
     transition: background-color $transition-duration $timing-function;
 
     &:hover{
+      background-color: $color-green;
+    }
+
+    &:focus{
+      outline: none;
       background-color: $color-green;
     }
     
