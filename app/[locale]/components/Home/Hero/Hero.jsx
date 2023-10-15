@@ -11,7 +11,22 @@ import styles from "./Hero.module.scss";
 const Hero = () => {
 const t = useTranslations("Hero");
 const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 1280);
+const handleEnterKeyPress = (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault(); 
+    scrollToSection('helpUsGrow');
+  }
+};
 
+const scrollToSection = (sectionId) => {
+  const section = document.getElementById(sectionId);
+  if (section) {
+    window.scrollTo({
+      top: section.offsetTop,
+      behavior: 'smooth',
+    });
+  }
+};
 useEffect(() => {
   const handleWindowResize = () => {
     setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1280);
@@ -61,8 +76,12 @@ useEffect(() => {
                     {t("study-btn")}
                   </Link>
                       </li>
-                <li tabIndex="0" className={styles.under}>
+
+                <li tabIndex="0" 
+                onKeyUp={handleEnterKeyPress}
+                className={styles.under}>
                   <ScrollLink 
+                  
                   to="helpUsGrow" 
                   smooth={true} 
                   duration={500} 
