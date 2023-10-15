@@ -49,6 +49,9 @@
         align-items: center;
         margin-bottom: 50px;
 
+        @include mq(not-desktop) {
+            transform: translateX(25px);
+        }
         @include mq(desktop) {
             align-items: start;
             padding-top: 58px;
@@ -225,9 +228,8 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;
     color: $color-light-grey;
-
+    align-items: center;
     @include mq(desktop) {
         position: absolute;
         align-items: flex-start;
@@ -236,7 +238,11 @@
     }
     &__list{
         display: flex;
+        align-self: flex-start;
         align-items: center;
+        @include mq(not-desktop) {
+            transform: translateX(8px);    
+        }
     }
     &__listLow{
         display: flex;
@@ -289,7 +295,7 @@
     }
     &__link {
         font-family: Arial;
-        font-size: 8px;
+        font-size: 7px;
         line-height: normal;
         outline: none;
         transition: color $transition-duration $timing-function;
