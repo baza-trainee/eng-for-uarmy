@@ -14,6 +14,7 @@
     width: $desktop;
     margin: 0 auto;
     padding: 100px $section-padding 0;
+    position: relative;
 }
 
 .descWrap{
@@ -83,8 +84,8 @@ width: 360px;
     align-items: center;
     width: 739px;
     height: auto;
-    padding: 54px 0 44px 131px;
-    margin: 24px auto 56px; 
+    padding: 57px 0 58px 131px;
+    margin: 24px 0 100px 0; 
 }
 
 .cardSVG{
@@ -92,6 +93,7 @@ width: 360px;
     top: 0px;
     right:0px;
     pointer-events: none;
+    height: auto;
   }
 
 .cardSVGEn{
@@ -100,7 +102,6 @@ width: 360px;
     bottom: 0;
     right:0px;
     pointer-events: none;
-    margin-bottom: 56px;
 }
 
 .bankDetailstitle {

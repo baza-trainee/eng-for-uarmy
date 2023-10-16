@@ -47,16 +47,16 @@ const DonateSection = () => {
             </>
              ) : (
             <>
-            <Image className={styles.cardSVGEn} src='../outline.svg' alt='card border' width={740} height={580}/>
+            <Image className={styles.cardSVGEn} src='/outline.svg' alt='card border' width={740} height={682}/>
             <h1 className={styles.bankDetailstitle}>{b("title")}</h1>
             <p className={styles.bankDetailsText}>{b("p-1")}</p>
+            <p className={styles.bankDetailsText}>{b("p-02")}</p>
             <p className={styles.bankDetailsText}><span>{b("p-2-1")}</span><p>{b("p-2-2")}</p></p>
             <p className={styles.bankDetailsText}>{b("p-3-1")}<div style={{width: "230px"}}>{b("p-3-2")}</div></p>
             <p className={styles.bankDetailsText}>{b("p-4")}</p>
             <p className={styles.bankDetailsText}>{b("p-5")}</p>
-            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-6-1")}<br/>{b("p-6-2")}</p>
-            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>{b("p-6-1")}<br/>{b("p-6-2")}</p>
-
+            <p className={styles.bankDetailsText}>{b("p-6-1")}</p>
+            <p className={styles.bankDetailsText}>{b("p-6-2")}</p>
             <p className={styles.bankDetailsText}>{b("p-7")}</p>
             </>
             )}
