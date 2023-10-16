@@ -226,10 +226,10 @@
 
 .policy {
     display: flex;
-    justify-content: center;
+    transform: translateX(4%);
     flex-direction: column;
     color: $color-light-grey;
-    align-items: center;
+    align-items: flex-start;
     @include mq(desktop) {
         position: absolute;
         align-items: flex-start;
@@ -238,11 +238,7 @@
     }
     &__list{
         display: flex;
-        align-self: flex-start;
         align-items: center;
-        @include mq(not-desktop) {
-            transform: translateX(8px);    
-        }
     }
     &__listLow{
         display: flex;
