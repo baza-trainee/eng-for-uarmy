@@ -70,7 +70,7 @@ const Slider = ({ authors }) => {
             className={styles.reviewImg}
             src={photo}
             alt={name}
-            width={170}
+            width={169}
             height={170}
             loading="lazy"
           />
