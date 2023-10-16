@@ -41,7 +41,7 @@
 }
 
 .imageContainer{
-  width: 360px;
+  width: 359px;
   height: 255px;
   overflow: hidden;
 }
@@ -104,9 +104,9 @@
     transform: translateX(-50%);
     justify-self: end;
     display: flex;
-    padding: 16px ;
+    padding: 16px 5px;
     font-family: inherit;
-    font-size: 16px;
+    font-size: 16px ;
     justify-content: center;
     width: 240px;
     border: 3px solid transparent;
@@ -129,7 +129,7 @@
   @media (min-width: $mobile) and (max-width: 1279.5px){
 
     .withMargin {
-      margin: 50px; 
+      margin-top: 50px; 
     }
     .ourProjects{
       padding-top: 0;
@@ -211,7 +211,7 @@
     .cardButton {
       bottom: 38px;
       position: absolute;
-      width: 130px;
+      width: 132px;
       padding: 12px;
       justify-content: center;
       align-items: center;
