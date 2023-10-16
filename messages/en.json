@@ -160,6 +160,7 @@
   "bankDetails": {
     "title": "Bank details",
     "p-1": "Charity foundation \"OSVITUM\"",
+    "p-02": "Code 44946920",
     "p-2-1": "USD",
     "p-2-2": "IBAN Code: UA103510050000026007879183310",
     "p-3-1": "Name of the bank: JSC UKRSIBBANK,",
