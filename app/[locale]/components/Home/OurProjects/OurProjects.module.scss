@@ -41,7 +41,7 @@
 }
 
 .imageContainer{
-  width: 360px;
+  width: 359px;
   height: 255px;
   overflow: hidden;
 }
@@ -108,7 +108,7 @@
     font-family: inherit;
     font-size: 16px;
     justify-content: center;
-    width: 240px;
+    width: 247px;
     border: 3px solid transparent;
     color: $color-white-text;
     background-color: $color-olive;
@@ -129,7 +129,7 @@
   @media (min-width: $mobile) and (max-width: 1279.5px){
 
     .withMargin {
-      margin: 50px; 
+      margin-top: 50px; 
     }
     .ourProjects{
       padding-top: 0;
@@ -211,7 +211,7 @@
     .cardButton {
       bottom: 38px;
       position: absolute;
-      width: 130px;
+      width: 132px;
       padding: 12px;
       justify-content: center;
       align-items: center;
