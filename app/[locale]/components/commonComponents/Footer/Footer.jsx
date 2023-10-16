@@ -110,11 +110,11 @@ const Footer = () => {
 
         <div className={styles.policy}>
           <div className={styles.policy__list}>
-            <Link href={`/`} className={styles.policy__link}>{t("policy-right")}</Link>
+            <Link href="https://drive.google.com/file/d/1s33dCUyC7qvX4DWRvviHjv8XT_kfJ4V8/view" target="_blank" rel="noopener noreferrer" aria-label="Open youtube channel of Eng for uarmy" className={styles.policy__link}>{t("policy-right")}</Link>
               <span className={styles.policy__divider}></span>
-            <Link href={`/`} className={styles.policy__link}>{t("statute")}</Link>
-              <span className={styles.policy__divider}></span>
-            <Link href={`/`} className={styles.policy__link}>{t("report")}</Link>
+            <Link href="https://docs.google.com/document/d/1_DN5eZn3Z8DSYDiBbfgR9flGV8dONvbX/edit" target="_blank" rel="noopener noreferrer" aria-label="Open conditions of use of Eng for uarmy" className={styles.policy__link}>{t("statute")}</Link>
+              {/* <span className={styles.policy__divider}></span>
+            <Link href={`/`} className={styles.policy__link}>{t("report")}</Link> */}
 
           </div>
           <div className={styles.policy__listLow}>
