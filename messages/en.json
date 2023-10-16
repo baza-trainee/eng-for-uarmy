@@ -170,8 +170,8 @@
     "p-4": "Bank SWIFT Code: KHABUA2K",
     "p-5": "Сorrespondent bank: acc. 020061151200138",
     "p-6": "BNP PARIBAS U.S.A. - New York Branch New York , USA",
-    "p-6-1mobile": "BNP PARIBAS U.S.A. - New York Branch", 
-    "p-6-2mobile": "New York , USA",
+    "p-6-1": "BNP PARIBAS U.S.A. - New York Branch", 
+    "p-6-2": "New York , USA",
     "p-7": "Bank SWIFT Code: BNPAUS3N"
   },
   "404": {
