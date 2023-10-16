@@ -54,8 +54,8 @@ const DonateSection = () => {
             <p className={styles.bankDetailsText}>{b("p-3-1")}<div style={{width: "230px"}}>{b("p-3-2")}</div></p>
             <p className={styles.bankDetailsText}>{b("p-4")}</p>
             <p className={styles.bankDetailsText}>{b("p-5")}</p>
-            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-6")}</p>
-            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>{b("p-6-1mobile")}<br/>{b("p-6-2mobile")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-6-1")}<br/>{b("p-6-2")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>{b("p-6-1")}<br/>{b("p-6-2")}</p>
 
             <p className={styles.bankDetailsText}>{b("p-7")}</p>
             </>
