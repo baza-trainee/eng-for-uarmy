@@ -32,10 +32,7 @@
     "desc": "Read what some of our Military English learners have said about our course.",
     "review-1": "The project is adapted to the requirements and opportunities that currently limit the military in learning the language: minimum time, maximum information. The presentation of the material is interesting - in a combined way: the main part is in an understandable native language, and the terms are provided in English in a relaxed but rich way. It is definitely useful, very relevant, and I often recommend it. Comparison with national realities is important, which improves understanding of the new material. I am sincerely grateful to Ms. Olena for her efforts, creativity and approach.",
     "name-1": "Natalia,",
-    "role-1": "Head of the Educational and Research Center for Foreign Languages",
-    "review-2": "The project is adapted to the requirements and opportunities that currently limit the military in learning the language: minimum time, maximum information. The presentation of the material is interesting - in a combined way: the main part is in an understandable native language, and the terms are provided in English in a relaxed but rich way.",
-    "name-2": "Natalia,",
-    "role-2": "Head of the Educational and Research Center for Foreign Languages"
+    "role-1": "Head of the Educational and Research Center for Foreign Languages"
   },
   "OurProjects": {
     "title": "Our projects",
@@ -170,6 +167,8 @@
     "p-4": "Bank SWIFT Code: KHABUA2K",
     "p-5": "Сorrespondent bank: acc. 020061151200138",
     "p-6": "BNP PARIBAS U.S.A. - New York Branch New York , USA",
+    "p-6-1mobile": "BNP PARIBAS U.S.A. - New York Branch",
+    "p-6-2mobile": "New York , USA",
     "p-6-1": "BNP PARIBAS U.S.A. - New York Branch", 
     "p-6-2": "New York , USA",
     "p-7": "Bank SWIFT Code: BNPAUS3N"

@@ -56,15 +56,14 @@
 	}
 
 	@media screen and (min-width: $desktop) {
-		width: 100%;
-		margin-left: 84px;
-		margin-right: 20px;
+		margin-left: 83px;
 	}
 }
 
 .reviewWrapper {
 	@media screen and (min-width: $desktop) {
-		margin-right: 84px;
+		margin-left: 20px;
+		margin-right: 86px;
 	}
 }
 
