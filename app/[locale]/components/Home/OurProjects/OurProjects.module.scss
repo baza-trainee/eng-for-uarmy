@@ -2,6 +2,9 @@
 @import '../../../styles/variables.module';
 @import '../../../styles/utils.module';
 
+.withMargin {
+  margin: 0; 
+}
 
   .ourProjects{
     margin: 0 auto;
@@ -25,6 +28,7 @@
   .our_projects_card{
     margin-left: 21px;
     width: 360px;
+    height: 610px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -38,7 +42,7 @@
 
 .imageContainer{
   width: 360px;
-  height: 205px;
+  height: 255px;
   overflow: hidden;
 }
 
@@ -70,17 +74,17 @@
   .cardHead{
     color: var(--black, #171717);
     text-align: center;
-    font-size: 28px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 400;
-    min-height: 104px;
-    line-height: 34px; /* 121.429% */
+    min-height: 54px;
+    line-height: 27px; /* 121.429% */
     letter-spacing: 0.35px;
   }
 
   .cardText{
     position: relative;
-    width: 287px;
+    width: 290px;
     color: var(--grey, #8B8B8B);
     margin-top: 16px;
     text-align: center;
@@ -89,34 +93,22 @@
     font-style: normal;
     font-weight: 400;
     line-height: 27px;
-    
   }
+ 
 
-  .cardText2{
-    width: 287px;
-    color: var(--grey, #8B8B8B);
-    margin-top: 16px;
-    text-align: center;
-    font-family: Arial;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 27px;
-    
-  }
 
   .cardButton {
     position: absolute;
-    bottom: 24px;
+    bottom: 32px;
     left: 50%;
     transform: translateX(-50%);
     justify-self: end;
     display: flex;
-    padding: 16px 38px;
+    padding: 16px ;
     font-family: inherit;
     font-size: 16px;
     justify-content: center;
-    width: 208px;
+    width: 240px;
     border: 3px solid transparent;
     color: $color-white-text;
     background-color: $color-olive;
@@ -136,6 +128,9 @@
 
   @media (min-width: $mobile) and (max-width: 1279.5px){
 
+    .withMargin {
+      margin: 50px; 
+    }
     .ourProjects{
       padding-top: 0;
       padding-bottom: 20px;
@@ -150,6 +145,7 @@
 
     .imageContainer{
       width: 288px;
+      height: 255px;
       overflow: hidden;
       
     }
@@ -165,7 +161,7 @@
     .our_projects_card{
       display: flex;
       width: 288px;
-      height: 612px;
+      height: 568px;
       align-items: center;
       flex-direction: column;
       padding-bottom:45px;
@@ -184,6 +180,7 @@
     
     }
     .textCont{
+      padding: 20px 8px;
       position: relative;
       height: calc(612px - 205px);
   
@@ -192,14 +189,13 @@
   
     .cardHead{
       margin-top: 0;
-      min-height: 72px;
-      font-size: 20px;
-      line-height: normal;
+      font-size: 16px;
+      line-height: 27px;
     }
   
     .cardText{
       width: 217px;
-      margin-top: 20px;
+      margin-top: 28px;
       font-size: 13px;
       line-height: 150%;
   
@@ -213,6 +209,7 @@
     }
   
     .cardButton {
+      bottom: 38px;
       position: absolute;
       width: 130px;
       padding: 12px;

@@ -13,6 +13,8 @@ const OurProjects = () => {
    const locale = useLocale();
    const t = useTranslations("OurProjects");
    const [isLargeScreen, setIsLargeScreen] = useState(typeof window !== 'undefined' && window.innerWidth >= 1280);
+   const isEnglish = locale === 'en'; 
+  const sectionStyles = isEnglish ? styles.withMargin : '';
     
     useEffect(() => {
         const handleWindowResize = () => {
@@ -30,7 +32,7 @@ const OurProjects = () => {
     return (
       <>
           <span className={styles.anchor} id='ourProjects'></span>
-          <section className={styles.ourProjects}>
+          <section className={`${styles.ourProjects} ${sectionStyles}`}> 
             <div className={styles.ourProjectsContainer}>
               <h2 className={styles.head}>{t("title")}</h2>
              
