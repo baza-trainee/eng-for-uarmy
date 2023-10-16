@@ -1,11 +1,13 @@
 "use client";
-import { useTranslations} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Image from 'next/image';
 import styles from './donateSection.module.scss';
 import Link from 'next/link';
 
 const DonateSection = () => {
     const t = useTranslations("Contact us");
+    const b = useTranslations("bankDetails");
+    const locale = useLocale();
 
  return <section className={styles.pageContainer}>
     <div className={styles.sectionWrap}>
@@ -30,16 +32,34 @@ const DonateSection = () => {
                 </Link>
             </div>
         </div>
-        <div className={styles.bankDetails}>
-            <Image className={styles.cardSVG} src='../outlineBorders.svg' alt='card border' width={739} height={373}/>
-            <h1 className={styles.bankDetailstitle}>{t("bankDetails")}</h1>
-            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>Отримувач: БО «Благодійний фонд «ОСВІТУМ»</p>
-            <p className={`${styles.bankDetailsText} ${styles.firstParagraphTextMobile}`}>Отримувач:<br/> БО «Благодійний фонд «ОСВІТУМ»</p>
-            <p className={styles.bankDetailsText}>КОД ЄДРПОУ 44966920</p>
-            <p className={styles.bankDetailsText}>БАНК  УКРСИББАНК: п/р <br /> UA373510050000026007879183309</p>
-            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>Призначення: благодійний внесок</p>
-            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>Призначення:<br/> благодійний внесок</p>
         </div>
+        <div className={styles.bankDetails}>
+        {locale === "uk" ? (
+            <>
+            <Image className={styles.cardSVG} src='../outlineBorders.svg' alt='card border' width={739} height={361}/>
+            <h1 className={styles.bankDetailstitle}>{b("title")}</h1>
+            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-1-title")}{b("p-1-desc")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.firstParagraphTextMobile}`}>{b("p-1-title")}{b("p-1-desc")}</p>
+            <p className={styles.bankDetailsText}>{b("p-2-title")} {b("p-2-desc")}</p>
+            <p className={styles.bankDetailsText}>{b("p-3-title")} <br /> {b("p-3-desc")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-4-title")}{b("p-4-desc")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>{b("p-4-title")}<br/> {b("p-4-desc")}</p>
+            </>
+             ) : (
+            <>
+            <Image className={styles.cardSVGEn} src='../outline.svg' alt='card border' width={740} height={580}/>
+            <h1 className={styles.bankDetailstitle}>{b("title")}</h1>
+            <p className={styles.bankDetailsText}>{b("p-1")}</p>
+            <p className={styles.bankDetailsText}><span>{b("p-2-1")}</span><p>{b("p-2-2")}</p></p>
+            <p className={styles.bankDetailsText}>{b("p-3-1")}<div style={{width: "230px"}}>{b("p-3-2")}</div></p>
+            <p className={styles.bankDetailsText}>{b("p-4")}</p>
+            <p className={styles.bankDetailsText}>{b("p-5")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textDesktop}`}>{b("p-6")}</p>
+            <p className={`${styles.bankDetailsText} ${styles.textMobile}`}>{b("p-6-1mobile")}<br/>{b("p-6-2mobile")}</p>
+
+            <p className={styles.bankDetailsText}>{b("p-7")}</p>
+            </>
+            )}
     </div>
     </section>
 };

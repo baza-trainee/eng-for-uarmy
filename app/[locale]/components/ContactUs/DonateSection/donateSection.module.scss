@@ -13,7 +13,7 @@
 .sectionWrap{
     width: $desktop;
     margin: 0 auto;
-    padding: 100px $section-padding 100px;
+    padding: 100px $section-padding 0;
 }
 
 .descWrap{
@@ -78,12 +78,13 @@ width: 360px;
     margin: 25px 28px 28px 56px;
 }
 
-.bankDetails {
+.bankDetails{
     position: relative;
+    align-items: center;
     width: 739px;
-    height: 373px;
-    padding: 57px 0 58px 131px;
-    margin: 40px 271px 0px 191px; 
+    height: auto;
+    padding: 54px 0 44px 131px;
+    margin: 24px auto 56px; 
 }
 
 .cardSVG{
@@ -92,6 +93,15 @@ width: 360px;
     right:0px;
     pointer-events: none;
   }
+
+.cardSVGEn{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right:0px;
+    pointer-events: none;
+    margin-bottom: 56px;
+}
 
 .bankDetailstitle {
     font-size: 18px;
@@ -187,13 +197,16 @@ width: 360px;
     }
     .bankDetails{
         width: 288px;
-        height: 257px;
+        height: auto;
         margin: 20px 0 0 0;
         padding: 20px 0 31px 12px;
         border: 1px solid $color-black;
         display: block;
     }
     .cardSVG{
+        display: none;
+    }
+    .cardSVGEn{
         display: none;
     }
     .bankDetailstitle {
