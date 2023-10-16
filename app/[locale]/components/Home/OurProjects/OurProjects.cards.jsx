@@ -35,7 +35,7 @@ export const Project2 = ({t, locale, isLargeScreen})=>{
                 <div className={styles.textCont}> 
                     <h3 className={styles.cardHead}>{t("practice")}</h3>
                     <p className={styles.cardText}>{t("practice-desc")}</p>
-                    <Link href={`/${locale}`} className={styles.cardButton} style={{ visibility: 'hidden' }}>{t("learnMore")} </Link>
+                    <Link href={`/${locale}`} className={styles.cardButton} tabIndex={-1}  style={{backgroundColor:'#D9D9D9', pointerEvents: 'none', opacity: 0.5 }}>{t("mobileApp-desc2")} </Link>
                 </div>
         </div>
     )
@@ -52,8 +52,7 @@ export const Project3 = ({t, locale, isLargeScreen})=>{
                     <div className={styles.textCont}>
                     <h3 className={styles.cardHead}>{t("mobileApp")}</h3>
                     <p className={styles.cardText}>{t("mobileApp-desc")}</p>
-                    <p className={styles.cardText2}>{t("mobileApp-desc2")}</p>
-                    <Link href={`/${locale}`} className={styles.cardButton} style={{ visibility: 'hidden' }}>{t("learnMore")}</Link>
+                    <Link href={`/${locale}`} className={styles.cardButton} tabIndex={-1}  style={{ backgroundColor:'#D9D9D9', pointerEvents: 'none', opacity: 0.5 }}>{t("mobileApp-desc2")}</Link>
                 </div>
         </div>
     )
