@@ -6,7 +6,7 @@ import Image from 'next/image';
 const MemberList = () => {
     const t = useTranslations("OurTeam");
 
-    const members = Array.from({ length: 17 }, (_, idx) => ({
+    const members = Array.from({ length: 24 }, (_, idx) => ({
         id: idx + 1,
         photo: `/team/member-${String(idx + 1).padStart(2, '0')}.webp`,
         name: t(`name-${idx + 1}`),
@@ -19,7 +19,6 @@ const MemberList = () => {
                 <li key={id} className={styles.members__item}>
                     <Image
                         src={photo}
-                        // srcSet={`${isDesktop ? photoDes : photoMob} 1x, ${isDesktop ? photoDesRet : photoMobRet} 2x`}
                         alt={name}
                         width={130}
                         height={150}
