@@ -119,7 +119,8 @@ const ContactForm = ({ action }) => {
   return (
     <>
       {!isSubmit
-        ? (<form className={styles.form} onSubmit={handleSubmit}>
+        ? (<form className={styles.form} onSubmit={handleSubmit}
+          autoComplete="off">
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
               <CustomSelect action={action}
