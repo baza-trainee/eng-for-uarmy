@@ -13,6 +13,7 @@ export default function useLocalStorage(key, defaultValue) {
 
   useEffect(() => {
     if (isBrowser) {
+      console.log(`Setting ${key} in local storage: `, state);
       window.localStorage.setItem(key, JSON.stringify(state));
     }
   }, [key, state, isBrowser]);
