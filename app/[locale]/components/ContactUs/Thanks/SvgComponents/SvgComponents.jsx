@@ -46,9 +46,9 @@ export const BorderBackSvg = () => {
   return (
     <svg
       className={styles.borderBack}
-      width="236"
-      height="92"
-      viewBox="0 0 236 92"
+      //   width="236"
+      //   height="92"
+      viewBox="0 -0.5 237 93.5"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
@@ -58,6 +58,7 @@ export const BorderBackSvg = () => {
         d="M0.5 0.5H235.5V91.5H36.2071L0.5 55.7929V0.5Z"
         stroke="#231F20"
         vectorEffect="non-scaling-stroke"
+        overflow="visible"
       />
     </svg>
   );
@@ -68,9 +69,9 @@ export const BorderBackSvgMobile = () => {
     <svg
       className={styles.borderBackMobile}
       xmlns="http://www.w3.org/2000/svg"
-      width="200"
-      height="50"
-      viewBox="0 0 200 50"
+      //   width="200"
+      //   height="50"
+      viewBox="0 -0.5 200.5 50.5"
       fill="none"
     >
       <path
@@ -78,6 +79,7 @@ export const BorderBackSvgMobile = () => {
         d="M0.5 29.7929V0.5H199.5V49.5H20.2071L0.5 29.7929Z"
         stroke="#231F20"
         vectorEffect="non-scaling-stroke"
+        overflow="visible"
       />
     </svg>
   );

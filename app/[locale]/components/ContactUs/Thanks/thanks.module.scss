@@ -82,7 +82,7 @@
 .btnBackWrapper {
 	position: relative;
 	margin: 0 auto;
-	max-width: 200px;
+	width: 200px;
 
 	&:focus {
 		outline: none;
@@ -91,7 +91,7 @@
 	}
 
 	@media screen and (min-width: $desktop) {
-		max-width: 236px;
+		width: 236px;
 	}
 }
 
@@ -119,14 +119,12 @@
 	}
 
 	@media screen and (min-width: $mobile) and (max-width: 1279.98px) {
-		width: 200px;
 		height: 50px;
 		font-size: 13px;
-		--size-corner: 20px;
+		--size-corner: 21px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		width: 236px;
 		height: 92px;
 		font-size: 22px;
 		--size-corner: 36px;
