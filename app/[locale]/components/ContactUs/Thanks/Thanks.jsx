@@ -2,9 +2,7 @@
 import { useTranslations } from "next-intl";
 import Link from "next/link";
 import Image from "next/image";
-import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
-import recieveIconImg from "../../../../../public/thanks/recieve_ic_desktop.svg";
-import styles from "./thanks.module.scss";
+
 import {
   ArrowLeftSvg,
   ArrowLeftSvgMobile,
@@ -12,8 +10,20 @@ import {
   BorderBackSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
+import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
+import recieveIconImg from "../../../../../public/thanks/recieve_ic_desktop.svg";
+
+import styles from "./thanks.module.scss";
+
 const Thanks = ({ setIsSubmit }) => {
   const t = useTranslations("Contact us");
+
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      e.preventDefault();
+      setIsSubmit(false);
+    }
+  };
 
   return (
     <div className={styles.thanksWrapper}>
@@ -36,14 +46,19 @@ const Thanks = ({ setIsSubmit }) => {
       <h2 className={styles.title}>{t("thanks")}</h2>
       <p className={styles.text}>{t("getBack")}</p>
 
-      <div className={styles.btnBackWrapper} tabIndex="1">
+      <div
+        className={styles.btnBackWrapper}
+        tabIndex="1"
+        onKeyDown={handleKeyDown}
+      >
         <BorderBackSvgMobile />
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
-          href=''
+          href=""
           onClick={() => setIsSubmit(false)}
-          aria-label="Back button">
+          aria-label="Back button"
+        >
           <ArrowLeftSvgMobile />
           <ArrowLeftSvg />
           {t("back")}
