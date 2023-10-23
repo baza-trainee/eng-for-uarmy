@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
 const CustomSelect = ({ action, requestType, setRequestType }) => {
+  const [selectedOption, setSelectedOption] = useState(requestType);
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Contact us");
 
@@ -48,17 +49,15 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
   const handleKeyDown = (e) => {
     if (isOpen) {
       if (e.key === "ArrowDown") {
-        e.preventDefault();
-        const currentIndex = options.findIndex((option) => option.label === requestType);
+        const currentIndex = options.findIndex((option) => option.label === selectedOption);
         const nextIndex = (currentIndex + 1) % options.length;
-        setRequestType(options[nextIndex].label);
+        setSelectedOption(options[nextIndex].label);
       } else if (e.key === "ArrowUp") {
-        e.preventDefault();
-        const currentIndex = options.findIndex((option) => option.label === requestType);
+        const currentIndex = options.findIndex((option) => option.label === selectedOption);
         const nextIndex = (currentIndex - 1 + options.length) % options.length;
-        setRequestType(options[nextIndex].label);
+        setSelectedOption(options[nextIndex].label);
       } else if (e.key === "Enter") {
-        setIsOpen(false);
+        setRequestType(selectedOption);
         setIsOpen(!isOpen);
       }
     }
@@ -87,8 +86,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
       {isOpen && (
         <ul className={styles.options}
           tabIndex='0'
-          onKeyDown={handleKeyDown}
-          >
+          onKeyDown={handleKeyDown}>
           {options.map((option) => (
             <li key={option.label}
               tabIndex='0'
