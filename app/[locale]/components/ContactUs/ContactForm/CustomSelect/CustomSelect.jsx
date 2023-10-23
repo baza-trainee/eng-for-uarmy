@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState, useMemo } from "react";
+import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
@@ -42,7 +42,26 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
 
   const handleOptionClick = (label) => {
     setRequestType(label)
-    setIsOpen(false);
+    setIsOpen(!isOpen);
+  };
+
+  const handleKeyDown = (e) => {
+    if (isOpen) {
+      if (e.key === "ArrowDown") {
+        e.preventDefault();
+        const currentIndex = options.findIndex((option) => option.label === requestType);
+        const nextIndex = (currentIndex + 1) % options.length;
+        setRequestType(options[nextIndex].label);
+      } else if (e.key === "ArrowUp") {
+        e.preventDefault();
+        const currentIndex = options.findIndex((option) => option.label === requestType);
+        const nextIndex = (currentIndex - 1 + options.length) % options.length;
+        setRequestType(options[nextIndex].label);
+      } else if (e.key === "Enter") {
+        setIsOpen(false);
+        setIsOpen(!isOpen);
+      }
+    }
   };
 
   const changeStyle = requestType !== t("type");
@@ -66,7 +85,10 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
       </div>
 
       {isOpen && (
-        <ul className={styles.options}>
+        <ul className={styles.options}
+          tabIndex='0'
+          onKeyDown={handleKeyDown}
+          >
           {options.map((option) => (
             <li key={option.label}
               tabIndex='0'
