@@ -53,31 +53,32 @@ const ContactForm = ({ action }) => {
     },
     validationSchema: yup.object().shape({
       name: yup
-          .string()
-          .trim()
-          .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ]+$/, t("alphabet"))
-          .min(2, t("min"))
-          .max(50, t("max50"))
-          .required( t("requiredName") ),
+        .string()
+        .trim()
+        .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ]+$/, t("alphabet"))
+        .min(2, t("min"))
+        .max(50, t("max50"))
+        .required( t("requiredName") ),
       email: yup
-          .string()
-          .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
-              t("invalid"))
-          .test('no-cyrillic', t("invalid"), function (value) {
-              if (value) {
-                  const domain = value.split('@')[1];
-                  const cyrillicRegex = /[а-яА-ЯіІїЇґҐёЁєЄ]/;
-                  return !cyrillicRegex.test(domain);
-              }
-              return true;
-          })
-          .max(50, t("max50"))
-          .required( t("requiredEmail") ),
+        .string()
+        .matches(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+          t("invalid"))
+        .test('no-cyrillic', t("invalid"), function (value) {
+          if (value) {
+            const domain = value.substring(value.lastIndexOf('@') + 1);
+            const secondDomain = domain.split('.')[0];
+            const latinRegex = /^[a-zA-Z]+$/;
+            return latinRegex.test(secondDomain);
+          }
+          return true;
+        })
+        .max(50, t("max50"))
+        .required( t("requiredEmail") ),
       request: yup
-          .string()
-          .trim()
-          .max(2000, t("max2000"))
-          .required(t("requiredRequest")),
+        .string()
+        .trim()
+        .max(2000, t("max2000"))
+        .required(t("requiredRequest")),
       }),
     onSubmit: async ({ name, email, request }, { resetForm }) => {
       try {
