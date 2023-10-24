@@ -4,10 +4,31 @@
 .select {
   position: relative;
   margin-bottom: 30px;
+
   @include mq(desktop) {
     width: 360px;
     height: 75px;
     margin-bottom: 60px;
+  }
+
+  &:focus{
+    outline: none;
+  }
+
+  &:focus .select__label{
+    font-size: 10px;
+    line-height: 1.2;
+    -webkit-transform: translateY(-13px);
+    -moz-transform: translateY(-13px);
+    transform: translateY(-13px);
+    
+    @include mq(desktop) {
+      font-size: 18px;
+      line-height: 1.5;
+      -webkit-transform: translateY(-32px);
+      -moz-transform: translateY(-32px);
+      transform: translateY(-32px);
+    }
   }
 
   &__trigger {
@@ -23,7 +44,7 @@
     font-size: 13px;
     font-weight: 700;
     line-height: 1.5;
-  
+
     color: $color-grey;
   
     @include mq(desktop) {
@@ -39,38 +60,49 @@
     }
   }
 
-  &__selected {
-    color: $color-black;
+  &__label{
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    transform: translateY(0);
+    
+    transition: transform $transition-duration $timing-function;
   }
 
-  &__btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
+  &__labelUp{
+    font-size: 10px;
+    line-height: 1.2;
+    -webkit-transform: translateY(-13px);
+    -moz-transform: translateY(-13px);
+    transform: translateY(-13px);
 
+    transition: transform $transition-duration $timing-function;
+    
+    @include mq(desktop) {
+      font-size: 18px;
+      line-height: 1.5;
+      -webkit-transform: translateY(-32px);
+      -moz-transform: translateY(-32px);
+      transform: translateY(-32px);
+    }
+  }
+
+  &__selected {
     color: $color-black;
-    background-color: transparent;
-    transition: color $transition-duration $timing-function;
-
-    &:hover{
-      color: $color-green;
-    }
-
-    &:focus{
-      outline: none;
-    }
   }
 
   &__icon {
     width: 25px;
     height: 25px;
-    stroke: currentColor;
+    stroke: $color-black;
+    transition: stroke $transition-duration $timing-function;
   
     @include mq(desktop) {
       width: 32px;
       height: 32px;
+    }
+
+    &:hover {
+      stroke: $color-green;
     }
   }
 }
