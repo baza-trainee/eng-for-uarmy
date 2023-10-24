@@ -63,8 +63,6 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
     }
   };
 
-  const changeStyle = requestType !== t("type");
-
   return (
     <div className={styles.select} tabIndex='0'>
       <div onClick={toggleDropdown}
@@ -72,8 +70,8 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
         <div>
           <p className={!requestType ? styles.select__label : styles.select__labelUp}>{t("type")}</p>
 
-          {requestType &&
-            <p className={`${changeStyle && styles.select__selected}`}>{requestType}</p>}
+          {requestType && requestType !== t("type") &&
+            <p className={styles.select__selected}>{requestType}</p>}
         </div>
         
         {!isOpen

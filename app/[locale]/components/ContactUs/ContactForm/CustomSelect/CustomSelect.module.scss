@@ -71,18 +71,13 @@
   &__labelUp{
     font-size: 10px;
     line-height: 1.2;
-    -webkit-transform: translateY(-13px);
-    -moz-transform: translateY(-13px);
-    transform: translateY(-13px);
-
-    transition: transform $transition-duration $timing-function;
+    position: absolute;
+    top: 0;
+    left: 0;
     
     @include mq(desktop) {
       font-size: 18px;
       line-height: 1.5;
-      -webkit-transform: translateY(-32px);
-      -moz-transform: translateY(-32px);
-      transform: translateY(-32px);
     }
   }
 
