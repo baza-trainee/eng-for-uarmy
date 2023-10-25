@@ -48,13 +48,14 @@ const Thanks = ({ setIsSubmit }) => {
 
       <div
         className={styles.btnBackWrapper}
-        tabIndex="1"
+        tabIndex="0"
         onKeyDown={handleKeyDown}
       >
         <BorderBackSvgMobile />
         <BorderBackSvg />
         <Link
           className={styles.btnBack}
+          tabIndex="1"
           href=""
           onClick={() => setIsSubmit(false)}
           aria-label="Back button"
