@@ -30,9 +30,15 @@
   "Feedback": {
     "title": "Testimonials",
     "desc": "Read what some of our Military English learners have said about our course.",
-    "review-1": "The project is adapted to the requirements and opportunities that currently limit the military in learning the language: minimum time, maximum information. The presentation of the material is interesting - in a combined way: the main part is in an understandable native language, and the terms are provided in English in a relaxed but rich way. It is definitely useful, very relevant, and I often recommend it. Comparison with national realities is important, which improves understanding of the new material. I am sincerely grateful to Ms. Olena for her efforts, creativity and approach.",
-    "name-1": "Natalia,",
-    "role-1": "Head of the Educational and Research Center for Foreign Languages"
+    "review-1": "The project is adapted to the demands and constraints currently limiting the military in language learning: absorbing maximum information in minimum time. The material is presented in an interesting way, combining Ukrainian and English languages: the main part is clearly in the native language while English terms are provided in an unforced yet intensive way. Undoubtedly - it's useful, very relevant, and I recommend its frequent practice. It's important to relate the learning with our current national context, which enhances understanding of new material. I'm sincerely grateful to Ms. Olena for her efforts, creative approach, and creativity.",
+    "name-1": "Natalia",
+    "role-1": "Chief of the Foreign Languages Education and Research Centre",
+    "review-2": "The “Eng for UArmy” project is like an oasis in the desert of illiteracy. When working with soldiers of the Foreign Legion, the response time and successful task execution depend on our collective understanding and interaction. As a commander, it was vital for me to know military English. Thanks to the  “Eng for UArmy” project, I quickly learned critically important information that helped not only survive in the literal sense of the word but also save the lives of those in my unit. It is through projects like these that we will prevail.",
+    "name-2": "Taras",
+    "role-2": "Commander of a Special Purpose Company, International Legion of Defense of Ukraine",
+    "review-3": "ENG for UArmy is a great tool for learning military English. If you want to understand the intricacies of the names of branches of the armed forces, military ranks, equipment and weapons, you have come to the right place. I use this resource personally and also advise my cadets to use it as a source of the most relevant military vocabulary.",
+    "name-3": "Olga Dernyaeva",
+    "role-3": "Professor of the Department of Foreign Languages at the Military Academy (Odesa), employee of the Armed Forces of Ukraine"
   },
   "OurProjects": {
     "title": "Our projects",
@@ -184,7 +190,7 @@
     "p-6": "BNP PARIBAS U.S.A. - New York Branch New York , USA",
     "p-6-1mobile": "BNP PARIBAS U.S.A. - New York Branch",
     "p-6-2mobile": "New York , USA",
-    "p-6-1": "BNP PARIBAS U.S.A. - New York Branch", 
+    "p-6-1": "BNP PARIBAS U.S.A. - New York Branch",
     "p-6-2": "New York , USA",
     "p-7": "Bank SWIFT Code: BNPAUS3N"
   },
