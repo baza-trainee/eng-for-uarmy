@@ -104,8 +104,8 @@ const ContactForm = ({ action }) => {
         
         setActionURL(null);
         setRequestType(null);
-        setSavedValues({ name: '', email: '', request: '' });
         resetForm();
+        setSavedValues({ name: '', email: '', request: '' });
         setIsSubmit(true);
       } catch (err) {
         console.log(err);
