@@ -3,7 +3,7 @@ import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ action, requestType, setRequestType }) => {
+const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   const [selectedOption, setSelectedOption] = useState(requestType);
   const [isOpen, setIsOpen] = useState(false);
   const t = useTranslations("Contact us");
@@ -17,8 +17,8 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
   ], [t]);
 
   useEffect(() => {
-    if (!requestType) {
-      switch (action) {
+    if (!requestType && actionURL) {
+      switch (actionURL) {
         case "volunteer":
         setRequestType(options[0].label);
         break;
@@ -35,7 +35,7 @@ const CustomSelect = ({ action, requestType, setRequestType }) => {
         setRequestType(null);
       }
     }
-  }, [action, options, requestType, setRequestType, t]);
+  }, [actionURL, options, requestType, setRequestType, t]);
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);

@@ -51,7 +51,6 @@
 
     @include mq(desktop) {
       padding-top: 32px;
-      height: 75px;
     }
   }
 
@@ -149,7 +148,7 @@
     &:focus {
       height: 314px;
     }
-  }
+  } 
 
   &__textarea::-webkit-scrollbar {
     width: 5px;

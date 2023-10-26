@@ -13,12 +13,13 @@ import styles from "./ContactForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const ContactForm = ({ action }) => {
+  const [actionURL, setActionURL] = useState(action);
   const [savedValues, setSavedValues] = useLocalStorage('formValues', {
     name:"",
     email: "",
     request: "",
   });
-  const [requestType, setRequestType] = useState( null);
+  const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
   const t = useTranslations("Contact us");
@@ -84,28 +85,27 @@ const ContactForm = ({ action }) => {
       try {
         setIsLoading(true);
 
-        const type = requestType === t("type") ? t("other") : requestType;
-
         // send to Google Sheet
         const formData = new FormData();
         formData.append('Name', name);
         formData.append('Email', email);
         formData.append('Request', request);
-        formData.append('Type of request', type);
+        formData.append('Type of request', requestType || t("other"));
         await sendToGoogleSheet(formData);
 
         // send to email
         const emailData = {
-          requestType: type,
+          requestType: requestType || t("other"),
           name,
           email,
           request,
         };
         await sendEmail(emailData);
         
-        setRequestType(t("type"));
-        setSavedValues({ name: '', email: '', request: '' });
+        setActionURL(null);
+        setRequestType(null);
         resetForm();
+        setSavedValues({ name: '', email: '', request: '' });
         setIsSubmit(true);
       } catch (err) {
         console.log(err);
@@ -124,7 +124,7 @@ const ContactForm = ({ action }) => {
           autoComplete="off">
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
-              <CustomSelect action={action}
+              <CustomSelect actionURL={actionURL}
                 requestType={requestType}
                 setRequestType={setRequestType} />
 
@@ -133,7 +133,7 @@ const ContactForm = ({ action }) => {
                   name="name"
                   value={values.name}
                   placeholder={t("name")}
-                  debounceTimeout={500}
+                  debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.name && touched.name && styles.form__inputError}`} />
@@ -150,7 +150,7 @@ const ContactForm = ({ action }) => {
                   name="email"
                   value={values.email}
                   placeholder={t("email")}
-                  debounceTimeout={500}
+                  debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
@@ -164,12 +164,12 @@ const ContactForm = ({ action }) => {
             </div>
 
             <div>
-              <label className={`${styles.form__field} ${styles.form__fieldTextarea}`}>
+              <label className={styles.form__field}>
                 <DebounceInput element="textarea"
                   name="request"
                   value={values.request}
                   placeholder={t("tellUs")}
-                  debounceTimeout={500}
+                  debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
                   onInput={handleInput}
