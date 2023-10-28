@@ -6,6 +6,7 @@ import styles from "./CustomSelect.module.scss";
 const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   const [selectedOption, setSelectedOption] = useState(requestType);
   const [isOpen, setIsOpen] = useState(false);
+  const selectRef = useRef(null);
   const t = useTranslations("Contact us");
 
   const options = useMemo(() => [
@@ -37,6 +38,24 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
     }
   }, [actionURL, options, requestType, setRequestType, t]);
 
+  useEffect(() => {
+    // Додати обробник подій для слідкування за кліками на документі
+    const handleDocumentClick = (e) => {
+      if (selectRef.current && !selectRef.current.contains(e.target)) {
+        // Клік відбувається поза елементом селекту, закрити селект
+        setIsOpen(false);
+      }
+    };
+
+    // Додати обробник подій при монтуванні компонента
+    document.addEventListener("click", handleDocumentClick);
+
+    // Прибрати обробник подій при розмонтовуванні компонента
+    return () => {
+      document.removeEventListener("click", handleDocumentClick);
+    };
+  }, []);
+
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
@@ -64,7 +83,7 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   };
 
   return (
-    <div className={styles.select} tabIndex='0'>
+    <div className={styles.select} tabIndex='0' ref={selectRef}>
       <div onClick={toggleDropdown}
         className={`${styles.select__trigger} ${isOpen && styles.select__triggerBorder}`}>
         <div>
