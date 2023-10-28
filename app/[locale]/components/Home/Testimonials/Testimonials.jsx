@@ -50,7 +50,7 @@ const Testimonials = () => {
   const locale = useLocale();
   const t = useTranslations("Feedback");
 
-  const authors = Array.from({ length: 1 }, (_, idx) => ({
+  const authors = Array.from({ length: 3 }, (_, idx) => ({
     id: idx + 1,
     photo: `/feedback/author-${String(idx + 1).padStart(2, "0")}.jpg`,
     review: t(`review-${idx + 1}`),
@@ -60,7 +60,8 @@ const Testimonials = () => {
 
   return (
     <section
-      className={`${styles.section} ${locale === "en" ? styles.isNone : ""}`}
+      className={styles.section}
+      //   className={`${styles.section} ${locale === "en" ? styles.isNone : ""}`}
     >
       <div className={styles.container}>
         <div className={styles.titleWrapper}>
