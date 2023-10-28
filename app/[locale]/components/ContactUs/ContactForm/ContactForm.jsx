@@ -44,8 +44,8 @@ const ContactForm = ({ action }) => {
   const handleFocus = (e) => {
     const wrapper = document.querySelector(`.${styles.form__wrapper}`);
     wrapper.style.marginBottom = "60px";
-  }  
-
+  }
+  
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       name: savedValues.name,
