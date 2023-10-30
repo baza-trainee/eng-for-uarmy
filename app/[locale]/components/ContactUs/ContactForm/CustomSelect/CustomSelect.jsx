@@ -39,18 +39,14 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   }, [actionURL, options, requestType, setRequestType, t]);
 
   useEffect(() => {
-    // Додати обробник подій для слідкування за кліками на документі
     const handleDocumentClick = (e) => {
       if (selectRef.current && !selectRef.current.contains(e.target)) {
-        // Клік відбувається поза елементом селекту, закрити селект
         setIsOpen(false);
       }
     };
 
-    // Додати обробник подій при монтуванні компонента
     document.addEventListener("click", handleDocumentClick);
-
-    // Прибрати обробник подій при розмонтовуванні компонента
+    
     return () => {
       document.removeEventListener("click", handleDocumentClick);
     };
