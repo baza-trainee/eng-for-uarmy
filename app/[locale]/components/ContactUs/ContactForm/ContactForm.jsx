@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
@@ -104,8 +104,8 @@ const ContactForm = ({ action }) => {
         
         setActionURL(null);
         setRequestType(null);
-        resetForm();
         setSavedValues({ name: '', email: '', request: '' });
+        resetForm();
         setIsSubmit(true);
       } catch (err) {
         console.log(err);
@@ -120,8 +120,7 @@ const ContactForm = ({ action }) => {
   return (
     <>
       {!isSubmit
-        ? (<form className={styles.form} onSubmit={handleSubmit}
-          autoComplete="off">
+        ? (<form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
               <CustomSelect actionURL={actionURL}
@@ -133,6 +132,7 @@ const ContactForm = ({ action }) => {
                   name="name"
                   value={values.name}
                   placeholder={t("name")}
+                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -150,6 +150,7 @@ const ContactForm = ({ action }) => {
                   name="email"
                   value={values.email}
                   placeholder={t("email")}
+                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -169,6 +170,7 @@ const ContactForm = ({ action }) => {
                   name="request"
                   value={values.request}
                   placeholder={t("tellUs")}
+                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
