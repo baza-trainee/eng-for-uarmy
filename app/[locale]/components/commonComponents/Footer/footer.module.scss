@@ -7,23 +7,24 @@
     &__container {
         position: relative;
         width: $mobile;
-        padding: 0 0 27px;
+        padding: 30px 22px;
         margin: 0 auto;
         overflow: hidden;
     
         @include mq(desktop) {
             display: flex;
             width: $desktop;
-            padding: 10px 50px 62px;
+            padding: 10px 62px 68px 50px;
             color: $color-white;
         }
     }
 
     &__logo{
         display: block;
-        margin: 0 auto;
-        margin-top: -20px;
-
+        margin-top: -60px;
+        @include mq(not-desktop) {
+            margin-left: 28px;
+        }
         @include mq(desktop) {
             margin: 0 325px 0 0;
         }
@@ -46,14 +47,13 @@
     &__follows{
         display: flex;
         flex-direction: column;
-        align-items: center;
         margin-bottom: 50px;
 
         @include mq(not-desktop) {
+            margin-left: 32px;
             transform: translateX(25px);
         }
         @include mq(desktop) {
-            align-items: start;
             padding-top: 58px;
             margin-bottom: 0;
         }
@@ -233,66 +233,46 @@
     @include mq(desktop) {
         position: absolute;
         align-items: flex-start;
-        bottom: 62px;
-        left: 80px;
+        bottom: 32px;
+        left: 70px;
     }
     &__list{
         display: flex;
         align-items: center;
+        margin-bottom: 8px;
     }
-    &__listLow{
-        display: flex;
-        align-items: center;
-        margin-top: 8px;
-        @include mq(desktop) {
-            align-items: baseline;
-        }
-    }
-    &__baza {
+   
+     &__baza {
         font-family: Arial;
-        font-size: 7px;
-        font-weight: 400;
-        line-height: normal;
-        &:focus{
-            outline: none;
-        }
-
+        font-size: 8px;
+        font-weight: 700;
+        line-height: 20px;
+        transition: color $transition-duration $timing-function;
+    
         @include mq(desktop) {
-            font-size: 15px;
+            font-size: 13px;
         }
     }
 
     &__divider {
         display: inline-block;
-        width: 1px;
-        height: 11px;
-        margin: 0 5px;
+        width: 1.5px;
+        height: 8px;
+        margin: 0 3px;
 
         background-color: $color-white-text;
 
         @include mq(desktop) {
-            height: 16px;
-            margin: 0 16px;
+            height: 13px;
+            margin: 0 5px;
         }
-    }
-    &__bold{
+     }
+   
+    &__link {
         font-family: Arial;
         font-size: 8px;
         font-weight: 700;
-        outline: none;
-        transition: color $transition-duration $timing-function;
-        
-        &:hover{
-            color: $color-green;
-        }
-        @include mq(desktop) {
-            font-size: 18px;
-        }
-    }
-    &__link {
-        font-family: Arial;
-        font-size: 7px;
-        line-height: normal;
+        line-height: 20px;
         outline: none;
         transition: color $transition-duration $timing-function;
         
@@ -301,8 +281,15 @@
         }    
 
         @include mq(desktop) {
-            font-size: 12px;
-            line-height: 16px;
+            font-size: 13px;
+        }
+    }
+    &__developed{
+        font-family: Arial;
+        font-size: 8px;
+        line-height: 20px;
+        @include mq(desktop) {
+            font-size: 13px;
         }
     }
 }
