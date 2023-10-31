@@ -114,9 +114,9 @@ const Footer = () => {
             <span className={styles.policy__divider}></span>
             <Link href="https://drive.google.com/file/d/1j7N7I1E70-1ml-oxZj_cUnuVw9YuXtsW/view" target="_blank" rel="noopener noreferrer" aria-label="Open conditions of use of Eng for uarmy" className={styles.policy__link}>{t("statute")}</Link>
              <span className={styles.policy__divider}></span>
-            <Link href={t("policy-right-link")} target="_blank" rel="noopener noreferrer" aria-label="Open youtube channel of Eng for uarmy" className={styles.policy__link}>{t("policy-right")}</Link>
+            <Link href={t("policy-right-link")} target="_blank" rel="noopener noreferrer" aria-label="Open terms of use of Eng for uarmy" className={styles.policy__link}>{t("policy-right")}</Link>
              <span className={styles.policy__divider}></span>
-            <Link href={`/${locale}/privacy-policy`} className={`${styles.policy__link}`}>{t("policy-link")}</Link>
+            <Link href={t("policy-link")} className={`${styles.policy__link}`} target="_blank" rel="noopener noreferrer">{t("privacy-policy")}</Link>
   
           </div>
           <p className={styles.policy__developed}>{t("developed")}</p>
