@@ -142,6 +142,10 @@
     }
   }
 
+  &__itemActive{
+    background-color: $color-green;
+  }
+
   &__label{
     font-family: Arial;
     font-size: 13px;

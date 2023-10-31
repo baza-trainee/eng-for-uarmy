@@ -4,8 +4,8 @@ import { useTranslations } from "next-intl";
 import styles from "./CustomSelect.module.scss";
 
 const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
-  const [selectedOption, setSelectedOption] = useState(requestType);
   const [isOpen, setIsOpen] = useState(false);
+  const [activeOptionIndex, setActiveOptionIndex] = useState(-1);
   const selectRef = useRef(null);
   const t = useTranslations("Contact us");
 
@@ -62,24 +62,31 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   };
 
   const handleKeyDown = (e) => {
-    if (isOpen) {
-      if (e.key === "ArrowDown") {
-        const currentIndex = options.findIndex((option) => option.label === selectedOption);
-        const nextIndex = (currentIndex + 1) % options.length;
-        setSelectedOption(options[nextIndex].label);
-      } else if (e.key === "ArrowUp") {
-        const currentIndex = options.findIndex((option) => option.label === selectedOption);
-        const nextIndex = (currentIndex - 1 + options.length) % options.length;
-        setSelectedOption(options[nextIndex].label);
-      } else if (e.key === "Enter") {
-        setRequestType(selectedOption);
-        setIsOpen(!isOpen);
-      }
+    if (e.key === "Enter") {
+      setIsOpen(!isOpen);
     }
   };
 
+  const handleOptionKeyDown = (e, selectedOption) => {
+    // const currentIndex = options.findIndex((option) => option.label === selectedOption);
+      // if (e.key === "ArrowDown") {
+      //   const nextIndex = (currentIndex + 1) % options.length;
+      //   setActiveOptionIndex(nextIndex);
+      // } else if (e.key === "ArrowUp") {
+      //   const nextIndex = (currentIndex - 1 + options.length) % options.length;
+      //   setActiveOptionIndex(nextIndex);
+      // } else
+  if (e.key === "Enter") {
+        setRequestType(selectedOption);
+        setIsOpen(!isOpen);
+      }
+  };
+
   return (
-    <div className={styles.select} tabIndex='0' ref={selectRef}>
+    <div tabIndex='0'
+      className={styles.select}
+      ref={selectRef}
+      onKeyDown={handleKeyDown}>
       <div onClick={toggleDropdown}
         className={`${styles.select__trigger} ${isOpen && styles.select__triggerBorder}`}>
         <div>
@@ -99,14 +106,13 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
       </div>
 
       {isOpen && (
-        <ul className={styles.options}
-          tabIndex='0'
-          onKeyDown={handleKeyDown}>
-          {options.map((option) => (
+        <ul className={styles.options}>
+          {options.map((option, idx) => (
             <li key={option.label}
               tabIndex='0'
-              className={styles.options__item}
-              onClick={() => handleOptionClick(option.label)}>
+              className={`${styles.options__item} ${idx === activeOptionIndex && styles.options__itemActive}`}
+              onClick={() => handleOptionClick(option.label)}
+              onKeyDown={(e) => handleOptionKeyDown(e, option.label)}>
               <p className={styles.options__label}>{option.label}</p>
             </li>))}
         </ul>)}
