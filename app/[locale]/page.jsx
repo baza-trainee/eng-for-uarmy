@@ -24,6 +24,7 @@ const Home = ({searchParams}) => {
     }
   }, [showModal]);
 
+
   return (
     <>
       <Hero />
