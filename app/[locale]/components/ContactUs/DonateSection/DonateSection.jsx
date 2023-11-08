@@ -51,8 +51,8 @@ const DonateSection = () => {
             <h1 className={styles.bankDetailstitle}>{b("title")}</h1>
             <p className={styles.bankDetailsText}>{b("p-1")}</p>
             <p className={styles.bankDetailsText}>{b("p-02")}</p>
-            <p className={styles.bankDetailsText}><span>{b("p-2-1")}</span><p>{b("p-2-2")}</p></p>
-            <p className={styles.bankDetailsText}>{b("p-3-1")}<div style={{width: "230px"}}>{b("p-3-2")}</div></p>
+            <p className={styles.bankDetailsText}><span>{b("p-2-1")}</span><span style={{display: "block"}}>{b("p-2-2")}</span></p>
+            <p className={styles.bankDetailsText}>{b("p-3-1")}<span style={{width: "230px", display: "block"}}>{b("p-3-2")}</span></p>
             <p className={styles.bankDetailsText}>{b("p-4")}</p>
             <p className={styles.bankDetailsText}>{b("p-5")}</p>
             <p className={styles.bankDetailsText}>{b("p-6-1")}</p>
