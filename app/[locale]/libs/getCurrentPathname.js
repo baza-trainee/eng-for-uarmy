@@ -4,7 +4,6 @@ const getCurrentPathname = (pathname) => {
         return '/'
     } else {
         return currentPath
-            // + (typeof window !== 'undefined' ? window.location.search : '')
     }
 } 
 export default getCurrentPathname;

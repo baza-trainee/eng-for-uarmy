@@ -18,7 +18,7 @@ const OurProjects = () => {
     
     useEffect(() => {
         const handleWindowResize = () => {
-        setIsLargeScreen(typeof window !== 'undefined' && window.innerWidth >= 1280);
+        setIsLargeScreen( window !== 'undefined' && window.innerWidth >= 1280);
         };
     
         window.addEventListener("resize", handleWindowResize);
