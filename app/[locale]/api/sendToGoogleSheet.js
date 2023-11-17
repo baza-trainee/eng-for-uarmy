@@ -1,7 +1,6 @@
 import axios from 'axios';
-import { GOOGLE_SHEET_URL } from '../constants/urls';
-
-axios.defaults.baseURL = GOOGLE_SHEET_URL;
+console.log(process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL, "process.env.GOOGLE_SHEET_URL");
+axios.defaults.baseURL = process.env.NEXT_PUBLIC_GOOGLE_SHEET_URL;
 
 export const sendToGoogleSheet = async (formData ) => {
     try {

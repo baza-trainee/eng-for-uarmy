@@ -1,6 +1,6 @@
 import axios from 'axios';
-import { HOST_URL } from '../constants/urls';
+console.log(process.env.NEXT_PUBLIC_HOST_URL, "process.env.HOST_URL");
 
 export const host = axios.create({
-  baseURL: HOST_URL,
+  baseURL: process.env.NEXT_PUBLIC_HOST_URL,
 });
