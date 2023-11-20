@@ -117,7 +117,6 @@ const Footer = () => {
             <Link href={t("policy-right-link")} target="_blank" rel="noopener noreferrer" aria-label="Open terms of use of Eng for uarmy" className={styles.policy__link}>{t("policy-right")}</Link>
              <span className={styles.policy__divider}></span>
             <Link href={t("policy-link")} className={`${styles.policy__link}`} target="_blank" rel="noopener noreferrer">{t("privacy-policy")}</Link>
-  
           </div>
           <p className={styles.policy__developed}>{t("developed")}</p>
         </div>

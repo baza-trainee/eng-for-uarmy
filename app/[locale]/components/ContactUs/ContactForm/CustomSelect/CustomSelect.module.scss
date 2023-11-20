@@ -82,12 +82,19 @@
   }
 
   &__selected {
-    color: $color-black;
+    max-width: 238px;
+
+    color: $color-black; 
+
+    @include mq(desktop) {
+      max-width: 328px;
+    }
   }
 
   &__icon {
     width: 25px;
     height: 25px;
+    outline: none;
     stroke: $color-black;
     transition: stroke $transition-duration $timing-function;
   
@@ -96,7 +103,12 @@
       height: 32px;
     }
 
-    &:hover {
+    &:active {
+      stroke: $color-black;
+    }
+
+    &:hover,
+    &:focus:not(:active) {
       stroke: $color-green;
     }
   }

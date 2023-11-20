@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
+import { DebounceInput } from 'react-debounce-input';
 import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
 import { sendEmail } from "@/app/[locale]/api/sendEmail";
 import * as yup from 'yup';
 import CustomSelect from "./CustomSelect/CustomSelect";
-import { DebounceInput } from 'react-debounce-input';
+import ContactButton from "./ContactButton/ContactButton";
 import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
-import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const ContactForm = ({ action }) => {
   const [actionURL, setActionURL] = useState(action);
@@ -120,7 +120,7 @@ const ContactForm = ({ action }) => {
   return (
     <>
       {!isSubmit
-        ? (<form className={styles.form} onSubmit={handleSubmit}>
+        ? (<form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
               <CustomSelect actionURL={actionURL}
@@ -132,7 +132,6 @@ const ContactForm = ({ action }) => {
                   name="name"
                   value={values.name}
                   placeholder={t("name")}
-                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -150,7 +149,6 @@ const ContactForm = ({ action }) => {
                   name="email"
                   value={values.email}
                   placeholder={t("email")}
-                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -170,7 +168,6 @@ const ContactForm = ({ action }) => {
                   name="request"
                   value={values.request}
                   placeholder={t("tellUs")}
-                  autoComplete="off"
                   debounceTimeout={300}
                   onChange={handleInputChange}
                   onBlur={handleBlur}
@@ -190,14 +187,7 @@ const ContactForm = ({ action }) => {
             </div>
           </div>
 
-          <div className={styles.form__btnWrapper}>
-            <button type="submit"
-              disabled={disabled}
-              className={`${btnStyles.mainLink} ${styles.form__btn}`}>
-              {isLoading && <span className={styles.form__spinner}></span>}
-              {t("send")}
-            </button>
-          </div>
+          <ContactButton disabled={disabled} isLoading={isLoading} />
         </form>)
         : <Thanks setIsSubmit={setIsSubmit} /> }
     </>
