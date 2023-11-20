@@ -97,10 +97,10 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
         </div>
         
         {!isOpen
-          ? <svg className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
+          ? <svg tabIndex='0' className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
               <path d="M3.90625 8.59375L12.5 17.1875L21.0938 8.59375" />
             </svg>
-          : <svg className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
+          : <svg tabIndex='0' className={styles.select__icon} width="25" height="25" viewBox="0 0 25 25" fill="none">
             <path d="M21.0938 16.4062L12.5 7.8125L3.90625 16.4062" />
           </svg>}
       </div>
