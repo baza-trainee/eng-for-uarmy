@@ -54,14 +54,18 @@
     }
 
     &__agreement {
-        text-align: center;
+        width: 200px;
+        margin: 0 auto;
+        text-align: right;
         font-family: Arial;
-        font-size: 10px;
+        font-size: 8px;
         line-height: 1.2;
 
         color: $color-grey;
 
         @include mq(desktop) {
+            width: 425px;
+            margin: 0 0 0 auto;
             text-align: right;
             font-size: 18px;
             line-height: 1.5;
@@ -72,9 +76,12 @@
         outline: none;
         transition: color $transition-duration $timing-function;
 
-        &:hover,
+        &:hover{
+            color: $color-black;
+        }
+
         &:focus {
-            color: $color-green;
+            color: $color-olive;
         }
     }
 }
