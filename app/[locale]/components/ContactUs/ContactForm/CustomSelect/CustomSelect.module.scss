@@ -107,9 +107,12 @@
       stroke: $color-black;
     }
 
-    &:hover,
-    &:focus:not(:active) {
+    &:hover{
       stroke: $color-green;
+    }
+
+    &:focus:not(:active) {
+      stroke: $color-olive;
     }
   }
 }
