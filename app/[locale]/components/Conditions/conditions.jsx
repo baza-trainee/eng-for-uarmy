@@ -6,7 +6,7 @@ const Conditions = () => {
 
   return (
     <section className={styles.conditionsSection}>
-      <div>
+      <div className={styles.conditions}>
         <div className={styles.headerArea}>
           <h1 className={styles.header}>{t("header")}</h1>
         </div>
@@ -22,7 +22,10 @@ const Conditions = () => {
           <p className={styles.title}>{t("service")}</p>
         </div>
         <div className={styles.textArea}>
-          <p className={styles.text}>{t("service-text1")}</p>
+          <p className={styles.text}>
+            <b>Eng for UARMY</b>
+            {t("service-text1")}
+          </p>
           <p className={styles.text}>{t("service-text2")}</p>
           <p className={styles.text}>{t("service-text3")}</p>
           <p className={styles.text}>{t("service-text4")}</p>
@@ -69,20 +72,14 @@ const Conditions = () => {
         <div className={styles.textArea}>
           <p className={styles.text}>{t("limitationOfLiability-text1")}</p>
           <ul>
-            <li>
-              <p className={styles.listText}>
-                {t("limitationOfLiability-text2")}
-              </p>
+            <li className={styles.listText}>
+              {t("limitationOfLiability-text2")}
             </li>
-            <li>
-              <p className={styles.listText}>
-                {t("limitationOfLiability-text3")}
-              </p>
+            <li className={styles.listText}>
+              {t("limitationOfLiability-text3")}
             </li>
-            <li>
-              <p className={styles.listText}>
-                {t("limitationOfLiability-text4")}
-              </p>
+            <li className={styles.listText}>
+              {t("limitationOfLiability-text4")}
             </li>
           </ul>
           <p className={styles.text}>{t("limitationOfLiability-text6")}</p>

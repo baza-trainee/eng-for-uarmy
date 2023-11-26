@@ -1,5 +1,13 @@
+@import "../../styles/variables.module";
+
 .conditionsSection {
-  padding: 84px 365px 100px 80px;
+  max-width: $desktop;
+  margin: 0 auto;
+}
+
+.conditions {
+  max-width: 915px;
+  padding: 84px 0 100px 80px;
 }
 
 .headerArea {
@@ -9,7 +17,6 @@
 }
 
 .header {
-  font-family: Furore; // need font furore and bold
   font-size: 64px;
   font-weight: 400;
   letter-spacing: 0.36399999260902405px;
@@ -47,7 +54,6 @@
 }
 
 .donationFirstParagraph,
-.listText,
 .changesFirstParagraph,
 .contactUsFirstParagraph {
   font-family: Arial;
@@ -55,4 +61,14 @@
   font-weight: 400;
   line-height: 27px;
   letter-spacing: 0px;
+}
+
+.listText {
+  list-style-type: disc;
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0px;
+  margin-left: 20px;
 }
