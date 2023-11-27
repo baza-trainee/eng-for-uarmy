@@ -72,3 +72,56 @@
   letter-spacing: 0px;
   margin-left: 20px;
 }
+
+@media (max-width: 1279.5px) {
+  .conditionsSection {
+    width: $mobile;
+    padding: 20px $section-padding-mob 0 $section-padding-mob;
+  }
+
+  .conditions {
+    padding: 0 0 50px 0;
+  }
+
+  .header {
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0px;
+    text-align: left;
+  }
+
+  .headerArea {
+    padding-bottom: 30px;
+  }
+
+  .dateArea {
+    padding: 0;
+  }
+
+  .date {
+    font-size: 13px;
+  }
+
+  .text,
+  .donationSecondParagraph,
+  .changesSecondParagraph,
+  .contactUsSecondParagraph,
+  .donationFirstParagraph,
+  .changesFirstParagraph,
+  .contactUsFirstParagraph,
+  .listText {
+    font-size: 13px;
+    padding: 0px;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0px;
+    text-align: left;
+    padding-bottom: 5px;
+  }
+
+  .titleArea {
+    padding: 25px 0 5px 0;
+  }
+}

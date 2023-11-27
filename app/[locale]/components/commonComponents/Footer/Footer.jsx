@@ -224,11 +224,9 @@ const Footer = () => {
             </Link>
             <span className={styles.policy__divider}></span>
             <Link
-              href={t(`/${locale}/conditions`)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="Open terms of use of Eng for uarmy"
               className={styles.policy__link}
+              href={`/${locale}/conditions`}
+              onClick={(e) => e.currentTarget.blur()}
             >
               {t("policy-right")}
             </Link>
