@@ -1,7 +1,7 @@
 @import "../../../styles/variables.module";
 
 .section {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (max-width: 1279.5px) {
 		padding-top: 20px;
 		padding-bottom: 50px;
 	}
@@ -15,7 +15,7 @@
 .container {
 	margin: 0 auto;
 
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (max-width: 1279.5px) {
 		width: $mobile;
 		padding-left: $section-padding-mob;
 		padding-right: $section-padding-mob;
@@ -28,31 +28,17 @@
 	}
 }
 
-.wrapper {
-	@media screen and (min-width: $desktop) {
-		display: flex;
-	}
-}
+.title {
+	font-weight: 400;
 
-.titleWrapper {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (max-width: 1279.5px) {
+		font-size: 27px;
+		line-height: 1.2;
 		margin-bottom: 30px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		min-width: 520px;
-		margin-right: 50px;
-	}
-}
-
-.title {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		font-size: 30px;
-		line-height: 1.2;
-		margin-bottom: 10px;
-	}
-
-	@media screen and (min-width: $desktop) {
+		max-width: 700px;
 		font-size: 64px;
 		line-height: 1.25;
 		letter-spacing: 0.364px;
@@ -62,41 +48,38 @@
 
 .textHead {
 	font-family: Arial;
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+
+	@media screen and (max-width: 1279.5px) {
 		font-size: 13px;
 		line-height: 1.5;
+		margin-bottom: 5px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		font-size: 15px;
 		line-height: 1.53;
+		margin-bottom: 16px;
 	}
 }
 
 .textWrapper {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
+	@media screen and (max-width: 1279.5px) {
 		margin-bottom: 30px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		margin-bottom: 40px;
+		max-width: 835px;
+		margin-bottom: 24px;
 	}
 }
 
-.text {
-	font-family: Arial;
-	line-height: 1.5;
-
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		font-size: 13px;
-	}
-
-	@media screen and (min-width: $desktop) {
-		font-size: 18px;
-	}
+.textWrapperMarginBottom {
+	margin-bottom: 0;
 }
 
 .subTitle {
+	font-weight: 400;
+
 	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
 		font-size: 15px;
 		line-height: 1.8;
@@ -110,26 +93,40 @@
 	}
 }
 
-.list {
-	list-style: disc;
-
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		margin-top: 10px;
-		padding-left: 20px;
+.textBox {
+	@media screen and (max-width: 1279.5px) {
+		margin-bottom: 5px;
 	}
 
 	@media screen and (min-width: $desktop) {
-		margin-top: 24px;
-		padding-left: 20px;
+		margin-bottom: 24px;
 	}
 }
 
-.item:not(:last-child) {
-	@media screen and (min-width: $mobile) and (max-width: 1279.5px) {
-		margin-bottom: 10px;
+.text {
+	font-family: Arial;
+	line-height: 1.5;
+
+	@media screen and (max-width: 1279.5px) {
+		font-size: 13px;
+	}
+
+	@media screen and (min-width: $desktop) {
+		font-size: 18px;
+	}
+}
+
+.textMarginBottom {
+	@media screen and (max-width: 1279.5px) {
+		margin-bottom: 5px;
 	}
 
 	@media screen and (min-width: $desktop) {
 		margin-bottom: 16px;
 	}
+}
+
+.list {
+	list-style: disc;
+	margin-left: 14px;
 }
