@@ -224,7 +224,7 @@ const Footer = () => {
             </Link>
             <span className={styles.policy__divider}></span>
             <Link
-              href={t("policy-right-link")}
+              href={t(`/${locale}/conditions`)}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Open terms of use of Eng for uarmy"
