@@ -16,7 +16,7 @@ import {
   BorderGoHomeFocusSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
-import errorImg from "../../../../public/404/404.png";
+import errorImg from "../../../public/404/404.png";
 
 import styles from "./not-found.module.scss";
 

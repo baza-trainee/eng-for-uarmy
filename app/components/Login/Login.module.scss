@@ -1,0 +1,17 @@
+@import "../../styles/variables.module";
+@import "../../styles/mixins.module";
+
+.login {
+    width: $mobile;
+    margin: 0 auto;
+    padding: 20px $section-padding-mob 0;
+    
+    @include mq(desktop) {
+        width: $desktop;
+        padding: 40px $section-padding 0;
+    }
+
+    &__img{
+        margin-bottom: 97px;
+    }
+}

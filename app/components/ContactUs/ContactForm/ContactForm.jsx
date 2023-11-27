@@ -1,11 +1,11 @@
 "use client";
 import React, { useState } from "react";
-import useLocalStorage from "@/app/[locale]/hooks/useLocalStorage";
+import useLocalStorage from "@/app/hooks/useLocalStorage";
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { DebounceInput } from 'react-debounce-input';
-import { sendToGoogleSheet } from "@/app/[locale]/api/sendToGoogleSheet";
-import { sendEmail } from "@/app/[locale]/api/sendEmail";
+import { sendToGoogleSheet } from "@/app/api/sendToGoogleSheet";
+import { sendEmail } from "@/app/api/sendEmail";
 import * as yup from 'yup';
 import CustomSelect from "./CustomSelect/CustomSelect";
 import ContactButton from "./ContactButton/ContactButton";

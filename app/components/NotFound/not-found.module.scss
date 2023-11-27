@@ -170,7 +170,7 @@
 			display: inline-block;
 			width: 9px;
 			height: 34px;
-			background-image: url("../../../../public/404/border-left-mobile.svg");
+			background-image: url("../../../public/404/border-left-mobile.svg");
 		}
 
 		&::after {
@@ -178,7 +178,7 @@
 			display: inline-block;
 			width: 9px;
 			height: 34px;
-			background-image: url("../../../../public/404/border-right-mobile.svg");
+			background-image: url("../../../public/404/border-right-mobile.svg");
 		}
 	}
 
@@ -192,7 +192,7 @@
 			display: inline-block;
 			width: 14px;
 			height: 52px;
-			background-image: url("../../../../public/404/border-left.svg");
+			background-image: url("../../../public/404/border-left.svg");
 		}
 
 		&::after {
@@ -200,7 +200,7 @@
 			display: inline-block;
 			width: 14px;
 			height: 52px;
-			background-image: url("../../../../public/404/border-right.svg");
+			background-image: url("../../../public/404/border-right.svg");
 		}
 	}
 }

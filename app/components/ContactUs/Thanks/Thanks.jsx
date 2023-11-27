@@ -10,8 +10,8 @@ import {
   BorderBackSvgMobile,
 } from "./SvgComponents/SvgComponents";
 
-import lettterImg from "../../../../../public/thanks/letter-desktop.svg";
-import recieveIconImg from "../../../../../public/thanks/recieve_ic_desktop.svg";
+import lettterImg from "../../../../public/thanks/letter-desktop.svg";
+import recieveIconImg from "../../../../public/thanks/recieve_ic_desktop.svg";
 
 import styles from "./thanks.module.scss";
 

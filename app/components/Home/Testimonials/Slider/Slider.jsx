@@ -6,10 +6,10 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import borderRightTop from "../../../../../../public/testimonials/border-right-top.svg";
-import borderRightBottom from "../../../../../../public/testimonials/border-right-bottom.svg";
-import borderLeftTop from "../../../../../../public/testimonials/border-left-top.svg";
-import borderLeftBottom from "../../../../../../public/testimonials/border-left-bottom.svg";
+import borderRightTop from "../../../../../public/testimonials/border-right-top.svg";
+import borderRightBottom from "../../../../../public/testimonials/border-right-bottom.svg";
+import borderLeftTop from "../../../../../public/testimonials/border-left-top.svg";
+import borderLeftBottom from "../../../../../public/testimonials/border-left-bottom.svg";
 
 import styles from "./slider.module.scss";
 import "./slider.css";

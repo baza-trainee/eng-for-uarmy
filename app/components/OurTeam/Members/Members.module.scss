@@ -8,6 +8,6 @@
 
     @include mq(desktop) {
         width: $desktop;
-        padding: 84px $section-padding 0 $section-padding;
+        padding: 84px $section-padding 0;
     }
 }
