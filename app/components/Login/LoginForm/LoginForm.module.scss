@@ -9,19 +9,72 @@
 
     &__title{
         margin-bottom: 60px;
+
+        font-size: 54px;
     }
 
     &__label{
+        position: relative;
         margin-bottom: 48px;
         text-align: left;
+        font-family: Arial;
+        font-size: 22px;
     }
 
     &__input{
         width: 100%;
+        margin-top: 16px;
+        padding: 19px 15px;
+        outline: transparent;
+        border-radius: 0;
+        border: 1px solid $color-black;
+
+        font-family: Arial;
+        font-size: 18px;
+
+        color: $color-black;
+        background-color: $color-ultra-light-grey;
+
+        &::placeholder {
+            font-family: Arial;
+            font-size: 18px;
+
+            color: $color-grey;   
+        }
     }
 
     &__link{
         margin-bottom: 87px;
         text-align: left;
+        font-family: Arial;
+        font-size: 22px;
+        text-decoration: underline;
+    }
+
+    & &__btn{
+        min-width: 270px;
+        height: 80px;
+        margin-bottom: 48px;
+
+        &:disabled {
+            color: $color-ultra-light-grey;
+            background-color: $color-grey;
+            border-color: transparent;
+        }
+    }
+
+    &__bntEye{
+        position: absolute;
+        right: 15px;
+        bottom: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 30px;
+        outline: transparent;
+        border: none;
+
+        background-color: transparent;
     }
 }
