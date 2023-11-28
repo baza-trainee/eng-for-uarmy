@@ -68,21 +68,21 @@
 }
 
 .my-swiper .swiper-button-prev::after {
-	background-image: url("../../../../../../public/testimonials/arrow-left.svg");
+	background-image: url("../../../../../public/testimonials/arrow-left.svg");
 
 }
 
 .my-swiper .swiper-button-next::after {
-	background-image: url("../../../../../../public/testimonials/arrow-right.svg");
+	background-image: url("../../../../../public/testimonials/arrow-right.svg");
 }
 
 .my-swiper .swiper-button-prev:hover::after {
-	background-image: url("../../../../../../public/testimonials/arrow-left-hover.svg");
+	background-image: url("../../../../../public/testimonials/arrow-left-hover.svg");
 
 }
 
 .my-swiper .swiper-button-next:hover::after {
-	background-image: url("../../../../../../public/testimonials/arrow-right-hover.svg");
+	background-image: url("../../../../../public/testimonials/arrow-right-hover.svg");
 }
 
 

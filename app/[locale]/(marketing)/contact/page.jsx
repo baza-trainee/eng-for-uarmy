@@ -1,8 +1,8 @@
 "use client";
 import { useTranslations } from "next-intl";
-import Title from "../../components/commonComponents/Title/Title";
-import ContactForm from "../../components/ContactUs/ContactForm/ContactForm";
-import DonateSection from '../../components/ContactUs/DonateSection/DonateSection';
+import Title from "../../../components/commonComponents/Title/Title";
+import ContactForm from "../../../components/ContactUs/ContactForm/ContactForm";
+import DonateSection from '../../../components/ContactUs/DonateSection/DonateSection';
 import styles from "./ContactUs.module.scss";
 
 const ContactsPage = ({ searchParams }) => {

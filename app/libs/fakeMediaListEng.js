@@ -1,4 +1,4 @@
-import france24logo from '../../../public/france24.png';
+import france24logo from '../../public/france24.png';
 
 const mediaEng = [
     {

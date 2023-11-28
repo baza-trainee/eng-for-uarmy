@@ -2,8 +2,8 @@
 import Link from "next/link";
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
-import mediaEng from "@/app/[locale]/libs/fakeMediaListEng";
-import medias from "@/app/[locale]/libs/fakeMediaList";
+import mediaEng from "@/app/libs/fakeMediaListEng";
+import medias from "@/app/libs/fakeMediaList";
 import MediaList from "./MediaList";
 import styles from "./Media.module.scss";
 
