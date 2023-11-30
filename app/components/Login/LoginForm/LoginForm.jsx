@@ -16,7 +16,8 @@ const LoginForm = () => {
     initialValues: {
       email: '',
       password: '',
-    },
+        },
+    // validationSchema: adminSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
         console.log(email, password, "Sumbmit");
 
