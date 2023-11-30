@@ -1,7 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useFormik } from "formik";
-import { adminSchema } from '@/app/libs/adminValidationSchema';
+import { forgotPasswordSchema } from '@/app/libs/adminValidationSchema';
 import Link from 'next/link';
 import Thanks from '../Thanks/Thanks';
 import styles from './ForgotPasswordForm.module.scss';
@@ -12,7 +12,7 @@ const ForgotPasswordForm = () => {
 
   const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: { email: '' }, 
-    validationSchema: adminSchema,
+    validationSchema: forgotPasswordSchema,
     onSubmit: async ({ email }, { resetForm }) => {
       console.log(email, "Sumbmit");
 
@@ -21,6 +21,8 @@ const ForgotPasswordForm = () => {
       console.log(isSubmit, "isSubmit");
     },
   });
+
+  const disabled = errors.email && touched.email;
 
   return (
     <>
@@ -44,6 +46,7 @@ const ForgotPasswordForm = () => {
 
           <div className={styles.form__btnWrapper}>
             <button type="submit"
+              disabled={disabled}
               className={`${btnStyles.mainLink} ${styles.form__btn}`}>
               Підтвердити
             </button>
