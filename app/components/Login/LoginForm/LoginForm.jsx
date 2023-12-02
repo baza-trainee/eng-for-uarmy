@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useFormik } from "formik";
+ import { loginSchema } from "@/app/libs/adminValidationSchema";
 import Link from "next/link";
 import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
@@ -12,12 +13,12 @@ const LoginForm = () => {
         setShowPassword(!showPassword);
     }
 
-    const { values, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: '',
       password: '',
         },
-    // validationSchema: adminSchema,    
+    validationSchema: loginSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
         console.log(email, password, "Sumbmit");
 
@@ -38,7 +39,9 @@ const LoginForm = () => {
                     value={values.email}
                     placeholder="Введіть логін"
                     onChange={handleChange}
-                    className={styles.form__input}/>
+                    onBlur={handleBlur}
+                    className={styles.form__input} />
+                {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
             </label>
 
             <label className={styles.form__label}>
@@ -48,8 +51,10 @@ const LoginForm = () => {
                     value={values.password}
                     placeholder="Введіть пароль"
                     onChange={handleChange}
+                    onBlur={handleBlur}
                     className={styles.form__input} />
-                
+                {errors.password && touched.password && <p className={styles.form__error}>{errors.password}</p>} 
+
                 <button type="button"
                     onClick={togglePassword}
                     className={styles.form__bntEye}>
