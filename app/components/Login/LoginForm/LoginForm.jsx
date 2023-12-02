@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import { useFormik } from "formik";
 import Link from "next/link";
 import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
@@ -11,24 +12,43 @@ const LoginForm = () => {
         setShowPassword(!showPassword);
     }
 
-    const disabled = true;
+    const { values, handleChange, handleSubmit } = useFormik({
+    initialValues: {
+      email: '',
+      password: '',
+        },
+    // validationSchema: adminSchema,    
+    onSubmit: async ({ email, password }, { resetForm }) => {
+        console.log(email, password, "Sumbmit");
+
+        resetForm();
+    },
+  });
+
+    const disabled = !values.email || !values.password;
 
     return (
-        <form className={styles.form} autoComplete="off">
+        <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
             <h2 className={styles.form__title}>ВХІД</h2>
 
             <label className={styles.form__label}>
                 Логін
                 <input type="email"
-                    className={styles.form__input}
-                    placeholder="Введіть логін"/>
+                    name="email"
+                    value={values.email}
+                    placeholder="Введіть логін"
+                    onChange={handleChange}
+                    className={styles.form__input}/>
             </label>
 
             <label className={styles.form__label}>
                 Пароль
                 <input type={showPassword ? 'text' : 'password'}
-                    className={styles.form__input}
-                    placeholder="Введіть пароль" />
+                    name="password"
+                    value={values.password}
+                    placeholder="Введіть пароль"
+                    onChange={handleChange}
+                    className={styles.form__input} />
                 
                 <button type="button"
                     onClick={togglePassword}

@@ -66,35 +66,35 @@ useEffect(() => {
                       </li>
                 </ul>
                 <ul className={styles.btnList}>
-                <li>
-                  <Link tabIndex="0" 
-                    href={`https://www.youtube.com/@engforuarmy`}
-                    className={styles.under_txt_btn}
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    aria-label="Start studying on Youtube channel of ENG for UArmy">
-                    {t("study-btn")}
-                  </Link>
-                      </li>
+                  <li>
+                    <Link tabIndex="0" 
+                      href={`https://www.youtube.com/@engforuarmy`}
+                      className={styles.under_txt_btn}
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      aria-label="Start studying on Youtube channel of ENG for UArmy">
+                      {t("study-btn")}
+                    </Link>
+                  </li>
 
-                <li tabIndex="0" 
-                onKeyUp={handleEnterKeyPress}
-                className={styles.under}>
-                  <ScrollLink 
-                  
-                  to="helpUsGrow" 
-                  smooth={true} 
-                  duration={500} 
-                  className={styles.under_txt_btn2}
-                  aria-label="Move to Help us grow section">
-                  {t("support-btn")}
-                  </ScrollLink>
-                  {isLargeScreen ? (
-                        <ButtonBorder />
-                      ) : (
-                        <ButtonBorderMobile />
-                      )}</li>
-                  </ul>
+                  <li tabIndex="0" 
+                    onKeyUp={handleEnterKeyPress}
+                    className={styles.under}>
+                      <ScrollLink 
+                      
+                      to="helpUsGrow" 
+                      smooth={true} 
+                      duration={500} 
+                      className={styles.under_txt_btn2}
+                      aria-label="Move to Help us grow section">
+                      {t("support-btn")}
+                      </ScrollLink>
+                      {isLargeScreen ? (
+                            <ButtonBorder />
+                          ) : (
+                            <ButtonBorderMobile />)}
+                  </li>
+                </ul>
             </div>
 
             <div className={styles.your_container}>

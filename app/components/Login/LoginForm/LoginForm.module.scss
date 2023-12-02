@@ -45,6 +45,7 @@
 
     &__link{
         margin-bottom: 87px;
+        outline: none;
         text-align: left;
         font-family: Arial;
         font-size: 22px;
@@ -74,6 +75,7 @@
         height: 30px;
         outline: transparent;
         border: none;
+        cursor: pointer;
 
         background-color: transparent;
     }
