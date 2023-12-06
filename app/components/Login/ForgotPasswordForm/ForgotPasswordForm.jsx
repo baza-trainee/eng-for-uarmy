@@ -32,7 +32,7 @@ const ForgotPasswordForm = () => {
 
           <p className={styles.form__text}>Вкажіть вашу електронну адресу, щоб підтвердити вашу особу</p>
 
-          <label className={styles.form__label}>
+          <label className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
             Електронна пошта
             <input type="email"
               name="email"
@@ -40,7 +40,7 @@ const ForgotPasswordForm = () => {
               placeholder="Введіть електронну пошту"
               onChange={handleChange}
               onBlur={handleBlur}
-              className={styles.form__input} />
+              className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`}/>
             {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
           </label>
 
@@ -54,8 +54,8 @@ const ForgotPasswordForm = () => {
             <Link href='/login'
               className={styles.form__btnOutline}>
               Cкасувати
-              <svg tabIndex='0' width="270" height="80" viewBox="0 0 270 80" fill="none" className={styles.form__btnIcon}>
-                <path d="M0.5 39.7929V0.5H269.5V79.5H40.2071L0.5 39.7929Z"/>
+              <svg tabIndex='0' width="270" height="92" viewBox="0 0 270 92" fill="none" className={styles.form__btnIcon}>
+                <path d="M0.5 45.813V0.5H269.5V91.5H40.2278L0.5 45.813Z"/>
               </svg>
             </Link>
           </div>

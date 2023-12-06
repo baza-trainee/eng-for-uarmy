@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { useFormik } from "formik";
+ import { loginSchema } from "@/app/libs/adminValidationSchema";
 import Link from "next/link";
 import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
@@ -12,12 +13,12 @@ const LoginForm = () => {
         setShowPassword(!showPassword);
     }
 
-    const { values, handleChange, handleSubmit } = useFormik({
+    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
       email: '',
       password: '',
         },
-    // validationSchema: adminSchema,    
+    validationSchema: loginSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
         console.log(email, password, "Sumbmit");
 
@@ -31,25 +32,29 @@ const LoginForm = () => {
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
             <h2 className={styles.form__title}>ВХІД</h2>
 
-            <label className={styles.form__label}>
+            <label className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
                 Логін
                 <input type="email"
                     name="email"
                     value={values.email}
                     placeholder="Введіть логін"
                     onChange={handleChange}
-                    className={styles.form__input}/>
+                    onBlur={handleBlur}
+                    className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
+                {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
             </label>
 
-            <label className={styles.form__label}>
+            <label className={`${styles.form__label} ${errors.password && touched.password && styles.form__labelError}`} >
                 Пароль
                 <input type={showPassword ? 'text' : 'password'}
                     name="password"
                     value={values.password}
                     placeholder="Введіть пароль"
                     onChange={handleChange}
-                    className={styles.form__input} />
-                
+                    onBlur={handleBlur}
+                    className={`${styles.form__input} ${errors.password && touched.password && styles.form__inputError}`} />
+                {errors.password && touched.password && <p className={styles.form__error}>{errors.password}</p>} 
+
                 <button type="button"
                     onClick={togglePassword}
                     className={styles.form__bntEye}>
