@@ -44,10 +44,10 @@ useEffect(() => {
         <div className={styles.container}>
             <div className={styles.card}>
             {isLargeScreen ? (
-        <HeroCardBorder />
-      ) : (
-        <HeroCardBorderMobil />
-      )}
+              <HeroCardBorder />
+            ) : (
+              <HeroCardBorderMobil />
+            )}
                 <h1 className={styles.firstHead}>Eng for UArmy</h1>
                 <h2 className={styles.secondHead}>{t("title")}</h2>
                 
@@ -67,9 +67,10 @@ useEffect(() => {
                 </ul>
                 <ul className={styles.btnList}>
                   <li>
-                    <Link tabIndex="0" 
-                      href={`https://www.youtube.com/@engforuarmy`}
+                    <Link 
+                      onClick={(e) => e.currentTarget.blur()}
                       className={styles.under_txt_btn}
+                      href={`https://www.youtube.com/@engforuarmy`}
                       target="_blank" 
                       rel="noopener noreferrer"
                       aria-label="Start studying on Youtube channel of ENG for UArmy">

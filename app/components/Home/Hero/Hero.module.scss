@@ -101,7 +101,6 @@
   --size-corner: 36px;        
   width: 270px;
   height: 92px;
-  border: none;
   z-index: 2;
  @include cutBtn;
  &:not(:active){

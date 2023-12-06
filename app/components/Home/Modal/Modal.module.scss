@@ -6,40 +6,45 @@
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    height: 100vh;
+    width: 100vw;
     align-items: center;
     justify-content: center;
     pointer-events: auto;
     background: rgba(255, 255, 255, 0.40);
     backdrop-filter: blur(25px);
-    z-index: 101;
+    z-index: 50;
 }
-.modal{
-    position: absolute;
+
+.scrollbar {
+    position: relative;
+    max-height: 90%;
+    width: auto;
+    overflow-y: scroll;
+    background: #FFF;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+    background-color: $color-ultra-light-grey;    
+}
+.scrollbar::-webkit-scrollbar {
+    width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.modal {
     width: calc(320px - 32px);
     background: #FFF;
     filter: drop-shadow(0px 8px 30px rgba(0, 0, 0, 0.10));
     padding: 28px 19px;
-    
+
     @media screen and (min-width: $desktop) {
         width: auto;
         padding: 40px 70px 55px 70px;
     }
 }
-.smallModal06 {
-    transform: scale(0.9);
-    @media screen and (min-width: $desktop) {
-        transform: scale(0.6);
-    }
-}
-.smallModal07 {
-    transform: scale(0.95);
-    @media screen and (min-width: $desktop) {
-        transform: scale(0.7);
-    }
-}
-
 .modalTitle{
     font-size: 30px;
     font-weight: 400;
@@ -224,3 +229,4 @@
         fill: $color-olive;
     }
 }
+
