@@ -1,7 +1,7 @@
 @import "../../../styles/variables.module";
 
 .form{
-    width: 428px;
+    width: 510px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -19,6 +19,14 @@
         text-align: left;
         font-family: Arial;
         font-size: 22px;
+
+        &:last-of-type{
+            margin-bottom: 58px;
+        }
+    }
+
+    &__labelError{
+        color: $color-error;
     }
 
     &__input{
@@ -41,6 +49,10 @@
 
             color: $color-grey;   
         }
+    }
+
+    &__inputError {
+        border-color: $color-error;
     }
 
     &__link{
@@ -82,7 +94,7 @@
     &__error {
         position: absolute;
         left: 0;
-        bottom: -30px;
+        top: 108px;
     
         font-family: Arial;
         font-size: 16px;

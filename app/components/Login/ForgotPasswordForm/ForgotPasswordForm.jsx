@@ -32,7 +32,7 @@ const ForgotPasswordForm = () => {
 
           <p className={styles.form__text}>Вкажіть вашу електронну адресу, щоб підтвердити вашу особу</p>
 
-          <label className={styles.form__label}>
+          <label className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
             Електронна пошта
             <input type="email"
               name="email"
@@ -40,7 +40,7 @@ const ForgotPasswordForm = () => {
               placeholder="Введіть електронну пошту"
               onChange={handleChange}
               onBlur={handleBlur}
-              className={styles.form__input} />
+              className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`}/>
             {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
           </label>
 

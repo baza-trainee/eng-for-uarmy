@@ -19,6 +19,10 @@ export const loginSchema = yup.object().shape({
   password: yup
     .string()
     .min(6, 'Мінімум 6 символів')
+    .matches(
+      /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]+$/,
+      'Пароль повинен складатися з великих та малих літер латинського алфавіту і цифр'
+    )
     .required('Введіть пароль'),
 });
 

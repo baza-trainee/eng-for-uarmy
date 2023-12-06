@@ -32,7 +32,7 @@ const LoginForm = () => {
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
             <h2 className={styles.form__title}>ВХІД</h2>
 
-            <label className={styles.form__label}>
+            <label className={`${styles.form__label} ${errors.email && touched.email && styles.form__labelError}`}>
                 Логін
                 <input type="email"
                     name="email"
@@ -40,11 +40,11 @@ const LoginForm = () => {
                     placeholder="Введіть логін"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={styles.form__input} />
+                    className={`${styles.form__input} ${errors.email && touched.email && styles.form__inputError}`} />
                 {errors.email && touched.email && <p className={styles.form__error}>{errors.email}</p>}
             </label>
 
-            <label className={styles.form__label}>
+            <label className={`${styles.form__label} ${errors.password && touched.password && styles.form__labelError}`} >
                 Пароль
                 <input type={showPassword ? 'text' : 'password'}
                     name="password"
@@ -52,7 +52,7 @@ const LoginForm = () => {
                     placeholder="Введіть пароль"
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={styles.form__input} />
+                    className={`${styles.form__input} ${errors.password && touched.password && styles.form__inputError}`} />
                 {errors.password && touched.password && <p className={styles.form__error}>{errors.password}</p>} 
 
                 <button type="button"
