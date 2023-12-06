@@ -57,7 +57,7 @@ export const Facebook = () => {
   }
 
 export const ButtonBorder = ()=> {
-  return <Link href="" target="_blank" rel="noopener noreferrer" className=''>
+  return <Link href="" target="_blank" rel="noopener noreferrer" className='' >
         <svg className={styles.svgBorder} width="360" height="92" viewBox="0 0 360 92" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M0.5 0.5H359.5V91.5H36.2071L0.5 55.7929V0.5Z" />
 </svg>

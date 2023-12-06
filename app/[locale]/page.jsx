@@ -8,9 +8,8 @@ import HelpUsGrows from "../components/Home/HelpUsGrow/HelpUsGrow";
 import Partners from "../components/Home/Partners/Partners";
 import Media from "../components/Home/Media/Media";
 import Testimonials from "../components/Home/Testimonials/Testimonials";
-import Modal from "../components/Home/Modal/Modal";
 import { bindPrevent } from "../libs/preventTab";
-  
+import { ModalParams } from "../components/Home/Modal/ModalWrapper";  
 const Home = ({searchParams}) => {
   const showModal = searchParams?.modal;
   
@@ -35,7 +34,7 @@ const Home = ({searchParams}) => {
       <HelpUsGrows />
       <Partners />
       <Media />
-      {showModal && <Modal />}
+      {showModal && <ModalParams />}
     </>
   );
 };

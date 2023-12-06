@@ -16,7 +16,8 @@ export const Project1 = ({t, isLargeScreen})=>{
                 <p className={styles.cardText}>{t("youtube-desc")}</p>
                 <Link href={`https://www.youtube.com/@engforuarmy`}
                    target="_blank" 
-                   rel="noopener noreferrer"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.currentTarget.blur()}
                  className={styles.cardButton}>{t("learnMore")}</Link>
                 
             </div>
