@@ -50,7 +50,7 @@ const Testimonials = () => {
   const locale = useLocale();
   const t = useTranslations("Feedback");
 
-  const authors = Array.from({ length: 3 }, (_, idx) => ({
+  const authors = Array.from({ length: 11 }, (_, idx) => ({
     id: idx + 1,
     photo: `/feedback/author-${String(idx + 1).padStart(2, "0")}.jpg`,
     review: t(`review-${idx + 1}`),
