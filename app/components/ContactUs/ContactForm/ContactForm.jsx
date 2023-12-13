@@ -1,6 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import useLocalStorage from "@/app/hooks/useLocalStorage";
+import { useActionContext } from '@/app/context/action';
 import { useTranslations } from "next-intl";
 import { useFormik } from "formik";
 import { DebounceInput } from 'react-debounce-input';
@@ -12,8 +13,7 @@ import ContactButton from "./ContactButton/ContactButton";
 import Thanks from "../Thanks/Thanks";
 import styles from "./ContactForm.module.scss";
 
-const ContactForm = ({ action }) => {
-  const [actionURL, setActionURL] = useState(action);
+const ContactForm = () => {
   const [savedValues, setSavedValues] = useLocalStorage('formValues', {
     name:"",
     email: "",
@@ -22,6 +22,7 @@ const ContactForm = ({ action }) => {
   const [requestType, setRequestType] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [isSubmit, setIsSubmit] = useState(false);
+  const { setAction } = useActionContext();
   const t = useTranslations("Contact us");
 
   const handleInputChange = (e) => {
@@ -102,7 +103,7 @@ const ContactForm = ({ action }) => {
         };
         await sendEmail(emailData);
         
-        setActionURL(null);
+        setAction('');
         setRequestType(null);
         setSavedValues({ name: '', email: '', request: '' });
         resetForm();
@@ -123,8 +124,7 @@ const ContactForm = ({ action }) => {
         ? (<form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
           <div className={styles.form__wrapper}>
             <div className={styles.form__blockLeft}>
-              <CustomSelect actionURL={actionURL}
-                requestType={requestType}
+              <CustomSelect requestType={requestType}
                 setRequestType={setRequestType} />
 
               <label className={`${styles.form__field} ${styles.form__fieldName}`}>

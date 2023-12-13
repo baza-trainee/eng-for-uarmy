@@ -1,11 +1,13 @@
 "use client";
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import { useTranslations } from "next-intl";
+import { useActionContext } from '@/app/context/action';
 import styles from "./CustomSelect.module.scss";
 
-const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
+const CustomSelect = ({ requestType, setRequestType }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeOptionIndex, setActiveOptionIndex] = useState(-1);
+  const { action } = useActionContext();
   const selectRef = useRef(null);
   const t = useTranslations("Contact us");
 
@@ -18,8 +20,8 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
   ], [t]);
 
   useEffect(() => {
-    if (!requestType && actionURL) {
-      switch (actionURL) {
+    if (!requestType && action) {
+      switch (action) {
         case "volunteer":
         setRequestType(options[0].label);
         break;
@@ -36,7 +38,7 @@ const CustomSelect = ({ actionURL, requestType, setRequestType }) => {
         setRequestType(null);
       }
     }
-  }, [actionURL, options, requestType, setRequestType, t]);
+  }, [action, options, requestType, setRequestType, t]);
 
   useEffect(() => {
     const handleDocumentClick = (e) => {

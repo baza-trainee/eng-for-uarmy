@@ -1,18 +1,27 @@
 'use client'
 import { useState } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { useRouter } from 'next/navigation';
+import { useActionContext } from '@/app/context/action';
 import { ModalWrapper } from '../../commonComponents/ModaWrapper/ModalWrapper';
 import Modal from '../DonateModal/DonateModal';
 import styles from './HelpUsGrow.module.scss';
 
 const HelpUsGrows = () => {
     const [showModal, setShowModal] = useState(false);
+    const { setAction } = useActionContext();
+    const router = useRouter();
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
 
     const toggleModal = () => setShowModal(state => !state);
+
+    const handleChangeAction = (e, value) => {
+        e.currentTarget.blur();
+        router.push(`/${locale}/contact`)
+        setAction(value);
+    };
 
     return <>
         <span className={styles.anchor} id='helpUsGrow'></span>
@@ -37,15 +46,30 @@ const HelpUsGrows = () => {
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("volunteer-desc")}</p>
-                    <Link href={`/${locale}/contact?action=volunteer`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("volunteer")}</Link>
+                        
+                    <button type='button'
+                        onClick={(e) => handleChangeAction(e, 'volunteer')}
+                        className={styles.helpBtn}>
+                        {t("volunteer")}
+                    </button>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("partner-desc")}</p>
-                    <Link href={`/${locale}/contact?action=partner`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("partner")}</Link>
+                        
+                    <button type='button'
+                        onClick={(e) => handleChangeAction(e, 'partner')}
+                        className={styles.helpBtn}>
+                        {t("partner")}
+                    </button>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("spread-desc")}</p>
-                    <Link href={`/${locale}/contact?action=spread`} className={styles.helpBtn} onClick={(e) => e.currentTarget.blur()}>{t("spread")}</Link>
+                        
+                    <button type='button'
+                        onClick={(e) => handleChangeAction(e, 'spread')}   
+                        className={styles.helpBtn}>
+                        {t("spread")}
+                    </button>
                 </li>
             </ul>
         </div>

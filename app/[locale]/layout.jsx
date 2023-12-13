@@ -1,5 +1,6 @@
 import "./globals.scss";
 import { NextIntlClientProvider } from "next-intl";
+import { ActionProvider } from "../context/action";
 import fonts from '../assets/fonts/fontsSrc';
 import Header from "../components/commonComponents/Header/Header";
 import Footer from "../components/commonComponents/Footer/Footer";
@@ -32,18 +33,20 @@ const RootLayout = async ({ children, params: { locale }}) => {
   return (
     <html lang={locale} suppressHydrationWarning={true}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
-          <Header />
+        <ActionProvider>
+          <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
+            <Header />
 
-          <main>
-            <HeaderTrigger/>
-            {children}
-          </main>
+            <main>
+              <HeaderTrigger/>
+              {children}
+            </main>
 
-          <Footer />
+            <Footer />
 
-          <div id="modal-root"></div>  
-        </body>
+            <div id="modal-root"></div>  
+          </body>
+        </ActionProvider>  
       </NextIntlClientProvider>
     </html>
   )
