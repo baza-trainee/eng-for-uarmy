@@ -11,8 +11,11 @@ const AdminLayout = async ({ children }) => {
           <Sidebar />
           {children}
         </main>
+
+        <div id="modal-root"></div> 
       </body>
     </html>
   );
 };
+
 export default AdminLayout;

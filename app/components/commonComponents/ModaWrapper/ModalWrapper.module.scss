@@ -15,6 +15,12 @@
     backdrop-filter: blur(25px);
     z-index: 50;
 }
+
+.backdropAdmin{
+    background: rgba(116, 116, 116, 0.60);
+    backdrop-filter: none;
+}
+
 .scrollbar {
     position: relative;
     max-height: 90%;

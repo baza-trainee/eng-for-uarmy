@@ -3,7 +3,7 @@ import { useLocale, useTranslations} from "next-intl";
 import Link from "next/link";
 import styles from './DonateModal.module.scss';
 
-const Modal = ({onClose}) => {
+const Modal = ({ onClose }) => {
     const t = useTranslations("Contact us");
     const b = useTranslations("bankDetails");
     const locale = useLocale();
