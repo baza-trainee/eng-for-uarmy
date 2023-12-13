@@ -1,11 +1,23 @@
 "use client";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
+import { useRouter } from 'next/navigation';
+import { useActionContext } from '@/app/context/action';
 import Image from 'next/image';
 import MainLink from "../../commonComponents/MainLink/MainLink";
 import styles from './Goin.module.scss';
+import btnStyles from '../../commonComponents/MainLink/MainLink.module.scss'
 
 const Goin = () => {
+    const { setAction } = useActionContext();
+    const router = useRouter();
+    const locale = useLocale();
     const t = useTranslations("OurTeam");
+
+    const handleChangeAction = (e, value) => {
+        e.currentTarget.blur();
+        router.push(`/${locale}/contact`)
+        setAction(value);
+    };
 
     return (
         <section className={styles.goin}>
@@ -25,8 +37,12 @@ const Goin = () => {
                     aria-label="Work.ua link">
                     {t("vacancies")}
                 </MainLink>
-                
-                <MainLink path='contact?action=volunteer'>{t("volunteer")}</MainLink>
+
+                <button type='button'
+                    onClick={(e) => handleChangeAction(e, 'volunteer')}
+                    className={btnStyles.mainLink}>
+                    {t("volunteer")}
+                </button>
             </div>
         </section>
     )

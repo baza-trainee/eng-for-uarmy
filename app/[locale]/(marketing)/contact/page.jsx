@@ -5,9 +5,8 @@ import ContactForm from "../../../components/ContactUs/ContactForm/ContactForm";
 import DonateSection from '../../../components/ContactUs/DonateSection/DonateSection';
 import styles from "./ContactUs.module.scss";
 
-const ContactsPage = ({ searchParams }) => {
+const ContactsPage = () => {
   const t = useTranslations("Contact us");
-  const action = searchParams?.action;
 
   return (
     <>
@@ -15,7 +14,7 @@ const ContactsPage = ({ searchParams }) => {
         <div className={styles.container}>
           <Title title={t("title")} description={t("desc")} />
 
-          <ContactForm action={action} />
+          <ContactForm/>
         </div>
       </section>
 

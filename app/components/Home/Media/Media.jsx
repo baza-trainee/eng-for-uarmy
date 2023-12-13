@@ -1,18 +1,22 @@
 'use client'
 import Link from "next/link";
+import { useRouter } from 'next/navigation';
 import { useTranslations, useLocale } from "next-intl";
 import { useEffect, useState } from "react";
+import { useActionContext } from '@/app/context/action';
 import mediaEng from "@/app/libs/fakeMediaListEng";
 import medias from "@/app/libs/fakeMediaList";
 import MediaList from "./MediaList";
 import styles from "./Media.module.scss";
 
 const Media = () => {
-    const t = useTranslations("Media");
-    const locale = useLocale();
     const [mediaList, setMediaList] = useState([]);
     const [currentList, setCurrentList] = useState([]);
-    const [screenWidth, setScreenWidth] = useState(1280)
+    const [screenWidth, setScreenWidth] = useState(1280);
+    const { setAction } = useActionContext();
+    const router = useRouter();
+    const t = useTranslations("Media");
+    const locale = useLocale();
 
     useEffect(() => {
          if (locale === "en") {
@@ -47,6 +51,12 @@ const Media = () => {
             setCurrentList(newMedia) 
         }
     }
+
+    const handleChangeAction = (e, value) => {
+        e.currentTarget.blur();
+        router.push(`/${locale}/contact`)
+        setAction(value);
+    };
    
     return <section className={styles.section}>
         <span className={styles.anchor} id='media'></span>
@@ -70,7 +80,11 @@ const Media = () => {
                     <path d="M1 1L39 39L77 1" stroke="#231F20" strokeWidth="2" />
                 </svg>
             }
-            <Link href={`/${locale}/contact?action=spread`} className={styles.mediaBtn} onClick={(e) => e.currentTarget.blur()}>{t("button")}</Link>
+            <button type='button'
+                onClick={(e) => handleChangeAction(e, 'spread')}   
+                className={styles.mediaBtn}>
+                {t("button")}
+            </button>
         </div>
     </section>
 }
