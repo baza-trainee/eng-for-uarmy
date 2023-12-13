@@ -14,8 +14,6 @@ export const ModalWrapper = ({ onClose, children }) => {
   useEffect(() => {
     const handleKeyDown = e => {
       if (e.code === 'Escape') {
-        console.log('Нажали ESC, нужно закрыть модалку');
-
         onClose();
       };
     };
@@ -28,8 +26,6 @@ export const ModalWrapper = ({ onClose, children }) => {
   }, [onClose]);
 
   const handleBackdropClick = e => {
-    console.log('Кликнули в бекдроп');
-
     if (e.currentTarget === e.target) {
       onClose();
     }
