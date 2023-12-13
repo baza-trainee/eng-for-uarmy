@@ -1,0 +1,100 @@
+@import "../../../../styles/variables.module";
+@import "../../../../styles/mixins.module";
+
+.backdrop {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(25px);
+  z-index: 50;
+}
+
+.scrollbar {
+  position: relative;
+  max-height: 90%;
+  width: auto;
+  overflow-y: scroll;
+  background: #fff;
+}
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: $color-ultra-light-grey;
+}
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.modal {
+  width: 619px;
+  max-height: 306px;
+  background-color: $color-ultra-light-grey;
+  filter: drop-shadow(0px 8px 30px rgba(0, 0, 0, 0.1));
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 100%;
+  z-index: 1000;
+}
+
+.btnCross {
+  position: absolute;
+  right: 13px;
+  top: 32px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: $color-black;
+}
+
+.textArea {
+  margin: 88px 93px 0 93px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 23px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.btn {
+  font-family: "__furore_a46fcf";
+  width: 270px;
+  height: 92px;
+  margin: 40px 19px 0 19px;
+  background-color: transparent;
+  border: 1px solid $color-black;
+  color: $color-black;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0px;
+  // --size-corner: 45px;
+  // clip-path: polygon(
+  //   0 0,
+  //   100% 0,
+  //   100% 100%,
+  //   80% 100%,
+  //   var(--size-corner) 100%,
+  //   0 calc(100% - var(--size-corner))
+  // );
+  transition: background-color $transition-duration $timing-function;
+
+  &:hover {
+    background-color: $color-grey;
+    color: $color-ultra-light-grey;
+  }
+}
