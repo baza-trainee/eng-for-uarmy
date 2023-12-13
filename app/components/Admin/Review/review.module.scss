@@ -1,0 +1,52 @@
+@import "../../../styles/variables.module";
+
+.reviewArea {
+  display: flex;
+  flex-direction: column;
+  min-width: 1035px;
+}
+
+.headerArea {
+  padding: 40px 0 80px 40px;
+}
+
+.headerText {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 75px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.buttonArea {
+  margin: 0 0 40px 40px;
+}
+
+.button {
+  font-family: "__furore_a46fcf";
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 27px;
+  letter-spacing: 0px;
+  text-align: left;
+  background-color: $color-ultra-light-grey;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-black;
+  line-height: normal;
+  border: none;
+  width: 270px;
+  height: 92px;
+  border: 1px solid $color-black;
+
+  &:hover {
+    color: $color-white;
+    background-color: $color-olive;
+  }
+
+  &:active {
+    color: inherit;
+    background-color: transparent;
+  }
+}
