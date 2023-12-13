@@ -1,12 +1,19 @@
 'use client'
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useLocale, useTranslations } from 'next-intl';
+import { ModalWrapper } from '../../commonComponents/ModaWrapper/ModalWrapper';
+import Modal from '../DonateModal/DonateModal';
 import styles from './HelpUsGrow.module.scss';
 
 const HelpUsGrows = () => {
+    const [showModal, setShowModal] = useState(false);
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
+
+    const toggleModal = () => setShowModal(state => !state);
+
     return <>
         <span className={styles.anchor} id='helpUsGrow'></span>
         <section className={styles.section} id='helpUsGrow'>
@@ -21,9 +28,12 @@ const HelpUsGrows = () => {
             <ul className={styles.helpList}>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("donate-desc")}</p>
-                        <Link href={`/${locale}?modal=true`} onClick={(e) => {
-                            e.currentTarget.blur()
-                        }} className={styles.helpBtn}>{t("donate")}</Link>
+                        
+                    <button type='button'
+                        onClick={toggleModal}
+                        aria-label="Open modal"
+                        className={styles.helpBtn}>{t("donate")}
+                    </button>
                 </li>
                 <li className={styles.helpItem}>
                     <p className={styles.helpDesc}>{t("volunteer-desc")}</p>
@@ -40,6 +50,11 @@ const HelpUsGrows = () => {
             </ul>
         </div>
         </section>
+
+        {showModal && (
+            <ModalWrapper onClose={toggleModal}>
+                <Modal onClose={toggleModal}/>
+            </ModalWrapper>)}
     </>
 }
 export default HelpUsGrows;

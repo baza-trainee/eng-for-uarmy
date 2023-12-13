@@ -34,11 +34,15 @@ const RootLayout = async ({ children, params: { locale }}) => {
       <NextIntlClientProvider locale={locale} messages={messages}>
         <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
           <Header />
+
           <main>
             <HeaderTrigger/>
             {children}
           </main>
+
           <Footer />
+
+          <div id="modal-root"></div>  
         </body>
       </NextIntlClientProvider>
     </html>

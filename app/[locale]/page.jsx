@@ -1,5 +1,5 @@
-"use client"
-import { useEffect } from "react";
+// "use client"
+// import { useEffect } from "react";
 import Hero from "../components/Home/Hero/Hero";
 import RunningLine from "../components/Home/RunningLine/RunningLine";
 import OurProjects from "../components/Home/OurProjects/OurProjects";
@@ -8,20 +8,21 @@ import HelpUsGrows from "../components/Home/HelpUsGrow/HelpUsGrow";
 import Partners from "../components/Home/Partners/Partners";
 import Media from "../components/Home/Media/Media";
 import Testimonials from "../components/Home/Testimonials/Testimonials";
-import { bindPrevent } from "../libs/preventTab";
-import { ModalParams } from "../components/Home/Modal/ModalWrapper";  
+// import { bindPrevent } from "../libs/preventTab";
+// import { ModalParams } from "../components/Home/Modal/ModalWrapper";  
+
 const Home = ({searchParams}) => {
-  const showModal = searchParams?.modal;
+  // const showModal = searchParams?.modal;
   
-  useEffect(() => {
-    if (showModal) {
-      document.body.classList.add('modal-open');
-      document.addEventListener("keydown", bindPrevent);
-    } else {
-      document.body.classList.remove('modal-open');
-      document.removeEventListener("keydown", bindPrevent);
-    }
-  }, [showModal]);
+  // useEffect(() => {
+  //   if (showModal) {
+  //     document.body.classList.add('modal-open');
+  //     document.addEventListener("keydown", bindPrevent);
+  //   } else {
+  //     document.body.classList.remove('modal-open');
+  //     document.removeEventListener("keydown", bindPrevent);
+  //   }
+  // }, [showModal]);
 
 
   return (
@@ -34,7 +35,7 @@ const Home = ({searchParams}) => {
       <HelpUsGrows />
       <Partners />
       <Media />
-      {showModal && <ModalParams />}
+      {/* {showModal && <ModalParams />} */}
     </>
   );
 };

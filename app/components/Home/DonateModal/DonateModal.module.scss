@@ -1,39 +1,6 @@
 @import '../../../styles/variables.module';
 @import '../../../styles/mixins.module';
 
-.backdrop{
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    align-items: center;
-    justify-content: center;
-    pointer-events: auto;
-    background: rgba(255, 255, 255, 0.40);
-    backdrop-filter: blur(25px);
-    z-index: 50;
-}
-
-.scrollbar {
-    position: relative;
-    max-height: 90%;
-    width: auto;
-    overflow-y: scroll;
-    background: #FFF;
-}
-.scrollbar::-webkit-scrollbar-thumb {
-    background-color: $color-ultra-light-grey;    
-}
-.scrollbar::-webkit-scrollbar {
-    width: 10px;
-}
-
-.scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-}
-
 .modal {
     width: calc(320px - 32px);
     background: #FFF;
