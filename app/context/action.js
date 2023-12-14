@@ -5,7 +5,6 @@ const ActionContext = createContext(0);
 
 export const ActionProvider = ({ children }) => {
   const [action, setAction] = useState('');
-  console.log("action", action);
 
   const providerValue = useMemo(() => {
     return {
