@@ -2,14 +2,13 @@
 import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { usePathname } from "next/navigation";
-// import { useBodyScrollLock } from '@/app/hooks/useBodyScrollLock';
+import { useBodyScrollLock } from '@/app/hooks/useBodyScrollLock';
 import styles from './ModalWrapper.module.scss';
 
 export const ModalWrapper = ({ onClose, children }) => {
   const pathname = usePathname();
   const modalRoot = document.querySelector('#modal-root');
-
-  // useBodyScrollLock(true);
+  useBodyScrollLock(true);
 
   useEffect(() => {
     const handleKeyDown = e => {
