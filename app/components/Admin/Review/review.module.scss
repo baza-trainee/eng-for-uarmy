@@ -4,11 +4,12 @@
   display: flex;
   flex-direction: column;
   min-width: 1035px;
+  padding: 40px;
 }
 
-.headerArea {
-  padding: 40px 0 80px 40px;
-}
+// .headerArea {
+//   // padding: 40px 0 80px 40px;
+// }
 
 .headerText {
   font-size: 50px;
@@ -19,7 +20,7 @@
 }
 
 .buttonArea {
-  margin: 0 0 40px 40px;
+  margin-top: 80px;
 }
 
 .button {
