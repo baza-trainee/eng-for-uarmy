@@ -11,7 +11,9 @@ const MediaList = ({ list }) => {
     return <ul className={styles.mediaList}>
         {list.map(({ id, image, desc, url, name }) => {
             return <li className={styles.mediaCard} key={id}>
-                <div className={styles.mediaLogoWrap}><Image src={image} width={100} height={100} loading = 'lazy' style={{width: "100%", height: "auto", display: "block"}} alt='media logo' /></div>
+                <div className={styles.mediaLogoWrap}>
+                    <Image src={image} width={100} height={100} loading='lazy' style={{ width: "100%", height: "auto", display: "block" }} alt='media logo' />
+                </div>
                 <div className={styles.mediaContent}>
                     <p className={styles.mediaDesc}>{desc}</p>
                     <Link className={styles.btnReadMore}
