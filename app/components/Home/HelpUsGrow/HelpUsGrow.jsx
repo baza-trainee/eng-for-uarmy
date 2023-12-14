@@ -15,8 +15,10 @@ const HelpUsGrows = () => {
     const locale = useLocale();
     const t = useTranslations("HelpUsGrow");
 
-    const toggleModal = () => setShowModal(state => !state);
-
+    const toggleModal = () => {
+        setShowModal(state => !state);
+        router.push(`/${locale}#helpUsGrow`, { scroll: true });
+    }
     const handleChangeAction = (e, value) => {
         e.currentTarget.blur();
         router.push(`/${locale}/contact`)

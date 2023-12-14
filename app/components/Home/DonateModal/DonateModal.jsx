@@ -61,11 +61,12 @@ const Modal = ({ onClose }) => {
                 <><h3 className={styles.infoTitle}>{b("title")}</h3>
                 <p className={styles.infoItem}>{b("p-1")}</p>
                 <p className={styles.infoItem}>{b("p-02")}</p>
-                <p className={styles.infoItem}><span>{b("p-2-1")}</span><span>{b("p-2-2")}</span></p>
+                <p className={styles.infoItem}><span>{b("p-2-1")}</span> <br/> <span>{b("p-2-2")}</span></p>
                 <p className={styles.infoItem}>{b("p-3-1")}<span style={{width: "230px", display: "block"}}>{b("p-3-2")}</span></p>
                 <p className={styles.infoItem}>{b("p-4")}</p>
                 <p className={styles.infoItem}>{b("p-5")}</p>
-                <p className={styles.infoItem} style={{maxWidth: "330px"}}>{b("p-6")}</p>
+                <p className={styles.infoItem}>{b("p-6-1")}</p>
+                <p className={styles.infoItem}>{b("p-6-2")}</p>
                 <p className={styles.infoItem}>{b("p-7")}</p>
                 </>
                 }

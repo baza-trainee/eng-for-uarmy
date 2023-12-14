@@ -1,10 +1,18 @@
-import france24logo from '../../public/france24.png';
+import france24logo from '../../public/mediaLabels/france24.png';
+import cnnLogo from '@/public/mediaLabels/cnn-logo.svg';
+import enLogo from '@/public/mediaLabels/en.png';
+import telegraphLogo from '@/public/mediaLabels/telegraph.png';
+import expressLogo from '@/public/mediaLabels/express.png';
+import rubLogo from '@/public/mediaLabels/rubryka-logo.png'
+import shotam  from '@/public/mediaLabels/shotam.png'
+import bahmutLogo from '@/public/mediaLabels/bahmut.png'
+import donetskLogo from '@/public/mediaLabels/donetsk.png'
 
 const medias = [
     {
         id: '124',
         name: 'CNN',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/2048px-CNN_International_logo.svg.png',
+        image: cnnLogo,
         desc: 'English is our lingua franca in interacting with instructоrs, with the military and the media from around the globe.',
         url: 'https://www.youtube.com/watch?v=AV0L5dYP06A'
     },
@@ -25,21 +33,21 @@ const medias = [
     {
         id: '131',
         name: 'Єдині новини',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Yedyni_novyny_%28May_2022%2C_alternative%29.svg/330px-Yedyni_novyny_%28May_2022%2C_alternative%29.svg.png',
+        image: enLogo,
         desc: 'Вивчаючи англійську, ми краще й глибше вивчаємо військову справу.',
         url: 'https://www.youtube.com/watch?v=GpI3x2kgBnc'
     },
     {
         id: '138',
         name: 'The Telegraph',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Telegraph_logo.svg/2560px-The_Telegraph_logo.svg.png',
+        image: telegraphLogo,
         desc: 'The aim of the course is to make them [soldiers] confident speakers in communication with foreign instructors, journalists, colleagues from abroad, armed forces.',
         url: 'https://podcasts.apple.com/us/podcast/russia-closing-in-on-kharkiv-new-weapons-to-kyiv/id1612424182?i=1000570714514'
     },
     {
         id: '134',
         name: 'Express & Star (Britain)',
-        image: 'https://cloudfront-us-east-1.images.arcpublishing.com/mna/ZAGBMBKV35FF3IVFYAO6AJJXVI.png',
+        image: expressLogo,
         desc: 'I really believe that our efforts will change something in this war and equip and arm our soldiers.',
         url: 'https://www.expressandstar.com/news/uk-news/2023/08/24/english-is-our-intellectual-weapon-says-ukrainian-military-teacher/'
     },
@@ -53,7 +61,7 @@ const medias = [
     {
         id: '135',
         name: 'ShoTam',
-        image: 'https://shotam.info/wp-content/uploads/2020/04/header_logo.png',
+        image: shotam,
         desc: 'Ми формуємо нову сферу в Україні і це надихає найбільше.',
         url: 'https://shotam.info/anhliyska-dlia-zsu-yak-vykladachka-olena-chekryzhova-stvoryla-proiekt-z-vyvchennia-anhliyskoi-sered-viyskovykh/'
     },
@@ -74,7 +82,7 @@ const medias = [
     {
         id: '126',
         name: 'Rubryka',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logo_-rubryka_1000x1000.png/330px-Logo_-rubryka_1000x1000.png',
+        image: rubLogo,
         desc: 'Зараз англійська — це складова нашої боротьби й складова нашого зв`язку з рештою світу.',
         url: 'https://rubryka.com/article/english-for-military/'
     },
@@ -88,14 +96,14 @@ const medias = [
     {
         id: '132',
         name: 'bahmut.in.ua',
-        image: 'https://media.mssg.me/thumbnails/small/w/645a1a9f5436550011d4d90e/websites/645a1ab0464e6b0018aaf70b/_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F,_%D0%BA%D0%BE%D0%BF%D1%96%D1%8F_(1)_1683626863740.png',
+        image: bahmutLogo,
         desc: 'Військова англійська має бути доступною для всіх, й не має бути привілеєм, чи засекреченою інформацією.',
         url: 'https://bahmut.in.ua/59-heroi/5527-navishcho-pikhoti-znaty-anhliisku-movu-vykladachka-z-bakhmuta-rozpovila-pro-navchannia-viiskovykh'
     },
     {
         id: '125',
         name: '062 - Site of the city of Donetsk',
-        image: 'https://s.62.ua/section/logo/upload/pers/2/logo.png',
+        image: donetskLogo,
         desc: 'Я виконую свою освітню спецоперацію, завдання якої — пройти з бійцями курс English for the Military.',
         url: 'https://www.62.ua/news/3409562/olena-cekrizova-koli-ne-vistacae-motivacii-a-zgaduu-svij-gniv-ta-otrimuu-nejmovirnu-energiu'
     }
