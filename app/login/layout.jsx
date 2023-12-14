@@ -1,6 +1,6 @@
 import "./globals.scss";
 import Image from "next/image";
-import fonts from '../assets/fonts/fontsSrc';
+import fonts from '../../assets/fonts/fontsSrc';
 import styles from "./Login.module.scss";
 
 const AdminLayout = async ({ children }) => {

@@ -1,7 +1,7 @@
 import "./globals.scss";
 import { NextIntlClientProvider } from "next-intl";
 import { ActionProvider } from "../context/action";
-import fonts from '../assets/fonts/fontsSrc';
+import fonts from '../../assets/fonts/fontsSrc';
 import Header from "../components/commonComponents/Header/Header";
 import Footer from "../components/commonComponents/Footer/Footer";
 import HeaderTrigger from "../components/commonComponents/HeaderTrigger/HeaderTrigger";

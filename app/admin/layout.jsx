@@ -1,7 +1,7 @@
 import Sidebar from "../components/commonComponents/Sidebar/Sidebar";
 import "./globals.scss";
 import styles from "./admin.module.scss";
-import fonts from "../assets/fonts/fontsSrc";
+import fonts from "../../assets/fonts/fontsSrc";
 
 const AdminLayout = async ({ children }) => {
   return (
