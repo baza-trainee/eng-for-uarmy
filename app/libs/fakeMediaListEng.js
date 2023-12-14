@@ -1,10 +1,14 @@
-import france24logo from '../../public/france24.png';
+import france24logo from '@/public/mediaLabels/france24.png';
+import cnnLogo from '@/public/mediaLabels/cnn-logo.svg';
+import rubLogo from'@/public/mediaLabels/rubryka-logo.png'
+import telegraphLogo from '@/public/mediaLabels/telegraph.png';
+import expressLogo from '@/public/mediaLabels/express.png';
 
 const mediaEng = [
     {
         id: '142',
         name: 'CNN',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/CNN_International_logo.svg/2048px-CNN_International_logo.svg.png',
+        image: cnnLogo,
         desc: 'English is our lingua franca in interacting with instructоrs, with the military and the media from around the globe.',
         url: 'https://www.youtube.com/watch?v=AV0L5dYP06A'
     },
@@ -25,21 +29,21 @@ const mediaEng = [
     {
         id: '145',
         name: 'Rubryka',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Logo_-rubryka_1000x1000.png/330px-Logo_-rubryka_1000x1000.png',
+        image: rubLogo,
         desc: 'It is an honor to teach these people. Especially now, English is a component of our struggle and our connection with the rest of the world.',
         url: 'https://rubryka.com/en/article/english-for-military/'
     },    
     {
         id: '146',
         name: 'The Telegraph',
-        image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Telegraph_logo.svg/2560px-The_Telegraph_logo.svg.png',
+        image: telegraphLogo,
         desc: 'The aim of the course is to make them [soldiers] confident speakers in communication with foreign instructors, journalists, colleagues from abroad, armed forces.',
         url: 'https://podcasts.apple.com/us/podcast/russia-closing-in-on-kharkiv-new-weapons-to-kyiv/id1612424182?i=1000570714514'
     },
     {
         id: '147',
         name: 'Express & Star (Britain)',
-        image: 'https://cloudfront-us-east-1.images.arcpublishing.com/mna/ZAGBMBKV35FF3IVFYAO6AJJXVI.png',
+        image: expressLogo,
         desc: 'I really believe that our efforts will change something in this war and equip and arm our soldiers.',
         url: 'https://www.expressandstar.com/news/uk-news/2023/08/24/english-is-our-intellectual-weapon-says-ukrainian-military-teacher/'
     },

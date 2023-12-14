@@ -40,6 +40,7 @@
 .btnList{
     @media screen and (min-width: $desktop) {
         display: flex;
+        margin-bottom: 28px;
     }   
 }
 
@@ -96,8 +97,8 @@
     border: 1px solid $color-black;
     @media screen and (min-width: $desktop) {
             width: 740px;
-            margin-top: 24px;
-            padding: 40px 107px 40px 134px;
+            padding: 38px 107px 38px 134px;
+            margin-top: 0px;
             border: none;
             --border-color: #231F20;
             --size-corner: 60px;
