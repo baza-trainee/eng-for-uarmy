@@ -2,6 +2,8 @@
 import { useTranslations } from "next-intl";
 import Slider from "./Slider/Slider";
 
+import authorsSrc from "./authors-src";
+
 import styles from "./testimonials.module.scss";
 
 const Testimonials = () => {
@@ -9,16 +11,14 @@ const Testimonials = () => {
 
   const authors = Array.from({ length: 11 }, (_, idx) => ({
     id: idx + 1,
-    photo: `/feedback/author-${String(idx + 1).padStart(2, "0")}.jpg`,
+    photo: authorsSrc[idx],
     review: t(`review-${idx + 1}`),
     name: t(`name-${idx + 1}`),
     role: t(`role-${idx + 1}`),
   }));
 
   return (
-    <section
-      className={styles.section}
-    >
+    <section className={styles.section}>
       <div className={styles.container}>
         <div className={styles.titleWrapper}>
           <h2 className={styles.title}>{t("title")}</h2>
