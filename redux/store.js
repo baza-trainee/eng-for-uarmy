@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-import authReducer from "./auth/slice";
+import authReducer from "./auth/auth-slice";
 
 const createNoopStorage = () => {
   return {

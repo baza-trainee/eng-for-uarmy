@@ -1,4 +1,5 @@
 import "./globals.scss";
+import Providers from "@/redux/Provider";
 import fonts from '../assets/fonts/fontsSrc';
 
 export const metadata = {
@@ -15,14 +16,17 @@ export const metadata = {
 };
 
 const RootLayout = async ({ children }) => {
-    return (
-        <html lang='uk' suppressHydrationWarning={true}>
-            <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
-                {children}
+  return (
+    <html lang='uk' suppressHydrationWarning={true}>
+      <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
+        <Providers>
+          {children}
+        </Providers>
 
-                <div id="modal-root"></div>  
-            </body>
-        </html>
-    )
-}
+        <div id="modal-root"></div>
+      </body>
+    </html>
+  )
+};
+
 export default RootLayout
