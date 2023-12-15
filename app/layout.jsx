@@ -1,5 +1,6 @@
 import "./globals.scss";
 import Providers from "@/redux/Provider";
+import PersistGates from "@/redux/PersistGate";
 import fonts from '../assets/fonts/fontsSrc';
 
 export const metadata = {
@@ -20,7 +21,9 @@ const RootLayout = async ({ children }) => {
     <html lang='uk' suppressHydrationWarning={true}>
       <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
         <Providers>
-          {children}
+          <PersistGates>
+            {children}
+          </PersistGates>  
         </Providers>
 
         <div id="modal-root"></div>

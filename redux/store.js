@@ -10,7 +10,7 @@ import {
   REGISTER,
 } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
-import authReducer from "./auth/auth-slice";
+import { authReducer } from "./auth/auth-slice";
 
 const createNoopStorage = () => {
   return {
@@ -27,14 +27,12 @@ const createNoopStorage = () => {
 };
 
 const storage =
-  typeof window === "undefined"
-    ? createNoopStorage()
-    : createWebStorage("local");
+  typeof window === "undefined" ? createNoopStorage() : createWebStorage("local");
 
 const authPersistConfig = {
   key: "auth",
   storage,
-  whitelist: ["accessToken"],
+  whitelist: ['token'],
 };
 
 const rootReducer = combineReducers({
