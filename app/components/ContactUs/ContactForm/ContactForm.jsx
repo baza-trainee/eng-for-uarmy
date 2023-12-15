@@ -57,7 +57,7 @@ const ContactForm = () => {
       name: yup
         .string()
         .trim()
-        .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ]+$/, t("alphabet"))
+        .matches(/^[-\sA-Za-zа-яА-ЯіІїЇґҐёЁєЄ']+$/, t("alphabet"))
         .min(2, t("min"))
         .max(50, t("max50"))
         .required( t("requiredName") ),

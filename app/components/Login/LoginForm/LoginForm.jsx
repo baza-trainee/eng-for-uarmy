@@ -1,13 +1,25 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from 'react-redux';
+import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
- import { loginSchema } from "@/app/libs/adminValidationSchema";
+import { loginSchema } from "@/app/libs/adminValidationSchema";
+import { selectIsLoggedIn } from "@/redux/auth/auth-selectors";
+import { login } from "@/redux/auth/auth-operations";
 import Link from "next/link";
 import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false); 
+    const isLoggedIn = useSelector(selectIsLoggedIn);
+    const router = useRouter();
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        console.log("isLoggedIn", isLoggedIn);
+        isLoggedIn ? router.replace("/admin") : router.replace("/login");
+    }, [isLoggedIn, router]);
 
     const togglePassword = () => {
         setShowPassword(!showPassword);
@@ -15,12 +27,15 @@ const LoginForm = () => {
 
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
-      email: '',
-      password: '',
-        },
+        email: '',
+        password: '',
+            },
     validationSchema: loginSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
         console.log(email, password, "Sumbmit");
+
+        dispatch(login({ email, password }));
+        router.push("/admin");
 
         resetForm();
     },
