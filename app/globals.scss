@@ -65,3 +65,10 @@ ol {
         color-scheme: dark;
     }
 }
+
+.modal-open {
+    overflow: hidden;
+    height: 100%;
+    position: fixed;
+    width: 100%;
+}

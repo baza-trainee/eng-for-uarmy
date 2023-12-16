@@ -1,6 +1,7 @@
 import "./globals.scss";
 import Providers from "@/redux/Provider";
 import PersistGates from "@/redux/PersistGate";
+import ReduxWrapper from "@/app/components/commonComponents/ReduxWrapper/ReduxWrapper";
 import fonts from '../assets/fonts/fontsSrc';
 
 export const metadata = {
@@ -22,7 +23,9 @@ const RootLayout = async ({ children }) => {
       <body className={`${fonts.arial.className} ${fonts.furore.className}`}>
         <Providers>
           <PersistGates>
-            {children}
+            <ReduxWrapper>
+              {children}
+            </ReduxWrapper>
           </PersistGates>  
         </Providers>
 

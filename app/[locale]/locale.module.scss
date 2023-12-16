@@ -1,0 +1,9 @@
+@import "../styles/mixins.module";
+
+.main {
+    margin-top: 58px;
+    
+    @include mq(desktop) {
+        margin-top: 140px;
+    }
+}
