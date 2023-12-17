@@ -35,7 +35,6 @@ const LoginForm = () => {
         console.log(email, password, "Sumbmit");
 
         dispatch(login({ email, password }));
-        router.push("/admin");
 
         resetForm();
     },

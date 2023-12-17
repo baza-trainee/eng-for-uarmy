@@ -1,9 +1,10 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useDispatch } from "react-redux";
+import { logout } from "@/redux/auth/auth-operations";
 import styles from "./ExitModal.module.scss";
 
 const ExitModal = ({ onClose }) => {
-  const router = useRouter();
+  const dispatch = useDispatch();
 
   return (
     <div className={styles.modal}>
@@ -25,7 +26,8 @@ const ExitModal = ({ onClose }) => {
         <p className={styles.text}>ВИ ДІЙСНО ХОЧЕТЕ ВИЙТИ З СИСТЕМИ?</p>
       </div>
       <div>
-        <button className={styles.btn} onClick={() => router.push("/")}>
+        <button className={styles.btn}
+          onClick={() => dispatch(logout())}>
           ПІДТВЕРДИТИ
         </button>
         <button type='button'
