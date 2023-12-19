@@ -1,0 +1,55 @@
+@import "../../../styles/variables.module";
+
+.modalBox {
+	position: relative;
+	width: 577px;
+	height: auto;
+	padding-top: 94px;
+	padding-bottom: 40px;
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.text {
+	font-size: 20px;
+	margin-bottom: 32px;
+	text-align: center;
+}
+
+.btnClose {
+	position: absolute;
+	top: 32px;
+	right: 6px;
+	color: inherit;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	transition-property: color;
+	transition: color $timing-function $transition-duration;
+	cursor: pointer;
+}
+
+.btnClose:hover {
+	color: $color-olive;
+}
+
+.btnPublish {
+	display: block;
+	min-width: 270px;
+	font-family: inherit;
+	font-size: 22px;
+	color: $color-ultra-light-grey;
+	background-color: $color-black;
+	border: none;
+	padding: 34px 120px;
+	margin: 0 auto;
+	text-transform: uppercase;
+	--size-corner: 35px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+	transition: background-color $transition-duration $timing-function;
+	cursor: pointer;
+
+	&:hover {
+		background-color: $color-olive;
+	}
+}

@@ -1,0 +1,66 @@
+@import "../../../styles/variables.module";
+
+.section {
+	padding: 40px 0;
+}
+
+.container {
+	padding: 0 40px;
+}
+
+.title {
+	font-size: 50px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 40px;
+}
+
+.box {
+	display: flex;
+	justify-content: center;
+	align-items: start;
+	padding-top: 40px;
+	padding-bottom: 22px;
+	gap: 22px;
+	border-bottom: 1px solid $color-grey;
+}
+
+.thumb {
+	min-width: 360px;
+	height: 205px;
+	margin-right: 18px;
+}
+
+.img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.subTitle {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 32px;
+}
+
+.desc {
+	font-family: Arial;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: $color-grey;
+}
+
+.edit {
+	background-color: $color-green;
+	transition:
+		color $transition-duration $timing-function,
+		background-color $transition-duration $timing-function;
+
+	&:hover {
+		color: $color-white;
+		background-color: $color-olive;
+	}
+}

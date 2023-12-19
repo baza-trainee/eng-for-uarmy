@@ -6,6 +6,11 @@ import styles from "./ExitModal.module.scss";
 const ExitModal = ({ onClose }) => {
   const dispatch = useDispatch();
 
+  const handleClick = () => {
+    dispatch(logout());
+    onClose();
+  };
+
   return (
     <div className={styles.modal}>
       <button type='button'
@@ -27,7 +32,7 @@ const ExitModal = ({ onClose }) => {
       </div>
       <div>
         <button className={styles.btn}
-          onClick={() => dispatch(logout())}>
+          onClick={handleClick}>
           ПІДТВЕРДИТИ
         </button>
         <button type='button'

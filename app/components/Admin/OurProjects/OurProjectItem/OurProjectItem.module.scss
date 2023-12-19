@@ -1,0 +1,181 @@
+@import "../../../../styles/variables.module";
+
+.section {
+	padding: 40px 0;
+}
+
+.container {
+	padding: 0 40px;
+}
+
+.title {
+	font-size: 50px;
+	font-weight: 400;
+	line-height: 1.5;
+	margin-bottom: 80px;
+}
+
+.textPhoto {
+	font-family: Arial;
+	font-size: 24px;
+	line-height: normal;
+	margin-bottom: 16px;
+}
+
+.thumb {
+	position: relative;
+	max-width: 410px;
+	height: 398px;
+	margin-bottom: 40px;
+}
+
+.img {
+	display: block;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+}
+
+.form {
+	min-width: 850px;
+}
+
+.boxInput {
+	display: flex;
+	gap: 30px;
+	margin-bottom: 60px;
+}
+
+.label {
+	display: block;
+}
+
+.text,
+.label {
+	margin-bottom: 16px;
+}
+
+.inputTitle {
+	font-family: inherit;
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 1.5;
+	text-transform: uppercase;
+	width: 100%;
+}
+
+.text,
+.label,
+.inputText {
+	font-family: Arial;
+	font-size: 22px;
+	line-height: normal;
+	width: 100%;
+}
+
+.inputText,
+.inputTitle {
+	color: $color-black;
+	background-color: transparent;
+	border: 1px solid $color-black;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 15px;
+	padding-right: 70px;
+	outline: none;
+	resize: none;
+	// margin-bottom: 6px;
+}
+
+.inputLinkText {
+	font-size: 18px;
+	width: calc(50% - 15px);
+}
+
+.boxInputLink {
+	margin-bottom: 100px;
+}
+
+.wrapperInput {
+	position: relative;
+	width: 100%;
+}
+
+.lang {
+	position: absolute;
+	top: 20px;
+	right: 15px;
+	font-size: 16px;
+}
+
+.length {
+	font-family: Arial;
+	color: $color-olive;
+	font-size: 12px;
+	line-height: normal;
+	position: absolute;
+	bottom: -18px;
+	right: 0;
+}
+
+.lengthDinamic {
+	color: $color-black;
+}
+
+.load {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+	background-color: $color-green;
+	transition:
+		color $transition-duration $timing-function,
+		background-color $transition-duration $timing-function;
+
+	&:hover {
+		color: $color-white;
+		background-color: $color-olive;
+	}
+}
+
+.boxBtn {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.btnWrapper {
+	position: relative;
+	outline: none;
+}
+
+.button {
+	min-width: 270px;
+	font-family: inherit;
+	font-size: 22px;
+	line-height: 1.22;
+	color: $color-ultra-light-grey;
+	background-color: $color-black;
+	border: none;
+	padding: 32px 46px;
+	text-transform: uppercase;
+	--size-corner: 35px;
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 80% 100%, var(--size-corner) 100%, 0 calc(100% - var(--size-corner)));
+	transition: background-color $transition-duration $timing-function;
+
+	&:hover {
+		background-color: $color-olive;
+	}
+}
+
+.btnDelete {
+	color: $color-black;
+	background-color: transparent;
+	transition:
+		color $transition-duration $timing-function,
+		background-color $transition-duration $timing-function;
+
+	&:hover {
+		color: $color-ultra-light-grey;
+		background-color: $color-olive;
+	}
+}

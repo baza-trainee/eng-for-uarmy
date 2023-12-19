@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     useEffect(() => {
         console.log("isLoggedIn", isLoggedIn);
-        isLoggedIn ? router.push('/admin') : router.push('/login');
+        isLoggedIn && router.push('/admin');
     }, [isLoggedIn, router]);
 
     const togglePassword = () => {
