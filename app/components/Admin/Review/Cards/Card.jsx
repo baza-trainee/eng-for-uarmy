@@ -26,7 +26,7 @@ const Card = ({ data, onEdit, onDelete }) => {
       </div>
       <div className={styles.buttonArea}>
         <Link href="/admin/changeReview" className={styles.changeReview}>
-          <Image src="./Admin/Icons/Frame.svg" width={40} height={40}></Image>
+          <Image src="./Admin/Icons/Frame.svg" width={40} height={40} alt="image"></Image>
         </Link>
         <Link href="/admin/deleteReview">
           <Image
