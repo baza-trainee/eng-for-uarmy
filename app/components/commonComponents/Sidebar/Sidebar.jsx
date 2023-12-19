@@ -7,11 +7,11 @@ import { ModalWrapper } from "../ModaWrapper/ModalWrapper";
 import ExitModal from "../../Admin/ExitModal/ExitModal";
 import styles from "./sidebar.module.scss";
 
-const Sidebar = ({ }) => {
+const Sidebar = ({}) => {
   const [showModal, setShowModal] = useState(false);
   const pathname = usePathname();
 
-  const toggleModal = () => setShowModal(state => !state);
+  const toggleModal = () => setShowModal((state) => !state);
 
   return (
     <>
@@ -29,9 +29,9 @@ const Sidebar = ({ }) => {
             ВІДГУКИ ПРО ПРОЕКТ
           </Link>
           <Link
-            href="/admin/ourProjects"
+            href="/admin/our-projects"
             className={`${styles.navLink} ${
-              pathname === "/admin/ourProjects" || pathname === "/"
+              pathname === "/admin/our-projects" || pathname === "/"
                 ? styles.activeLink
                 : ""
             }`}
@@ -110,19 +110,22 @@ const Sidebar = ({ }) => {
           </Link>
         </div>
 
-        <button type='button'
+        <button
+          type="button"
           onClick={toggleModal}
           aria-label="Open exit modal"
-          className={styles.button}>
+          className={styles.button}
+        >
           ВИЙТИ
         </button>
       </div>
 
       {showModal && (
         <ModalWrapper onClose={toggleModal}>
-          <ExitModal onClose={toggleModal}/>
-        </ModalWrapper>)}
-    </>  
+          <ExitModal onClose={toggleModal} />
+        </ModalWrapper>
+      )}
+    </>
   );
 };
 export default Sidebar;
