@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectIsRefreshing } from "@/redux/auth/auth-selectors";
 import { refreshAdmin } from "@/redux/auth/auth-operations";
+import Loader from "../Loader/Loader";
 
 function ReduxWrapper({ children }) {
   const dispatch = useDispatch();
@@ -12,7 +13,12 @@ function ReduxWrapper({ children }) {
     dispatch(refreshAdmin());
   }, [dispatch]);
 
-  return isRefreshing ? <div>Loading...</div> : <div>{children}</div>;
-}
+  return (
+    <>
+      {isRefreshing && <Loader />}
+      <div>{children}</div>
+    </>
+  )
+};
 
 export default ReduxWrapper;
