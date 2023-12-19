@@ -19,15 +19,21 @@ const Card = ({ data, onEdit, onDelete }) => {
       <img src={imageUrl} alt="Card Image" className={styles.image} />
       <div className={styles.textAndName}>
         <p className={styles.text}>{textUk}</p>
-        <p className={styles.nameUk}>{nameUk}</p>
-        <p className={styles.designation}>{designationUk}</p>
+        <div>
+          <p className={styles.nameUk}>{nameUk}</p>
+          <p className={styles.designation}>{designationUk}</p>
+        </div>
       </div>
       <div className={styles.buttonArea}>
-        <Link href="/admin/changeReview">
-          <Image src="./Frame.svg" width={40} height={40}></Image>
+        <Link href="/admin/changeReview" className={styles.changeReview}>
+          <Image src="./Admin/Icons/Frame.svg" width={40} height={40}></Image>
         </Link>
         <Link href="/admin/deleteReview">
-          <Image src="./trash-01.svg" width={40} height={40}></Image>
+          <Image
+            src="./Admin/Icons/trash-01.svg"
+            width={40}
+            height={40}
+          ></Image>
         </Link>
       </div>
     </div>
