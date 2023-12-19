@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Cards/Card";
 import styles from "./review.module.scss";
+import { host } from "@/app/api/baseSettings";
 
 const Review = () => {
   const [cards, setCards] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
+  const cardsPerPage = 3;
 
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api/cards");
+        const response = await host.get("api/reviews");
         const data = await response.json();
         setCards(data);
       } catch (error) {
@@ -19,6 +22,16 @@ const Review = () => {
     fetchCards();
   }, []);
 
+  const indexOfLastCard = currentPage * cardsPerPage;
+  const indexOfFirstCard = indexOfLastCard - cardsPerPage;
+  const currentCards = cards.slice(indexOfFirstCard, indexOfLastCard);
+
+  const totalPages = Math.ceil(cards.length / cardsPerPage);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+
   return (
     <div className={styles.reviewArea}>
       <p className={styles.headerText}>ВІДГУКИ ПРО ПРОЕКТ</p>
@@ -27,9 +40,28 @@ const Review = () => {
       </div>
       <div>
         <div>
-          {cards.map((card) => (
+          {currentCards.map((card) => (
             <Card key={card._id} data={card} />
           ))}
+        </div>
+        <div className={styles.pagination}>
+          <button
+            className={styles.paginationButton}
+            onClick={() => paginate(currentPage - 1)}
+            disabled={currentPage === 1}
+          >
+            {"<"}
+          </button>
+          <p>
+            {currentPage} з {totalPages}
+          </p>
+          <button
+            className={styles.paginationButton}
+            onClick={() => paginate(currentPage + 1)}
+            disabled={currentPage === totalPages}
+          >
+            {">"}
+          </button>
         </div>
       </div>
     </div>
