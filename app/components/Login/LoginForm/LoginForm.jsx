@@ -18,7 +18,7 @@ const LoginForm = () => {
 
     useEffect(() => {
         console.log("isLoggedIn", isLoggedIn);
-        isLoggedIn ? router.replace("/admin") : router.replace("/login");
+        isLoggedIn && router.push('/admin');
     }, [isLoggedIn, router]);
 
     const togglePassword = () => {
@@ -34,7 +34,7 @@ const LoginForm = () => {
     onSubmit: async ({ email, password }, { resetForm }) => {
         console.log(email, password, "Sumbmit");
 
-        dispatch(login({ email, password }));
+        await dispatch(login({ email, password }));
 
         resetForm();
     },

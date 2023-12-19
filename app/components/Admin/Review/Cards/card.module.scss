@@ -4,8 +4,8 @@
   padding-top: 40px;
   display: flex;
   flex-direction: row;
-  max-width: 955px;
-  max-height: 407px;
+  width: 955px;
+  height: 447px;
   border-bottom: 1px $color-grey solid;
 }
 
@@ -13,6 +13,12 @@
   margin-right: 80px;
   width: 170px;
   height: 170px;
+}
+
+.textAndName {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .text {
@@ -31,7 +37,6 @@
   line-height: 27px;
   letter-spacing: 0px;
   text-align: left;
-  padding-top: 37px;
 }
 
 .designation {
@@ -47,4 +52,8 @@
 
 .buttonArea {
   padding-left: 40px;
+}
+
+.changeReview {
+  margin-right: 15px;
 }
