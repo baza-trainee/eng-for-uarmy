@@ -23,6 +23,7 @@ const OurProjects = () => {
                 width={360}
                 height={205}
                 alt="photo about project"
+                priority
               />
             </div>
             <div className={styles.textWrapper}>
