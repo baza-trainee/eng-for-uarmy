@@ -55,4 +55,10 @@ const SvgLoad = () => {
   );
 };
 
-export { SvgPencil, SvgLoad };
+const SvgBorderBtn = () => {
+  <svg xmlns="http://www.w3.org/2000/svg" width="270" height="92" fill="none">
+    <path stroke="#231F20" d="M.5 45.813V.5h269v91H40.228L.5 45.813Z" />
+  </svg>;
+};
+
+export { SvgPencil, SvgLoad, SvgBorderBtn };
