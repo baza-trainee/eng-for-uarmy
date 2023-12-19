@@ -2,11 +2,11 @@ import { host } from '@/app/api/baseSettings';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const setAuthHeader = token => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  host.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 const clearAuthHeader = () => {
-  axios.defaults.headers.common.Authorization = '';
+  host.defaults.headers.common.Authorization = '';
 };
 
 /*
@@ -24,6 +24,7 @@ export const login = createAsyncThunk(
 
       return data;
     } catch (error) {
+      console.log(error);
       return thunkAPI.rejectWithValue(error.message);
     }
   }

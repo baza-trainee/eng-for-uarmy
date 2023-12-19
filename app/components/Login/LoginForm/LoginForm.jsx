@@ -32,7 +32,7 @@ const LoginForm = () => {
             },
     validationSchema: loginSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
-        console.log(email, password, "Sumbmit");
+        console.log(email, password, "Submit");
 
         await dispatch(login({ email, password }));
 

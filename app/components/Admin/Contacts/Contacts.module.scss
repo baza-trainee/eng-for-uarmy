@@ -1,0 +1,34 @@
+@import "../../../styles/mixins.module";
+@import "../../../styles/variables.module";
+
+.contactWrapper{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.socialWrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px 30px;
+}
+
+.socialTitle{
+    font-family: Arial;
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 16px;
+}
+
+.submitBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 270px;
+    height: 50px;
+    height: 92px;
+    font-size: 22px;
+    color: $color-ultra-light-grey;
+    margin-top: 200px;
+    @include cutBtn();
+}
