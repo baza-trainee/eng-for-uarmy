@@ -1,4 +1,4 @@
-import { host } from '../../app/api/baseSettings';
+import { host } from '@/app/api/baseSettings';
 import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const setAuthHeader = token => {
