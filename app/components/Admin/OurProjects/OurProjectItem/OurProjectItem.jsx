@@ -85,7 +85,9 @@ const OurProjectItem = () => {
                   ></textarea>
                   <span className={styles.lang}>UKR</span>
                   <span className={styles.length}>
-                    <span className={styles.lengthDinamic}>33</span>
+                    <span className={styles.lengthDinamic}>
+                      {titleUa.length}
+                    </span>
                     /50
                   </span>
                 </div>
@@ -102,7 +104,9 @@ const OurProjectItem = () => {
                   ></textarea>
                   <span className={styles.lang}>ENG</span>
                   <span className={styles.length}>
-                    <span className={styles.lengthDinamic}>27</span>
+                    <span className={styles.lengthDinamic}>
+                      {titleEn.length}
+                    </span>
                     /50
                   </span>
                 </div>
@@ -125,7 +129,9 @@ const OurProjectItem = () => {
                   ></textarea>
                   <span className={styles.lang}>UKR</span>
                   <span className={styles.length}>
-                    <span className={styles.lengthDinamic}>173</span>
+                    <span className={styles.lengthDinamic}>
+                      {textUa.length}
+                    </span>
                     /255
                   </span>
                 </div>
@@ -142,7 +148,9 @@ const OurProjectItem = () => {
                   ></textarea>
                   <span className={styles.lang}>ENG</span>
                   <span className={styles.length}>
-                    <span className={styles.lengthDinamic}>131</span>
+                    <span className={styles.lengthDinamic}>
+                      {textEn.length}
+                    </span>
                     /255
                   </span>
                 </div>
