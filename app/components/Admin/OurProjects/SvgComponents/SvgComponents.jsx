@@ -56,9 +56,18 @@ const SvgLoad = () => {
 };
 
 const SvgBorderBtn = () => {
-  <svg xmlns="http://www.w3.org/2000/svg" width="270" height="92" fill="none">
-    <path stroke="#231F20" d="M.5 45.813V.5h269v91H40.228L.5 45.813Z" />
-  </svg>;
+  return (
+    <svg
+      className={styles.svgBorderBtn}
+      width="270"
+      height="90"
+      viewBox="0 0 271 90"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path className={styles.path} d="M0 0H270V90H36L0 56V0Z" />
+    </svg>
+  );
 };
 
 export { SvgPencil, SvgLoad, SvgBorderBtn };
