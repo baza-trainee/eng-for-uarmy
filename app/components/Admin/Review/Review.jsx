@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Card from "./Cards/Card";
 import styles from "./review.module.scss";
-import { host } from "@/app/api/baseSettings";
+import { host } from "../../../api/baseSettings";
 
 const Review = () => {
   const [cards, setCards] = useState([]);
@@ -11,9 +11,8 @@ const Review = () => {
   useEffect(() => {
     const fetchCards = async () => {
       try {
-        const response = await host.get("api/reviews");
-        const data = await response.json();
-        setCards(data);
+        const response = await host.get("/api/admin/reviews");
+        setCards(response.data);
       } catch (error) {
         console.error("Error fetching cards:", error);
       }
