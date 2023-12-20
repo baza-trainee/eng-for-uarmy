@@ -21,8 +21,6 @@ const LoginForm = () => {
     const router = useRouter();
     const dispatch = useDispatch();
 
-    console.log('status', status);
-
     useEffect(() => {
         console.log("isLoggedIn", isLoggedIn);
         isLoggedIn && router.push('/admin');
