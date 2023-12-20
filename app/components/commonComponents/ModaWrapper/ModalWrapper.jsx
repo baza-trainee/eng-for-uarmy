@@ -34,7 +34,7 @@ export const ModalWrapper = ({ onClose, children }) => {
     <div
       onClick={handleBackdropClick}
       className={`${styles.backdrop} ${
-        pathname.includes("/admin") && styles.backdropAdmin
+        (pathname.includes("/login") || pathname.includes("/admin")) && styles.backdropAdmin
       }`}
     >
       <div className={styles.scrollbar}>{children}</div>

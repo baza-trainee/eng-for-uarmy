@@ -4,26 +4,40 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import { loginSchema } from "@/app/libs/adminValidationSchema";
-import { selectIsLoggedIn } from "@/redux/auth/auth-selectors";
+import { selectIsLoggedIn, selectError } from "@/redux/auth/auth-selectors";
 import { login } from "@/redux/auth/auth-operations";
 import Link from "next/link";
+import { ModalWrapper } from "../../commonComponents/ModaWrapper/ModalWrapper";
+import ErrorModal from "../ErrorModal/ErrorModal";
 import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const LoginForm = () => {
     const [showPassword, setShowPassword] = useState(false); 
+    const [showModal, setShowModal] = useState(false);
     const isLoggedIn = useSelector(selectIsLoggedIn);
+    const error = useSelector(selectError);
+    const { status } = error;
     const router = useRouter();
     const dispatch = useDispatch();
+
+    console.log('status', status);
 
     useEffect(() => {
         console.log("isLoggedIn", isLoggedIn);
         isLoggedIn && router.push('/admin');
-    }, [isLoggedIn, router]);
+
+        if (status === 401) {
+            setShowModal(true);
+        };
+
+    }, [isLoggedIn, router, status]);
 
     const togglePassword = () => {
         setShowPassword(!showPassword);
     }
+
+    const toggleModal = () => setShowModal((state) => !state);
 
     const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
     initialValues: {
@@ -32,9 +46,7 @@ const LoginForm = () => {
             },
     validationSchema: loginSchema,    
     onSubmit: async ({ email, password }, { resetForm }) => {
-        console.log(email, password, "Sumbmit");
-
-        await dispatch(login({ email, password }));
+        dispatch(login({ email, password }));
 
         resetForm();
     },
@@ -43,6 +55,7 @@ const LoginForm = () => {
     const disabled = !values.email || !values.password;
 
     return (
+        <>
         <form className={styles.form} onSubmit={handleSubmit} autoComplete="off">
             <h2 className={styles.form__title}>ВХІД</h2>
 
@@ -99,7 +112,14 @@ const LoginForm = () => {
                 </button>
             </div>
             
-        </form>
+            </form>
+
+            {showModal && (
+                <ModalWrapper onClose={toggleModal}>
+                    <ErrorModal onClose={toggleModal}/>
+                </ModalWrapper>
+            )}
+        </>    
     )
 }
 
