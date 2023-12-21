@@ -1,0 +1,54 @@
+@import "../../../styles/variables.module";
+
+.modal {
+    width: 576px;
+    padding: 32px 16px 64px;
+
+    text-align: center;
+
+    background-color: $color-ultra-light-grey;
+
+   &__message{
+        display: block;
+        margin-bottom: 32px;
+        font-weight: 400;
+        font-size: 16px;
+   }
+
+   &__btnCross{
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: auto;
+    margin-bottom: 32px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    background-color: $color-ultra-light-grey;
+    color: $color-black;
+
+    transition: color $transition-duration $timing-function;
+
+    &:hover{
+        color: $color-green;
+    }
+    }
+
+    &__icon{
+        width: 30px;
+        height: 30px;
+        stroke: currentColor;
+    }
+
+    &__text{
+        margin-bottom: 32px;
+        font-size: 16px;
+    }
+
+    & &__btn{
+        width: 270px;
+    }
+}

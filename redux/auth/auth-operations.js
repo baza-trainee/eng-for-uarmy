@@ -17,15 +17,17 @@ export const login = createAsyncThunk(
   'auth/login',
   async (credentials, thunkAPI) => {
     try {
-      const { data } = await host.post('/api/auth/login', credentials);
-      console.log("data", data);
+      const res = await host.post('/api/auth/login', credentials);
+      console.log("responce", res);
+
+      const { data } = res;
             
       setAuthHeader(data.admin.token);
 
       return data;
     } catch (error) {
       console.log(error);
-      return thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error.response);
     }
   }
 );
@@ -64,7 +66,7 @@ export const refreshAdmin = createAsyncThunk(
     try {
       setAuthHeader(persistedToken);
       const res = await host.get('/api/auth/current');
-      console.log('res.data', res.data);
+      console.log('refresh admin', res.data);
       return res.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
