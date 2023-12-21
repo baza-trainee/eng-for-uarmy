@@ -88,7 +88,18 @@
         border: none;
         cursor: pointer;
 
+        color: $color-black;
         background-color: transparent;
+
+        transition: color $transition-duration $timing-function;
+
+        &:hover{
+            color: $color-olive;
+        }
+    }
+
+    &__icon{
+        stroke: currentColor;
     }
 
     &__error {
