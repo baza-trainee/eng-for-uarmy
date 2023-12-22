@@ -4,6 +4,7 @@ import { useFormik } from "formik";
 import { forgotPasswordSchema } from '@/app/libs/adminValidationSchema';
 import Link from 'next/link';
 import Thanks from '../Thanks/Thanks';
+import SvgBorderBtn from '@/app/components/commonComponents/SvgBorderBtn/SvgBorderBtn';
 import styles from './ForgotPasswordForm.module.scss';
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
@@ -51,14 +52,14 @@ const ForgotPasswordForm = () => {
               Підтвердити
             </button>
 
-            <Link href='/login'
-              className={styles.form__btnOutline}>
-              Cкасувати
-              <svg tabIndex='0' width="270" height="92" viewBox="0 0 270 92" fill="none" className={styles.form__btnIcon}>
-                <path d="M0.5 45.813V0.5H269.5V91.5H40.2278L0.5 45.813Z"/>
-              </svg>
-            </Link>
-          </div>
+            <div className={styles.form__borderWrapper} tabIndex={1}>
+              <Link href='/login'
+                className={styles.form__btnBack}>
+                Cкасувати
+              </Link>
+              <SvgBorderBtn />
+            </div>
+          </div>  
         </form>
       : <Thanks /> }
     </>

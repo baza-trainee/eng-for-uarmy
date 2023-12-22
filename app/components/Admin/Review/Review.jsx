@@ -1,8 +1,5 @@
 'use client';
 import React, { useState, useEffect } from "react";
-import { useSelector } from 'react-redux';
-import { useRouter } from "next/navigation";
-import { selectIsLoggedIn } from "@/redux/auth/auth-selectors";
 import { host } from "../../../api/baseSettings";
 import Card from "./Cards/Card";
 import styles from "./review.module.scss";
@@ -11,13 +8,6 @@ const Review = () => {
   const [cards, setCards] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const cardsPerPage = 3;
-  const isLoggedIn = useSelector(selectIsLoggedIn);
-  const router = useRouter();
-
-  useEffect(() => {
-    console.log("isLoggedIn", isLoggedIn);
-    !isLoggedIn && router.push('/login');
-  }, [isLoggedIn, router]);
 
   useEffect(() => {
     const fetchCards = async () => {
