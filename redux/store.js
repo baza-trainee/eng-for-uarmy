@@ -11,6 +11,7 @@ import {
 } from "redux-persist";
 import createWebStorage from "redux-persist/lib/storage/createWebStorage";
 import { authReducer } from "./auth/auth-slice";
+import { adminReducer } from "./admin/admin-slice";
 
 const createNoopStorage = () => {
   return {
@@ -37,6 +38,7 @@ const authPersistConfig = {
 
 const rootReducer = combineReducers({
   auth: persistReducer(authPersistConfig, authReducer),
+  admin: adminReducer
 });
 
 export const store = configureStore({
