@@ -71,9 +71,9 @@ const ForgotPasswordForm = () => {
             </button>
 
             <div className={styles.form__borderWrapper} tabIndex={1}>
-              <button className={styles.form__btnBack}>
-                <Link href="/login"> Cкасувати</Link>
-              </button>
+              <Link href="/login" className={styles.form__btnBack}>
+                Cкасувати
+              </Link>
               <SvgBorderBtn />
             </div>
           </div>
