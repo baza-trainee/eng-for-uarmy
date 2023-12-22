@@ -9,7 +9,6 @@
     color: $color-black;
     width: 270px;
     height: 92px;
-    margin-bottom: 40px;;
     font-size: 22px;
     line-height: 27px;
     transition: all $transition-duration $timing-function;
@@ -25,9 +24,10 @@
 .mediaItem{
     display: flex;
     align-items: flex-start;
-    padding-top: 40px;;
+    padding-top: 40px;
     padding-bottom: 22px;
     border-bottom: 1px solid $color-grey;
+    width: 100%;
 }
 .logoBox{
     display: flex;

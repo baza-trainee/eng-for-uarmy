@@ -1,0 +1,67 @@
+@import "../../../../styles/variables.module";
+@import "../../../../styles/mixins.module";
+
+.modal{
+    position: relative;
+    color: $color-black;
+    padding: 94px 16px 77px 16px;
+}
+.exitBtn{
+    position: absolute;
+    top: 32px;
+    right: 16px;
+    color: $color-black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    & path{
+        stroke: currentColor;
+    }
+    &:hover{
+        color: $color-olive;
+    }
+}
+.confirmation{
+font-size: 20px;
+text-align: center;
+margin-bottom: 20px;
+}
+
+.cancelBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+    width: 270px;
+    height: 92px;
+    font-size: 22px;
+    line-height: 27px;
+    transition: all $transition-duration $timing-function;
+    @include emptyCutBtn();
+
+    &:hover {
+        color: $color-white;
+    }
+}
+
+.confirmBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    width: 270px;
+    height: 92px;
+    font-size: 22px;
+    transition: all $transition-duration $timing-function;
+    @include cutBtn();
+
+    &:hover {
+        color: $color-white;
+    }
+}
+
+.btnBox {
+    display: flex;
+    gap: 8px;
+}

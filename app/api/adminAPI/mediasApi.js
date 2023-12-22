@@ -14,6 +14,9 @@ const getMediaById = async (id) => {
         return response.data;
     } catch (error) {
         console.error("Error fetching medias:", error);
+        if (error.response) {
+            return error.response.data
+        }
     }
 }
 const createMedia = async (data) => {
@@ -36,6 +39,7 @@ const updateMedia = async (data) => {
 const deleteMediaById = async (id) => {
     try {
         const response = await host.delete(`/api/admin/medias/${id}`);
+        console.log("success");
         return response.data;
     } catch (error) {
         console.error("Error fetching medias:", error);
