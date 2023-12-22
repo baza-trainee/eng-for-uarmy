@@ -6,9 +6,9 @@ const SvgPencil = () => {
       <path d="M0 0h40v40H0z" />
       <path
         className={styles.path}
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
         d="M20 33.336h15M27.5 5.832a3.535 3.535 0 1 1 5 5L11.667 31.666 5 33.332l1.667-6.666L27.5 5.832ZM25 8.336l5 5"
       />
     </svg>
@@ -46,28 +46,13 @@ const SvgLoad = () => {
           className={styles.path}
           id="Vector_3"
           d="M20 25V5"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
       </g>
     </svg>
   );
 };
 
-const SvgBorderBtn = () => {
-  return (
-    <svg
-      className={styles.svgBorderBtn}
-      width="270"
-      height="90"
-      viewBox="0 0 271 90"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path className={styles.path} d="M0 0H270V90H36L0 56V0Z" />
-    </svg>
-  );
-};
-
-export { SvgPencil, SvgLoad, SvgBorderBtn };
+export { SvgPencil, SvgLoad };

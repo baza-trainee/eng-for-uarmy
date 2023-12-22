@@ -110,12 +110,10 @@ const Sidebar = ({}) => {
           </Link>
         </div>
 
-        <button
-          type="button"
+        <button type="button"
           onClick={toggleModal}
           aria-label="Open exit modal"
-          className={styles.button}
-        >
+          className={styles.button}>
           ВИЙТИ
         </button>
       </div>

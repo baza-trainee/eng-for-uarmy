@@ -28,6 +28,7 @@ const ExitModal = ({ onClose }) => {
       </div>
       <div>
         <button className={styles.btn}
+          aria-label="Log out"
           onClick={handleClick}>
           ПІДТВЕРДИТИ
         </button>

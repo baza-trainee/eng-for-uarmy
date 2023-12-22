@@ -6,7 +6,8 @@ import { createRef, useState } from "react";
 
 import { ModalWrapper } from "@/app/components/commonComponents/ModaWrapper/ModalWrapper";
 import ModalPublish from "../../ModalPublish/ModalPublish";
-import { SvgBorderBtn, SvgLoad } from "../SvgComponents/SvgComponents";
+import SvgBorderBtn from "@/app/components/commonComponents/SvgBorderBtn/SvgBorderBtn";
+import { SvgLoad } from "../SvgComponents/SvgComponents";
 import dataProjects from "../data";
 
 import styles from "./OurProjectItem.module.scss";
