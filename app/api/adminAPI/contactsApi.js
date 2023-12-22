@@ -26,4 +26,4 @@ const updateContacts = async (data) => {
     }
 }
 
-export { getContacts };
+export { getContacts, getSocials, updateContacts };

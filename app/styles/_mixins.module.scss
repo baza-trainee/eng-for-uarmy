@@ -138,6 +138,100 @@
             }
     }
     
+    
+    // @media screen and (max-width: $desktop) {
+    // &:active {
+    //     --border-color: #798738;
+    // }
+
+    // &:active::after {
+    //     background: $color-olive;
+    // }
+    // &:not(:active) {
+    //     --border-color: #231F20;
+    // }
+    // }
+
+   
+}
+@mixin emptyCutBtn(){
+    position: relative;
+    font-family: inherit;
+    --border-color: #231F20;
+    --size-corner: 20px;
+    --border-width: 1px;
+    outline: none;
+    border: none;
+    clip-path: polygon(0 0,
+            100% 0,
+            100% 100%,
+            80% 100%,
+            var(--size-corner) 100%,
+            0 calc(100% - var(--size-corner)));
+    transition: all $transition-duration $timing-function;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background: var(--border-color);
+        z-index: -2;
+    }
+
+    &::after {
+        content: "";
+        background-color: $color-ultra-light-grey;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        z-index: -1;
+        clip-path: polygon(var(--border-width) var(--border-width),
+                100% var(--border-width),
+                calc(100% - var(--border-width)) var(--border-width),
+                calc(100% - var(--border-width)) calc(100% - var(--border-width)),
+                calc(var(--size-corner) + calc(var(--border-width) / 2)) calc(100% - var(--border-width)),
+                var(--border-width) calc(100% - var(--size-corner) - calc(var(--border-width) / 2)));
+    }
+
+
+         &:active {
+             --border-color: #798738;
+         }
+    
+         &:active::after {
+             background: $color-olive;
+         }
+
+    @media screen and (min-width: $desktop) {
+        --size-corner: 36px;
+        &:hover {
+                --border-color: #798738;
+            }
+        
+            &:hover::after {
+                background-color: $color-olive;
+            }
+        
+            &:active {
+                --border-color: #231F20;
+            }
+        
+            &:active::after {
+                background: $color-black;
+            }
+        
+            &:focus:not(:active) {
+                --border-color: #8b8b8b;
+            }
+    }
+    
+    
     // @media screen and (max-width: $desktop) {
     // &:active {
     //     --border-color: #798738;

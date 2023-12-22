@@ -1,0 +1,78 @@
+@import "../../../styles/mixins.module";
+@import "../../../styles/variables.module";
+
+.addBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    color: $color-black;
+    width: 270px;
+    height: 92px;
+    font-size: 22px;
+    line-height: 27px;
+    transition: all $transition-duration $timing-function;
+    @include emptyCutBtn();
+    &:hover{
+        color: $color-white;
+    }
+    &:hover path{
+        stroke: $color-white;
+    }
+}
+
+.mediaItem{
+    display: flex;
+    align-items: flex-start;
+    padding-top: 40px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid $color-grey;
+    width: 100%;
+}
+.logoBox{
+    display: flex;
+    width: 262px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $color-grey;
+    padding: 0 40px;
+}
+.logo{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.desc{
+    font-family: Arial;
+    font-size: 23px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 23px;
+    margin: 0 20px 0 40px;
+}
+.btnBox{
+    display: flex;
+    gap: 16px;
+    margin-left: auto;
+}
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: $color-green;
+    color: $color-black;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    transition: all $transition-duration $timing-function;
+    &:hover{
+        color: $color-white;
+        background-color: $color-olive;
+    }
+}
+.btnIcon{
+    stroke: currentColor;
+}

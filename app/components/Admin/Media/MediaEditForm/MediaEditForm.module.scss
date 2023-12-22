@@ -1,0 +1,107 @@
+@import "../../../../styles/variables.module";
+@import "../../../../styles/mixins.module";
+
+.cancelBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-black;
+    width: 270px;
+    height: 92px;
+    font-size: 22px;
+    line-height: 27px;
+    transition: all $transition-duration $timing-function;
+    @include emptyCutBtn();
+
+    &:hover {
+        color: $color-white;
+    }
+}
+.publishBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $color-white;
+    width: 270px;
+    height: 92px;
+    font-size: 22px;
+    transition: all $transition-duration $timing-function;
+    @include cutBtn();
+
+    &:hover {
+        color: $color-white;
+    }
+}
+
+.btnBox{
+    display: flex;
+    gap: 40px;
+    margin-top: 100px;
+}
+
+.textareasWrapper{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 120px;
+}
+
+.titles{
+    font-family: Arial;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+.textarea{
+    position: relative;
+    width: 410px;
+    min-height: 168px;
+    padding: 20px 15px;
+    border: 1px solid $color-black;
+    font-family: Arial;
+    font-size: 22px;
+    resize: none;
+    outline: none;
+    background-color: transparent;
+    &::placeholder{
+        color: $color-grey;
+    }
+    &::before{
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 6px;
+        width: 40px;
+        height: 40px;
+        z-index: 5;
+        background: url('../../../../../public/en.svg') no-repeat center center;
+        background-size: cover;
+    }
+}
+
+.inputUrl{
+    width: 410px;
+    padding: 18px 15px;
+    border: 1px solid $color-black;
+    font-family: Arial;
+    font-size: 18px;
+    outline: none;
+    background-color: transparent;
+
+    &::placeholder {
+        color: $color-grey;
+    }
+}
+
+.imgBox{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 262px;
+    height: 100px;
+    border: 1px solid $color-black;
+    margin-bottom: 40px;
+    overflow: hidden;
+}
+.img{
+    max-height: 100%;
+    max-width: 100%;
+}

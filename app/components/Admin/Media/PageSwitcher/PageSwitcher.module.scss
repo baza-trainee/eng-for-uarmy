@@ -1,0 +1,35 @@
+@import "../../../../styles/variables.module";
+
+.switcherBox{
+    display: flex;
+    margin-top: 108px;
+    align-items: center;
+    justify-content: center;
+}
+.pageBox{
+    font-family: Arial;
+    color: $color-black;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    gap: 7px;
+}
+.pageNumber{
+    font-size: 24px;
+    padding: 0 6px;
+}
+.arrowBtn{
+    color: $color-black;
+    font-family: Arial;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 27px;
+    border: none;
+    outline: none;
+    &:disabled{
+            color: $color-grey;
+    }
+        
+}
