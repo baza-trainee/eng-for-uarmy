@@ -1,20 +1,35 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { AdminTitle } from "../../commonComponents/AdminTitle/AdminTitle";
 import AdminWrapper from "../../commonComponents/AdminWrapper/AdminWrapper";
 import ContactsForm from "./ContactsForm";
-import { getContacts } from "@/app/api/adminAPI/contactsApi";
+import { getContacts } from "@/redux/admin/admin-operathions";
+import { ModalWrapper } from "../../commonComponents/ModaWrapper/ModalWrapper";
+import PublishModal from "../PublishModal/PublishModal";
 
 const Contacts = () => {
-  const [formData, setFormData] = useState({number: "8989"});
-  useEffect(() => {
-        getContacts().then(setFormData)
-  }, [])
+    const [showModal, setShowModal] = useState(false);
+    const dispatch = useDispatch();
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
+  
+    useEffect(() => {
+      dispatch(getContacts())
+    }, [dispatch])
     
-    return <AdminWrapper>
+  return <>
+    <AdminWrapper>
         <AdminTitle title="Контакти" />
-        <ContactsForm data={formData} />
+        <ContactsForm onClose={toggleModal}/>
     </AdminWrapper>
+    {showModal && (
+        <ModalWrapper onClose={toggleModal}>
+            <PublishModal onClose={toggleModal}/>
+        </ModalWrapper>
+    )}
+  </>
 }
 
 export default Contacts;
