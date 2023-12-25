@@ -63,11 +63,19 @@
         }
     } 
 
-    &__wrapper a:first-child{
+    &__wrapper a{
         margin-bottom: 30px;
         @include mq(desktop) {
             margin-bottom: 0;
             margin-right: 18px;
+        }
+    }
+
+    &__wrapper button {
+        width: 100%;
+
+        @include mq(desktop) {
+            width: fit-content;
         }
     }
 }    
