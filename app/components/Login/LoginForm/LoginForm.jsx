@@ -1,10 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useRouter } from "next/navigation";
 import { useFormik } from "formik";
 import { loginSchema } from "@/app/libs/adminValidationSchema";
-import { selectIsLoggedIn, selectError } from "@/redux/auth/auth-selectors";
+import { useAuth } from "@/app/hooks/useAuth";
 import { login } from "@/redux/auth/auth-operations";
 import Link from "next/link";
 import { ModalWrapper } from "../../commonComponents/ModaWrapper/ModalWrapper";
@@ -13,10 +13,9 @@ import styles from "./LoginForm.module.scss";
 import btnStyles from "../../commonComponents/MainLink/MainLink.module.scss";
 
 const LoginForm = () => {
-    const [showPassword, setShowPassword] = useState(false); 
+    const [showPassword, setShowPassword] = useState(false);
     const [showModal, setShowModal] = useState(false);
-    const isLoggedIn = useSelector(selectIsLoggedIn);
-    const error = useSelector(selectError);
+    const { isLoggedIn, error } = useAuth();
     const { status } = error;
     const router = useRouter();
     const dispatch = useDispatch();
