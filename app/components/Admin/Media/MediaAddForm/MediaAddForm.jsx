@@ -11,34 +11,32 @@ const  defaultImg = "https://res.cloudinary.com/dbyoqto0b/image/upload/v17035279
 
 
 const MediaAddForm = () => {
-    const [file, setFile] = useState(null);
+    const [file, setFile] = useState(null); 
+    const initialValues = { logoImg: file, mediaURL: "", ukDesc: "", enDesc: "" };
+    const handleFileChange = e => {
+        const file = e.target.files[0];
+        setFile(file)
+    };
     
-    const initialValues = {logoImg: file, mediaURL: "", ukDesc: "", enDesc: ""}
-    const { values, errors, touched, handleBlur, handleChange, handleSubmit } = useFormik({
-      initialValues,
-      validationSchema: mediaSchema,    
+    const { values, errors, handleChange, handleSubmit, resetForm } = useFormik({
+        initialValues,
+        validationSchema: mediaSchema,    
         onSubmit: async (values) => {
             console.log(values, "Submit");
-    
+
             const formData = new FormData();
             formData.append('logoImg', file);
             formData.append('mediaURL', JSON.stringify(values.mediaURL));
             formData.append('ukDesc', JSON.stringify(values.ukDesc));
             values.enDesc ? formData.append('enDesc', JSON.stringify(values.enDesc)) : null;
             await createMedia(formData); 
-      },
-      enableReinitialize: true,
+        },
+        enableReinitialize: true,
     });
 
-
-    const handleFileChange = e => {
-         console.log("click");
-        const file = e.target.files[0];
-        setFile(file)
-    };
     return <AdminWrapper>
         <AdminTitle title={'Медіа'} />
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} autoComplete="off">
             <p className={styles.titles} style={{ fontSize: "24px" }}>Логотип ЗМІ</p>
             <div className={styles.fieldWrapper} >
                 <div style={{position: 'relative', width: '262px'}}>
@@ -90,7 +88,10 @@ const MediaAddForm = () => {
             </div>
             <div className={styles.btnBox}>
                 <button type="submit" className={styles.publishBtn}>Опублікувати</button>
-                <button type="button" className={styles.cancelBtn}>Скасувати</button>
+                <button type="reset" onClick={() => {
+                    resetForm({ values: { logoImg: null, mediaURL: "", ukDesc: "", enDesc: "" } })
+                    setFile(null)
+                }} className={styles.cancelBtn}>Скасувати</button>
             </div>
         </form>
     </AdminWrapper>
