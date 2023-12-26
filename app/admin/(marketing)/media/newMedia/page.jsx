@@ -1,7 +1,9 @@
+import MediaAddForm from "@/app/components/Admin/Media/MediaAddForm/MediaAddForm";
+
 const NewMediaPage = () => {
     
 
-    return <p>new</p>
+    return <MediaAddForm/>
 }
 
 export default NewMediaPage;

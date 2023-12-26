@@ -40,7 +40,7 @@ const Media = () => {
                 Додати медіа
             </Link>
             <ul>
-                {medias.map((media) => <MediaItem key={media._id} media={media} onClose={toggleModal} />)}
+                {medias && medias.map((media) => <MediaItem key={media._id} media={media} onClose={toggleModal} />)}
             </ul>
             <PageSwitcher currentPage={currentPage} setCurrentPage={setCurrentPage} allMedia={all} />
         </AdminWrapper>

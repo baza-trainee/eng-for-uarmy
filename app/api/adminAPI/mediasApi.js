@@ -3,6 +3,7 @@ import { host } from "../baseSettings";
 const getMedia = async (lang, page, limit) => {
     try {
         const response = await host.get(`/api/admin/medias?lang=${lang}&page=${page}&limit=${limit}`);
+    //    console.log(response.data);
         return response.data;
     } catch (error) {
         console.error("Error fetching medias:", error);
