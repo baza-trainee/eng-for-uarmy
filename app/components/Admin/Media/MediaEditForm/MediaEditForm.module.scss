@@ -64,19 +64,12 @@
     &::placeholder{
         color: $color-grey;
     }
-    &::before{
-        content: "";
-        position: absolute;
-        top: 20px;
-        right: 6px;
-        width: 40px;
-        height: 40px;
-        z-index: 5;
-        background: url('../../../../../public/en.svg') no-repeat center center;
-        background-size: cover;
-    }
 }
-
+.inputType{
+    position: absolute;
+    top: 20px;
+    right: 6px;
+}
 .inputUrl{
     width: 410px;
     padding: 18px 15px;
@@ -97,11 +90,72 @@
     justify-content: center;
     width: 262px;
     height: 100px;
-    border: 1px solid $color-black;
-    margin-bottom: 40px;
+    border: 1px solid $color-grey;
+    margin-bottom: 80px;
     overflow: hidden;
 }
 .img{
     max-height: 100%;
     max-width: 100%;
+}
+.uploadBtn{
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 40px;
+    height: 40px;
+    color: $color-black;
+    background-color: $color-green;
+    transition: all $transition-duration $timing-function;
+    &:hover{
+        background-color: $color-olive;
+        color: $color-white;
+    }
+    & path{
+        stroke: currentColor;
+    }
+}
+.uploadInput{
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+.uploadIcon{
+    position: absolute;
+}
+.fieldWrapper{
+    position: relative;
+}
+.errorMsg{
+    position: absolute;
+    bottom: -34px;
+    left: 0;
+    font-family: Arial;
+    font-size: 10x;
+    line-height: 28px;
+    color: $color-error;
+}
+.errorMsgTextarea{
+    position: absolute;
+    bottom: -40px;
+    left: 0;
+    font-family: Arial;
+    font-size: 12x;
+    color: $color-error;
+}
+.sizeCounter{
+    position: absolute;
+    left: 0;
+    bottom: -20px;
+    font-family: Arial;
+    font-size: 12px;
+    color: #798738;
+    &__right{
+        position: absolute;
+        right: 0;
+        bottom: -20px;
+        font-family: Arial;
+        font-size: 12px;
+        color: #798738;
+     }
 }
