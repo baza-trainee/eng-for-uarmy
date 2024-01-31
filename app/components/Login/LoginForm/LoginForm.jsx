@@ -17,18 +17,20 @@ const LoginForm = () => {
     const [showModal, setShowModal] = useState(false);
     const { isLoggedIn, error } = useAuth();
     const { status } = error;
+    const [errorStatus, setErrorStatus] = useState(status);
     const router = useRouter();
     const dispatch = useDispatch();
+    console.log("showModal", showModal);
 
     useEffect(() => {
         console.log("isLoggedIn", isLoggedIn);
         isLoggedIn && router.push('/admin');
 
-        if (status === 401) {
+        if (errorStatus === 401) {
             setShowModal(true);
         };
 
-    }, [isLoggedIn, router, status]);
+    }, [isLoggedIn, router, errorStatus]);
 
     const togglePassword = () => {
         setShowPassword(!showPassword);
@@ -99,7 +101,11 @@ const LoginForm = () => {
                 </button>
             </label>
 
-            <Link href='/login/forgot-password' className={styles.form__link}>Забули пароль?</Link>
+                <Link href='/login/forgot-password'
+                    className={styles.form__link}
+                    onClick={() => setErrorStatus(false)}>
+                Забули пароль?
+            </Link>
 
             <div>
                 <button type="submit"
