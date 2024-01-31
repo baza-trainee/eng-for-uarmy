@@ -17,7 +17,7 @@ export const Project1 = ({ t, isLargeScreen }) => {
           className={styles.cardImg}
           src={firstProject}
           alt="Project channel image"
-          priority="true"
+          loading="lazy"
           width={359}
           height={255}
         />
@@ -48,7 +48,7 @@ export const Project2 = ({ t, locale, isLargeScreen }) => {
           className={styles.cardImg}
           src={secondProject}
           alt="Speaking image"
-          priority="true"
+          loading="lazy"
           width={359}
           height={255}
         />
@@ -82,7 +82,7 @@ export const Project3 = ({ t, locale, isLargeScreen }) => {
           className={styles.cardImg}
           src={thirdProject}
           alt="Mobile app image"
-          priority="true"
+          loading="lazy"
           width={359}
           height={205}
         />
