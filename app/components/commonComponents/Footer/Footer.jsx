@@ -17,7 +17,7 @@ const Footer = () => {
           width={200}
           height={200}
           className={styles.footer__logo}
-        />
+          loading="lazy"/>
 
         <div className={styles.menu}>
           <h3 className={styles.footer__title}>{t("menu")}</h3>

@@ -14,7 +14,12 @@ const AboutUs = () => {
             <div className={styles.rightside}>
                 <div className={styles.mobileContent}>
                 <h2 className={styles.title}>{t("title")}</h2>
-                <Image className={styles.mobileImage} src={aboutUsImgMob} alt='mobile about us image' width={288} height={238} />
+                <Image className={styles.mobileImage}
+                    src={aboutUsImgMob}
+                    alt='mobile about us image'
+                    width={288}
+                    height={238}
+                    loading="lazy" />
                 <p className={styles.paragraphOne}>{t("first-part")}</p>
                 <p className={styles.paragraphTwo}>{t("second-part")}</p>
                 <p className={styles.paragraphThree}>{t("third-part")}</p>

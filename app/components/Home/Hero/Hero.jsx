@@ -5,7 +5,7 @@ import Link from 'next/link';
 import { Link as ScrollLink } from 'react-scroll';
 import { useEffect, useState } from 'react';
 import { Facebook, Youtube, Instagram, Telegram, ButtonBorder, Arrow, HeroCardBorder, HeroCardBorderMobil, ButtonBorderMobile } from './SvgComponent';
-import soldierImg from '@/public/hero/soldier-transp.png'
+import soldierImg from '@/public/hero/soldier-transp.webp'
 import "./SvgComponent.styles.scss"
 import styles from "./Hero.module.scss"; 
  
@@ -112,7 +112,7 @@ const Hero = () => {
       <Image className={styles.soldierImg}
         src={soldierImg}
         alt="soldier image"
-        width={796} height={523}
+        width={420} height={275}
         priority />
     </div>
   </section>
